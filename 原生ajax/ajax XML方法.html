@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+</body>
+<script>
+    var inp=document.getElementsByTagName("input");
+    if(window.XMLHttpRequest){
+       var xhr=new XMLHttpRequest();
+    }else{
+        var xhr=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xhr.open("get","test2.xml",true);
+    xhr.send();
+    xhr.onreadystatechange=function() {
+        if (xhr.readyState == 4 && xhr.status == 200){
+            var str = xhr.responseXML;
+            var books=str.getElementsByTagName("book")[0];
+            alert(books.innerHTML)
+
+        }
+
+    }
+</script>
+</html>

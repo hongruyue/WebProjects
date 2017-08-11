@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+
+      var data = 123;
+
+      var MyTitle = React.createClass({//propTypes值是对象
+        propTypes: {//验证是不是字符串，不是给转换成字符型
+          title: React.PropTypes.string.isRequired,
+        },
+
+        render: function() {
+          return <h1> {this.props.title} </h1>;
+        }
+      });
+
+      ReactDOM.render(
+        <MyTitle title={data}/>,
+        document.getElement ById('example')
+      );
+    alert(typeof )
+    </script>
+  </body>
+</html>
+

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        ul{
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+<p>这是一个段落</p>
+<p>这是另一个段落</p>
+<ul>
+    <li>今天天气挺不错1</li>
+    <li>今天天气挺不错2</li>
+    <li class="add">今天天气挺不错3</li>
+    <li>今天天气挺不错4</li>
+</ul>
+<button>结尾添加文本</button>
+<button>结尾添加列表</button>
+<button>开头插入</button>
+<button>之后插入</button>
+<button>之前插入</button>
+</body>
+<script src="js/jquery-1.8.3.min.js"></script>
+<script>
+    $(function(){
+      $("button").eq(0).click(function(){
+            $("p").append("<b>添加的文本</b>");
+
+        })
+        $("button").eq(1).click(function(){
+            $("ul").append("<li>添加新的列表</li>");
+
+        })
+        $("button").eq(2).click(function(){
+            $("ul").prepend("<li>添加新的列表</li>");
+
+        })
+        $("button").eq(3).click(function(){
+            $(".add").after("<li>添加新的列表</li>").css("color","green");
+
+        })
+        $("button").eq(4).click(function(){
+            $(".add").before("<li>添加新的列表</li>").css("color","red");
+
+        })
+
+    })
+</script>
+</html>

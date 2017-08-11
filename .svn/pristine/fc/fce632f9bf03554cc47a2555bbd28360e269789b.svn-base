@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="js/jquery-1.8.3.min.js"></script>
+</head>
+<body>
+<div></div>
+</body>
+<script>
+    $(function(){
+        var str=location.href;
+        var num=str.indexOf("#");
+        var str1=str.substring(num+1);
+        var str2=parseInt(str1.replace("code=",""));
+        //$("div").html(str1);
+        $("div").html(typeof str2);
+        $.ajax({
+            url:"news",
+            type:"get",
+            dataType:"json",
+            success:function(data){
+                $("div").html(data[str2].content);
+            },
+            async:true
+        })
+    })
+
+</script>
+</html>

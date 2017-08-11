@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        #outer{
+            width: 300px;
+            border: 1px solid black;
+            margin: 0 auto;
+            background:#63f7ff ;
+        }
+       .friend-num{
+           display: none;
+           background: white;
+
+       }
+        .friend-num li{
+            font-size: 16px;
+            height: 26px;
+            line-height: 26px;
+            padding-left: 24px;
+            border-bottom: 1px solid black;
+        }
+        .cursor{
+            cursor: pointer;
+            background: #63f7ff;
+            margin-left: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+       img{
+           margin-left: 4px;
+       }
+        #outer-ul{
+            margin-left: -24px;
+            padding-left: 4px;
+
+
+
+        }
+    </style>
+</head>
+<body>
+<div id="outer">
+    <ul id="outer-ul">
+
+        <li class="myfriend cursor">
+            <img src="img/right.png" alt=""  class="myfriend-img"/>
+            myfriend
+           <ul class="myfriend-num friend-num">
+               <li>张三</li>
+               <li>张三</li>
+               <li>张三</li>
+           </ul>
+        </li>
+
+        <li class="mycompany cursor">
+            <img src="img/right.png" alt=""  class="mycompany-img"/>
+            mycompany
+           <ul class="mycompany-num friend-num">
+               <li>李老板</li>
+               <li>李老板</li>
+               <li>李老板</li>
+           </ul>
+        </li>
+
+        <li class="lostfriend cursor">
+            <img src="img/right.png" alt=""  class="lostfriend-img"/>
+            lostfriend
+           <ul class="lostfriend-num friend-num">
+               <li>二狗</li>
+               <li>二狗</li>
+               <li>二狗</li>
+           </ul>
+        </li>
+    </ul>
+</div>
+</body>
+<script src="jquery-1.8.3.min.js"></script>
+<script>
+    $(function(){
+        $(".myfriend").click(function(){
+            if( $(".myfriend-num").css("display")=="block"){
+                $(".myfriend-num").hide();
+                $(".myfriend-img").attr("src","img/right.png");
+                $(this).css("background"," #63f7ff");
+            }else{
+                $(".myfriend-num").show();
+                $(".myfriend-img").attr("src","img/down.png");
+                $(this).css("background"," #f7f794");
+            }
+        });
+        $(".mycompany").click(function(){
+            if( $(".mycompany-num").css("display")=="block"){
+                $(".mycompany-num").hide();
+                $(".mycompany-img").attr("src","img/right.png");
+                $(this).css("background"," #63f7ff");
+            }else{
+                $(".mycompany-num").show();
+                $(".mycompany-img").attr("src","img/down.png");
+                $(this).css("background"," #f7f794");
+            }
+        });
+        $(".lostfriend").click(function(){
+            if( $(".lostfriend-num").css("display")=="block"){
+                $(".lostfriend-num").hide();
+                $(".lostfriend-img").attr("src","img/right.png");
+                $(this).css("background"," #63f7ff");
+            }else{
+                $(".lostfriend-num").show();
+                $(".lostfriend-img").attr("src","img/down.png");
+                $(this).css("background"," #f7f794");
+            }
+        })
+
+
+
+
+
+
+
+    })
+
+
+
+</script>
+</html>

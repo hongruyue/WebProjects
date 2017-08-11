@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+</body>
+<script>
+    //基于object对象
+    var person=new Object();
+    person.name="My Name";
+    person.age=18;
+    person.getName=function(){
+        return this.name;
+    };
+    person.getName();
+  //alert(person.getName());
+
+    //对象字面量方式(比较清楚的查找对象所包含的属性和方法)
+    var person={
+        name:"My Name",
+        age:18,
+        getName:function(){
+        return this.name;
+    }
+    }
+    person.newAtt="new Attr";//添加属性
+    alert(person.newAtt);//new Attr
+    delete person.age;
+    alert(person.age);//undefined(删除属性后值为undefined);
+</script>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .outer{
+            width: 1150px;
+            height: 630px;
+            background: url("image/1.jpg");
+            margin: 20px auto;
+            position: relative;
+        }
+        .box{
+            width: 755px;
+            height: 518px;
+            border: 1px solid white;
+            position: absolute;
+            left: 44px;
+            top: 32px;
+        }
+        p{
+            position: absolute;
+            bottom: 30px;
+            left: 43px;
+            color: white;
+            font-size: 40px;
+        }
+        img{
+            display: none;
+        }
+        ul{
+            list-style: none;
+            position: absolute;
+            bottom: -36px;
+            left: 300px;
+        }
+        li{
+            width: 20px;
+            height: 20px;
+            background-color: yellow;
+            border-radius: 50%;
+            margin-left: 20px;
+            float: left;
+        }
+        .lis{
+            background-color: red;
+        }
+        .circle_left,.circle_right{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: yellow;
+            opacity: 0.3;
+            position: absolute;
+            bottom: 240px;
+            text-align: center;
+            line-height: 50px;
+            font-size: 30px;
+            color: white;
+            font-weight: 600;
+        }
+        .circle_left{
+            left: 10px;
+        }
+       /* .circle_left:hover,.circle_right:hover{
+            opacity:1;
+        }*/
+        .circle_right{
+            right: 10px;
+        }
+        .spic{
+            width:100px;
+            height:100px;
+            position: absolute;
+            bottom:-5px;
+            left:270px;
+            background-size:100% 100%;
+            display: none;
+            border:5px solid white;
+            border-radius:5px;
+        }
+    </style>
+</head>
+<body>
+<div class="outer">
+    <div class="box">
+        <img src="image/5.jpg" alt="" width="755" height="518" style="display: block">
+        <img src="image/6.jpg" alt="" width="755" height="518">
+        <img src="image/7.jpg" alt="" width="755" height="518">
+        <img src="image/8.jpg" alt="" width="755" height="518">
+        <div class="circle_left"><</div>
+        <div class="circle_right">></div>
+        <ul>
+            <li class="lis"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <div class="spic"></div>
+    </div>
+    <p>带缩略图切换</p>
+</div>
+</body>
+<script>
+    var lis=document.getElementsByTagName("li");
+    var cl=document.getElementsByClassName("circle_left")[0];
+    var cr=document.getElementsByClassName("circle_right")[0];
+    var spic=document.getElementsByClassName("spic")[0];
+    var imgs=document.getElementsByTagName("img");
+    var c=0;
+    //点击cl循环切换图片
+    cl.onclick=function () {
+        cl.style.opacity=1;
+        c++;
+        if(c>=4){
+            c=0;
+        }
+        for(var i=0;i<imgs.length;i++) {
+            imgs[i].style.display = "none";
+            imgs[c].style.display = "block";
+            lis[i].style.backgroundColor="yellow";
+            lis[c].style.backgroundColor="red";
+        }
+    };
+    //鼠标移出cl透明度改变
+    cl.onmouseout=function () {
+        cl.style.opacity=0.3;
+    };
+    //点击cr循环切换图片
+    cr.onclick=function () {
+        cr.style.opacity=1;
+        c++;
+        if(c>=4){
+            c=0;
+        }
+        for(var i=0;i<imgs.length;i++) {
+            imgs[i].style.display = "none";
+            imgs[c].style.display = "block";
+            lis[i].style.backgroundColor="yellow";
+            lis[c].style.backgroundColor="red";
+        }
+    };
+    //鼠标移出cr透明度改变
+    cr.onmouseout=function () {
+        cr.style.opacity=0.3;
+    };
+    //点击lis对应图片  鼠标移上lis出现缩略图
+    for(var j=0;j<lis.length;j++){
+         lis[j].index=j;
+         lis[j].onclick=function () {
+             for(var v=0;v<lis.length;v++){
+                 lis[v].style.backgroundColor="yellow";
+                 imgs[v].style.display = "none";
+             }
+             this.style.backgroundColor="red";
+             imgs[this.index].style.display = "block";
+         };
+        //小图的位置以及显示
+         lis[j].onmouseover=function () {
+             spic.style.display="block";
+             spic.style.backgroundImage = "url(image/"+(this.index+5)+".jpg)";
+             spic.style.left = (40*this.index+270) +"px"
+         };
+        //移出小图消失
+        lis[j].onmouseout = function () {
+            spic.style.display = "none";
+        }
+    }
+
+
+
+
+
+</script>
+</html>

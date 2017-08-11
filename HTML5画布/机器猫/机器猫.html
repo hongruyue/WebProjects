@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <style>
+        #canvas{
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvas" width="800px" height="800px"></canvas>
+</body>
+<script>
+    var canvas=document.getElementById("canvas");
+    var cvs=canvas.getContext("2d");
+
+    cvs.beginPath();
+    cvs.save();
+    cvs.moveTo(280,71);
+    cvs.bezierCurveTo(107,94,173,254,237,262);
+    cvs.fillStyle="#08B6E7";
+    cvs.strokeStyle="black";
+    cvs.stroke();
+    cvs.fill();
+    cvs.restore();
+    cvs.closePath();
+
+    cvs.beginPath();
+    cvs.save();
+    cvs.moveTo(280,71);
+    cvs.bezierCurveTo(426,94,402,254,307,262);
+    cvs.fillStyle="#08B6E7";
+    cvs.strokeStyle="black";
+    cvs.stroke();
+    cvs.fill();
+    cvs.restore();
+    cvs.closePath();
+
+    cvs.beginPath();
+    cvs.save();
+    cvs.moveTo(280,131);
+    cvs.bezierCurveTo(137,124,193,254,257,262);
+    cvs.fillStyle="#ffffff";
+    cvs.strokeStyle="black";
+    cvs.stroke();
+    cvs.fill();
+    cvs.restore();
+    cvs.closePath();
+
+    cvs.beginPath();
+    cvs.save();
+    cvs.moveTo(280,131);
+    cvs.bezierCurveTo(366,124,365,254,287,262);
+    cvs.fillStyle="#ffffff";
+    cvs.strokeStyle="black";
+    cvs.stroke();
+    cvs.fill();
+    cvs.restore();
+    cvs.closePath();
+
+    cvs.beginPath();
+    cvs.save();
+    cvs.arc(280,151,20,0,Math.PI*2);
+    cvs.fillStyle="#CA3500";
+    cvs.strokeStyle="black";
+    cvs.stroke();
+    cvs.fill();
+    cvs.restore();
+    cvs.closePath();
+
+    cvs.beginPath();
+    cvs.save();
+    cvs.moveTo(280,161);
+    cvs.lineTo(280,221);
+    cvs.strokeStyle="#414141";
+    cvs.lineWidth=3;
+    cvs.stroke();
+    cvs.restore();
+    cvs.closePath();
+</script>
+</html>

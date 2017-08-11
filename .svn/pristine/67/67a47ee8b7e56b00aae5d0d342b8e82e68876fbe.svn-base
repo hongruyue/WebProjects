@@ -1,0 +1,433 @@
+
+.x_whole{
+    width: 100%;
+}
+/*显示在中间部分的主体内容*/
+.x_main{
+    width: 1200px;
+    margin: 0 auto;
+    height: 1797px;
+    border-bottom: 10px solid black;
+}
+/**居在上方的整体*********************************************************************/
+.x_up{
+    height: 845px;
+    width: 100%;
+}
+.x_up:after{
+    display: block;
+    content: "clear";
+    height: 0;
+    clear: both;
+    overflow: hidden;
+    visibility: hidden;
+}
+/*居在上左方位置的内容***************************************************************/
+.x_upleft{
+    width: 871px;
+    border-top: 10px solid black;
+}
+
+/*updiv指的是居在上面两个div统一的名字，目的是为了让他们并排显示*/
+.x_updiv{
+    float: left;
+}
+/*北服新面孔这几个字的样式设置*/
+.x_upleft_uptext{
+    width: 110px;
+    font-size: 22px;
+    cursor: pointer;
+    padding-bottom: 32px;
+    padding-top: 20px;
+    display: block;
+}
+/*“北服新面孔”这几个字的点击颜色变色*/
+.fontred{
+    color: #ff625b;
+}
+/*“北服新面孔”这几个字下面两排轮播图片的整个设置的*/
+.x_upleftinner{
+    height: 692px;
+    background: url("../img/beifu_logo.jpg")0 0 no-repeat;
+    position: relative;
+}
+/*这是居在左方的黑色按钮*/
+.x_upleftbtnl{
+    position: absolute;
+    left: 123px;
+    top: 315px;
+    z-index: 2;
+    cursor: pointer;
+}
+/*这是居在右方的黑色按钮*/
+.x_upleftbtnr{
+    position: absolute;
+    right: 0;
+    top:315px;
+    z-index: 2;
+    cursor: pointer;
+}
+/*这是中间“优秀学生”四个字的样式和位置*/
+.x_upleft_goodstudent{
+    position: absolute;
+    right:350px;
+    top:320px;
+    z-index: 2;
+    font-size: 12px;
+    color: gray;
+}
+/*这是所有图片的设置*/
+.x_upleft_upimg li{
+    float: left;
+    width: 337px;
+    margin-right:72px;
+    position: relative;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 70px;
+}
+/*这是每组图片的ul*/
+.x_upleft_upimg{
+    width: 337px;
+}
+/*这是四组图片的每个div的整体设置*/
+.x_imgout{
+    width: 337px;
+    height: 280px;
+    float: left;
+    overflow: hidden;
+}
+/*这是四组图片的位置*/
+.x_leftimgout1{
+    margin-left: 123px;
+    padding-bottom: 48px;border-bottom: 1px dotted gray;
+}.x_leftimgout2{
+     margin-left: 74px;
+     padding-bottom: 48px;border-bottom: 1px dotted gray;
+ }.x_leftimgout3{
+      margin-left: 123px;
+      padding-top: 54px;
+  }.x_leftimgout4{
+       margin-left: 74px;
+       padding-top: 54px;
+   }
+/*这是图片中间视频按钮的位置和样式*/
+.x_videologo{
+    position: absolute;
+    left: 145px;
+    top: 70px;
+    width: 49px;
+    height: 49px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+/*这是图片中间视频按钮的hover效果*/
+.x_videologo:hover{
+    background: red;
+}
+/*图片下面名字的设置*/
+.x_name{
+    font-size: 14px;
+    display: inline-block;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    border-bottom: 1px dotted #ccc;
+    color:red;
+    font-weight: bold;
+
+}
+/*下面是对右边手风琴整体的样式***************************************************/
+/*居在上右方位置的内容*/
+.x_upright{
+    width: 300px;
+    background:black;
+    margin-left: 29px;
+    height: 778px;
+    position: relative;
+}
+/*右边列表中每个li，即每行标题的设置*/
+.x_rightli{
+    cursor: pointer;
+    /*height: 49px;*/
+    line-height: 49px;
+    border-bottom: 1px solid black;
+    text-indent: 17px;
+    font-weight: bold;
+    background-color: white;
+}
+/*右边整个列表的位置和宽度*/
+.x_upright>ul{
+    width: 290px;
+    margin-left: 5px;
+}
+/*右边院校介绍的内容*/
+.rightlip{
+    display: none;
+    width: 273px;
+    background: white;
+    height: 435px;
+    color: purple;
+    font-size: 14px;
+    font-weight: lighter;
+    border: 1px solid black;
+    padding: 0 8px;
+}
+/*这是李宇春图片*/
+.x_liyuchun{
+    margin-left: -5px;
+    background: white;
+}
+.x_rightli img{
+    margin-left: 200px;
+}
+/*这是手风琴标题中小箭头的变化*/
+.x_rightli img:hover{
+    transform: scaleY(1.5);
+}
+/*这是手风琴下面三个放大效果标签的整体*****************************************************/
+.x_righttit{
+    color: white;
+    text-align: center;
+    margin-top:18px;
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
+}
+/*这是手风琴下面三个能放大的标签*/
+.x_righttit li{
+    width: 71px;
+    height: 63px;
+    float: left;
+    margin-left:19px;
+    overflow: hidden;
+    position: relative;
+}
+
+.x_righttit img{
+    margin-top: 20px;
+}
+
+
+.x_righttit span{
+    position: absolute;
+    left: 12px;
+    bottom: 0;
+}
+/**居在下方的整体*********************************************************************/
+.x_down{
+    height: 951px;
+    width: 100%;
+}
+.x_down:after{
+    display: block;
+    content: "clear";
+    height: 0;
+    clear: both;
+    overflow: hidden;
+    visibility: hidden;
+}
+/**居在下方左方的样式*********************************************************************/
+.x_downleft{
+    border-top: 10px solid black;
+    width:871px;
+    position: relative;
+}
+/*这是下方左边头部右侧三个小标签的位置和大小*/
+.x_downtopul{
+    width: 300px;
+    height:20px;
+    margin-top: -55px;
+    margin-left: 570px;
+    position: relative;
+}
+.x_downtopul li{
+    float: left;
+    width: 80px;
+    height: 18px;
+    margin-left: 20px;
+    text-align: right;
+    cursor: pointer;
+}
+/*这是下方左边大图上黑色小方框的位置*/
+.x_lusuoleft{
+    position: absolute;
+    left: 66px;
+    top: 105px;
+    z-index: 2;
+    cursor: pointer;
+}
+.ask{
+    position: absolute;
+    left: 225px;
+    top: -2px;
+}
+.situation{
+    position: absolute;
+    left: 125px;
+    top: -2px;
+}
+.road{
+    position: absolute;
+    left: 25px;
+    top: -2px;
+}
+/*这是下方左边大图上黑色小方框鼠标滑过以后显示出来的内容*/
+.x_lusuodis{
+    width: 260px;
+    height: 140px;
+    background: rgba(31,29,29,0.5);
+    position: absolute;
+    left: 66px;
+    top: 140px;
+    color: white;
+    padding: 10px;
+    line-height: 25px;
+    display: none;
+}
+/*这是左边大图下两个图片的ul*/
+.x_downleft_ul{
+    width: 871px;
+    margin-top: 23px;
+
+}
+.x_downleft_ul li{
+    float: left;
+    position: relative;
+}
+/*这是左边下面两个图片中间的视频标志*/
+.x_videologo2{
+    position: absolute;
+    left: 180px;
+    top: 94px;
+}
+.x_downleft_ul_right{
+    margin-left: 47px;
+}
+/*这是位于下方右边内容的整体的宽高和位置*/
+.x_downright{
+    width:300px;
+    height: 860px;
+    margin-left: 29px;
+    margin-top: -3px;
+    position: relative;
+}
+/*下方右边的背景图片*/
+.x_downrightinner{
+    width: 100%;
+    height: 100%;
+    background: url("../img/lusuo_right_5.jpg");
+    margin-top: -3px;
+}
+/*这是下方左右div的统一class名，目的是为了左浮*/
+.x_downli{
+    float: left;
+}
+/*下方右边位于头部的两个图片*/
+.lusuo_right_2{
+    margin-left: 30px;
+    margin-top: 37px;
+    padding-bottom: 27px;
+}
+.lusuo_right_1{
+    margin-left: 50px;
+    margin-bottom: 27px;
+}
+/*两个图片的下边框是双黑实线*/
+.x_downrightup{
+    width: 290px;
+    height: 130px;
+    border-bottom: 4px double black;
+    margin-left: 5px;
+    margin-top: -885px;
+}
+/*这是右边type切换的选项框*/
+.x_downrightdown_title{
+    width: 290px;
+    height: 33px;
+    margin-left: 5px;
+    border-bottom:1px solid #b5b5b5;
+}
+/*每个选项框统一的名字样式设置*/
+.x_tit{
+    float: left;
+    height: 100%;
+    line-height: 33px;
+    font-size: 12px;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+}
+/*鼠标滑过hover效果*/
+.x_tit:hover{
+    background: #5B585B;
+    color: white;
+    border-color: black;
+}
+.x_tit3{
+    width:107px ;
+    border-left: 1px solid #b5b5b5;
+}
+.x_tit2{
+    width: 124px;
+    border-left: 1px solid #b5b5b5;
+}
+.x_tit1{
+    width: 57px;
+}
+/*type切换的内容*/
+.x_downrightdown_con1{
+    width: 290px;
+    height: 720px;
+    margin-left: 5px;
+}
+/*每个内容的border设置*/
+.x_downrightdown_con dd{
+    width: 100%;
+    height: 180px;
+    border-bottom: 1px solid #b5b5b5;
+    position: relative;
+}
+/*图片位置*/
+.x_downrightdown_con dd img{
+    margin-left: 27px;
+    margin-top: 37px;
+}
+/*图片旁边的文字定位在固定地方，父级是整个content*/
+.x_downrightdown_con dd span{
+    display: block;
+    margin-left: 145px;
+    margin-top: -100px;
+    width: 128px;
+    height: 64px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    position: absolute;
+    left: 7px;
+    top: 160px;
+    color: #494848;
+}
+/*旁边文字的标题*/
+.x_downrightdown_con dd em{
+    font-size: 14px;
+    font-weight: bold;
+    color: black;
+}
+/*隐藏的两个内容*/
+.x_non{
+    display: none;
+}
+.x_nonpink{
+    background:#F5C7F5;
+}
+.x_nonpuple{
+    background:#EDF459;
+}
+.x_nongreen{
+    background:#C9F3CB;
+}
+.lusuo_right_4{
+    position: absolute;
+    left: 0;
+    top: 870px;
+}
+

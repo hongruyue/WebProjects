@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html ng-app="addcertiApp" ng-controller="addcertificateTrail">
+	<head>
+		<meta charset="UTF-8">
+		<title>添加收发与踪迹规则</title>
+		<link rel="stylesheet" href="../../bs/css/bootstrap.min.css">   
+		<link type="text/css" rel="stylesheet" href="../../css/main.css" />
+		<link type="text/css" rel="stylesheet" href="../../css/style.css" />
+		<!--<link type="text/css" rel="stylesheet" href="../../bs/css/validationEngine.jquery.css" />-->
+		<script src="../../bs/js/jquery-1.11.3.min.js"></script>
+   		<script src="../../bs/js/bootstrap.min.js"></script>
+   		<script type="text/javascript" src="../../bs/js/angular.min.js" ></script>
+   		<script type="text/javascript" src="../../js/url.js" ></script>
+		<script type="text/javascript" src="js/certificateTrail.js" ></script>
+   		<script src="../../bs/js/jquery.form.js"></script>
+   		<script src="../../bs/js/jquery.page.js"></script>	
+	<style type="text/css">
+			.col-md-2 {
+			    width: 14.667%;
+			}
+	</style>
+
+</head>
+<body>
+	<div id="man_zone" class="mianbody">
+			<div class="softtm"></div>			
+			<div class="row show-grid" style="padding: 1% 1% 0% 2%;">
+			<form id="testForm" ng-submit="submitForm()" class="form-horizontal">
+				<div class="col-md-12 col-xs-12 col-sm-12">
+					 <div class="form-group">
+						  	<div class="col-md-12 col-xs-12 col-sm-12" >
+							    <label for="coordinationOrganizationId" class="col-md-2 control-label">凭证制发机构部门</label>
+							    <div class="col-md-4 col-xs-4 col-sm-4">
+								     <select  class="form-control" ng-model="coordinationOrganizationId" ng-options="x.dpName for x in names"  ng-change="selectsystem()"  name="coordinationOrganizationId" id="coordinationOrganizationId">
+									  </select>
+								  </div>
+						    </div>
+					 </div>
+					 <div class="form-group">
+						  	<div class="col-md-12 col-xs-12 col-sm-12" >
+							    <label for="coordinationSystemId" class="col-md-2 control-label">凭证制发机构系统</label>
+							    <div class="col-md-4 col-xs-4 col-sm-4">
+								   <select  class="form-control" id="coordinationSystemId" ng-model="coordinationSystemId" name="coordinationSystemId">
+								   </select>
+								</div>
+						    </div>
+					 </div>
+					<div class="form-group">
+							<div class="col-md-12 col-xs-12 col-sm-12" >
+							    <label for="traceCredentialsStr" class="col-md-2 control-label">凭证踪迹管理规则</label>
+								<div class="col-md-4 col-xs-4 col-sm-4">
+								    <input type="text" class="input form-control" ng-model="form.traceCredentialsStr" id="traceCredentialsStr" name="traceCredentialsStr" data-validation-engine="validate[required]" placeholder="请填写规则"/>
+								</div>
+							</div>
+							<div class="col-md-12 col-xs-12 col-sm-12">
+								<div class="col-md-2 col-xs-2 col-sm-2"></div>
+								<div class="col-md-4 col-xs-4 col-sm-4">
+						    	<a href="javascript:;" class="file">
+							        <input type="file" name="file" title="选择文件" id="">选择文件
+							    </a>
+							     <span id="showFileName" style="margin: 1px"></span>
+							     </div>
+						    </div>
+					</div>
+					<div class="form-group">
+						  	<div class="col-md-12 col-xs-12 col-sm-12" >
+							    <label for="traceSendRule" class="col-md-2 control-label">协同办理凭证发送规则</label>
+							    <div class="col-md-4 col-xs-4 col-sm-4">
+								    <input type="text" class="input form-control" ng-model="form.traceSendRule" id="traceSendRule" name="traceSendRule" data-validation-engine="validate[required]" placeholder="请填写规则"/>
+								</div>
+						    </div>
+					 </div>
+					 <div class="form-group">
+						  	<div class="col-md-12 col-xs-12 col-sm-12" >
+							    <label for="ReceiptRule" class="col-md-2 control-label">协同办理凭证签收规则</label>
+							    <div class="col-md-4 col-xs-4 col-sm-4">
+								    <input type="text" class="input form-control" ng-model="form.ReceiptRule" id="traceReceiveRule" name="traceReceiveRule" data-validation-engine="validate[required]" placeholder="请填写规则"/>
+							    </div>
+							</div>
+					 </div>
+				</div>
+				<div class="col-md-9 col-xs-9 col-sm-9" style="margin:15px 0;">	
+					<div class="col-md-1 col-xs-1 col-sm-1"></div>
+					  	<div class="col-md-3 col-xs-3 col-sm-3">
+					  		<button class="btn btndel-handle1" type="button" ng-click="rt()">返回</button>
+					  	</div>
+					  	 <div class="col-md-4 col-xs-4 col-sm-4">
+					  		<button class="btn btndel-handle1" type="submit">保存</button>
+					  	</div>				
+				</div>
+			</form>
+			</div>
+	</div> 
+<!--<script src="../../bs/js/jquery.validationEngine.min.js"></script>	
+<script src="../../bs/js/jquery.validationEngine-zh-CN.js"></script>		
+<script type="text/javascript">
+$.validationEngine.defaults.scroll = false;
+jQuery(document).ready(function(){
+  jQuery('#testForm').validationEngine();
+});
+
+</script>-->
+<script>
+jQuery(document).ready(function(){	
+  //选择文件		
+	$(".file").on("change","input[type='file']",function(){
+        var filePath = $(this).val().split('\\');
+        var fileName = filePath[filePath.length-1];
+        $(this).parent().next().html(fileName);
+        $(this).parent().next().attr("title",fileName);
+    })
+   
+});
+</script>
+</body>
+</html>

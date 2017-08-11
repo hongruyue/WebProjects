@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .zong{
+            width: 700px;
+            height: 100%;
+            margin: 0 auto;
+            margin-top: 80px;
+        }
+        h2{
+            text-align: center;
+            padding-bottom: 15px;
+        }
+        h3{
+          padding-top: 15px;
+        }
+        .kuang{
+            width: 700px;
+            height: 525px;
+            background-color: #287d8b;
+            border-radius: 4px;
+        }
+        .kuang1{
+            width: 700px;
+            height: 400px;
+            background-color: #d5d5d5;
+            margin-top: 20px ;
+            border-radius: 4px;
+        }
+        .dianniu{
+            width: 70px;
+            height: 30px;
+            background-color: #fff;
+            margin:0 auto ;
+            line-height: 30px;
+            border-radius: 4px;
+            text-align: center;
+            margin-top: 20px ;
+        }
+        .zuo{
+            width: 300px;
+            height: 360px;
+            float: left;
+          margin-top: 20px;
+            margin-left: 10px;
+            background-color: #fff;
+            border-radius: 4px;
+        }
+        .you{
+            width: 300px;
+            height: 360px;
+            float: right;
+            background-color: #fff;
+            margin-top: 20px;
+            margin-right: 10px;
+            border-radius: 4px;
+        }
+        .anniu{
+            width: 70px;
+            height: 220px;
+            float:left;
+            margin-top: 80px;
+            margin-right: 10px;
+            border-radius: 4px;
+        }
+        button{
+            width: 70px;
+            height: 30px;
+            background-color: #fff;
+            line-height: 30px;
+            border-radius: 4px;
+            text-align: center;
+            margin-top: 20px ;
+            margin-left: 5px;
+        }
+      .zuo li{
+         padding-left: 20px;
+          font-weight: 600;
+          background-color: #fff;
+          color: #379dcc;
+          font-size: 15px;
+          line-height:25px ;
+      }
+        .zuo li:hover{
+            background-color: #a0d5ca;
+        }
+        .you li{
+            padding-left: 20px;
+            font-weight: 600;
+            background-color: #fff;
+            color: #379dcc;
+            font-size: 15px;
+            line-height:25px ;
+        }
+        .you li:hover{
+            background-color: #a0d5ca;
+        }
+    </style>
+</head>
+<body>
+<div class="zong">
+<h2>水果选择器</h2>
+    <div class="kuang">
+        <h3>你想吃什么水果勒。。。</h3>
+        <div class="kuang1">
+            <div class="zuo">
+                <ul>
+                    <li>葡萄</li>
+                    <li>西瓜</li>
+                    <li>苹果</li>
+                    <li>菠萝</li>
+                    <li>草莓</li>
+                    <li>鸭梨</li>
+                    <li>蜜桃</li>
+                    <li>桑果</li>
+                    <li>杨梅</li>
+                    <li>香蕉</li>
+                </ul>
+            </div>
+            <div class="anniu">
+                <button>&gt;</button>
+                <button>&gt;&gt;</button>
+                <button> &lt;</button>
+                <button>&lt;&lt;</button>
+            </div>
+            <div class="you">
+                <ul>
+                </ul>
+            </div>
+        </div>
+        <div class="dianniu">GET</div>
+    </div>
+</div>
+
+</body>
+<script src="jquery-2.1.0.min.js"></script>
+<script>
+    $(function(){
+        $('.zuo li').click(function(){
+            var index=$(this).index();
+            $('.zuo li').eq(index).css('backgroundColor','#387FD5').siblings().css('backgroundColor','')
+            $('button').eq(0).click(function(){
+                 var i=$('.zuo li').eq(index).clone();
+                $('.you ul').append(i);
+                $('.zuo li').eq(index).html('');
+                $('.you li').css('backgroundColor','')
+                $('.you li').click(function(){
+                    var index=$(this).index();
+                    $('.you li').eq(index).css('backgroundColor','#387FD5').siblings().css('backgroundColor','')
+                    $('button').eq(2).click(function(){
+                        var i=$('.you li').eq(index).clone();
+                        $('.zuo ul').append(i)
+                        $('.you li').eq(index).html('');
+                        $('.zuo li').css('backgroundColor','')
+                    })})})})
+        $('button').eq(1).click(function(){
+            var s=$('.zuo li').clone();
+            $('.you ul').append(s);
+            $('.zuo li').html('');
+            $('.you li').css('backgroundColor','');
+            $('.you li').click(function(){
+                var index=$(this).index();
+                $('.you li').eq(index).css('backgroundColor','#387FD5').siblings().css('backgroundColor','')
+                $('button').eq(2).click(function(){
+                    var i=$('.you li').eq(index).clone();
+                    $('.zuo ul').append(i)
+                    $('.you li').eq(index).html('');
+                    $('.zuo li').css('backgroundColor','')
+                })})})
+        $('button').eq(3).click(function(){
+            var s=$('.you li').clone();
+            $('.zuo ul').append(s);
+            $('.you li').html('');
+            $('.zuo li').css('backgroundColor','')
+            $('.zuo li').click(function(){
+                var index=$(this).index();
+                $('.zuo li').eq(index).css('backgroundColor','#387FD5').siblings().css('backgroundColor','')
+                $('button').eq(0).click(function(){
+                    var i=$('.zuo li').eq(index).clone();
+                    $('.you ul').append(i);
+                    $('.zuo li').eq(index).html('');
+                    $('.you li').css('backgroundColor','')
+                })})})})
+</script>
+</html>

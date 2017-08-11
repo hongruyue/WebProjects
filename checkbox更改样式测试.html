@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CSS3美化单选按钮和复选按钮代码</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<style type="text/css">
+
+.magic-checkbox {
+	display: none;
+}
+
+
+label {
+	position: relative;
+	display: block;
+	padding-left: 30px;
+	cursor: pointer;
+	vertical-align: middle;
+}
+
+
+
+.magic-checkbox + label:before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	content: '';
+	border: 1px solid #c0c0c0;
+}
+
+  .magic-checkbox + label:after {
+	position: absolute;
+	display: none;
+	content: '';
+}
+
+/*.magic-checkbox[disabled] + label {*/
+	/*cursor: not-allowed;*/
+	/*color: #e4e4e4;*/
+/*}*/
+
+
+
+/*.magic-checkbox:checked + label:before {*/
+	/*animation-name: none;*/
+/*}*/
+
+
+.magic-checkbox:checked + label:after {
+	display: block;
+}
+
+
+
+.magic-checkbox + label:before {
+	border-radius: 3px;
+}
+.magic-checkbox + label:after {
+	top: 2px;
+	left: 7px;
+	box-sizing: border-box;
+	width: 6px;
+	height: 12px;
+	transform: rotate(45deg);
+	border-width: 2px;
+	border-style: solid;
+	border-color: #fff;
+	border-top: 0;
+	border-left: 0;
+}
+.magic-checkbox:checked + label:before {
+    border: #F44336;
+    background:darkseagreen;
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<div id="main">
+	<div class="demo">
+		<div class="col">
+          <h4>Checkbox(复选按钮)</h4>
+			
+			<div class="opt">
+				<input class="magic-checkbox" type="checkbox" name="layout" id="c1">
+				<label for="c1">Normal</label>
+			</div>
+       </div>
+	</div>
+	
+</div>
+</body>
+</html>

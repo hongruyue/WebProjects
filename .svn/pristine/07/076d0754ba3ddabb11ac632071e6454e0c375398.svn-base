@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../css/style.css"/>
+    <link rel="stylesheet" href="../css/reset.css"/>
+</head>
+<body>
+<!--header开始-->
+<div class="header">
+    <div class="header_box">
+        <a href="http://www.baidu.com">
+            <span class="header_left"></span>
+        </a>
+        <a href=""></a>
+        <a href="http://www.baidu.com">
+            <span class="header_right"></span>
+        </a>
+        <a href=""></a>
+    </div>
+</div>
+<!--header end-->
+<!--banner start-->
+<div class="gy">
+</div>
+<!--banner end-->
+
+<!--nav start-->
+<div class="nav">
+    <div class="nav1">
+        <ul>
+            <li>
+                <a href="http://www.baidu.com" >
+                    <p class="navp"></p>
+                    <p>质优价廉</p>
+                </a>
+            </li>
+            <li>
+                <a href="http://www.baidu.com" >
+                    <p class="navp1"></p>
+                    <p>品质把控</p>
+                </a>
+            </li>
+            <li>
+                <a href="http://www.baidu.com" >
+                    <p class="navp2"></p>
+                    <p>值得信赖</p>
+                </a>
+            </li>
+            <li>
+                <a href="http://www.baidu.com" >
+                    <p class="navp3"></p>
+                    <p>高品优质</p>
+                </a>
+            </li>
+            <li>
+                <a href="http://www.baidu.com" >
+                    <p class="navp4"></p>
+                    <p>屡创新高</p>
+                </a>
+            </li>
+            <li>
+                <a href="http://www.baidu.com" >
+                    <p class="navp5"></p>
+                    <p>企业文化</p>
+                </a>
+            </li>
+            <li>
+                <a href="http://www.baidu.com" >
+                    <p class="navp6"></p>
+                    <p>联系我们</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+</div>
+<!--nav end-->
+<div class="count1"></div>
+<div class="count2"></div>
+<div class="count3"></div>
+<div class="count4"></div>
+<div class="count5"></div>
+<div class="count6"></div>
+<div class="count7">
+    <ul class="count7_btn">
+        <li><a href="http://www.baidu.com">招聘入口</a></li>
+        <li><a href="http://www.baidu.com">商家报名</a></li>
+        <li><a href="http://www.baidu.com">联系客服</a></li>
+    </ul>
+</div>
+
+
+</body>
+<script>
+ window.onscroll=function(){
+     var scrollTop=document.body.scrollTop||document.documentElement.scrollTop;
+     var nav=document.getElementsByClassName("nav")[0];
+     var nav1=document.getElementsByClassName("nav1")[0];
+     var navTop=nav.offsetTop;
+     console.log(navTop);
+     if(scrollTop>navTop){
+         nav1.style.position="fixed";
+         nav1.style.top="0";
+         nav1.style.zIndex="1";
+     }else{
+         nav1.style.position="static";
+     }
+ }
+</script>
+</html>

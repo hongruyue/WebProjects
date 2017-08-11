@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="box1">1</div>
+
+</body>
+<script>
+    var box1=document.getElementsByClassName("box1")[0];
+    var num=1;
+    function jia() {
+        num++;
+        box1.innerHTML = num;
+    }
+    setInterval(jia,1000);
+
+</script>
+</html>

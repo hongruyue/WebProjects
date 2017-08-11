@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{
+		list-style: none;
+		padding: 0px;
+		margin:0px;
+	}
+	.outer{
+		width: 800px;
+		height: 400px;
+		background: #ccc;
+		padding: 25px;
+		box-sizing: border-box;
+		margin: 0 auto;
+	}
+	.box{
+		width: 750px;
+		height: 350px;
+		/*margin: 25px;*/
+		background: #fff;
+	}
+	#text{
+		margin:25px 0px 0 10px;
+	}
+	.btn{
+		float: left;
+		margin-top: 25px;
+	}
+	textarea{
+		float: left;
+		margin-top: 25px;
+	}
+	ul{
+		display: none;
+	}
+	li{		
+		float: left;
+		width: 5px;
+		height: 5px;
+		background: orange;
+		margin-left: 5px;
+	}
+	button{
+		background: orange;
+	}
+	</style>
+</head>
+<body>
+	<div class="outer">
+		<div class="box">
+			<textarea name="text" id="text" cols="40" rows="15">日称，日本政府将在9月底制定使用人工卫星和无人机的海洋监视体制的基本计划。
+　　日</textarea>
+			<div class="btn">
+				<button>文字右移</button><br>
+				<span>0</span>/<span>0</span>
+				<ul>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</div>
+			<textarea name="text1" id="text1" cols="40" rows="15"></textarea>
+		</div>
+	</div>
+</body>
+<script>
+	var txt=document.getElementsByTagName('textarea');
+	var btn=document.getElementsByTagName('button')[0];
+	var lis=document.getElementsByTagName('li');
+	var spans=document.getElementsByTagName('span');
+	var uls=document.getElementsByTagName('ul')[0];
+	var time,time1,time2;
+	var num1=0;
+	function run(){
+			var str=txt[0].value;
+			if(str.length==0){
+				btn.style.background="orange";
+				clearInterval(time);
+				var opa=1;
+				time2=setInterval(function(){
+					uls.style.opacity=opa;
+					opa-=0.1;
+					if(opa==0){
+						uls.style.display="none";
+						uls.style.opacity=1;
+					}
+				},100);
+			}
+			var num=txt[1].value.length;
+			var str1=str.substring(0,1);
+			var str2=str.substring(1);
+			txt[0].value=str2;
+			txt[1].value+=str1;
+			spans[0].innerHTML=num;
+		}
+	btn.onclick=function(){
+		txt[1].value="";
+		clearInterval(time);
+		clearInterval(time1);
+		clearInterval(time2);
+		uls.style.display="block";
+		var text=txt[0].value;
+		spans[1].innerHTML=text.length;
+		btn.style.background="#ccc";
+		time=setInterval(run,50);
+		time1=setInterval(function(){
+			for(var i=0; i<lis.length;i++){
+				if(lis[i]==lis[num1]){
+					lis[i].style.background="red";
+				}else{
+					lis[i].style.background="orange";
+				}
+			}
+			num1++;
+			if(num1>=lis.length){
+				num1=0;
+			}
+		},50);
+	}
+</script>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box{
+            width: 500px;
+            height: 500px;
+            margin: 100px auto;
+        }
+        .box p{
+            text-align: center;
+            margin-top: 50px;
+        }
+        .inner{
+            width: 100px;
+            height: 20px;
+            line-height: 20px;
+            margin-right: 10px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .point{
+            width: 0;
+            height: 0;
+            border:8px solid #717171;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-bottom:8px solid transparent;
+            cursor: pointer;
+            float: right;
+            margin:8px 6px 0 0;
+        }
+        .point:hover{
+            border:8px solid #000000;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-top:8px solid transparent;
+            margin: 0 6px 8px 0;
+        }
+
+        .content {
+            width: 500px;
+            height: 200px;
+            border: 1px dashed #cccccc;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <!--▲-->
+    <!--<div class="inner att">-->
+        <!--<span class="point"></span>-->
+
+        <!--</div>-->
+    <!--<div class="inner grade">-->
+        <!--<span class="point"></span>-->
+
+    <!--</div>-->
+    <input type="text" value="选择城市   ▼" class=" inner att">
+    <input type="text" value="选择区   ▼" class="inner grade">
+    <input type="button" value="请点击选中" id="button" class="button">
+     <p>选中的内容</p>
+    <div class="content">
+
+    </div>
+</div>
+</body>
+<script src="js/data1.js"></script>
+<script src="js/data2.js"></script>
+</html>

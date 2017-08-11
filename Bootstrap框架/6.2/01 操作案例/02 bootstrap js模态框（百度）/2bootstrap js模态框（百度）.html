@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>模态框</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <link rel="stylesheet" href="../css/bootstrap.min.css"/>
+    <style>
+        .myMP{
+            margin: 20px;
+        }
+        .myB{
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+<!--按钮-->
+<button class="btn btn-primary" data-toggle="modal" data-target="#mymodal">登录</button>
+<div class="container" style="margin-top: 40px">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3" >
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="" >
+                    <span class="input-group-btn" >  <!-- 容易出错点：写成input-group-addon-->
+                        <button class="btn btn-primary" type="button">百度一下</button>
+                    </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--弹出的模态框-->
+    <div id="mymodal" class="modal fade bs-examlpe-modal-sm"><!-- modal固定布局，上下左右都是0表示充满全屏，支持移动设备上使用触摸方式进行滚动。。-->
+        <div class="modal-dialog modal-sm"><!-- modal-dialog默认相对定位，自适应宽度，大于768px时宽度600，居中-->
+            <div class="modal-content"><!-- modal-content模态框的边框、边距、背景色、阴影效果。-->
+                <div class="modal-header">
+                    <button class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">登录百度账号</h4>
+                </div>
+                <div class="media-body">
+                    <form action="#">
+                        <div class="col-md-10 col-md-offset-1 myMP">
+                            <input class="form-control" type="text" placeholder="手机/邮箱/用户名"/>
+                        </div>
+                        <div class="col-md-10 col-md-offset-1 myMP">
+                            <input class="form-control" type="text" placeholder="密码"/>
+                        </div>
+                        <div class="col-md-10 col-md-offset-1 myMP">
+                            <input type="checkbox" />下次自动登录
+                        </div>
+                        <div class="col-md-12 myB">
+                            <input class="btn btn-primary form-control" type="submit" value="登录"/>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+<script src="../js/jquery-1.10.2.min.js"></script>
+<script src='../js/bootstrap.min.js'></script>
+    <script>
+//        默认弹出
+//        $('.modal').modal();
+
+    </script>
+</body>
+</html>

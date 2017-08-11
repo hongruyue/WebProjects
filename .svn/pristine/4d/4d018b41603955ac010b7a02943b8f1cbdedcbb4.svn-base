@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #canvas{
+            background: #cccccc;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvas" width="800px" height="800px"></canvas>
+</body>
+<script>
+    var canvas=document.getElementById("canvas");
+    var cvs=canvas.getContext("2d");
+    var img=new Image();//创建Image对象
+    img.src="img/1.jpg";//设置图像路径
+    var re=cvs.createPattern(img,'repeat');
+    img.onload=function(){
+        cvs.beginPath();
+        cvs.rect(0,0,800,600);
+        cvs.fillStyle=re;
+        cvs.fill();
+        cvs.closePath();
+    }
+
+
+</script>
+
+</html>

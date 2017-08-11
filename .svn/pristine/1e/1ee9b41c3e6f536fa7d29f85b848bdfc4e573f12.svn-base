@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box{
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+
+</div>
+</body>
+<script>
+    var box=document.getElementsByClassName("box")[0];
+    //新建XMLHttpRequest对象
+    if(window.XMLHttpRequest){
+       var xhr=new XMLHttpRequest();
+    }else{
+        var xhr=new ActiveXObject("Microsoft.XMLHTTP");//兼容低版本
+    }
+    //建立与服务器的连接
+    xhr.open("get","text",true);//true异步 false同步
+    //向服务器发送数据 如果是get就写send();
+    xhr.send();
+    xhr.onreadystatechange=function(){
+        if(xhr.readyState==4&&xhr.status==200){//弹出4
+                var str=xhr.responseText;//请求到的数据
+                box.innerHTML=str;
+            //alert(str);
+            }else{
+               // alert(xhr.readyState)//弹出2,3
+
+        }
+    }
+</script>
+</html>

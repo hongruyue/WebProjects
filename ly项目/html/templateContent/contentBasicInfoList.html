@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title>基础属性信息列表</title>
+		<link rel="stylesheet" href="../../bs/css/bootstrap.min.css">
+	    <link rel="stylesheet" href="../../css/collaboration.css">  
+	    <link type="text/css" rel="stylesheet" href="../../css/style.css" />	
+	    <link type="text/css" rel="stylesheet" href="../../bs/css/validationEngine.jquery.css" /> 
+	  	<script type="text/javascript" src="../../bs/js/jquery-1.11.3.min.js" ></script>
+		<script type="text/javascript" src="../../bs/js/bootstrap.min.js" ></script>
+		<script type="text/javascript" src="../../bs/js/angular.min.js" ></script>
+		<script type="text/javascript" src="../../bs/js/angular-popups.js"></script>
+		<script type="text/javascript" src="../../js/url.js" ></script>
+	  	<script src="../../bs/js/jquery.page.js"></script>   
+	  	<script src="js/contentBasicInfoList.js"></script>
+	  	<style type="text/css">
+			a,a:hover {
+				text-decoration: none;
+			}
+			table {
+				font-size: 12px;
+			}
+			.top {
+				border-bottom: 2px solid #ddd;
+			}
+			.hover {
+				border-bottom: 1px solid #ddd;
+			}
+			.hover td {
+				color: #157fb3;
+				font-weight: 900;
+			}
+			td>a {
+				color: #1138e0
+			}
+			.table > tbody > tr > td {
+				border-top: 0
+			}
+			.table {
+				margin-bottom: 0px;
+			}
+			form{margin: 0}
+			.list {
+				height: 380px;
+				overflow-y: auto;
+			}
+		</style>
+	</head>
+	<body ng-controller="basicInfoCtrl">
+		<div id="man_zone" class="mianbody">
+			<div class="softtm"></div>			
+			<div class="row show-grid" style="padding: 1% 1% 0% 1%;">			
+				<div class="col-md-12 col-xs-12 col-sm-12 " style="height:35px;">
+						<button class="btndel-handle" type="button" ng-click="add()">增加</button>
+				</div>
+			<div class="col-md-12 col-xs-12 col-sm-12">		
+				<div class="View">基础信息列表</div>
+				<div class="list">
+					<table class="table top table-condensed">
+							<tr>
+								<th width="5%">序号</th>	
+								<th width="25%">名称</th>						
+								<th width="15%">是否需要核实</th>	
+								<th width="20%">共享方</th>
+								<th width="20%">入库方</th>															
+								<th width="15%">操作</th>
+							</tr>				
+						</table>
+						<table class="table hover table-hover table-condensed" ng-repeat= "info in basicInfoList">
+							<tbody id="table_style">
+								<tr>
+									<td width="5%">{{$index+1}}</td>	
+									<td width="25%">{{info.metaData.metadataCname}}</td>						
+									<td width="15%">	
+										<div ng-if="info.contentBasicInformation.ifCheck == 1"> 
+											需要
+											<button id="btn{{$index}}" class="btn btn-sm btn-default"  ng-click="bubble.open = true">
+												详细信息
+											</button>
+											<bubble ng-if="bubble.open" for="btn{{$index}}" align="right top" style="text-align: left;" close="bubble.open=false">
+												<b>由谁核实:<br></b><span ng-repeat="departName in info.fromChecks">{{departName}}<br></span>
+												<b>向谁核实:<br></b><span ng-repeat="departName in info.toChecks">{{departName}}<br></span>
+											</bubble>
+										</div>
+										<div ng-if="info.contentBasicInformation.ifCheck != 1"> 
+											不需要
+										</div>
+									</td>	
+									<td width="20%">
+										<button id="btn{{$index}}1" class="btn btn-sm btn-default"  ng-click="bubble1.open = true">
+												详细信息
+										</button>
+										<bubble ng-if="bubble1.open" for="btn{{$index}}1"  align="right top" style="text-align: left;" close="bubble1.open=false">
+											<span ng-repeat="handlMatterName in info.shareHandlMatters">{{handlMatterName}}</br></span>
+										</bubble>
+									</td>	
+									<td width="20%">
+										<button id="btn{{$index}}2" class="btn btn-sm btn-default"  ng-click="bubble2.open = true">
+												详细信息
+										</button>
+										<bubble ng-if="bubble2.open" for="btn{{$index}}2"  align="right top" style="text-align: left;" close="bubble2.open=false">
+											<span ng-repeat="systemName in info.storageOrgs">{{systemName}}</br></span>
+										</bubble>
+                      			   	</td>																
+									<td width="15%">
+										<a ng-click="update(info.contentBasicInformation.id)">修改</a>&nbsp;&nbsp;&nbsp;&nbsp;
+		                            	<a ng-click="delete(info.contentBasicInformation.id)"> 删除</a>	
+									</td>
+								</tr>
+							</tbody>
+						</table>		 					
+					</div>						
+				</div>
+				<div class="tcdPageCode"></div>
+			</div>
+		</div>
+	</body>
+</html>

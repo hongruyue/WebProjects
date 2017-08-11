@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+
+      });
+        $(function(){//jq的预备函数简写方  作用和window.onload是一样的
+
+           $(".box").eq(0).css("color","red").sibling().css("");//改变元素的单一属性 sibling（）代表其他的兄弟元素   eq()代表下标
+            //fontSize驼峰式写法 在js改变样式必须用，但jq不一定
+            $(".box1").css({"color":"green","fontSize":"40px","backgroundColor":"yellow","width":"300px","height":"300px"});
+           // console.log($(".box1".css("width","300px")));
+
+        });
+
+    </script>
+</head>
+<body>
+<div class="box">这是第一个</div>
+<div class="box1">这是第二个</div>
+</body>
+</html>

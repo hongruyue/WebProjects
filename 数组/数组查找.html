@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+</body>
+<script>
+    var arr1=['a','a','b','d','e','r','g','h','b','c','b','g','d','h','b','c'];
+    var arr2=['c','d'];
+    console.log(arr1.join(''));
+    console.log(arr2.join(''));
+    function indexof(a,b){
+        var aa= a.join('');
+        var bb= b.join('');
+        var num=aa.indexOf(bb);
+        return num;
+    }
+    alert(indexof(arr1,arr2));
+</script>
+</html>

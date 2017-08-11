@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<input type="text"/>
+<ul>
+    <!--<li>离开家回归分析</li>-->
+</ul>
+</body>
+<script>
+    var Script='';
+    var inp=document.getElementsByTagName("input")[0];
+    var uls=document.getElementsByTagName("ul")[0];
+    inp.onkeyup=function(ev){
+        if(ev.keyCode==38||ev.keyCode==40){
+                ev.preventDefault();
+        }else{
+            if(Script){
+                document.body.removeChild(Script);
+            }
+            Script=document.createElement("script");
+            Script.src="http://suggestion.baidu.com/su?cb=callback&wd="+inp.value;
+            document.body.appendChild(Script);
+        }
+    }
+//回调函数
+    function callback(data){
+        uls.innerHTML='';
+        var arr=data.s;
+        for(var i=0;i<arr.length; i++){
+            var lis=document.createElement("li");
+            lis.innerHTML=arr[i];
+            uls.appendChild(lis);
+        }
+    }
+    var num=-1;
+    document.onkeydown=function(ev){
+        var lis=document.getElementsByTagName("li");
+        if(ev.keyCode==38){
+            num--;
+            if(num<0){
+                num=9;
+            }
+            for(var i=0; i<lis.length;i++){
+                if(i==num){
+                    lis[i].style.background="red";
+                    inp.value=lis[num].innerHTML;
+                }else{
+                    lis[i].style.background="white";
+                }
+            }
+        }else if(ev.keyCode==40){
+            num++;
+            if(num>9){
+                num=0;
+            }
+            for(var i=0; i<lis.length;i++){
+                if(i==num){
+                    lis[i].style.background="red";
+                    inp.value=lis[num].innerHTML;
+                }else{
+                    lis[i].style.background="white";
+                }
+            }
+        }
+    }
+</script>
+</html>

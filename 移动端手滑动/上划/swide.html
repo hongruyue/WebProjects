@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<title></title>
+	</head>
+	
+	<script src="js/zepto-1.1.6.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/touch.js" type="text/javascript" charset="utf-8"></script>
+	<style type="text/css">
+		.list li{list-style: none;display: none; }
+	    	.list .show{display: block;}
+	    	img{width: 100%;}
+	</style>
+	<body>
+		<ul class="list">
+				<li class="show"><img src="img/bg1.jpg"/></li>
+				<li><img src="img/bg2.jpg"/></li>
+				<li><img src="img/bg3.jpg"/></li>
+				<li><img src="img/bg4.jpg"/></li>
+				<li><img src="img/bg5.jpg"/></li>
+			</ul>
+			<script type="text/javascript">
+				$(".list li").swipeUp(function () {
+        	var i=$(".list li").index(this);
+        	if(i<$(".list li").length-1){
+        		$(".list li").eq(i+1).addClass("show").siblings().removeClass("show");
+        	}else{
+        		return false;
+        	}
+        })
+        $(".list li").swipeDown(function () {
+        	var i=$(".list li").index(this);
+        	if(i>0){
+          		$(".list li").eq(i-1).addClass("show").siblings().removeClass("show");
+        		
+        	}else{
+        		return false;
+        	}
+        })
+			</script>
+	</body>
+</html>

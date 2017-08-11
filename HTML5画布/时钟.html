@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{margin: 0px;padding: 0px}
+        #canvas{
+            background: black;
+            display: block;
+            margin: 50px auto;
+        }
+
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width="600px" height="600px"></canvas>
+</body>
+<script>
+    var canvas=document.getElementById("canvas");
+    var cvs=canvas.getContext("2d");
+    function clock(){
+        cvs.clearRect(0,0, canvas.width, canvas.height);
+
+    cvs.beginPath();
+    cvs.arc(300,300,200,0,Math.PI*2,true);
+    cvs.strokeStyle="cyan";
+    cvs.lineWidth=5;
+    cvs.stroke();
+    cvs.closePath();
+
+    for(var i= 0;i<60;i++){
+        cvs.beginPath();
+        cvs.save();
+        cvs.translate(300,300);
+        cvs.rotate(Math.PI/180*6*i);
+        cvs.moveTo(0,-200);
+        cvs.lineTo(0,-190);
+        cvs.strokeStyle="yellow";
+        cvs.lineWidth=3;
+        cvs.stroke();
+        cvs.restore();
+        cvs.closePath();
+    }
+
+    for(var i= 0;i<12;i++){
+        cvs.beginPath();
+        cvs.save();
+        cvs.translate(300,300);
+        cvs.rotate(Math.PI/180*30*i);
+        cvs.moveTo(0,-200);
+        cvs.lineTo(0,-180);
+        cvs.strokeStyle="orange";
+        cvs.lineWidth=5;
+        cvs.stroke();
+        cvs.restore();
+        cvs.closePath();
+    }
+        var time=new Date();
+        var minute=time.getMinutes();
+        var second=time.getSeconds();
+        var hours=time.getHours();
+    cvs.beginPath();
+    cvs.save();
+    cvs.translate(300,300);
+    cvs.rotate(30*hours*Math.PI/180+30*(minute/60)*Math.PI/180);//Math.PI/180换算成度数
+    cvs.moveTo(0,10);
+    cvs.lineTo(0,-150);
+    cvs.strokeStyle="red";
+    cvs.lineWidth=5;
+    cvs.stroke();
+    cvs.restore();
+    cvs.closePath();
+
+    cvs.beginPath();
+    cvs.save();
+    cvs.translate(300,300);
+    cvs.rotate(Math.PI/180*6*minute);
+    cvs.moveTo(0,15);
+    cvs.lineTo(0,-160);
+    cvs.strokeStyle="green";
+    cvs.lineWidth=3;
+    cvs.stroke();
+    cvs.restore();
+    cvs.closePath();
+
+    cvs.beginPath();
+    cvs.save();
+    cvs.translate(300,300);
+    cvs.rotate(second*6*Math.PI/180);
+    cvs.moveTo(0,15);
+    cvs.lineTo(0,-170);
+    cvs.strokeStyle="pink";
+    cvs.lineWidth=2;
+    cvs.stroke();
+    cvs.moveTo(0,-150);
+    cvs.fillStyle="yellow";
+    cvs.arc(0,-150,8,0,Math.PI*2);
+    cvs.fill();
+    cvs.moveTo(0,0);
+    cvs.arc(0,0,8,0,Math.PI*2);
+    cvs.fillStyle="yellow";
+    cvs.fill();
+    cvs.restore();
+    cvs.closePath();
+    }
+    clock();
+    setInterval(clock,1000);
+</script>
+</html>

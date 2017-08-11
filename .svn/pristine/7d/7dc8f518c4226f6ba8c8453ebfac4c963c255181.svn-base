@@ -1,0 +1,649 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="政府,采购,政府采购, IT, 办公设备,财政部 "/> 
+<meta name="description" content="政府采购信息网IT栏目为供应商和采购中心提供专业、准确、快捷的采购、政府、政府采购、IT、办公设备、财政部等信息 "/>
+<title>IT频道-政府采购信息网</title>
+<link href="css.css" rel="stylesheet" type="text/css" />
+<script languag="javascript" type="text/javascript" src="js/jquery-1.4.4.min.js"></script>
+<script languag="javascript" type="text/javascript" src="js/jquery.fn.imgplayer.js"></script>
+</head>
+
+<body>
+<div class="box">
+  <div class="top">
+   <iframe src="header.html" width="1400" height="100%"  frameborder="0" scrolling="no"  allowTransparency="true" ></iframe>
+  </div>
+<div class="con"> 
+<!--  <div class="con_left">
+          <ul>
+            	<li><a href="#" title="行业新闻">行业新闻</a>&nbsp;┊&nbsp;</li>
+                <li><a href="#" title="企业新闻">企业新闻</a>&nbsp;┊&nbsp;</li>
+                <li><a href="#" title="行业趋势">行业趋势</a>&nbsp;┊&nbsp;</li>
+                <li><a href="#" title="采购指南">采购指南</a>&nbsp;┊&nbsp;</li>
+                <li><a href="#" title="市场行情">市场行情</a>&nbsp;┊&nbsp;</li>
+                <li><a href="#" title="招标公告">招标公告</a></li>
+         </ul>  	
+         <div class="con_content">
+         <p class="img"><img src="images/pic_03.jpg" width="110" height="100" /></p>
+         	<div class="writer">
+            	<h2>标题标题标题</h2>
+                <p>内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容。<a href="#">更多>></a><br />标签：<span class="w_con">内容&nbsp;&nbsp;内容&nbsp;&nbsp;内容</span></p>
+            </div>
+       </div>
+       
+       <div class="con_content2">
+       		<h2>标题标题标题</h2>
+                <p>内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内内容内容内容。<a href="#">更多>></a><br />标签：<span class="w_con">内容&nbsp;&nbsp;内容&nbsp;&nbsp;内容</span></p>
+     </div>
+  
+     <div class="con_content2">
+       		<h2>标题标题标题</h2>
+                <p>内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内内容内容内容。<a href="#">更多>></a><br />标签：<span class="w_con">内容&nbsp;&nbsp;内容&nbsp;&nbsp;内容</span></p>
+     </div>
+     
+     <div class="con_content2">
+       		<h2>标题标题标题</h2>
+                <p>内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内内容内容内容。<a href="#">更多>></a><br />标签：<span class="w_con">内容&nbsp;&nbsp;内容&nbsp;&nbsp;内容</span></p>
+     </div>
+     
+     <div class="con_content2">
+       		<h2>标题标题标题</h2>
+                <p>内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内内容内容内容。<a href="#">更多>></a><br />标签：<span class="w_con">内容&nbsp;&nbsp;内容&nbsp;&nbsp;内容</span></p>
+     </div>
+     
+     <div class="con_content2">
+       		<h2>标题标题标题</h2>
+                <p>内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内内容内容内容。<a href="#">更多>></a><br />标签：<span class="w_con">内容&nbsp;&nbsp;内容&nbsp;&nbsp;内容</span></p>
+     </div>
+     
+     <div class="con_content2">
+       		<h2>标题标题标题</h2>
+                <p>内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内内容内容内容。<a href="#">更多>></a><br />标签：<span class="w_con">内容&nbsp;&nbsp;内容&nbsp;&nbsp;内容</span></p>
+     </div>
+     
+     <div class="con_content2_1">
+       		<h2>标题标题标题</h2>
+                <p>内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内内容内容内容。<a href="#">更多>></a><br />标签：<span class="w_con">内容&nbsp;&nbsp;内容&nbsp;&nbsp;内容</span></p>
+     </div>
+  
+  </div>
+  
+  <div class="con_right">
+  		<div class="con_right_top">
+        	<h2>推荐阅读</h2>
+            <ul>
+               <li><a href="#">虚拟运营商将登台多家公司争夺试点工程</a></li>
+               <li><a href="#">虚拟运营商将登台多家公司争夺试点工程</a></li>
+               <li><a href="#">虚拟运营商将登台多家公司争夺试点工程</a></li>
+               <li><a href="#">虚拟运营商将登台多家公司争夺试点工程</a></li>
+               <li><a href="#">虚拟运营商将登台多家公司争夺试点工程</a></li>
+               <li><a href="#">虚拟运营商将登台多家公司争夺试点工程</a></li>
+               <li><a href="#">虚拟运营商将登台多家公司争夺试点工程</a></li>
+               <li><a href="#">虚拟运营商将登台多家公司争夺试点工程</a></li>
+               <li><a href="#">虚拟运营商将登台多家公司争夺试点工程</a></li>
+               <li><a href="#">虚拟运营商将登台多家公司争夺试点工程</a></li>
+         </ul>
+        </div>
+        <div class="con_right_bottom">
+        <h2>图文资讯<span><a href="#">更多>></a></span></h2>
+        <div class="right_con_content">
+         	<p><img src="images/pic_03.jpg" width="110" height="82" /><h4>政府企业拥有云计算、大数据拉动印度产业IT增长</h4>政府企业拥有云计算、大数据拉动印度产业IT增政府企业拥有云计算、大数据拉动印度产业IT增政府产业IT增政府产业IT增政府产业IT增政府。</p>
+      </div>
+       <div class="right_con_content">
+         	<p><img src="images/pic_03.jpg" width="110" height="82" /><h4>政府企业拥有云计算、大数据拉动印度产业IT增长</h4>政府企业拥有云计算、大数据拉动印度产业IT增政府企业拥有云计算、大数据拉动印度产业IT增政府产业IT增政府产业IT增政府产业IT增政府。</p>
+      </div>
+      <div class="right_con_content">
+         	<p><img src="images/pic_03.jpg" width="110" height="82" /><h4>政府企业拥有云计算、大数据拉动印度产业IT增长</h4>政府企业拥有云计算、大数据拉动印度产业IT增政府企业拥有云计算、大数据拉动印度产业IT增政府产业IT增政府产业IT增政府产业IT增政府。</p>
+      </div>
+      <div class="right_con_content">
+         	<p><img src="images/pic_03.jpg" width="110" height="82" /><h4>政府企业拥有云计算、大数据拉动印度产业IT增长</h4>政府企业拥有云计算、大数据拉动印度产业IT增政府企业拥有云计算、大数据拉动印度产业IT增政府产业IT增政府产业IT增政府产业IT增政府。</p>
+      </div>
+  
+  
+  </div>
+
+
+
+
+</div> 
+
+
+-->
+		
+    <div class="con_top">
+    <div class="con_top_left">
+<iframe src="http://www.caigou2003.com/yyj123/itshouye/banner.php" width="960" height="380"  frameborder="0" scrolling="no"></iframe></div>
+            <div class="con_top_right">
+            	<p class="con_top_right_p">今日焦点</p>
+                <h1 id="itjiaodiantt"><a href="#">暂时没有相关数据</a></h1>
+                <ul id="ulkongtiaojiaodian">
+               <!-- <p class="con_top_right_p1"><a href="#" target="_blank">新闻资讯&nbsp;&nbsp;|&nbsp;&nbsp;虚拟运营商今年将登台多家公司争夺试点资格</a></p>
+                <p class="con_top_right_p1"><a href="#" target="_blank">新闻资讯&nbsp;&nbsp;|&nbsp;&nbsp;虚拟运营商今年将登台多家公司争夺试点资格</a></p>
+                <p class="con_top_right_p1"><a href="#" target="_blank">新闻资讯&nbsp;&nbsp;|&nbsp;&nbsp;虚拟运营商今年将登台多家公司争夺试点资格</a></p>
+                <p class="con_top_right_p1"><a href="#" target="_blank">新闻资讯&nbsp;&nbsp;|&nbsp;&nbsp;虚拟运营商今年将登台多家公司争夺试点资格</a></p><br />
+                <p class="con_top_right_p1"><a href="#" target="_blank">新闻资讯&nbsp;&nbsp;|&nbsp;&nbsp;虚拟运营商今年将登台多家公司争夺试点资格</a></p>
+                <p class="con_top_right_p1"><a href="#" target="_blank">新闻资讯&nbsp;&nbsp;|&nbsp;&nbsp;虚拟运营商今年将登台多家公司争夺试点资格</a></p>
+                <p class="con_top_right_p1"><a href="#" target="_blank">新闻资讯&nbsp;&nbsp;|&nbsp;&nbsp;虚拟运营商今年将登台多家公司争夺试点资格</a></p>
+                <p class="con_top_right_p1"><a href="#" target="_blank">新闻资讯&nbsp;&nbsp;|&nbsp;&nbsp;虚拟运营商今年将登台多家公司争夺试点资格</a></p><br />
+                <p class="con_top_right_p1"><a href="#" target="_blank">新闻资讯&nbsp;&nbsp;|&nbsp;&nbsp;虚拟运营商今年将登台多家公司争夺试点资格</a></p>
+                <p class="con_top_right_p1"><a href="#" target="_blank">新闻资讯&nbsp;&nbsp;|&nbsp;&nbsp;虚拟运营商今年将登台多家公司争夺试点资格</a></p>
+                <p class="con_top_right_p1"><a href="#" target="_blank">新闻资讯&nbsp;&nbsp;|&nbsp;&nbsp;虚拟运营商今年将登台多家公司争夺试点资格</a></p>
+                <p class="con_top_right_p1"><a href="#" target="_blank">新闻资讯&nbsp;&nbsp;|&nbsp;&nbsp;虚拟运营商今年将登台多家公司争夺试点资格</a></p>
+                -->
+              <p class="con_top_right_p1"><a href="#" target="_blank">暂时没有相关新闻</a></p>
+          </ul>  
+            </div>
+       </div>
+       
+       
+       
+       
+	  <div class="con_top1">
+      		
+	    <div class="con_top1_left">
+             	<h1>资讯·产品</h1>
+           <ul>
+           	 <li><a href="http://www.caigou2003.com/yyj123/itnew/hangyeindex.html" title="行业新闻" target="_blank">行业新闻</a>&nbsp;┊&nbsp;</li>
+             <li><a href="http://www.caigou2003.com/yyj123/itnew/qiyeindex.html" title="企业新闻" target="_blank">企业新闻</a>&nbsp;┊&nbsp;</li>
+             <li><a href="http://www.caigou2003.com/yyj123/itnew/fazhanindex.html" title="发展趋势" target="_blank">发展趋势</a>&nbsp;┊&nbsp;</li>
+             <li><a href="http://www.caigou2003.com/yyj123/itnew/caigouindex.html" title="采购指南" target="_blank">采购指南</a>&nbsp;┊&nbsp;</li>
+             <li><a href="http://www.caigou2003.com/yyj123/itnew/shichangindex.html" title="市场行情" target="_blank">市场行情</a>&nbsp;┊&nbsp;</li>
+             <li><a href="http://www.caigou2003.com/tender/notice/" title="招标公告" target="_blank">招标公告</a>
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+             <li class="gengduo"><a href="#" title="">更多>></a></li>
+          </ul>
+          <div class="con_top1_left_left">
+          		<h2 id="itzixuntt"><a href="#">暂时没有相关数据</a></h2>
+          		<ul id="ulkongtiao">
+          		<!-- 
+                <p class="con_top_right_p2"><a href="#" target="_blank">新闻资讯&nbsp;&nbsp;|&nbsp;&nbsp;虚拟运营商今年将登台多家公司争</a></p>
+                <p class="con_top_right_p2"><a href="#" target="_blank">新闻资讯&nbsp;&nbsp;|&nbsp;&nbsp;虚拟运营商今年将登台多家公司争</a></p>
+                <p class="con_top_right_p2"><a href="#" target="_blank">新闻资讯&nbsp;&nbsp;|&nbsp;&nbsp;虚拟运营商今年将登台多家公司争</a></p>
+                <p class="con_top_right_p2"><a href="#" target="_blank">新闻资讯&nbsp;&nbsp;|&nbsp;&nbsp;虚拟运营商今年将登台多家公司争</a></p>
+                <p class="con_top_right_p2"><a href="#" target="_blank">新闻资讯&nbsp;&nbsp;|&nbsp;&nbsp;虚拟运营商今年将登台多家公司争</a></p>
+                <p class="con_top_right_p2"><a href="#" target="_blank">新闻资讯&nbsp;&nbsp;|&nbsp;&nbsp;虚拟运营商今年将登台多家公司争</a></p>
+                <p class="con_top_right_p2"><a href="#" target="_blank">新闻资讯&nbsp;&nbsp;|&nbsp;&nbsp;虚拟运营商今年将登台多家公司争</a></p>
+                <p class="con_top_right_p2"><a href="#" target="_blank">新闻资讯&nbsp;&nbsp;|&nbsp;&nbsp;虚拟运营商今年将登台多家公司争</a></p>
+                <p class="con_top_right_p2"><a href="#" target="_blank">新闻资讯&nbsp;&nbsp;|&nbsp;&nbsp;虚拟运营商今年将登台多家公司争</a></p>
+                <p class="con_top_right_p2"><a href="#" target="_blank">新闻资讯&nbsp;&nbsp;|&nbsp;&nbsp;虚拟运营商今年将登台多家公司争</a></p>
+                <p class="con_top_right_p2"><a href="#" target="_blank">新闻资讯&nbsp;&nbsp;|&nbsp;&nbsp;虚拟运营商今年将登台多家公司争</a></p>
+                <p class="con_top_right_p2"><a href="#" target="_blank">新闻资讯&nbsp;&nbsp;|&nbsp;&nbsp;虚拟运营商今年将登台多家公司争</a></p>
+                <p class="con_top_right_p2"><a href="#" target="_blank">新闻资讯&nbsp;&nbsp;|&nbsp;&nbsp;虚拟运营商今年将登台多家公司争</a></p>
+                <p class="con_top_right_p2"><a href="#" target="_blank">新闻资讯&nbsp;&nbsp;|&nbsp;&nbsp;虚拟运营商今年将登台多家公司争</a></p>
+                <p class="con_top_right_p2"><a href="#" target="_blank">新闻资讯&nbsp;&nbsp;|&nbsp;&nbsp;虚拟运营商今年将登台多家公司争</a></p>
+                -->
+            <p class="con_top_right_p2"><a href="#">暂时没有相关新闻</a></p>
+          </ul>
+          
+          
+          </div>
+          <div class="con_top1_left_right"><img src="images/zixun_ad.jpg" width="300" height="180" />
+            <p></p>
+            <p class="img1"><img src="images/dianzibaiban.jpg" width="100" height="80" /></p>
+         	<div class="writer">
+            	<h3>我国电子白板单品…</h3>
+                <p><a href="http://www.caigou2003.com/suppliers/it/news/20130315/news_575297.html" target="_blank">得益于政府对于教育信息化的政策引导，媒体互动教学模式......&nbsp;&nbsp;&nbsp;&nbsp;</a></p>
+            </div>
+            <p class="img2"><img src="images/sanwangronghe.jpg" width="100" height="80" /></p>
+         	<div class="writer">
+            	<h3>三网融合带火视频…</h3>
+                <p><a href="http://www.caigou2003.com/suppliers/it/news/20130308/news_569565.html" target="_blank">音视频会议设备，这个2011年4月才正式纳入集中采购品......&nbsp;&nbsp;&nbsp;&nbsp;</a></p>
+            </div>
+          
+          </div>
+        </div>
+              
+              <div class="con_top1_right">
+              	 <div class="con_top1_right_top">
+               	    <h4>产品选购<a href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;更多>></a></h4>
+                    <form action="" method="get">
+                      <select name="" class="select1">
+                     <option>选择产品类别</option>
+                     <option>笔记本</option>
+                     <option>相机</option>
+                     <option>电视机</option>
+                   </select>
+                   <select name="" class="select2">
+                     <option>选择品牌</option>
+                     <option>笔记本</option>
+                     <option>相机</option>
+                     <option>电视机</option>
+                   </select>
+                  <input name="输入产品型号" type="text" value="输入产品型号"  class="input"/><input name="" type="button" value=""  class="button"/>
+                    
+                  </form>
+                 
+                
+              </div>
+              <div class="con_top1_right_bottom">
+               	    <h4>编辑推荐产品</h4>
+                <p class="con_top1_right_bottom_p">佳能5D Mark III</p>
+                <p class="con_top1_right_bottom_p"><a href="#">机身特性：全画幅数码单反 ;有效像素：2230万 ......</a></p>
+                <br /><br /><br />
+                <p class="con_top1_right_bottom_img"><img src="images/camera.jpg" width="200" height="120" /></p>
+               </div>
+              
+            </div>
+     </div>
+<!--     <div class="con_top2">
+	       <h4>热门产品<a href="#"><span>更多>></span></a></h4>
+           <p><a href="#"><img src="images/pic_3.png" width="134" height="110" /><br />惠普一体式工作站</a></p>
+           <p><a href="#"><img src="images/pic_3.png" width="134" height="110" /><br />惠普一体式工作站</a></p>
+           <p><a href="#"><img src="images/pic_3.png" width="134" height="110" /><br />惠普一体式工作站</a></p>
+           <p><a href="#"><img src="images/pic_3.png" width="134" height="110" /><br />惠普一体式工作站</a></p>
+    </div>-->
+    
+    <div class="con_top3">
+       <div class="con_top3_ul">
+	       <h4>政府采购IT实验室</h4>
+           <ul>
+             <li><a href="http://www.caigou2003.com/yyj123/itnew/renzhengindex.html" title="认证品牌" target="_blank">认证品牌</a>&nbsp;┊&nbsp;</li>
+             <li><a href="http://www.caigou2003.com/yyj123/itnew/jiageindex.html" title="价格指数" target="_blank">价格指数</a>&nbsp;┊&nbsp;</li>
+             <li><a href="http://www.caigou2003.com/yyj123/itnew/pingceindex.html" title="评测专题" target="_blank">评测专题</a>&nbsp;┊&nbsp;</li>
+             <li><a href="http://www.caigou2003.com/yyj123/itnew/baoguangindex.html" title="曝光维权" target="_blank">曝光维权</a>
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+             <li class="gengduo"><a href="#" >更多>></a></li>
+          </ul>
+          </div>
+          <div class="con_top3_top">
+              <p><img src="images/shiys_ad.jpg" width="500" height="340" /></p>
+              <div class="writer">
+            	<h3><a href="#" id="itchannelnew1_title" target="_blank">标题标题标题</a></h3>
+                <p><a href="#" id="itchannelnew1_desc" target="_blank">内容内容内容内容内容内容内容内容内内容内容内容内容内容内容内容内内容内容内容内容内容内内容</a></p>
+            </div>
+            <div class="writer">
+            	<h3><a href="#" id="itchannelnew2_title" target="_blank">标题标题标题</a></h3>
+                <p><a href="#" id="itchannelnew2_desc" target="_blank">内容内容内容内容内容内容内容内容内内容内容内容内容内容内容内容内内容内容内容内容内容内内容</a></p>
+            </div>
+            <div class="writer">
+            	<h3><a href="#" id="itchannelnew3_title" target="_blank">标题标题标题</a></h3>
+                <p><a href="#" id="itchannelnew3_desc" target="_blank">内容内容内容内容内容内容内容内容内内容内容内容内容内容内容内容内内容内容内容内容内容内内容</a></p>
+            </div>
+            <div class="writer">
+            	<h3><a href="#" id="itchannelnew4_title" target="_blank">标题标题标题</a></h3>
+                <p><a href="#" id="itchannelnew4_desc" target="_blank">内容内容内容内容内容内容内容内容内内容内容内容内容内容内容内容内内容内容内容内容内容内内容</a></p>
+            </div>
+          
+          
+          </div>
+      <div class="con_top3_bottom">
+          <p class="con_top3_bottom_p">政采价格指数</p>
+          <div class="con_top3_bottom_con">
+			<p ><img src="images/itjiage030.jpg" width="110" height="82" /><h3 class="con_top3_bottom_con_h4"><a href="http://www.caigou2003.com/suppliers/it/fv/20130301/fv_563842.html" idyyj="itchannelnew5_title" target="_blank">政采信息IT价格指数第030期</a></h3><br /><a href="http://www.caigou2003.com/suppliers/it/fv/20130301/fv_563842.html" idyyj="itchannelnew5_desc" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;政采信息IT价格指数"的采样数据均来自近期政府IT采购项目，反映了政采市场的实际成交价，供业内人士参考……</a></p>
+		</div>
+      
+       <div class="con_top3_bottom_con2">
+         <!--  <ul>
+               <li><a href="#">虚拟运营商将登台多家公司争夺试点工程</a></li>
+               <li><a href="#">虚拟运营商将登台多家公司争夺试点工程</a></li>
+               <li><a href="#">虚拟运营商将登台多家公司争夺试点工程</a></li>
+               <li><a href="#">虚拟运营商将登台多家公司争夺试点工程</a></li>
+           </ul>
+           -->
+           <ul id="ulperformance">
+            <li><a href="#">暂时没有相关新闻</a></li>
+          </ul>
+      </div>
+      
+      <div class="con_top3_bottom_con3">
+          <!-- <ul>
+               <li><a href="#">虚拟运营商将登台多家</a></li>
+               <li><a href="#">虚拟运营商将登台多家</a></li>
+               <li><a href="#">虚拟运营商将登台多家</a></li>
+               <li><a href="#">虚拟运营商将登台多家</a></li>
+           </ul>
+           -->
+           <ul id="ulobrand">
+            <li><a href="#">暂时没有相关新闻</a></li>
+          </ul>
+      </div>
+      
+      
+     
+      </div>
+    </div>
+	
+	<div class="con_top4">
+      		
+      	<!-- 广告位置 -->
+      	<div class="con_top4_leftyyj">
+    		<p ><a href="http://www.evenhi.com/a/xijieyun/" title="希捷" target="_blank"><img src="images/xijiezhw_ad.gif" width="480" height="100" /></a></p>
+    	</div>
+    	<div class="con_top4_right_top_yyj">
+    		
+    		<object id="FlashID" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="460" height="100">
+				    <param name="movie" value="IT.swf" />
+				    <param name="quality" value="high" />
+				    <param name="wmode" value="opaque" />
+				    <param name="swfversion" value="6.0.65.0" />
+				    <!-- 此 param 标签提示使用 Flash Player 6.0 r65 和更高版本的用户下载最新版本的 Flash Player。如果您不想让用户看到该提示，请将其删除。 -->
+				    <param name="expressinstall" value="Scripts/expressInstall.swf" />
+				    <!-- 下一个对象标签用于非 IE 浏览器。所以使用 IECC 将其从 IE 隐藏。 -->
+				    <!--[if !IE]>-->
+				    <object type="application/x-shockwave-flash" data="IT.swf" width="460" height="100">
+				      <!--<![endif]-->
+				      <param name="quality" value="high" />
+				      <param name="wmode" value="opaque" />
+				      <param name="swfversion" value="6.0.65.0" />
+				      <param name="expressinstall" value="Scripts/expressInstall.swf" />
+				      <!-- 浏览器将以下替代内容显示给使用 Flash Player 6.0 和更低版本的用户。 -->
+				      <div>
+				        <h4>此页面上的内容需要较新版本的 Adobe Flash Player。</h4>
+				        <p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="获取 Adobe Flash Player" width="112" height="33" /></a></p>
+				      </div>
+				      <!--[if !IE]>-->
+				    </object>
+				    <!--<![endif]-->
+			</object>
+    	</div>
+      		
+	    <div class="con_top4_left">
+            <div class="con_top4_left_ul">
+             <h1>企业计算</h1>
+           <ul>
+             <li><a href="http://www.caigou2003.com/yyj123/itnew/yunjisuanindex.html" title="云计算" target="_blank">云计算</a>&nbsp;┊&nbsp;</li>
+             <li><a href="http://www.caigou2003.com/yyj123/itnew/dashujuindex.html" title="大数据" target="_blank">大数据</a>&nbsp;┊&nbsp;</li>
+             <li><a href="http://www.caigou2003.com/yyj123/itnew/xinxiindex.html" title="信息安全" target="_blank">信息安全</a>&nbsp;┊&nbsp;</li>
+             <li><a href="http://www.caigou2003.com/yyj123/itnew/yidongindex.html" title="移动计算" target="_blank">移动计算</a>
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+             <li class="gengduo"><a href="#">更多>></a></li>
+          </ul>
+          </div>
+          <div class="con_top4_left_left">
+          		  <div class="con_top4_left_right_bot1">
+           <!--  <ul>
+               <li><a href="#">虚拟运营商将登台多家多家多家多家</a></li>
+               <li><a href="#">虚拟运营商将登台多家多家多家多家</a></li>
+               <li><a href="#">虚拟运营商将登台多家多家多家多家</a></li>
+               <li><a href="#">虚拟运营商将登台多家多家多家多家</a></li>
+           </ul>
+          -->
+           <ul id="ulenergy">
+            <li><a href="#">暂时没有相关新闻</a></li>
+          </ul>
+          </div>
+          <div class="con_top4_left_right_bot">
+           <!-- <ul>
+               <li><a href="#">虚拟运营商将登台多家多家多家多家</a></li>
+               <li><a href="#">虚拟运营商将登台多家多家多家多家</a></li>
+               <li><a href="#">虚拟运营商将登台多家多家多家多家</a></li>
+               <li><a href="#">虚拟运营商将登台多家多家多家多家</a></li>
+           </ul>
+          -->
+          <ul id="uldianshi">
+            <li><a href="#">暂时没有相关新闻</a></li>
+          </ul>
+          </div>
+          
+          
+          </div>
+          <div class="con_top4_left_right">
+           <p class="img_1"><a href="http://www.caigou2003.com/suppliers/it/fv/20130102/fv_522735.html" title="批量集采扩面增量 大数据推动回暖" target="_blank"><img src="images/piliangcaikuang.jpg" width="136" height="70" /></a><br />
+            批量集采扩面增量……</p>
+                <p class="img_2"><a href="http://www.caigou2003.com/suppliers/it/focus/20130315/focus_575292.html" title="面向全业务 大数据时代来临" target="_blank"><img src="images/mianxiangyewu.jpg" width="136" height="70" /></a><br />
+            面向全业务 大数据……</p>
+          <div class="con_top4_left_right_bot">
+           <!-- <ul>
+               <li><a href="#">虚拟运营商将登台多家多家多家多家</a></li>
+               <li><a href="#">虚拟运营商将登台多家多家多家多家</a></li>
+               <li><a href="#">虚拟运营商将登台多家多家多家多家</a></li>
+               <li><a href="#">虚拟运营商将登台多家多家多家多家</a></li>
+           </ul>
+          -->
+          <ul id="uldianti">
+            <li><a href="#">暂时没有相关新闻</a></li>
+          </ul>
+          </div>
+            
+          </div>
+          
+      </div>
+              
+              <div class="con_top4_right">
+              	 <div class="con_top4_right_top">
+               	    <h4>热点排行</h4>
+                    <div class="con_top4_right_top_shuzi">
+                    <p>1</p>
+                    <p>2</p>
+                    <p>3</p>
+                    <p>4</p>
+                    <p>5</p>
+                    <p>6</p>
+                    <p>7</p>
+                    <p>8</p>
+                    <p>9</p>
+                    <p>10</p>
+                    </div>
+                    <div class="con_top4_right_top_content" id="ulitredianpaihang">
+                      
+                    	
+           				<p><a href="#">暂时没有相关新闻</a></p>
+          			<!-- 
+                    <p><a href="#">云计算扎堆热263云通信率先响应</a></p>
+                    <p><a href="#">云计算扎堆热263云通信率先响应</a></p>
+                    <p><a href="#">云计算扎堆热263云通信率先响应</a></p>
+                    <p><a href="#">云计算扎堆热263云通信率先响应</a></p>
+                    <p><a href="#">云计算扎堆热263云通信率</a></p>
+                    <p><a href="#">云计算扎堆热263云通信率先响应</a></p>
+                    <p><a href="#">云计算扎堆热263云通信率先响应</a></p>
+                    <p><a href="#">云计算扎堆热263云通信率先响应</a></p>
+                    <p><a href="#">云计算扎堆热263云通信率先响应</a></p>
+                    <p><a href="#">云计算扎堆热263云通信率先响应</a></p>
+                    -->
+                    </div>
+                    
+              </div>
+            </div>
+
+     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     <!--[if !IE]>-页尾<![endif]-->
+     	 <iframe src="footer.html" width="960" height="180"  frameborder="0" scrolling="no"  allowTransparency="true" ></iframe>
+
+
+	</div>
+
+
+
+
+</div>
+<div class="clear"></div>
+</body>
+<script type="text/javascript" src="http://lib.caigou2003.com.cn/js/jquery-1.6.1.min.js"></script>
+<script type="text/javascript">
+jQuery(function($){
+	$.ajax({
+	   type: "GET",
+	   url: "/dwb.php",
+	   data: "action=nrlmjj",
+	   dataType:"json",
+	   error:function(){
+		 fillLi("数据获取出错,请重试!");
+	   },
+	   beforeSend:function(){
+		 fillLi("数据加载中......");
+	   },
+	   success: function(data){	
+			if(data.itchannelnew1 && !jQuery.isEmptyObject(data.itchannelnew1)){
+				fillA("itchannelnew1_title","/?viewnews-"+data.itchannelnew1.itemid,data.itchannelnew1.subject,data.itchannelnew1.ssubject);
+				fillA("itchannelnew1_desc","/?viewnews-"+data.itchannelnew1.itemid,data.itchannelnew1.subject,data.itchannelnew1.message);
+			}else{
+				fillA("itchannelnew1_title","#","暂时没有相关数据","暂时没有相关数据");
+				fillA("itchannelnew1_desc","#","暂时没有相关数据","暂时没有相关数据");			
+			}
+			if(data.itchannelnew2 && !jQuery.isEmptyObject(data.itchannelnew2)){
+				fillA("itchannelnew2_title","/?viewnews-"+data.itchannelnew2.itemid,data.itchannelnew2.subject,data.itchannelnew2.ssubject);
+				fillA("itchannelnew2_desc","/?viewnews-"+data.itchannelnew2.itemid,data.itchannelnew2.subject,data.itchannelnew2.message);
+			}else{
+				fillA("itchannelnew2_title","#","暂时没有相关数据","暂时没有相关数据");
+				fillA("itchannelnew2_desc","#","暂时没有相关数据","暂时没有相关数据");			
+			}
+			if(data.itchannelnew3 && !jQuery.isEmptyObject(data.itchannelnew3)){
+				fillA("itchannelnew3_title","/?viewnews-"+data.itchannelnew3.itemid,data.itchannelnew3.subject,data.itchannelnew3.ssubject);
+				fillA("itchannelnew3_desc","/?viewnews-"+data.itchannelnew3.itemid,data.itchannelnew3.subject,data.itchannelnew3.message);
+			}else{
+				fillA("itchannelnew3_title","#","暂时没有相关数据","暂时没有相关数据");
+				fillA("itchannelnew3_desc","#","暂时没有相关数据","暂时没有相关数据");			
+			}
+			if(data.itchannelnew4 && !jQuery.isEmptyObject(data.itchannelnew4)){
+				fillA("itchannelnew4_title","/?viewnews-"+data.itchannelnew4.itemid,data.itchannelnew4.subject,data.itchannelnew4.ssubject);
+				fillA("itchannelnew4_desc","/?viewnews-"+data.itchannelnew4.itemid,data.itchannelnew4.subject,data.itchannelnew4.message);
+			}else{
+				fillA("itchannelnew4_title","#","暂时没有相关数据","暂时没有相关数据");
+				fillA("itchannelnew4_desc","#","暂时没有相关数据","暂时没有相关数据");			
+			}
+			if(data.itchannelnew5 && !jQuery.isEmptyObject(data.itchannelnew5)){
+				fillA("itchannelnew5_title","/?viewnews-"+data.itchannelnew5.itemid,data.itchannelnew5.subject,data.itchannelnew5.ssubject);
+				fillA("itchannelnew5_desc","/?viewnews-"+data.itchannelnew5.itemid,data.itchannelnew5.subject,data.itchannelnew5.message);
+			}else{
+				fillA("itchannelnew5_title","#","暂时没有相关数据","暂时没有相关数据");
+				fillA("itchannelnew5_desc","#","暂时没有相关数据","暂时没有相关数据");			
+			}
+			if(data.itchannelnew6 && !jQuery.isEmptyObject(data.itchannelnew6)){
+				fillA("itchannelnew6_title","/?viewnews-"+data.itchannelnew6.itemid,data.itchannelnew6.subject,data.itchannelnew6.ssubject);
+				fillA("itchannelnew6_desc","/?viewnews-"+data.itchannelnew6.itemid,data.itchannelnew6.subject,data.itchannelnew6.message);
+			}else{
+				fillA("itchannelnew6_title","#","暂时没有相关数据","暂时没有相关数据");
+				fillA("itchannelnew6_desc","#","暂时没有相关数据","暂时没有相关数据");			
+			}
+			if(data.itchannelnew7 && !jQuery.isEmptyObject(data.itchannelnew7)){
+				fillA("itchannelnew7_title","/?viewnews-"+data.itchannelnew7.itemid,data.itchannelnew7.subject,data.itchannelnew7.ssubject);
+				fillA("itchannelnew7_desc","/?viewnews-"+data.itchannelnew7.itemid,data.itchannelnew7.subject,data.itchannelnew7.message);
+			}else{
+				fillA("itchannelnew7_title","#","暂时没有相关数据","暂时没有相关数据");
+				fillA("itchannelnew7_desc","#","暂时没有相关数据","暂时没有相关数据");			
+			}
+			
+			if(data.performance.length > 0){
+				$("ul[id='ulperformance']").empty();
+				for(key in data.performance){
+					$("<li><a href='http://www.caigou2003.com/?viewnews-"+data.performance[key].itemid+"' target='_blank' title='"+data.performance[key].subject+"'>"+data.performance[key].subject+"</a></li>").appendTo("#ulperformance");
+				}
+			}else{
+				$("ul[id='ulperformance'] li:first-child").html("暂时没有相关新闻");
+			}
+			if(data.obrand.length > 0){
+				$("ul[id='ulobrand']").empty();
+				for(key in data.obrand){
+					$("<li><a href='http://www.caigou2003.com/?viewnews-"+data.obrand[key].itemid+"' target='_blank' title='"+data.obrand[key].subject+"'>"+data.obrand[key].subject+"</a></li>").appendTo("#ulobrand");
+				}
+			}else{
+				$("ul[id='ulobrand'] li:first-child").html("暂时没有相关新闻");
+			}
+			if(data.energy.length > 0){
+				$("ul[id='ulenergy']").empty();
+				for(key in data.energy){
+					$("<li><a href='http://www.caigou2003.com/?viewnews-"+data.energy[key].itemid+"' target='_blank' title='"+data.energy[key].subject+"'>"+data.energy[key].subject+"</a></li>").appendTo("#ulenergy");
+				}
+			}else{
+				$("ul[id='ulenergy'] li:first-child").html("暂时没有相关新闻");
+			}
+			if(data.industry.length > 0){
+				$("ul[id='ulindustry']").empty();
+				for(key in data.industry){
+					$("<li><a href='http://www.caigou2003.com/?viewnews-"+data.industry[key].itemid+"' target='_blank' title='"+data.industry[key].subject+"'>"+data.industry[key].subject+"</a></li>").appendTo("#ulindustry");
+				}
+			}else{
+				$("ul[id='ulindustry'] li:first-child").html("暂时没有相关新闻");
+			}
+			if(data.dianshi.length > 0){
+				$("ul[id='uldianshi']").empty();
+				for(key in data.dianshi){
+					$("<li><a href='http://www.caigou2003.com/?viewnews-"+data.dianshi[key].itemid+"' target='_blank' title='"+data.dianshi[key].subject+"'>"+data.dianshi[key].subject+"</a></li>").appendTo("#uldianshi");
+				}
+			}else{
+				$("ul[id='uldianshi'] li:first-child").html("暂时没有相关新闻");
+			}
+			if(data.dianti.length > 0){
+				$("ul[id='uldianti']").empty();
+				for(key in data.dianti){
+					$("<li><a href='http://www.caigou2003.com/?viewnews-"+data.dianti[key].itemid+"' target='_blank' title='"+data.dianti[key].subject+"'>"+data.dianti[key].subject+"</a></li>").appendTo("#uldianti");
+				}
+			}else{
+				$("ul[id='uldianti'] li:first-child").html("暂时没有相关新闻");
+			}
+			if(data.kongtiao.length > 0){
+				$("ul[id='ulkongtiao']").empty();
+				for(key in data.kongtiao){
+					$("<p class='con_top_right_p2'><a href='http://www.caigou2003.com/?viewnews-"+data.kongtiao[key].itemid+"' target='_blank' title='"+data.kongtiao[key].subject+"'>"+data.kongtiao[key].subject+"</a></p>").appendTo("#ulkongtiao");
+				}
+			}else{
+				$("ul[id='ulkongtiao'] li:first-child").html("暂时没有相关新闻");
+			}
+			if(data.kongtiaojiaodian.length > 0){
+				$("ul[id='ulkongtiaojiaodian']").empty();
+				for(key in data.kongtiaojiaodian){
+					$("<p class='con_top_right_p1'><a href='http://www.caigou2003.com/?viewnews-"+data.kongtiaojiaodian[key].itemid+"' target='_blank' title='"+data.kongtiaojiaodian[key].subject+"'>"+data.kongtiaojiaodian[key].subject+"</a></p>").appendTo("#ulkongtiaojiaodian");
+				}
+			}else{
+				$("ul[id='ulkongtiaojiaodian'] li:first-child").html("暂时没有相关新闻");
+			}
+			//it首页焦点头条
+			if(data.itjiaodiantt && !jQuery.isEmptyObject(data.itjiaodiantt)){
+				jQuery("#itjiaodiantt").empty();
+				jQuery.each(data.itjiaodiantt, function(i,n){
+					jQuery("#itjiaodiantt").append("<a href='/?viewnews-"+n.itemid+"' target='_blank' title='"+n.subject+"'>"+n.ssubject+"</a>");
+				});
+			}else{
+				jQuery("#itjiaodiantt > h1:first").html("暂时没有相关数据");
+			}
+			//it首页咨询产品头条
+			if(data.itzixuntt && !jQuery.isEmptyObject(data.itzixuntt)){
+				jQuery("#itzixuntt").empty();
+				jQuery.each(data.itzixuntt, function(i,n){
+					jQuery("#itzixuntt").append("<a href='/?viewnews-"+n.itemid+"' target='_blank' title='"+n.subject+"'>"+n.ssubject+"</a>");
+				});
+			}else{
+				jQuery("#itzixuntt > h1:first").html("暂时没有相关数据");
+			}
+			//it首页热点排行
+			if(data.itredianpaihang.length > 0){
+				$("div[id='ulitredianpaihang']").empty();
+				
+				for(key in data.itredianpaihang){
+					$("<p><a href='http://www.caigou2003.com/?viewnews-"+data.itredianpaihang[key].itemid+"' target='_blank' title='"+data.itredianpaihang[key].subject+"'>"+data.itredianpaihang[key].subject+"</a></p>").appendTo("#ulitredianpaihang");
+				}
+			}else{
+				$("div[id='ulitredianpaihang'] li:first-child").html("暂时没有相关新闻");
+			}
+	   }
+	});
+});
+function fillA(id,href,title,subject){
+	jQuery("#"+id).attr("href",href);
+	jQuery("#"+id).attr("title",title);
+	jQuery("#"+id).html(subject);
+}
+function fillLi(msg){
+	jQuery("#itchannelnew1_title").html(msg);
+	jQuery("#itchannelnew1_desc").html(msg);
+	jQuery("#itchannelnew2_title").html(msg);
+	jQuery("#itchannelnew2_desc").html(msg);
+	jQuery("#itchannelnew3_title").html(msg);
+	jQuery("#itchannelnew3_desc").html(msg);
+	jQuery("#itchannelnew4_title").html(msg);
+	jQuery("#itchannelnew4_desc").html(msg);
+	jQuery("#itchannelnew5_title").html(msg);
+	jQuery("#itchannelnew5_desc").html(msg);
+	jQuery("#itchannelnew6_title").html(msg);
+	jQuery("#itchannelnew6_desc").html(msg);
+	jQuery("#itchannelnew7_title").html(msg);
+	jQuery("#itchannelnew7_desc").html(msg);
+}
+</script>
+</html>

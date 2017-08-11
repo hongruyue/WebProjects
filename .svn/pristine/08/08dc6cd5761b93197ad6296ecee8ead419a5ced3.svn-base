@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box{
+            width: 640px;
+            height: 480px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .top{width: 640px;
+        height: 5px;
+        }
+        video{
+            background: #000000;
+            position: absolute;
+        }
+        .img{
+            position: absolute;
+            top:200px;
+            left: 280px;
+            cursor: pointer;
+        }
+        .img:hover{
+            opacity: 0.5;
+        }
+        .control{
+            width: 640px;
+            height: 50px;
+            line-height: 50px;
+            border-top: 6px solid #464646;
+            position: absolute;
+            top:450px;
+            background: #000000;
+            opacity: 0.9;
+        }
+        .control img:hover{
+            opacity: 0.5;
+            cursor: pointer;
+        }
+        .point{
+            margin-left: 10px;
+            margin-top:8px;
+            margin-right:300px;
+        }
+
+        .quanping{
+           margin-left:40px;
+        }
+        .range{
+            width: 640px;
+            height: 6px;
+            position: absolute;
+            left: 0;
+            bottom:24px;
+            background: #464646;
+            overflow: hidden;
+        }
+        .range_inner{
+            width: 640px;
+            height: 6px;
+            background:red;
+            position: absolute;
+            left: -630px;
+
+        }
+        .range_inner1{
+            width: 16px;
+            height:16px;
+            background:#d58512;
+            position: absolute;
+            top:445px;
+            left: 0;
+            cursor: pointer;
+            border-radius: 50%;
+
+        }
+
+        #vid img{
+            position: absolute;
+            display: none;
+        }
+        .rangef_an{
+            width: 16px;
+            height: 16px;
+            position: absolute;
+            top:24px;
+            left:450px;
+            background: yellow;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .rangef{
+            width: 87px;
+            height: 19px;
+            background: url("img/rangef.png") no-repeat;
+            outline: none;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <p class="top"><img src="img/top.jpg"></p>
+    <video src="video.webm" width="640px" height="480px" poster="img/first.png"></video>
+    <img src="img/end.png" class="end"/>
+    <img src="img/afia_6.png" alt="" width="66" height="66" class="img"/>
+    <div class="control">
+      <img src="img/star.png" class="point" title="开始"/>
+      <img src="img/left.png" class="left" title="后退"/>
+      <img src="img/right.png" class="right" title="前进"/>
+      <img src="img/yl.png" class="yinliang" title="音量"/>
+      <!--<img src="img/rangef.png" class="rangef">-->
+        <input type="text" class="rangef"/>
+      <img src="img/all.png" class="quanping" title="全屏"/>
+        <div class="rangef_an"></div>
+
+    </div>
+    <div class="range">
+        <div class="range_inner">
+        </div>
+    </div>
+    <div class="range_inner1"></div>
+</div>
+
+</body>
+<script>
+     var box=document.getElementsByClassName("box")[0];
+     var range=document.getElementsByClassName("range")[0];
+     var range_inner=document.getElementsByClassName("range_inner")[0];
+     var range_inner1=document.getElementsByClassName("range_inner1")[0];
+     var vid=document.getElementsByTagName("video")[0];
+     var imgs=document.getElementsByClassName("img")[0];
+     var point=document.getElementsByClassName("point")[0];
+     var all=document.getElementsByClassName("quanping")[0];
+     var horn=document.getElementsByClassName("yinliang")[0];
+     var left=document.getElementsByClassName("left")[0];
+     var right=document.getElementsByClassName("right")[0];
+     var inp=document.getElementsByTagName("input")[0];
+     var yinliang_an=document.getElementsByClassName("yinliang_an")[0];
+     var cont=document.getElementsByClassName("control")[0];
+     var rangef_an=document.getElementsByClassName("rangef_an")[0];
+     var rangef=document.getElementsByClassName("rangef")[0];
+     var type=0;
+    imgs.onclick=function(){
+        vid.play();
+        this.style.display="none";
+        point.setAttribute("src","img/stop.png");
+        vid.style.display="block";
+    };
+    point.onclick=function(){
+        if(type){
+            vid.play();
+            this.setAttribute("src","img/stop.png");
+            imgs.style.display="none";
+            vid.style.display="block";
+            type=0;
+        }else{
+            vid.pause();
+            this.setAttribute("src","img/star.png");
+            imgs.style.display="block";
+            type=1;
+        }
+    };
+     left.onclick=function(){
+         vid.currentTime-=4;
+     };
+     right.onclick=function(){
+         vid.currentTime+=4;
+     };
+     horn.onclick=function(){
+         if(vid.muted){
+             vid.muted=false;
+             this.setAttribute("src","img/yl.png");
+         }else{
+             vid.muted=true;
+             this.setAttribute("src","img/yl2.png");
+         }
+     };
+    /*inp.oninput=function(){
+        vid.volume=inp.value;
+    };*/
+    /*............音量............*/
+    rangef.onclick=function(ev){
+        var event1=ev||window.event;
+        var X1=event1.clientX;
+        rangef.style.left=(X1-box.offsetLeft)+"px";
+        vid.volume=rangef.style.left;
+    };
+    var time1=false;
+     rangef_an.onmousedown=function(){
+        time1=true;
+    };
+     rangef.addEventListener("mousemove",function(ev){
+        if(time1){
+            var event1=ev||window.event;
+            var X1=event1.clientX;
+            rangef_an.style.left=(X1-box.offsetLeft)+"px";
+            rangef.style.left=vid.volume;
+
+        }
+    });
+    document.onmouseup=function(){
+        time1=false;
+    };
+    /*............音量............*/
+
+    all.onclick=function(){
+        vid.webkitRequestFullscreen();
+    };
+    vid.onended=function(){
+        vid.style.display="none";
+       // alert("谢谢收看！")
+
+    };
+
+/*.................进度条...........................*/
+    vid.ontimeupdate=function(){
+        var now=vid.currentTime;
+        var all=vid.duration;
+        var len=630-(now/all)*626;
+        range_inner.style.left=-len+"px";
+        range_inner1.style.left=(now/all)*626+"px";
+    };
+    range.onclick=function(ev){
+        var event=ev||window.event;
+        var X=event.clientX;
+        var L=626-(X-box.offsetLeft);
+        range_inner.style.left=-L+"px";
+        range_inner1.style.left=(X-box.offsetLeft)+"px";
+        vid.currentTime=vid.duration*((X-box.offsetLeft)/626);
+    };
+    var time=false;
+    range_inner1.onmousedown=function(){
+        time=true;
+    };
+    range.addEventListener("mousemove",function(ev){
+        if(time){
+            var event=ev||window.event;
+            var X=event.clientX;
+            var L=626-(X-box.offsetLeft);
+            range_inner.style.left=-L+"px";
+            range_inner1.style.left=(X-box.offsetLeft)+"px";
+            vid.currentTime=vid.duration*((X-box.offsetLeft)/626);
+        }
+    });
+    document.onmouseup=function(){
+        time=false;
+    }
+</script>
+</html>

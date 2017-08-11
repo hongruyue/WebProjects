@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            list-style: none;
+        }
+        h3{
+            width: 100px;
+            margin:0 auto;
+        }
+        .outer{
+            width:400px;
+            height:300px;
+            border:1px solid #c2c2c2;
+            margin:0 auto;
+        }
+        .top{
+            font-size:14px;
+            font-weight: bold;
+            height: 30px;
+            line-height: 20px;
+            padding:5px;
+            box-sizing: border-box;
+            background-color:#C0F0F3;
+        }
+        .mid{
+            font-size: 14px;
+            text-indent: 10px;
+            height:238px;
+            background-color: #F6F7F7;
+            border-top:1px solid #c2c2c2;
+            border-bottom:1px solid #c2c2c2;
+            overflow: hidden;
+        }
+        .mid-left{
+            width:150px;
+            height:220px;
+            border:1px solid #c2c2c2;
+            margin:8px;
+            float: left;
+            background:white;
+        }
+        .mid-mid{
+            width:40px;
+            height:220px;
+            margin:8px;
+            float: left;
+            text-indent: 0;
+        }
+        .mid-mid button{
+            width:40px;
+            height:25px;
+            margin-top:20px;
+            border:1px solid #EBEBEB;
+            background-color: white;
+             }
+        .mid-right{
+            width:150px;
+            height:220px;
+            border:1px solid #c2c2c2;
+            margin:8px;
+            float: right;
+            background:white;
+        }
+        .bottom{
+            height: 30px;
+            line-height: 25px;
+            text-align: center;
+            background-color:#C0F0F3;
+        }
+        .bottom button{
+            width:60px;
+            height:20px;
+            background-color: white;
+            border:1px solid #ebebeb;
+        }
+        .class1{
+            background:#e2e2e2;
+        }
+        .class2{
+            background:#fff;
+        }
+        .pink{
+            background:pink;
+        }
+    </style>
+</head>
+<body>
+<h3>列表选择</h3>
+<div class="outer">
+    <div class="top">想吃什么水果呢。。。</div>
+    <div class="mid">
+        <div class="mid-left">
+            <ul>
+                <li>葡萄</li>
+                <li>西瓜</li>
+                <li>苹果</li>
+                <li>菠萝</li>
+                <li>草莓</li>
+                <li>鸭梨</li>
+                <li>蜜桃</li>
+                <li>桑果</li>
+                <li>杨梅</li>
+                <li>香蕉</li>
+            </ul>
+        </div>
+        <div class="mid-mid">
+                <button>&gt;</button>
+                <button>&gt;&gt;</button>
+                <button>&lt;</button>
+                <button>&lt;&lt;</button>
+        </div>
+        <div class="mid-right">
+            <ul>
+
+            </ul>
+        </div>
+    </div>
+    <div class="bottom">
+        <button>GET</button>
+    </div>
+</div>
+</body>
+<script src="js/jquery-1.11.0.min.js"></script>
+<script>
+    $(function () {
+/*        $(".mid ul li").hover(function () {
+            $(this).css("background","#e2e2e2")
+        },function () {
+            $(this).css("background","white")
+        });*/
+/*        $(".mid ul li").click(function () {
+            $(this).css("background","pink")
+        });*/
+        $(".mid ul li").on({
+            mouseover:function () {
+                $(this).removeClass().addClass("class1").siblings().addClass("class2");
+            },
+            click:function () {
+                $(this).toggleClass("pink");
+            }
+        })
+
+        $("button").eq(0).click(function () {
+            var txt1 = $(".mid-left ul .pink").clone(true);
+/*            var txt1 = $(".mid-left ul .pink").text();
+            var text1=$("<li></li>").append(txt1);*/
+            $(".mid-right ul").append(txt1);
+
+            $(".mid-left ul .pink").remove();
+            $(".mid li").attr("class","class2");
+            $(".mid ul li").on({
+                mouseover:function () {
+                    $(this).removeClass().addClass("class1").siblings().addClass("class2");
+                },
+                click:function () {
+                    $(this).removeClass().toggleClass("pink");
+                }
+            })
+        });
+        $("button").eq(1).click(function () {
+            var txt2=$(".mid-left ul li").clone(true);
+            $(".mid-right ul").append(txt2);
+            $(".mid-left ul").empty();
+            $(".mid li").attr("class","class2");
+            $(".mid ul li").on({
+                mouseover:function () {
+                    $(this).removeClass().addClass("class1").siblings().addClass("class2");
+                },
+                click:function () {
+                    $(this).removeClass().toggleClass("pink");
+                }
+            })
+        });
+        $("button").eq(2).click(function () {
+            var txt3=$(".mid-right ul .pink").clone(true);
+            $(".mid-left ul").append(txt3);
+            $(".mid-right ul .pink").remove();
+            $(".mid li").attr("class","class2");
+            $(".mid ul li").on({
+                mouseover:function () {
+                    $(this).removeClass().addClass("class1").siblings().addClass("class2");
+                },
+                click:function () {
+                    $(this).removeClass().toggleClass("pink");
+                }
+            })
+        });
+        $("button").eq(3).click(function () {
+            var txt4=$(".mid-right ul li").clone(true);
+            $(".mid-left ul").append(txt4);
+            $(".mid-right ul").empty();
+            $(".mid li").attr("class","class2");
+            $(".mid ul li").on({
+                mouseover:function () {
+                    $(this).removeClass().addClass("class1").siblings().addClass("class2");
+                },
+                click:function () {
+                    $(this).removeClass().toggleClass("pink");
+                }
+            });
+        });
+    })
+</script>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html  ng-app="TD">
+	<head>
+		<meta charset="UTF-8">
+		<title>办理细节</title>
+		<link rel="stylesheet" href="../../bs/css/bootstrap.min.css">  
+		<link rel="stylesheet" href="../../css/main.css" />
+		<link rel="stylesheet" href="../../css/style.css" />
+		<link rel="stylesheet" href="../../css/collaboration.css" />
+		<script type="text/javascript" src="../../bs/js/jquery-1.11.3.min.js" ></script>
+		<script type="text/javascript" src="../../bs/js/angular.min.js" ></script>
+		<script type="text/javascript" src="../../bs/js/bootstrap.min.js" ></script>
+		<script type="text/javascript" src="../../js/url.js" ></script>
+		<script type="text/javascript" src="js/transactDetail.js"></script>
+		<script type="text/javascript" src="../../bs/js/angular-popups.js" ></script>
+
+		<style>
+			table{font-size: 12px;}
+			.table{margin-bottom: 0;}
+		</style>
+	</head>
+	<body ng-controller="AppController as vm">
+		<div id="man_zone" class="mianbody" >
+			<div class="softtm">
+				<a class="back" style="margin-top: 5px" ><img onclick="rt()" alt="返回" border="0" src="../../img/back_buss.png" /></a>
+			</div>
+			<div class="row show-grid" style="padding: 1% 1% 0% 1%;">
+				<div class="col-md-12 col-xs-12 col-sm-12">
+					<button type="button" class="btn btndel-handle" onclick="addTD()">添加</button>					
+				</div>
+				<div class="col-md-12 col-xs-12 col-sm-12">
+					<span class="col-md-12 col-xs-12 col-sm-12 View">办理细节列表</span>
+				</div>
+				<div class="col-md-12 col-xs-12 col-sm-12" > 
+					<div class="table_style">
+						<table class="table top table-condensed">										
+								<tr>
+									<th width="5%">序号</th>
+									<th width="20%">办理结果样例</th>
+									<th width="20%">转下一办理部门和办理事项</th>
+									<th width="20%">转下一办理部门和系统</th>
+									<th width="20%">是否需要归档</th>
+									<th width="15%">操作</th>
+								</tr>																				
+						</table>
+						<table class="table hover table-hover table-condensed" ng-repeat="item in vm.appData" ng-init="outerIndex = $index">
+							<tr>
+								<td width="5%">{{$index+1}}</td>
+								<td width="20%">{{item.documentName}}</td>
+								<td width="20%" >									
+									<button id="matNam{{$index}}" class="btn btn-sm btn-default"  ng-click="bubble.open = true">
+									 	详细信息
+									 </button>
+									<bubble ng-if="bubble.open" for="matNam{{$index}}"  align="right top" style="text-align: left;" close="bubble.open=false">
+										<!-- <span ng-repeat="m in matNames" >{{m.matName}}</span>-->
+										<table>
+											<tr ng-repeat="v in item.matNames track by $index" ng-init="innerIndex = $index">
+												<td>
+													{{v.matName}}
+												</td>
+											</tr>
+										</table>
+									</bubble>
+								</td>
+								<td width="20%">																		
+									<button id="next{{$index}}" class="btn btn-sm btn-default"  ng-click="bubble1.open = true">
+										 详细信息
+									 </button>
+									<bubble ng-if="bubble1.open" for="next{{$index}}"  align="right top" style="text-align: left;" close="bubble1.open=false">
+										<table>
+											<tr ng-repeat="n in item.nextSysNames track by $index" ng-init="innerIndex = $index" >
+												<td>
+													{{n.nextSysName}}
+												</td>
+											</tr>
+										</table>
+									</bubble>
+								</td>
+								
+								<td width="20%" ng-if="item.isarchive == 1">需要
+									<button id="sar{{$index}}" class="btn btn-sm btn-default"  ng-click="bubble2.open = true">
+										 详细信息
+									 </button>
+									<bubble ng-if="bubble2.open" for="sar{{$index}}"  align="right top" style="text-align: left;" close="bubble2.open=false">
+										<table>
+											<tr ng-repeat="a in item.achSysNames track by $index" ng-init="innerIndex = $index" ng-repeat="a in achSysNames">
+												<td>
+													{{a.achSysName}}
+												</td>
+											</tr>
+										</table>
+									</bubble>
+								</td>
+								<td width="20%" ng-if="item.isarchive == 0">
+									不需要
+									<!--<b ng-repeat="v in achSysNames">{{v.achSysName}}</b><br>-->
+								</td>
+								<td width="15%">
+									<a  ng-click="vm.updateTD(outerIndex, item)">修改</a>&nbsp;&nbsp;
+									<a ng-click="vm.deleteTD(item.id)"> 删除</a>&nbsp;&nbsp;
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			
+			</div>
+		</div>
+		<script>
+			function rt(){
+				location.href="approvalAttribute.html";
+				sessionStorage.setItem("linkId",sessionStorage.linkId);
+			}
+			function addTD(){
+				location.href="addTransactDetail.html";
+			}			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="angular-1.5.8/angular.js"></script>
+</head>
+<body ng-app="myApp" >
+<div ng-controller="con">
+    <input type="text" ng-model="name"/>
+    <input type="text" ng-model="age" />
+    <input type="button" value="添加" ng-click="add()" id="add"/>
+    <input type="button" value="重置" ng-click="reset()"/>
+    <table border="1" style="border-collapse: collapse">
+        <tr>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>删除</th>
+        </tr>
+        <tr ng-repeat="x in arr">
+            <td>{{x.name}}</td>
+            <td>{{x.age}}</td>
+            <td><button ng-click="remove($index)">删除</button></td>
+        </tr>
+    </table>
+</div>
+
+</body>
+<script>
+    angular.module("myApp",[]).controller("con",function($scope){
+        $scope.name="";
+        $scope.age="";
+        $scope.arr=[
+               {name:"张三",age:"124"},
+               {name:"李四",age:"1243"},
+               {name:"李五",age:"12433"},
+               {name:"赵六",age:"12435"}
+           ];
+        $scope.remove=function(num){
+            $scope.arr.splice(num,1)
+        };
+        $scope.add=function(){
+            $scope.arr.unshift({name:$scope.name,age:$scope.age});
+        };
+        $scope.reset=function(){
+          $scope.name="";
+          $scope.age="";
+        }
+    })
+</script>
+</html>

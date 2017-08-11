@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #canvas{
+            border: #cccccc;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvas"width="800px"height="800px"></canvas>
+</body>
+<script>
+    var canvas=document.getElementById("canvas");
+    var cvs=canvas.getContext("2d");
+    var g=cvs.createRadialGradient(400,250,0,400,250,200);//径向渐变(开始x 开始y  开始渐变圆心  4,5结束渐变圆心 结束渐变的半径)
+    g.addColorStop(0,'red');//添加渐变颜色 以比例确定
+    g.addColorStop(0.25,'purple');
+    g.addColorStop(0.5,'green');
+    g.addColorStop(0.75,'yellow');
+    g.addColorStop(1,'blue');
+
+   /* cvs.beginPath();
+    cvs.arc(400,250,250,0,Math.PI*2,true);
+    cvs.fillStyle=g;
+    cvs.fill();
+    cvs.closePath();
+*/
+    cvs.beginPath();
+    cvs.rect(200,200,200,200);
+    cvs.fillStyle=g;
+    cvs.fill();
+    cvs.closePath();
+
+
+</script>
+</html>

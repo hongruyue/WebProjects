@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>发布1</title>
+<style>
+.wrap{width: 600px;margin: 20px auto;background: #A9A3A3;padding: 20px;overflow: hidden;}
+.p1{font-size: 25px;font-weight: bold;}
+#bt{width: 500px;height: 30px;margin-bottom: 20px;}
+#nr{width: 500px;height: 150px;}
+#shuru{font-size: 30px;color: green;float: right;margin-right: 20px;}
+#btn{font-size: 25px;margin: 20px 0px 20px 20px;}
+#list li{background: #fff;font-size: 20px;overflow: hidden;}
+#list li h3{background: #878484;overflow: hidden;padding: 10px;}
+#list li h3 a{float: right;}
+#list li p{text-indent: 2em;}
+</style>
+</head>
+<body>
+	<div class="wrap">
+		<p class="p1">标题：<input type="text" id="bt"></p>
+		<p class="p1">内容：<textarea id="nr"></textarea></p>
+		<span id="shuru">还可以输入<span id="num">200</span>个字</span>
+		<button id="btn">发布</button>
+		<h1>显示内容</h1>
+		<ul id="list">
+			<!--<li>-->
+				<!--<h3>-->
+					<!--我是标题-->
+					<!--<a href="###">删除</a>-->
+				<!--</h3>-->
+				<!--<p>我是段落我是段落我是段落我是段落我是段落我是段落我是段落我是段落我是段落我是段落我是段落我是段落我是段落我是段落我是段落</p>-->
+			<!--</li>-->
+		</ul>
+	</div>
+</body>
+   <script src="js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			var time;
+			var maxnum = 200;
+			var inputnum = 0;
+			$("button").click(function () {
+				if ($("input").val() == "" || $("textarea").val() == "") {
+					alert("鼠标和内容不能为空")
+				} else {
+					var text;
+					var tit = $("input").val();
+					if ($("textarea").val().length >= maxnum) {
+						text = $("textarea").val().substring(0, maxnum);
+					} else {
+						text = $("textarea").val();
+					}
+
+					var text1 = $("<li></li>").html("<h3>" + tit + "<a href='###'>删除</a></h3><p>" + text + "</p>");
+					$("#list").html("");
+					$("#list").append(text1).hide();
+					$("#list").slideDown(2000);
+				}
+				//alert("second");
+				$("input").val("");
+				$("textarea").val("");
+				$("#num").css("color", "green");
+				$("#num").html(maxnum);
+				for (var i = 0; i < $("a").length; i++) {
+					$("a")[i].onclick = function () {
+						$("#list").slideUp(2000);
+					}
+				}
+			});
+
+			$("textarea").keydown(function () {
+				if ($(this).val().length >= maxnum)
+					event.returnValue = false;
+			});
+
+			$("textarea").focus(function () {
+				time = setInterval(function () {
+					var len = $("textarea").val().length;
+					var num1 = maxnum - len;
+					if (num1 <= 30) {
+						$("#num").css("color", "red");
+					}
+					$("#num").html(num1)
+				}, 20)
+				$("textarea").blur(function () {
+					clearInterval(time);
+				})
+
+			})
+		})
+
+</script>
+
+</html>

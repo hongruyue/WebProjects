@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单验证</title>
+    <style>
+    .green{
+        color: green;
+    }
+    .red{
+        color: red;
+    }
+    </style>
+    <script src="../js/jquery-1.10.2.min.js"></script>
+</head>
+<body>
+<form action="">
+    <label for="nic">昵称:</label>
+    <input type="text" name="nincheng" class="nicheng" id="nic"/><span class="nicheng"></span><br/>
+    <label for="usename">用户名:</label>
+    <input type="text" name="username" class="username" id="usename"/><span class="usernamestr"></span><br/>
+    <label for="emailstr">邮箱:</label>
+    <input type="text" name="email" class="email" id="emailstr"/><span class="emailstr"></span><br/>
+    <label for="password">密码:</label>
+    <input type="password" name="password" class="password" id="password"/><span class="password"></span><br/>
+    <label for="password1">二次密码:</label>
+   <input type="password" name="password1" class="password1"  id="password1"/><span class="password1"></span><br/>
+    <input type="submit"/>
+</form>
+</body>
+<script src="../js/jquery-1.10.2.min.js"></script>
+<script>
+    var oform=document.getElementsByTagName("form")[0];
+    oform.onsubmit=function(){//阻止form提交事件
+        return false;
+    };
+        $(function(){
+            $(".nicheng").blur(function(){
+                var str=$(".nicheng").val();
+                if(str==""){
+                    alert("不能为空！")
+                }
+            });
+
+            $(".username").blur(function(){
+                var str=$(".username").val();
+                if(str==""){
+                    alert("不能为空！")
+                }else{
+                    if(str.length<=16&&str.length>=6){
+                        $(".usernamestr").html("√").removeClass("red").addClass("green")
+                    }else{
+                        $(".usernamestr").html("×").removeClass("green").addClass("red")
+                    }
+
+                }
+
+            });
+            $(".password").blur(function(){
+                var str=$(".password").val();
+                if(str.length==0){
+                    alert("内容不能为空！")
+                }else{
+                    if(str.length<=20&&str.length>=6){
+                        $(".passstr").html("√").removeClass("red").addClass("green")
+                    }else{
+                        $(".passstr").html("×").removeClass("green").addClass("red")   }
+                }
+
+            })
+
+            $(".password1").blur(function(){
+                var str=$(".password").val();
+                var str1=$(this).val();
+                if(str1==str){
+                    $(".pass1str").html("内容正确").removeClass("red").addClass("green")
+                }else{
+                    $(".pass1str").html("内容不正确").removeClass("green").addClass("red")   }
+
+            });
+
+            $(".email").blur(function(){
+                var str=$(this).val();
+                if(str.indexOf("@")>=0){//检验邮箱是否有@符号
+                    $(".emailstr").html("√").removeClass("red").addClass("green")
+                }else{
+                    $(".emailstr").html("×").removeClass("green").addClass("red")
+                }
+            })
+
+
+        })
+
+</script>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+</body>
+<script>
+    var time=setInterval(function(){
+        alert("大家好")
+    },1000);
+    setTimeout(function(){
+        clearInterval(time)
+    },5*1000)
+</script>
+</html>

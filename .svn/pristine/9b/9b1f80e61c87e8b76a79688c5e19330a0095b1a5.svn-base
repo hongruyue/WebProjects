@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .red{
+            background: red;
+        }
+    </style>
+    <script src="angular-1.5.8/angular.js"></script>
+</head>
+<body ng-app="myApp">
+<div ng-controller="con">
+       <button ng-repeat="x in arr" ng-click="click($index)" class="{{$index==n?'red':null}}">{{x}}</button>
+    <div ng-repeat="v in con" ng-show="$index==n">{{v}}</div>
+</div>
+
+</body>
+<script>
+    angular.module("myApp",[]).controller("con",function($scope){
+         $scope.n=0;
+         $scope.arr=[
+            "动作","爱情","青春","古装"
+        ];
+        $scope.con=["内容1","内容2","内容3","内容4"]
+        $scope.click=function(index){
+           $scope.n=index;
+        }
+    })
+</script>
+</html>

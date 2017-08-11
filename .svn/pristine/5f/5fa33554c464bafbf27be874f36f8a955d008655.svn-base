@@ -1,0 +1,57 @@
+
+.box{
+    width: 90%;
+    margin: 0 auto;
+}
+.box li{
+    width: 90%;
+    height: 50px;
+    background:#D5D0BE;
+    font-size:16px;
+    line-height: 50px;
+    margin: 10px;
+    text-align: center;
+}
+.li1 p{
+    height: 50px;
+    line-height: 50px;
+    height: 50px;
+    width: 50%;
+    height: 50%;
+    float: left;
+}
+.box .bg2{
+   display: none;
+}
+.bg1{
+    width: 293px ;
+    height: 134px;
+    margin: 0 auto;
+}
+
+.bg4{
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+.bottom{
+    width: 90%;
+    margin:0 auto;
+    display: flex;
+}
+.bg6{
+    flex-basis: 40%;
+    display: none;
+
+}
+.bg5{
+ text-align: center;
+
+}
+.bottom p{
+    width: 100%;
+    line-height: 20px;
+    margin-top: 10px;
+}

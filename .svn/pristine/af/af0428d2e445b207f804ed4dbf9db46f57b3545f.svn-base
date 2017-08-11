@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+           background:red;
+        }
+    </style>
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            // $(".box").click(function(){
+
+
+             //})
+
+             //$(".box").mouseover(function(){
+               //  $(this).html("鼠标移入事件")
+
+            // })
+            //$(".box").mouseout(function(){
+               // $(".box").css("background","yellow");
+
+           // })
+                $(document).keydown(function(){//键盘属性必须在可编辑的文件里面
+               $(".box").css("background","green");
+            })
+            $(document).keyup(function(){//键盘属性必须在可编辑的文件里面
+                $(".box").css("background","yellow");
+            })
+            $(document).keypress(function(){
+                $(".box").css("background","green");
+
+            })
+        });
+
+    </script>
+</head>
+<body>
+<div class="box">大家好</div>
+</body>
+</html>

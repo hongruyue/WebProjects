@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="Demo/css/bootstrap.min.css"/>
+    <script src="Demo/js/jquery-1.10.2.min.js"></script>
+    <script src="Demo/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <!--thumbnail在图片的外部添加4px的边框-->
+            <!--div改成a标签的时候，会有悬浮效果-->
+            <a  href="#" class="thumbnail">
+                <img src="01.jpg" alt="" class="img-circle"/><!--img-circle圆的  img-rounded圆角  img-thumbnail多一层边框-->
+
+                <div class="caption">
+                    <h1>标题</h1>
+                    <button class="btn btn-info">播放</button>
+                    <button class="btn btn-success">下载</button>
+                    <p class="lead">大头儿子和小头爸爸</p>
+                </div>
+            </a>
+
+
+    </div>
+
+</div>
+    <!--进度条 progress-bar-striped斑马线-->
+    <div class="row">
+        <div class="col-lg-10">
+            <div class="progress">
+                <div class="progress-bar progress-bar-info progress-bar-striped" style="width: 50%"></div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

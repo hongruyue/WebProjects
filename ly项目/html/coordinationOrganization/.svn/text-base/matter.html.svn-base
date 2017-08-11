@@ -1,0 +1,113 @@
+<!--办理事项列表 -->
+<div class="tab-pane fade in active" id="matters">
+	<div class="col-md-12 col-xs-12 col-sm-12">
+		<span class="col-md-12 col-xs-12 col-sm-12 View">
+			办理事项列表
+			<button class="btm" type="button" data-toggle="modal" ng-click="intoAddMatter()">增加</button>
+		</span>
+	</div>
+	<div class="col-md-12 col-xs-12 col-sm-12">
+		<div class="table_style">
+			<table class="table top table-condensed">
+				<tr>
+					<th width="5%">序号</th>
+					<th width="35%">办理事项名称</th>
+					<th width="35%">办理事项内容</th>
+					<th width="25%">操作</th>
+				</tr>
+			</table>
+			<table id="handMatter" class="table hover table-hover table-condensed" ng-repeat="x in matters">
+				<tr>
+					<td width="5%">{{$index+1}}</td>
+					<td width="35%">{{x.handlMatterName}}</td>
+					<td width="35%">{{x.handlMatterContent}}</td>
+					<td width="25%">
+						<a ng-click="intoUpdateMatter(x)">修改</a>&nbsp;&nbsp;&nbsp;&nbsp;
+						<a ng-click="deleteHandlMatter(x.handlMatterId)">删除</a>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
+
+<!--分页  -->
+<div class="tcdPageCode" id="tcdPageCode2"></div>
+
+<!-- 添加办理事项 -->
+<div class="modal fade" id="HandlingMatters" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					&times;
+				</button>
+				<h4 class="modal-title" id="myModalLabel">
+				添加办理事项
+				</h4>
+			</div>
+			<form id="handlMatterForm" class="form-horizontal" name="addForm">
+				<input type="hidden" name="departId" ng-value="{{departId}}">
+				<div class="modal-body">
+					<div class="form-group">
+						<label for="handleName" class="col-sm-3 control-label">办理事项名称</label>
+						<div class="col-sm-5">
+							<input type="text" name="handlMatterName" data-validation-engine="validate[required]" class="input form-control" id="handlMatterName" placeholder="请输入办理事项名称">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="handleContent" class="col-sm-3 control-label">办理事项内容</label>
+						<div class="col-sm-5">
+							<textarea id="handlMatterContent" name="handlMatterContent" class="input form-control" data-validation-engine="validate[required]" placeholder="请输入办理事项内容"></textarea>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+					<button class="btn btn-primary" type="button" ng-click="addMatter()">保存</button>
+				</div>
+			</form>
+		</div>
+		<!-- /.modal-content -->
+	</div>
+	<!-- /.modal-dialog -->
+</div>
+<!-- 修改办理事项 -->
+<div class="modal fade" id="upHandlingMatters" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					&times;
+				</button>
+				<h4 class="modal-title" id="myModalLabel">
+				修改办理事项
+				</h4>
+			</div>
+			<form class="form-horizontal" name="addForm" id="upHandMattersForm">
+				<input type="hidden" name="handlMatterId" id="handlMatterId" ng-value="upMatter.handlMatterId">
+				<input type="hidden" name="departId" value="{{departId}}">
+				<div class="modal-body">
+					<div class="form-group">
+						<label for="uphandleName" class="col-sm-3 control-label">办理事项名称</label>
+						<div class="col-sm-5">
+							<input type="text" name="handlMatterName" ng-model="upMatter.handlMatterName" data-validation-engine="validate[required]" class="input form-control" id="uphandleName" placeholder="请输入办理事项名称">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="uphandleContent" class="col-sm-3 control-label">办理事项内容</label>
+						<div class="col-sm-5">
+							<textarea id="uphandleContent" name="handlMatterContent" ng-model="upMatter.handlMatterContent" class="input form-control" data-validation-engine="validate[required]" placeholder="请输入办理事项内容"></textarea>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+					<button class="btn btn-primary" type="button" ng-click="updateMatter()">保存</button>
+				</div>
+			</form>
+		</div>
+		<!-- /.modal-content -->
+	</div>
+	<!-- /.modal-dialog -->
+</div>

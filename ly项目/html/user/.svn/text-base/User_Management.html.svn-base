@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html ng-app="userApp" ng-init="formData.alias='';formData.username=''">
+	<head>
+		<meta charset="UTF-8">
+		<title>用户管理</title>
+		<link rel="stylesheet" href="../../bs/css/bootstrap.min.css">  
+		<link rel="stylesheet" href="../../css/main.css" />
+		<link rel="stylesheet" href="../../css/style.css" />
+		<script type="text/javascript" src="../../bs/js/jquery-1.11.3.min.js" ></script>
+		<script type="text/javascript" src="../../bs/js/angular.min.js" ></script>
+		<script type="text/javascript" src="../../bs/js/bootstrap.min.js" ></script>
+		<script type="text/javascript" src="../../js/url.js" ></script>
+		<script type="text/javascript" src="js/User_Management.js" ></script>
+		<script src="../../bs/js/jquery.page.js"></script>
+	</head>
+	<body  ng-controller="User_Management">
+		<div id="man_zone" class="mianbody">
+			<div class="softtm"></div>			
+			<div class="row show-grid" style="padding: 1% 1% 0% 1%;">
+				<div class="col-md-12 col-xs-12 col-sm-12">	
+					<form  class="form-inline" ng-submit="submitForm()">
+					   <div class="form-group">
+					   	<input type="hidden" name="projId" value="${projId}">
+					    <label for="alias">姓名</label>
+					    <input type="text" class="form-control" id="alias" ng-model="formData.alias"  name="alias" placeholder="请输入登录名"> 
+					  </div>
+					  <div class="form-group">
+					    <label for="username">登录名</label>
+					    <input type="text" class="form-control" id="username" ng-model="formData.username" name="username" placeholder="请输入姓名" >
+					  </div>
+					  <button type="submit" class="btn btndel-handle1">查询</button>
+					  <span id="select" style="line-height: 30px;color:#f00">{{msg}}</span>
+					</form>
+				</div>
+				<div class="col-md-12 col-xs-12 col-sm-12" style="margin-top:1%">
+					<button  type="button" class="btn btndel-handle1" ng-click="addUser();" >添加 </button><br/>
+					<input type="hidden" id="projId" value="{{projId}}">
+				</div>
+				<div class="col-md-12 col-xs-12 col-sm-12" >	
+					<div class="table-responsive">
+					  <table class="table table-bordered table-hover table-condensed" >
+					   <thead>
+					    <tr>
+						   	<th width="5%">序号</th>
+						   	<th width="15%">姓名</th>
+						   	<th width="15%">登录名</th>
+						   	<th width="20%">邮箱</th>
+						   	<th width="20%">手机</th>
+						   	<th width="25%">操作</th>			   	
+					   	</tr>
+					   </thead>
+					   <tbody>
+						   <tr ng-repeat= "x in metadatas">
+						   		<td>{{$index+1 }}</td>
+						   		<td>{{x.alias}}</td>
+						   		<td>{{x.username}}</td>
+						   		<td>{{x.email}}</td>
+							   	<td>{{x.phone}}</td>
+							   	<td><a ng-click="updateUser(x)">修改</a> <a ng-click="deleteUser(x.userId)">删除</a> <a data-toggle="modal" data-target="#updatepwd" ng-click="updatePassword(x)">修改密码</a></td>
+						   	</tr>
+					   </tbody>
+					  </table>
+					</div>	
+				</div>
+				<!--分页  -->
+				<div class="tcdPageCode"></div>
+			</div>
+			<div class="modal fade" id="updatepwd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					&times;
+				</button>
+				<h4 class="modal-title" id="myModalLabel">
+					修改密码
+				</h4>
+			</div>
+			<form id="testForm" class="form" ng-submit="submitPassword()">
+			<div class="modal-body" style="padding:10px 30px;">
+				<div class="form-group">
+					 <label for="password" class="control-label">请输入新密码 &nbsp;</label>
+					 <input data-validation-engine="validate[required,custom[userPwd]]" type="password"  class="input form-control" id="password" ng-model="formData.password" name="password"  placeholder="密码6-18位数字和字母，至少各一个大小写字母">								  
+					 <input type="hidden" id="uId" ng-model="formData.uId" name="uId" />
+				</div>
+				<div class="form-group" style="margin-top:1%">
+				   <label for="password" class="control-label">请确认新密码 &nbsp;</label>
+					<input data-validation-engine="validate[required,custom[userPwd],equals[password]]" type="password" class="input form-control" id="confirmpassword" ng-model="formData.confirmpassword" name="confirmpassword"  placeholder="请再次输入新密码" >								   								  
+				</div>
+				
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+				</button>
+				<button type="submit" class="btn btn-primary">
+					提交更改
+				</button>
+			</div>
+			</form>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal -->
+</div>
+
+	</body>
+</html>

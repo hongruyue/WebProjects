@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .put{
+            outline: none;/*与border设置方法相同 但是不占空间 效果与border一样 但是存在在边框的外边*/
+        }
+    </style>
+</head>
+<body>
+<form action="###">
+    <input type="text"/>
+    <input type="text" value="第二个表单"/>
+    <input type="text"/>
+    <button>移开焦点</button>
+    <button>设置焦点</button>
+    <button>选取内容</button>
+    <button>获取内容</button>
+    <button>设置表单内容</button>
+</form>
+</body>
+<script>
+    var inp=document.getElementsByTagName("input");
+    var btn=document.getElementsByTagName("button");
+    inp[0].onfocus=function(){//获取焦点事件 自身触发
+        //alert("获取焦点");
+        this.style.border="1px solid red";
+        this.style.outline="none"
+    }
+        inp[0].onblur=function(){//失去焦点
+       this.style.border="1px solid black";
+    }
+    inp[0].onchange=function(){//表单内容变化 失去焦点之后触发的
+        this.style.border="5px solid black"
+    }
+    btn[0].onclick=function(){//对表单的控制
+        inp[1].blur();
+    }
+    btn[1].onclick=function(){
+        inp[1].focus();
+    }
+    btn[2].onclick=function(){
+        inp[1].select();
+    }
+    btn[3].onclick=function(){
+        alert(inp[1].value);//获取表单的内容
+    }
+    btn[4].onclick=function(){
+        inp[2].value="设置内容";//为表单设置内容
+    }
+</script>
+
+
+</html>

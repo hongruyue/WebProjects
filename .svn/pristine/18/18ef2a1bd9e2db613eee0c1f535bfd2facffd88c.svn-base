@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            display: inline-block;
+        }
+        div:nth-child(1){
+            background: red;
+            margin-right: 60px;
+            animation: dd 3s linear infinite; }/*linear直线 匀速 ease先快后慢 infinite无限 forwards保持最后一个属性*/
+
+        @keyframes dd {
+            from{transform: rotate(0deg)}
+            to{transform: rotate(180deg)}
+        }
+        div:nth-child(2){
+            background: blue;
+            animation: df 3s linear infinite;
+            transform-style:preserve-3d;
+            perspective: 1000px;/*视距*/
+            perspective-origin:center center ;/*视点 看到元素的那个点*/
+            transform-origin:0 0;
+            /*transform-origin:center center;*/
+        }
+        @keyframes df{
+            from{transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg)}
+            to{transform: rotateX(180deg) rotateY(180deg) rotateZ(180deg)}
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<div></div>
+</body>
+</html>

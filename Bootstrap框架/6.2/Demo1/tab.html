@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <ul class="nav nav-pills">
+            <li><a href="#a" data-toggle="tab">标题1</a></li>
+            <li><a href="#b" data-toggle="tab">标题2</a></li>
+            <li><a href="#c" data-toggle="tab">标题3</a></li>
+            <li><a href="#d" data-toggle="tab">标题4</a></li>
+            <li><a href="#e" data-toggle="tab">标题5</a></li>
+        </ul>
+        <ul class="tab-content">
+            <li class="tab-pane fade in active" id="a">内容1
+                <div class="row">
+                    <div id="mycaroussel" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <!--data-slide-to显示到特定的位置-->
+                            <li data-target="#mycaroussel" data-slide-to="0" ></li>
+                            <li data-target="#mycaroussel" data-slide-to="1" class="active"></li>
+                            <li data-target="#mycaroussel" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="item">
+                                <div class="carousel-caption">第一张</div>
+                                <img src="img/1.jpg" alt=""/>
+                            </div>
+                            <div class="item active">
+                                <div class="carousel-caption">第2张</div>
+                                <img src="img/2.jpg" alt=""/>
+                            </div>
+                            <div class="item">
+                                <div class="carousel-caption">第3张</div>
+                                <img src="img/3.jpg" alt=""/>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#mycaroussel" class="left carousel-control" data-slide="prev">
+                        <span class="glyphicon glyphicon-arrow-left"></span>
+                    </a>
+                    <a href="#mycaroussel" class="right carousel-control" data-slide="next">
+                        <span class="glyphicon glyphicon-arrow-right"></span>
+                    </a>
+                </div>
+
+            </li>
+            <li class="tab-pane fade" id="b">滚动监听 折叠。。。</li>
+            <li class="tab-pane fade" id="c">内容3</li>
+            <li class="tab-pane fade" id="d">内容4</li>
+            <li class="tab-pane fade" id="e">内容5</li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

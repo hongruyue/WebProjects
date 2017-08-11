@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div></div>
+<div></div>
+</body>
+<script src="js/jquery-2.1.0.min.js"></script>
+<script>
+    $(function(){
+        var json={"name":"皮皮虾","age":"32","sex":"women"};
+//        json格式={"key(关键字)":"值","key":"value"}（对象格式）；
+        $("div").eq(0).html("姓名："+json.name+"年龄："+json.age+"性别："+json.sex);
+
+//        数组格式
+        var person=[
+            {"name":"皮皮虾","age":"32","sex":"women"},
+            {"name":"小王","age":"19","sex":"man"},
+            {"name":"小张","age":"13","sex":"man"}
+        ]
+        $("div").eq(1).html("姓名："+person[2].name+"年龄："+person[2].age+"性别："+person[2].sex)
+    })
+</script>
+</html>

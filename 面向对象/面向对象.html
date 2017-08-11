@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<div class="box"></div>
+</body>
+<script>
+//this指向它的所有者 最终的指向是window
+var box=document.getElementsByClassName("box")[0];
+    function show(){
+        alert(this);//window
+    }
+    var arr=[1,2,3,4];
+    arr.a=show;
+    arr.a();//指向arr
+
+    box.onclick=function(){
+        show();//指向window
+    }
+</script>
+</html>

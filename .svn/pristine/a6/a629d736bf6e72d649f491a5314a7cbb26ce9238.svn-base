@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<table border="1" style="border-collapse: collapse" >
+    <tbody>
+        <tr>
+            <th>姓名</th>
+            <th>颜色</th>
+            <th>年龄</th>
+            <th>删除</th>
+        </tr>
+    </tbody>
+</table>
+<button>点击获取</button>
+<input onclick="selectAll()" type="checkbox"   name="controlAll"  id="controlAll"/>全选
+<button id="delete">删除</button>
+</body>
+<script src="js/jquery-1.8.3.min.js"></script>
+<script>
+    $(function(){
+        $("button").eq(0).click(function(){
+            $.ajax({
+                url:"json",
+                type:"get",
+                data:"",
+                dataType:"json",
+                success:function(data){
+                    $("tbody").empty();//将tbody清空
+                    var head="<tr><th>姓名</th><th>颜色</th><th>年龄</th><th>删除</th></tr>";
+                    $("tbody").append(head);
+                    for(i=0;i<data.length;i++){
+                        news="<tr><td>"+data[i].name+"</td><td>"+data[i].title+"</td><td>"+data[i].age+"</td><td><input name='selected' type='checkbox' id='control' value='0' /><button>删除</button></td></tr>";
+                        $("tbody").append(news);$("tbody")
+                        // alert(data);
+                        $("button").eq(i).click(function(){
+                            var ipt=document.getElementsByTagName("input")[0];
+                            if(ipt.checked){
+                                //alert("true");
+                                $(this).parent().parent().remove();
+                            }
+                        })
+                    }
+
+
+                },
+                error:function(){
+                    alert("错误");
+                },
+                async:true,
+            })
+            /*$.getJSON("json",function(data){//get方法获取json的简写方式 只能获取json格式
+             alert(data[0].name);
+             })*/
+        })
+    })
+    function selectAll() {
+        var checklist = document.getElementsByName("selected");
+        if (document.getElementById("controlAll").checked) {
+            for (var i = 0; i < checklist.length; i++) {
+                checklist[i].checked = 1;
+
+            }
+        } else {
+            for (var j = 0; j < checklist.length; j++) {
+                checklist[j].checked = 0;
+            }
+        }
+    }
+    var btnDelete=document.getElementById("delete");
+    var checklist = document.getElementsByName ("selected");
+    btnDelete.onclick=function(){
+        alert("delete");
+        for(var i=0;i<checklist.length;i++){
+            if(checklist[i].checked == 1){
+                alert("remove");
+                checklist[i].remove();
+            }
+        }
+    }
+</script>
+</html>

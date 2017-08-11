@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>电子报纸的效果</title>
+<link href="css/jqzoom.css" rel="stylesheet" type="text/css" media="screen" />
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery.jqzoom.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+		    $(".jqzoom").jqueryzoom({
+		        xzoom:600,  // 放大图的宽
+		        yzoom:600,  // 放大图的高
+		        offset:30,   // 放大图距离原图的位置
+		        position:'right'  // 放大图在原图的右边(默认为right)
+		    });
+	    });
+    </script>
+</head>
+
+<body>
+ <div>
+            电子报纸的效果<br/>
+            <div class="jqzoom">
+                <img src="images/room_small.jpg" alt="电子报纸" width="300" height="421" jqimg="images/room_big.jpg" />
+            </div>
+        </div>
+</body>
+</html>

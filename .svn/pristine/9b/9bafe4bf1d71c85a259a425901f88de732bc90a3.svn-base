@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>显示日期</title>
+</head>
+<body>
+ <div class="box"></div>
+
+     <span></span>
+     <span></span>
+     <span></span>
+     <span></span>
+     <span></span>
+     <span></span>
+     <span></span>
+     <span></span>
+     <span></span>
+<script>
+    var box=document.getElementsByClassName("box")[0];
+    //var box = document.getElementById("box");
+    var time=new Date();
+    box.innerHTML=time;
+    var vspan=document.getElementsByTagName("span");
+    //alert(vspan.length);
+    var year=time.getFullYear();
+    vspan[0].innerHTML="现在时间是：";
+    vspan[1].innerHTML=year+"年";
+    var month=time.getMonth();
+    vspan[2].innerHTML=month+1+"月";
+    var date=time.getDate();
+    vspan[3].innerHTML=date+"日";
+    var week=time.getDay();
+    vspan[4].innerHTML="星期"+week;
+    var hours=time.getHours();
+    vspan[5].innerHTML=hours+"点";
+    var minute=time.getMinutes();
+    vspan[6].innerHTML=minute+"分";
+    var second=time.getTime();
+    vspan[7].innerHTML=second+"毫秒";
+
+</script>
+</body>
+</html>

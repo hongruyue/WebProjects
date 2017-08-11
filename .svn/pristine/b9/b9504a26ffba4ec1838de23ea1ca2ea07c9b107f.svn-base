@@ -1,0 +1,110 @@
+.taobao{
+    width: 720px;
+    margin: 0 auto;
+}
+.logo{
+    width:720px;
+    height: 35px;
+    margin: 20px;
+}
+.nav{
+    margin: 20px;
+}
+a{
+    color: #4B86C3;
+}
+.line{
+    width:720px;
+    margin:20px;
+    height: 22px;
+}
+.line li{
+    width: 120px;
+    height:22px;
+    line-height:22px;
+    float: left;
+    background:#E4E4E4;
+    text-align: center;
+
+}
+.line li:nth-child(1) {
+    background: #FF6600;
+    color: #FFFFFF;
+    background-image: url("image/taobao_bg.png");
+    background-repeat: no-repeat;
+    background-position: 106px 0px;
+    border-radius: 5px 0 0 5px;
+}
+.line li:nth-child(3){
+    background-image:url("image/taobao_bg.png");
+    background-repeat: no-repeat;
+    background-position:0px 0px;
+}
+.line li:nth-child(4){
+    background-image:url("image/taobao_bg.png");
+    background-repeat: no-repeat;
+    background-position:0px 0px;
+}
+.line li:nth-child(5){
+    background-image:url("image/taobao_bg.png");
+    background-repeat: no-repeat;
+    background-position:0px 0px;
+    border-radius: 0px 5px 5px 0px;
+}
+.table{
+  margin: 20px;
+}
+.table th{
+    text-align: center;
+}
+.bg td{
+    background:#E2F2FF;
+    border-right: 1px solid #FFFFFF;
+    text-align: center;
+}
+.bg td:nth-child(2){
+    text-align: left;
+}
+.bg td:nth-child(3){
+    font-weight: bold;
+}
+.bg td:nth-child(2) img:nth-child(1){
+    float: left;
+}
+.bg td:nth-child(5) span{
+    width:10px;
+    height: 10px;
+    line-height: 10px;
+    display: inline-block;
+    margin-right: 5px;
+    background: #FFFFFF;
+}
+.bg td:nth-child(5) span:nth-child(1){
+    border: 1px solid #e0e0e0;
+}
+.bg td:nth-child(5) span:nth-child(2){
+    width: 20px;
+    height: 15px;
+    line-height: 15px;
+    border: 1px solid #999999;
+}
+.bg td:nth-child(5) span:nth-child(3){
+    border: 1px solid #e0e0e0;
+}
+.button{
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+.jifen button{
+ margin-right: 570px;
+}
+.num{
+    color: #FC6400;
+}
+.jia_1{
+    cursor: pointer;
+}
+.jian_1{
+    cursor: pointer;
+}

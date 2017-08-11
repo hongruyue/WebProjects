@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="css/boss.css"/>
+</head>
+<body>
+        <!--页眉-->
+    <header class="headers">
+        <!--logo-->
+        <div class="header">
+            <div class="logo">
+                <a href=""></a>
+            </div>
+            <ul class="hdzuo">
+                <li><a href="">首页</a></li>
+                <li><a href="">求职</a></li>
+                <li><a href="" class="app">APP</a></li>
+                <li><a href="">新闻</a></li>
+            </ul>
+            <ul class="hdyou">
+                <li><a href="">Boss 扫码登录</a></li>
+                <li><a href="" class="hd_zhc">注册</a></li>
+                <li><a href="" class="hd_dl">登录</a></li>
+            </ul>
+        </div>
+        <div class="qingfu"></div>
+    </header>
+        
+        <!--右边的浮动下标-->
+        <ul class="youfu">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        
+        <!--以下内容部分-->
+        <!--以下内容部分-->
+        <!--内容大块一-->
+  <div class="box_z">
+    <div class="box1 box0">
+        <div class="neirong1">
+            <div class="cented1">
+               <div class="inner1_zuo">
+                   <img src="img/figure-phone-app.png" alt=""/>
+                   <img src="img/app-tip.png" class="app_tip" alt=""/>
+               </div>
+               <div class="inner1_you">
+                  <h3>这一次</h3>
+                  <p class="p1">试试用聊天的方式找工作</p>
+                  <p class="p2">下载BOSS直聘APP</p>
+                  <div class="inner11">
+                      <div><a href="" class="iph"></a></div>
+                      <div class="erweima"><img src="img/common.jpg" alt=""/></div>
+                      <div><a href="" class="And"></a></div>
+                  </div>
+               </div>
+            </div>
+        </div>
+    </div>
+        <!--内容大块二-->
+    <div class="box2 box0">
+        <div class="neirong2">
+            <p class="nr2_p1">BOSS直聘</p>
+            <p class="nr2_p2">企业BOSS与职场牛人直接在线开聊</p>
+            <div class="nr2_zhu">
+                <div class="nr2_sj">
+                    <img src="img/figure-phone-1.png" alt=""/>
+                </div>
+                <div class="nr2_ewm" ></div>
+                <div class="nr2_xian"></div>
+                <ul class="nr2_ul">
+                    <li class="user_1"></li>
+                    <li class="user_2"></li>
+                    <li class="user_3"></li>
+                    <li class="user_4"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+        <!--内容大块三-->
+     <div class="box3 box0">
+         <div class="neirong3">
+             <div class="nr3_left">
+                <div class="nr3_msk">
+                    <div class="chat-list"></div>
+                </div>
+                <div class="nr3_chat"></div>
+             </div>
+             <div class="nr3_right">
+                 <p class="nr3_p1">直聘/DIRECRUIT</p>
+                 <p class="nr3_p2">在APP上跟未来BOSS直接开聊</p>
+                 <p class="nr3_p3">与冷冰冰的简历投递说再见</p>
+             </div>
+         </div>
+     </div>
+        <!--内容大块四-->
+     <div class="box4 box0">
+         <div class="neirong4">
+            <div class="nr4_top">
+                <p class="nr4_p1">名企/BIG COMPANY</p>
+                <p class="nr4_p2">阿里百度腾讯，滴滴美团京东。都在用BOSS直聘招人</p>
+            </div>
+            <div class="nr4_bom">
+                <div class="nr4_dn"></div>\
+                <ul class="nr4_x">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+         </div>
+     </div>
+        <!--内容大块五-->
+     <div class="box5 box0">
+         <div class="neirong5">
+            <div class="nr5_left">
+                <p>DECENT PAY/高薪</p>
+                <p>除了真人在线之外</p>
+                <p>BOSS们认为最能表现诚意的是可观的薪资</p>
+            </div>
+            <div class="nr5_right">
+                <ul class="nr5_cards">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+         </div>
+     </div>
+       <!--内容大块六-->
+      <div class="box6 box0">
+          <div class="neirong6">
+              <div class="nr6_top">
+                  <p><span>—</span>&nbsp;&nbsp; 媒体报道&nbsp;&nbsp; <span>—</span></p>
+              </div>
+              <ul class="nr6_zh">
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li class="nr6_y"></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li class="nr6_y"></li>
+              </ul>
+              <div class="qingfu"></div>
+              <div class="nr6_bom1">
+                  <p><span>—</span>&nbsp;&nbsp; 他们一直在用&nbsp;&nbsp; <span>—</span></p>
+              </div>
+              <div class="n6_bom">
+                  <div class="zuo"></div>
+                  <div class="you"></div>
+                  <div class="nr6_bom2">
+                      <ul class="nr6_di2">
+                      </ul>
+                  </div>
+              </div>
+          </div>
+          <div class="bom">
+            <p>Copyright © 2017 zhipin.com京ICP备14013441号-5</p>
+            <p>zhipin.com.保留所有版权. 使用这些服务遵守用户协议</p>
+            <p>北京华品博睿网络技术有限公司 | 联系地址：北京朝阳区太阳宫中路8号冠捷大厦3层 302 | 联系电话：010-84150633</p>
+          </div>
+      </div>
+
+
+  </div>
+</body>
+<script src="js/jquery-1.8.3.min.js"></script>
+<script src="js/boss.js"></script>
+</html>

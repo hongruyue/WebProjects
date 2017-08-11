@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="angular-1.5.8/angular.js"></script>
+</head>
+<body ng-app="myApp">
+    <div ng-controller="con">
+      <my-directive></my-directive>
+        <div my-directive>我的div</div>
+        <div class="my-directive"></div>
+        <!--directive:my-directive --><!--两侧必须要有空格 后面空格必须有，前面空格可以没有-->
+    </div>
+
+</body>
+<script>
+    var app=angular.module("myApp",[]);
+    app.controller("con",function(){
+
+    });
+    app.directive("myDirective",function(){
+      /*   return{
+             //restrict自定义指令存在的格式
+             restrict:"AECM",//只能A通过属性方式调用 E元素名 C类名 M注释 EA元素跟属性
+             //ng-transclude 将原有内容出现
+             template:"<span ng-transclude></span><h1>自定义指令！</h1>",//定义内容
+             transclude:true
+         }*/
+        var json={
+            restrict:"CM",
+            template:"<div>今天好热！</div>",
+            replace:true//替换 注释结构需要加上
+        };
+        return json;
+    })
+</script>
+</html>

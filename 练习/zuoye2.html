@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box{
+            width: 600px;
+            height: 360px;
+            border: 1px solid black;
+            background: #e4e4e4;
+            position: relative;
+        }
+        .but{
+            width: 90px;
+            height:30px;
+            background: red;
+            border: none;
+            color: white;
+            font-weight: 700;
+          display: inline-block;
+        }
+        h2{
+            display: inline-block;
+        }
+        .box1{
+            width: 90px;
+            height: 90px;
+            border: 2px solid black;
+            background: #fff;
+            margin-left: 30px;
+        }
+        .box2{
+            width: 260px;
+            height: 190px;
+            background: white;
+            border: 30px solid #ccc;
+            position: absolute;
+            right: 50px;
+            bottom:30px;
+           display: none;
+        }
+        .but2,.but3{
+            border: none;
+            width: 60px;
+            height: 30px;
+            background: blue;
+            color:white;
+        }
+        span{
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            border: 1px solid #ccc;
+            margin-right: 10px;
+        }
+        .red{  background: red;  color: #fff;}
+        .yle{  background: yellow;  color: #fff;  }
+        .blue{  background: blue;  color: #fff;  }
+
+    </style>
+</head>
+<body>
+<div class="box">
+    <h2>为下面的div设置样式：</h2>
+    <button class="but">点击事件</button>
+    <div class="box1"></div>
+
+    <div class="box2">
+        <p class="p1">请选择颜色背景 <span class="red">红</span><span class="yle">黄</span><span class="blue">蓝</span></p>
+        <p class="p2">请选择宽（px） <span>200</span><span>300</span><span>400</span></p>
+        <p class="p3">请选择高（px） <span>200</span><span>300</span><span>400</span></p>
+        <button class="but2">恢复</button>
+        <button class="but3">确认</button>
+
+  </div>
+</div>
+</body>
+<script src="js/jquery-1.8.3.min.js"></script>
+<script>
+    $(function(){
+        $(".but").click(function(){
+            $(".box2").css("display","block");
+        })
+        var arr=["red", "yellow","blue"];
+        var arr1=["200px","300px","400px"];
+        var arr2=["200px","300px","400px"];
+        $(".p1 span").click(function(){
+            var index=$(this).index();
+            $(".box1").css("background",arr[index]);
+        })
+        $(".p2 span").click(function(){
+            var index=$(this).index();
+            $(".box1").css("width",arr1[index]);
+        })
+        $(".p3 span").click(function(){
+            var index=$(this).index();
+            $(".box1").css("height",arr2[index]);
+        })
+        $(".but2").click(function(){
+            $(".box1").removeAttr("style");
+        })
+        $(".but3").click(function(){
+            $(".box2").css("display","none");
+        })
+    })
+
+</script>
+</html>

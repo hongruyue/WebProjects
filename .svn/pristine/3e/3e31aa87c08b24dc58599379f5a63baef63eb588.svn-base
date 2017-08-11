@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=600,maximum-scale=1.0,user-scalable=0"/>
+    <style>
+        /*em设置尺寸，具有继承性，在父级的基础上成倍扩大 设置宽高，字体大小*/
+     /* 1em=16px em根据父级元素字体大小确定 父级是1em 子级是2em 最后子级是3em*/
+     /*如果父级字体大小确定 子级1em=1em*父级的大小*/
+        .box{
+            font-size: 1em;
+        }
+    </style>
+    <title></title>
+</head>
+<body>
+<div class="box">
+    <p>这是一个p</p>
+</div>
+<div class="box1"></div>
+</body>
+</html>

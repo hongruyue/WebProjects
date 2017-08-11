@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <script type="text/javascript">
+
+            function loadXMLDoc()
+            {
+                var xmlhttp;
+                if (window.XMLHttpRequest)
+                {// code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp=new XMLHttpRequest();
+                }
+                else
+                {// code for IE6, IE5
+                    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                
+                 xmlhttp.open("GET","http://127.0.0.1/phpLearn/10http/b.json",true);
+                 xmlhttp.send();
+                
+                
+                xmlhttp.onreadystatechange=function()
+                {
+                	    if(0 ==  xmlhttp.readyState)
+                	    {
+                	    	    document.writeln("服务器没有连接上");
+                	    }
+                	     
+                    if (xmlhttp.readyState==4 && xmlhttp.status==200)
+                    {
+                        //document.getElementById("myDiv").innerHTML=xmlhttp.responseXML;
+                         //document.writeln(xmlhttp.responseText);
+                        var  strJson = xmlhttp.responseText;
+                       // var  str     = JSON.stringify(strJson);
+                        //alert(typeof strJson);
+                        var    str     = JSON.parse(strJson);
+                        //alert(typeof str);
+                        //复杂一点的json的另一种形式  
+                      
+                       document.writeln("url = "+  str.url);
+                       document.writeln("<br>");
+                       document.writeln("name = "+ str.name);
+                       document.writeln("<br>");
+                       document.writeln("boolean= "+ str.boolean);
+                       document.writeln("<br>");
+                       document.writeln("a ="+ str.object.a);
+                       //alert(obj2.list[0].password);
+
+                    }
+                    
+                }
+                
+            }
+        </script>
+    </head>
+    <body>
+        
+        <div id="myDiv"><h2>Let AJAX change this text</h2></div>
+        <button type="button" onclick="loadXMLDoc()">http request</button>
+        
+    </body>
+</html>

@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>测试</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<style>
+*{margin:0; padding: 0; list-style: none;}
+#out{width: 1080px; margin:10px auto; overflow: hidden;}
+#out ul{float: left; width: 250px; margin:0 10px;}
+#out ul li{border: 1px solid #000; width: 248px; margin:10px 0;}
+#out ul li img{width: 248px; height: 100%;display: block;}
+</style>
+</head>
+<body>
+<div id="out">
+	<ul>
+		<!-- <li><img src="images/1.jpg" alt=""></li> -->
+	</ul>
+	<ul>
+		<!-- <li><img src="images/1.jpg" alt=""></li> -->
+	</ul>
+	<ul>
+		<!-- <li><img src="images/1.jpg" alt=""></li> -->
+	</ul>
+	<ul>
+		
+	</ul>
+</div>
+</body>
+<script>
+var out=document.getElementById('out');
+var uls=out.children;
+for (var i = 0; i < 18; i++) {
+	appendLi();
+};//进入页面加载的图片数量
+
+function appendLi(){
+	var oli=document.createElement('li');
+	oli.innerHTML='<img src="" alt="">';
+	oli.style.height=(Math.floor(Math.random()*121)+150)+'px';//150~270的随机数
+	var ul1_h=uls[0].offsetHeight;
+	var ul2_h=uls[1].offsetHeight;
+	var ul3_h=uls[2].offsetHeight;
+	var ul4_h=uls[3].offsetHeight;
+	var minUl=null;
+	var minH=Math.min(ul1_h,ul2_h,ul3_h,ul4_h)
+	for (var i = 0; i < uls.length; i++) {
+		if (uls[i].offsetHeight==minH) {
+			minUl=uls[i];
+		};
+	};
+	/*var minUl=null;
+	if (ul1_h<ul2_h) {
+		if (ul1_h<ul3_h) {
+			minUl=uls[0];
+		} else{
+			minUl=uls[2];
+		};
+	} else{
+		if (ul2_h<ul3_h) {
+			minUl=uls[1];
+		} else{
+			minUl=uls[2];
+		};
+	};*/
+	minUl.appendChild(oli);
+	var imgs=out.getElementsByTagName('img');
+	for (var i = 0; i < imgs.length; i++) {
+		var x=Math.ceil(Math.random()*25);//1~25
+		imgs[i].src='images/'+x+'.jpg'
+	};
+}
+
+window.onscroll=function (){
+	var scrollTop=document.body.scrollTop||document.documentElement.scrollTop;
+	var docH=document.documentElement.offsetHeight;//整个文档高度
+	var winH=document.documentElement.clientHeight;//窗口高度
+	if (docH-winH-500<scrollTop) {
+		// appendLi();
+		var i=0
+		alert(i++)
+		for (var i = 0; i < 16; i++) {
+			appendLi();
+	};
+	};
+}
+</script>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box{
+            width:1400px;
+            margin: 0 auto;
+        }
+        .top{
+            width: 40px;
+            height: 40px;
+            background: red;
+            cursor: pointer;
+            position:fixed;
+            bottom:30px;
+            left:1350px;
+            display: none;
+        }
+        .top:hover{
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+  <div class="box"><img src="img/bj.jpg"/></div>
+  <div class="top"></div>
+</body>
+<script>
+    window.onload=function(){
+        var top=document.getElementsByClassName("top")[0];
+        var time=null;
+        var pagelookheight=document.documentElement.clientHeight;
+        window.onscroll=function(){
+            var scrollTop=document.body.scrollTop||document.documentElement.scrollTop;
+            if(scrollTop>=pagelookheight){
+                top.style.display="block";
+            }else{
+                top.style.display="none";
+
+            }
+        };
+        top.onclick=function(){
+            time=setInterval(function(){
+                var backtop=document.body.scrollTop;
+                var scrollSpeed=backtop/5;
+                document.body.scrollTop=backtop-scrollSpeed;
+                if(backtop==0){
+                    clearInterval(time)
+                }
+            },30)
+
+        };
+    }
+
+</script>
+</html>

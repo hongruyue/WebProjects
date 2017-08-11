@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jquery-2.1.0.min.js"></script>
+	<style type="text/css"></style>
+</head>
+<style type="text/css">
+	*{margin:0;padding: 0}
+	li{float: left;width: 100px;height: 40px;background: pink;text-align: center;line-height: 40px;border: solid 1px black;}
+	img{float: left;clear: left;width: 408px;}
+	li{list-style: none; cursor: pointer}
+</style>
+<body>
+	<ul>
+		<li>春</li>
+		<li>夏</li>
+		<li>秋</li>
+		<li>冬</li>
+		<img src="images/1.jpg" />
+	</ul>
+</body>
+<script>
+	$(function(){
+		$("li").click(function(){
+			var index=$(this).index();
+			$.get("text1.txt",function(data){
+				var arr=data.split(";");
+	$("img").attr("src",arr[index]);//元素的属性
+				//$("img").prop("src",arr[index]);//元素的自有属性
+			},"text");
+		})
+	})
+</script>
+<!--</html>-->

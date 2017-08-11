@@ -1,0 +1,49 @@
+.box{
+    width: 90%;
+    margin: 0 auto;
+}
+.box li{
+    width: 15%;
+    height: 50px;
+    font-size: 16px;
+    line-height: 25px;
+    float: left;
+    margin: 10px;
+    text-align: center;
+}
+.li1{
+    padding-top: 80px;
+}
+.box .bg2{
+    width: 293px;
+    height: 134px;
+}
+.bg1{
+    display: none;
+}
+.bg4{
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+}
+.bg4 img{
+   margin-top: 20px;
+   margin-bottom: 20px;
+}
+.bottom{
+    width: 90%;
+    margin:0 auto;
+    display: flex;
+}
+.bg6{
+    flex-basis: 50%;
+
+}
+.bg5{
+    flex-basis: 50%;
+}
+.bottom p{
+    width: 587px;
+    line-height: 20px;
+    margin-top: 10px;
+}

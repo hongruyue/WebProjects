@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="angular-1.5.8/angular.js"></script>
+    <script src="conn/module1.js"></script>
+    <script src="conn/module2.js"></script>
+</head>
+<body ng-app="myApp">
+   <div ng-controller="con1">
+       <p>{{abc|fil1:"xyz"}}</p>
+   </div>
+   <div ng-controller="con2"></div>
+   <div ng-controller="con3">
+       <ul>
+           <li ng-repeat="v in arr" ng-click="fun()">{{v}}</li>
+       </ul>
+   </div>
+</body>
+<script>
+    //注入模块，模块的数据 控制器等都可以在此模块中使用
+    var app=angular.module("myApp",["myModule1","myModule2"]);
+    app.controller("con1",function($scope){
+       $scope.abc=564
+    });
+   app.controller("con2",function($scope){
+       $scope.def=""
+   })
+</script>
+</html>

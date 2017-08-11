@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="angular-1.5.8/angular.js"></script>
+</head>
+<body ng-app="myApp">
+   <!-- <div ng-controller="con"></div>-->
+    <runoob-directive></runoob-directive><!--元素名输出-->
+<div runoob-directive></div><!--属性输出-->
+<div class="runoob-directive"></div><!--类名-->
+<!--directive:runoob-directive--><!--注释-->
+
+</body>
+<script>
+    var app=angular.module("myApp",[]);
+    app.directive("runoobDirective",function(){
+         return{
+             restrict:"A",//只能A通过属性方式调用 E元素名 C类名 M注释 EA元素跟属性
+             template:"<h1>自定义指令！</h1>"
+         }
+    })
+</script>
+</html>

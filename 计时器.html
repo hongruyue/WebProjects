@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .input_check:checked{
+            background-color: red;
+            /*background-image: url("3.jpg");*/
+        }
+    </style>
+    <script src="jquery-1.10.2.min.js"></script>
+</head>
+<body>
+  <input type="checkbox" id="input_check">
+<img src="3.jpg">
+</body>
+<script>
+    var aa=document.getElementById("aa");
+    $(function(){
+        $("input[type=checkbox]:checked").each(function() {
+           $(this).css("backgroundImage","url('3.jpg')");
+        });
+
+    });
+//    aa.onclick=function(){
+//        if(aa.checked){
+//            aa.style.background="blue"
+//        }
+//
+//    };
+//    var time=setInterval(function(){
+////        alert("大家好")
+//    },1000);
+//    setTimeout(function(){
+//        clearInterval(time)
+//    },5*1000)
+</script>
+</html>

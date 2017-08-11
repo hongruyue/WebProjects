@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html ng-app="ct1">
+	<head>
+		<meta charset="UTF-8">
+		<title>模板信息1</title>
+		<link rel="stylesheet" href="../../bs/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="../../css/main.css" />
+		<link rel="stylesheet" href="../../css/style.css" />
+		<link rel="stylesheet" href="../../css/collaboration.css">  
+		<link rel="stylesheet" href="../../bs/css/treeTable.min.css"/>
+		<link rel="stylesheet" href="../../bs/css/zTreeStyle.css" />
+		<script type="text/javascript" src="../../bs/js/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="//cdn.bootcss.com/mustache.js/2.3.0/mustache.js"></script>
+		<script type="text/javascript" src="../../bs/js/angular.min.js"></script>
+		<script type="text/javascript" src="../../bs/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../../bs/js/jquery.treeTable.js"></script>
+		<script type="text/javascript" src="../../js/url.js"></script>
+		<script src="../../bs/js/jquery.validationEngine.min.js"></script>
+		<script src="../../bs/js/jquery.validationEngine-zh-CN.js"></script>
+		<script src="js/coordinationTemplate.js"></script>
+		<script src="../../js/addTOrg.js"></script>
+		<script src="../../bs/js/jquery.ztree.all-3.5.js"></script>
+		<script src="../../bs/js/jquery.ztree.exedit.js"></script>
+		 <style type="text/css">
+        .form-group{
+            line-height: 34px;
+        }
+        table {
+            font-size: 14px;
+            
+        }
+        .table{border: 0;margin:0;}
+        
+        .from{border-bottom: 1px solid #ccc;}
+        .form-inline .form-control {
+            width: 100%;margin-bottom: 10px;
+        }
+        .formErrorContent {
+            min-width: 175px !important;
+        }
+        .table_style{
+                margin-top:10px;
+                height:300px;
+                overflow-y: auto;
+             }
+             
+             .treeTable tr td .expander {
+              background-position: left center;
+              background-repeat: no-repeat;
+              cursor: pointer;
+              padding: 0;
+              zoom: 1; /* IE7 Hack */
+            }           
+            .treeTable tr.collapsed td .expander {
+              background-image: url(../../image/toggle-expand-dark.png);
+            }           
+            .treeTable tr.expanded td .expander {
+              background-image: url(../../image/toggle-collapse-dark.png);
+            }
+            .treeTable tr.selected, .treeTable tr.accept {
+              background-color: #3875d7;
+              color: #fff;
+            }           
+            .treeTable tr.collapsed.selected td .expander, .treeTable tr.collapsed.accept td .expander {
+              background-image: url(../../image/toggle-expand-light.png);
+            }           
+            .treeTable tr.expanded.selected td .expander, .treeTable tr.expanded.accept td .expander {
+              background-image: url(../../image/toggle-collapse-light.png);
+            }           
+            .treeTable .ui-draggable-dragging {
+              color: #000;
+              z-index: 1;
+            }
+            .left{
+            float: left;
+            width: 30%;
+            margin-right: 5px;      
+            }
+            .right{
+            float: left;
+            width: 68%;
+            }
+            .list{height: 275px;
+                overflow: auto;
+                border: 1px solid #ddd;
+            }
+            .View {
+                margin-top: 0;
+            }
+            #tree_table{border:  2px solid #ddd}
+            .top tr{
+            font-size: 12px;
+            }
+            .table > tbody > tr > td{
+            border-top: 0;
+            border-bottom:  1px solid #ddd;
+            }
+        </style>
+	</head>
+	<body ng-controller="coordinationTemplate1">
+		<div id="man_zone" class="mianbody">
+			<div class="softtm">
+				<input type="button" class="input_out" onmousemove="this.className='input_move'" onmouseout="this.className='input_out'" value='模板信息'/>
+				<a class="a1" href="coordinationTemplate2.html"><input type="button" class="input_out1" onmousemove="this.className='input_move1'" onmouseout="this.className='input_out1'" value="模板信息2" /></a>          
+			</div>
+			<div class="row show-grid" style="padding: 1% 1% 0% 1%;">
+				<div class="col-md-12 col-xs-12 col-sm-12 form">
+					<form ng-submit="submitForm()" class="form-inline" novalidate>
+                      <div class="form-group col-md-6 col-xs-6 col-sm-6">
+                        <label for="templateName" class="col-sm-2 control-label"><nobr>模板名称</nobr></label>
+                        <div class="col-sm-8">
+                          <input type="text"  data-validation-engine="validate[required]" class="input form-control" ng-model="formData.templateName" name="templateName" >
+                        </div>
+                      </div>
+                      <div class="form-group col-md-6 col-xs-6 col-sm-6">
+                        <label for="idRule" class="col-sm-2 control-label"><nobr>ID编制规则</nobr></label>
+                        <div class="col-sm-8">
+                          <input type="text"  data-validation-engine="validate[required]" class="input form-control text-input"  ng-model="formData.idRule" name="idRule" >
+                        </div>
+                      </div>
+                      <br>
+                      <div class="form-group col-md-6 col-xs-6 col-sm-6">
+                        <label for="idLink" class="col-sm-2 control-label"><nobr>ID生产环节</nobr></label>
+                        <div class="col-sm-8">
+                          <input type="text"  data-validation-engine="validate[required]"  class="input form-control" ng-model="formData.idLink" name="idLink" >                   
+                        </div>
+                      </div>
+                      <div class="form-group col-md-6 col-xs-6 col-sm-6">
+                        <label for="idPoeriod" class="col-sm-2 control-label"><nobr>ID生命周期</nobr></label>
+                        <div class="col-sm-8">
+                          <input type="text"  data-validation-engine="validate[required]" class="input form-control" ng-model="formData.idPoeriod" name="idPoeriod" >
+                        </div>
+                      </div>
+                       <br>
+                      <div class="form-group col-md-6 col-xs-6 col-sm-6">
+                        <label for="idApply" class="col-sm-2 control-label"><nobr>ID应用</nobr></label>
+                        <div class="col-sm-8">
+                          <input type="text" data-validation-engine="validate[required]" class="input form-control" ng-model="formData.idApply" name="idApply">
+                        </div>
+                      </div>
+                      <div class="col-md-5 col-xs-5 col-sm-5">
+                            <div class="col-md-10 col-xs-10 col-sm-10">
+                            	<button type="submit" class="btn btndel-handle1" >保存</button>
+                            </div>
+                      </div>   
+					</form>
+				</div>
+			 	<div class="col-md-12 col-xs-12 col-sm-12" >
+                    <div class="table-responsive">
+                    <button type="button" class="btn btndel-handle1" data-toggle="modal" data-target="#myModal" onclick = "addOrganization()" > &nbsp;&nbsp; 添加 &nbsp;&nbsp;</button>
+                     <div class="table_style">
+                        <table  id="tree_table" class="table table-bordered table-hover">
+                           <thead>                     
+                            <tr>
+                                <th>名称（区域+组织机构>部门信息>业务系统）</th>
+                                <th>操作</th>
+                            </tr>
+                           </thead>
+                           <tbody>
+                           </tbody>
+                          </table>
+                     </div>
+                    </div>
+			 	</div>	
+			
+			</div>
+		</div>
+<!-- 添加区域组织机构 -->   
+<div class="modal fade" id="myModal"  aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title">
+                选择区域
+                </h4>
+            </div>
+            <div class="modal-body">
+            <div style="width: 100%;height: 300px">
+                <div class="left">  
+                    <div class="View">区域列表</div>
+                    <div class="list listTree">
+                    <ul id="tree" class="ztree"></ul>
+                    </div>
+                </div>
+                <div class="right">     
+                    <div class="View">组织机构列表 &nbsp;<span id="rmname"></span></div>
+                    <input type="hidden" id="rmid">
+                    <div class="list">
+                        <table class="table top table-condensed">
+                        <thead>
+                            <tr>
+                                <th width="5%"><input type="checkbox"  onclick="swapCheck()"> </th>
+                                <th width="10%">序号</th>                             
+                                <th width="85%">组织机构名称</th>
+                            </tr>               
+                         </thead>
+                           <tbody id="Torg">
+                           </tbody>
+                          </table>                                          
+                        </div>                      
+                    </div>
+                </div>  
+                                    
+            </div>
+            <div class="modal-footer">
+                <span id="torgMsg" style="float: left;color: red"></span>
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary" onclick = "saveTorg()">保存</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 添加部门信息 -->
+<div class="modal fade" id="Dm"  aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title">
+                选择部门
+                </h4>
+            </div>
+            <div class="modal-body">
+                <div style="width: 100%;height: 300px">     
+                    <div class="View">部门信息列表</div>
+                    <input type="hidden" id="regionalId">
+                    <input type="hidden" id="orgId">
+                    <div class="list">
+                        <table class="table top table-condensed">
+                        <thead>
+                            <tr>
+                                <th width="5%"><input type="checkbox"  onclick="swapCheck()"> </th>
+                                <th width="10%">序号</th>                             
+                                <th width="85%">部门名称</th>
+                            </tr>               
+                         </thead>
+                           <tbody id="Dt">
+                           </tbody>
+                          </table>                                          
+                    </div>                      
+                </div>  
+                                    
+            </div>
+            <div class="modal-footer">
+                <span id="DmMsg" style="float: left;color: red"></span>
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                </button>
+                <button type="button" class="btn btn-primary" onclick = "saveDm()">
+                    保存
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 添加系统信息 -->
+<div class="modal fade" id="system"  aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title">
+                选择业务系统
+                </h4>
+            </div>
+            <div class="modal-body">
+                <div style="width: 100%;height: 300px">     
+                    <div class="View">业务系统信息列表</div>
+                    <input type="hidden" id="departId">
+                    <div class="list">
+                        <table class="table top table-condensed">
+                        <thead>
+                            <tr>
+                                <th width="5%"><input type="checkbox"  onclick="swapCheck()"> </th>
+                                <th width="10%">序号</th>                             
+                                <th width="40%">系统名称</th>
+                                <th width="45%">系统地址</th>
+                            </tr>               
+                         </thead>
+                           <tbody id="System">
+                           </tbody>
+                          </table>                                          
+                    </div>                      
+                </div>  
+                                    
+            </div>
+            <div class="modal-footer">
+                <span id="systemMsg" style="float: left;color: red"></span>
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                </button>
+                <button type="button" class="btn btn-primary" onclick = "saveSystem()">
+                    保存
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+	</body>
+</html>

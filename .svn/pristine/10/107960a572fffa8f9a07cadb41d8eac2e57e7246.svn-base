@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0px;padding: 0px;
+        }
+        .box{
+            width: 873px;
+            height: 531px;
+            background: url("img1/bianhuan.png") no-repeat;
+            margin: 0 auto;
+        }
+        button{
+            margin-top: 70px;
+            margin-left: 20px;
+            border-radius: 40%;
+            background: none;
+            border: 1px solid #089efd;
+        }
+        .left{
+            width: 450px;
+            margin-top:50px;
+            margin-left: 64px;
+            float: left;
+        }
+        .left p{
+            text-align: center;
+        }
+        .right{
+            width: 250px;
+            float: right;
+            margin-right: 60px;
+            margin-top:50px;
+        }
+        .right p{
+            text-align: center;
+        }
+        .numb{
+              margin-right: 470px;
+          }
+        .numb1{
+            margin-right:290px;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="btn">
+        <button>上一组</button>
+        <button>下一组</button>
+    </div>
+
+    <div class="left">
+        <img src="img1/1.jpg" width="420" height="260"/>
+        <p>第一组第<span class="span1">1</span>张</p>
+        <p  class="numb" ><span class="nb1">1</span>/4</p>
+    </div>
+
+    <div class="right">
+        <img src="img1/5.jpg" width="250" height="260"/>
+        <p>第二组第<span class="span2">1</span>张</p>
+        <p class="numb1" ><span class="nb2">1</span>/3</p>
+    </div>
+</div>
+</body>
+<script>
+    var btn=document.getElementsByTagName("button");
+    var leftimg=document.getElementsByClassName("left")[0];
+    var rightimg=document.getElementsByClassName("right")[0];
+    var imgsL=leftimg.getElementsByTagName("img")[0];
+    var imgsR=rightimg.getElementsByTagName("img")[0];
+    var span1=document.getElementsByClassName("span1")[0];
+    var span2=document.getElementsByClassName("span2")[0];
+    var nb1=document.getElementsByClassName("nb1")[0];
+    var nb2=document.getElementsByClassName("nb2")[0];
+    var num=0;
+    var type=0;
+    var i=0;
+    btn[0].onclick=function(){
+        if(type){
+            i++;
+            if(i>=4){
+                i=0;
+            }
+        }else{
+            i--;
+            if(i<0){
+                i=3;
+            }
+        }
+    }
+    leftimg.onclick=function(){
+        num++;
+        imgsL.src="img1/"+num+".jpg"
+        span1.innerHTML=num;
+        nb1.innerHTML=num;
+        if(num>=4){
+            num=0;
+        }
+    }
+    rightimg.onclick=function(){
+        num++;
+        imgsR.src="img1/"+(num+4)+".jpg"
+        span2.innerHTML=num;
+        nb2.innerHTML=num;
+        if(num>=3){
+            num=0;
+        }
+    }
+</script>
+</html>

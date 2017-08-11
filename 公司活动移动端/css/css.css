@@ -1,0 +1,287 @@
+html{
+    font-size: 100px;
+    height: 100%;
+}
+.body{
+    position: relative;
+}
+img{
+    max-width: 100%;
+}
+header{
+    width: 6.4rem;
+    height: 100%;
+    margin: 0 auto;
+
+}
+header ul{
+    width: 6.4rem;
+    height: 2.4rem;
+    position: relative;
+}
+header li{
+    position: absolute;
+    top:0;
+    left:0;
+    display: none;
+}
+header li:nth-child(1){
+    display: block;
+    z-index: 1;
+}
+ nav{
+     width: 6.4rem;
+     height: 0.6rem;
+     line-height: 0.6rem;
+     overflow-x: scroll;
+ }
+ ul{
+     width: 8rem;
+ }
+nav li{
+    text-align: center;
+    width:1rem ;
+    height: 0.6rem;
+    line-height: 0.6rem;
+    border: 0.01rem solid #999999;
+    border-radius: 0.1rem;
+    margin-right: 0.1rem;
+    float: left;
+
+}
+
+.point{
+    position: absolute;
+    top:2.1rem;
+    left:2.6rem;
+    z-index:2;
+    overflow: hidden;
+}
+.point p{
+    width: 0.1rem;
+    height: 0.1rem;
+    border-radius: 50%;
+    border: 0.01rem solid #999999;
+    background: #FFFFFF;
+    margin: 0.1rem;
+    float:left;
+}
+.point p:nth-child(1){
+    background: #2718ff;
+}
+.problem{
+    width: 6.4rem;
+    height:3rem;
+    background:#DAF5FF;
+}
+.p_header{
+    width:5.62rem;
+    height:0.52rem ;
+    margin: 0 auto;
+    position: relative;
+    background: url("../img/1.png") 0 0 no-repeat;
+    background-size: 100% 100%;
+}
+.p_header p{
+    width: 1.2rem;
+    height:2.4rem;
+    position: absolute;
+}
+.p_header p:nth-child(1){
+    top:0.5rem;
+    left:-1.6rem;
+    background: url("../img/01.png") 0 0 no-repeat;
+    background-size: 100% 100%;
+    animation: problem1 1s linear forwards;
+}
+@keyframes problem1 {
+    form{left:-1.6rem}
+    to{left:-0.38rem}
+}
+.p_header p:nth-child(2){
+    top:0.5rem;
+    left:1.3rem;
+    background: url("../img/02.png") 0 0 no-repeat;
+    background-size: 100% 100%;
+    opacity: 0;
+    animation: problem2 2s 1s linear forwards;
+}
+@keyframes problem2 {
+    form{opacity: 0}
+    to{opacity: 1}
+}
+.p_header p:nth-child(3){
+    top:0.5rem;
+    left:3.1rem;
+    opacity: 0;
+    background: url("../img/03.png") 0 0 no-repeat;
+    background-size: 100% 100%;
+    animation: problem3 2s 1s linear forwards;
+}
+@keyframes problem3 {
+    form{opacity: 0}
+    to{opacity: 1}
+}
+.p_header p:nth-child(4){
+    top:0.5rem;
+    left:6rem;
+    background: url("../img/04.png") 0 0 no-repeat;
+    background-size: 100% 100%;
+    animation: problem4 1s linear forwards;
+}
+@keyframes problem4{
+    form{left:6rem}
+    to{left:4.8rem}
+}
+.active{
+    width: 6.24rem;
+    height:0.6rem;
+    line-height: 0.6rem;
+    border: 0.08rem solid #cccccc;
+    color:#410000;
+}
+.active h4{
+    color: #FF5A00;
+    font-size: 0.36rem;
+    float: left;
+    padding-left: 0.2rem;
+}
+.box p{
+    height: 0.6rem;
+}
+.box{
+    width:4.2rem;
+    height: 0.6rem;
+    float: right;
+    overflow: hidden;
+}
+.inner{
+    height: 4rem;
+}
+.teacher{
+    width: 6.4rem;
+    height:3.4rem;
+    text-align: center;
+    background: url("../img/bg.png") 0 0 no-repeat;
+    background-size: 100% 100%;
+}
+.teacher h4 img{
+    width: 5.6rem;
+    margin-top: 0.1rem;
+}
+.teacher_left{
+    width: 2.3rem;
+    float: left;
+}
+.teacher li{
+    width: 2rem;
+    height: 0.4rem;
+    line-height:0.4rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-left: 0.2rem;
+}
+.teacher h3{
+    font-size: 0.2rem;
+    margin: 0.1rem;
+}
+.pk{
+    width: 1.2rem;
+    height: 1.2rem;
+    line-height: 1.2rem;
+    border-radius: 50%;
+    border: 0.08rem solid #FAF700;
+    float: left;
+    background: #FD8C0C;
+    font-size:0.5rem;
+    color: #FFFFFF;
+    margin-left: 0.1rem;
+    margin-top: 0.2rem;
+    /*transform: rotate(360deg);*/
+    animation: pk 4s linear  infinite;
+}
+@keyframes pk{
+    0%{transform: scale(1);}
+    50%{transform: scale(0.5);}
+    70%{transform: scale(1);}
+    100%{transform: scale(1.1);}
+}
+.teacher_right{
+    width:2.3rem;
+    float: left;
+    margin-right: 0.2rem;
+}
+
+.tong{
+    width: 6.4rem;
+    height:3.4rem;
+    text-align: center;
+    background: url("../img/bg2.png") 0 0 no-repeat;
+    background-size: 100% 100%;
+    margin-bottom: 1rem;
+}
+.tong ul{
+    margin-left:0.2rem;
+}
+.tong li{
+    width: 1.25rem;
+    height: 1.25rem;
+    float: left;
+    margin: 0.1rem;
+    border-radius: 50% 50% 50% 0;
+    background:#F89E00;
+    margin-top: 0.7rem;
+    transform: rotate(-40deg);
+    font-size:0.1rem;
+    text-align: center;
+    position: relative;
+    color:#FFFFFF;
+
+}
+.tong li p{
+    height: 0.3rem;
+    line-height: 0.3rem;
+    transform: rotate(40deg);
+    position: absolute;
+    top:0.3rem;
+    left:0.3rem;
+}
+.tong li:nth-child(2){
+    background:#60A204;
+}
+.tong li:nth-child(3){
+    background:#A926CE;
+}
+.tong li:nth-child(4){
+    background:#09A7C0;
+}
+
+footer{
+    width: 6.3rem;
+    height: 1rem;
+    line-height: 1rem;
+    position: fixed;
+    bottom:0;
+    left:0;
+    border-top: 0.01rem solid #999999;
+    background: #FFFFFF;
+}
+footer p{
+    width: 2.0rem;
+    height: 0.4rem;
+    line-height: 0.4rem;
+    float: left;
+    margin-top: 0.2rem;
+    border-right: 0.01rem solid #999999;
+    text-align: center;
+}
+footer p:nth-child(3){
+    border-right: none;
+}
+footer p img{
+    width: 0.4rem;
+    height: 0.4rem;
+    float: left;
+    margin-left: 0.4rem;
+}

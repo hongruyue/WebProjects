@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html  xmlns:ng="http://angularjs.org"  ng-app="index" ng-controller="indexCtrlgroup">
+	<head>
+		<meta  charset="utf-8">
+		<meta http-equiv="X-Ua-Compatible" content="IE=9"/>
+		<meta http-equiv="access-Control-allow-Origin" content="*">
+		<title>登陆页面</title>
+		<link rel="stylesheet" href="css/login.css" />
+		<script type="text/javascript" src="bs/js/jquery-1.11.3.min.js" ></script>
+		<script type="text/javascript" src="bs/js/angular.min.js" ></script>
+		<script type="text/javascript" src="bs/js/bootstrap.min.js" ></script>
+		<script type="text/javascript" src="js/url.js" ></script>
+		<script type="text/javascript" src="js/index.js" ></script>	
+	</head >
+	<body >
+	
+		<div class="bg_yun">
+			<IMG src="img/bg_1.png" >
+	</div>
+	<div id="darkbannerwrap" style="border-radius: 5px;">
+		<div class="darkbannerwrap_1">
+			<span id="img_left"><img src="img/yw2.png"  /></span>
+			<IMG src="img/bg_4.png" >
+		</div>
+		<div class="img">
+		</div>
+	</div>
+	<div id="login" >	
+		 <div id="wrapper">
+			<div id="content">	
+			<form action="">
+					<div class="form" >
+
+						<P>
+						<nobr>
+							<label for="username">
+								账户 :
+							</label>
+							<input id="username" type="text" name="username" ng-model="username" placeholder="请输入账号" /><span id="message"></span>
+						</nobr>
+						</P>
+						<P>
+						<nobr>
+							<label for="password">
+								密码 :
+							</label> 
+							<input id="password" type="password" ng-model="password" name="password" placeholder="请输入密码"  /><span id="message1"></span>
+							</nobr>
+						</P>
+						<p >
+						<nobr>
+							<label for="code" style="margin-left: -13px;">
+								验证码 :
+							</label>
+							<input id="code" type="text" name="code" ng-model="code" autocomplete="off" />
+							<img  id="codeImage" style="cursor: pointer;" alt="验证码"
+										width="60" height="24" ng-src="{{myCode}}" ng-click="refresh()"/>
+							<span id="message2"></span>
+						</nobr>
+						</p>
+						<button class="positive" type="button"  ng-click="sub(username,password,code);" >
+							<IMG src="img/key.png" alt="提交" >
+							登录
+						</button>
+						
+						<ul id="forgottenpassword">
+							<li >
+								<a href="javascript:;" id="btnToggle">用户注册</a>
+							</li>
+							<li class="boldtext">
+								 | 
+							</li>
+							<li>
+								<a href="javascript:;" id="wangpassd">忘记密码?</a>
+							</li>
+						</ul>
+						
+					</div>
+					</form>			
+			</div>
+		</div>
+</div>
+	</body>
+</html>

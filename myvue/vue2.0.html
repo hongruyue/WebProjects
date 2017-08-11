@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+<div class="box">
+    <input type="button" @click="add" value="添加">
+   <ul>
+       <li v-for=" (item,index) in arr" track-by="index">{{index}}{{item}} </li>
+       <li v-for=" (lis,key) in list" :key="index">{{lis}} {{key}}</li>
+   </ul>
+</div>
+</body>
+<script>
+    var vm=new Vue({
+//        el:".box",
+        aa:11,//自定义属性 不会显示
+        data:{
+            a:1,
+            arr:['apple','orange','egg'],
+            list:{
+                a:'apple',
+                b:'banana',
+                c:'organe'
+            }
+        },
+        methods:{
+            add:function(){
+                this.arr.push('tomato');
+            }
+        }
+
+    }).$mount(".box");
+
+</script>
+</html>

@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>测试</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+</head>
+<body>
+	<input id="btn" type="button" name="" value="移除事件">
+	<div id="out">DIV标签</div>
+</body>
+<script>
+	var out=document.getElementById('out');
+	var btn=document.getElementById('btn');
+	out.onclick=function (){
+		alert('div被点击1111');
+	}
+	out.onclick=function (){
+		alert('div被点击2222');
+	}
+
+	out.addEventListener('click',function (){
+		alert('div被点击3333');
+	},false);
+	out.addEventListener('click',function (){
+		alert('div被点击4444');
+	},false);
+	
+
+	function addEvent(obj,type,fn){
+		if (obj.addEventListener) {
+			obj.addEventListener(type,fn,false);
+		} else{
+			obj.attachEvent('on'+type,fn);
+		};
+	}
+	function removeEvent(obj,type,fn){
+		if (obj.removeEventListener) {
+			// alert('11')
+			obj.removeEventListener(type,fn,false);
+		} else{
+			obj.detachEvent('on'+type,fn);
+		};
+	}
+
+	function dianji(){
+		alert('你好 点击');
+	}
+
+	addEvent(out,'click',dianji);
+	addEvent(out,'mouseover',function (){
+		out.style.background='red';
+	})
+	addEvent(out,'mouseout',function (){
+		out.style.background='';
+	})
+
+	btn.onclick=function (){
+		removeEvent(out,'click',dianji);//移除事件，第三个参数必须是函数名
+	}
+</script>
+</html>

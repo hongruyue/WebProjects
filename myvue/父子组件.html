@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="js/vue.js"></script>
+    <script src="js/vue1.0.js"></script>
+    <link rel="stylesheet" href="css/animate.min.css"/>
+    <style>
+
+
+    </style>
+</head>
+<body>
+<div class="box">
+<aaa></aaa>
+</div>
+<template id="aaa">
+    <h1>111111</h1>
+    <bbb :m="msg2"></bbb>
+</template>
+</body>
+
+<script>
+    var vm=new Vue({
+        el:".box",
+        data:{
+          a:'aaa'
+        },
+      components:{
+          'aaa':{
+              data:function(){//vue默认情况下，子组件不能访问父组件的数据
+                  return{
+                      msg2:'我是父组件的数据'
+                  }
+              },
+              template:'#aaa',
+              components:{
+                  'bbb':{
+                      props:['m'],
+                      template:'<h3>我是bbb组件->{{m}}</h3>'
+                  }
+              }
+          }
+      }
+
+
+
+    })
+</script>
+</html>

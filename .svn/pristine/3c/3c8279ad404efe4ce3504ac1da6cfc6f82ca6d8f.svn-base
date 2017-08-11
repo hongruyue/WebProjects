@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../angular-1.5.8/angular.min.js"></script>
+    <script src="../angular-1.5.8/angular-route.js"></script>
+</head>
+<body ng-app="app1">
+<div ng-controller="con1">
+    <!--链接需要添加#-->
+    <!--路由实现的基础-->
+    <a href="#/user">用户名</a>
+    <a href="#/pass">密码</a>
+    <br>
+    <ng-view></ng-view>
+</div>
+</body>
+<script>
+    var app=angular.module("app1",["ngRoute"]);
+    app.controller("con1",function($scope){
+
+    });
+//    用来配置所需要的信息
+    app.config(function($routeProvider){
+        $routeProvider
+//                判断点击的a标签的链接
+                .when("/user",{
+//                    路由所展示的内容
+                    template:"<div>这是一个{{a}}</div>",
+//                    控制器控制对应的template
+                    controller:function($scope){
+                        $scope.a="路由内容";
+                    }
+                })
+                .when("/pass",{
+                    template:"这是一个{{b}}",
+                    controller:function($scope){
+                        $scope.b="sadhfusdgf";
+                    }
+                })
+    })
+</script>
+</html>

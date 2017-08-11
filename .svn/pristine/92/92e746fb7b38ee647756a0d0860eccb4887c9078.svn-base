@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8">
+            <div id="mycaroussel" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <!--data-slide-to显示到特定的位置-->
+                    <li data-target="#mycaroussel" data-slide-to="0" ></li>
+                    <li data-target="#mycaroussel" data-slide-to="1" class="active"></li>
+                    <li data-target="#mycaroussel" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                <div class="item">
+                    <div class="carousel-caption">第一张</div>
+                    <img src="img/1.jpg" alt=""/>
+                </div>
+                <div class="item active">
+                    <div class="carousel-caption">第2张</div>
+                    <img src="img/2.jpg" alt=""/>
+                </div>
+                <div class="item">
+                    <div class="carousel-caption">第3张</div>
+                    <img src="img/3.jpg" alt=""/>
+                </div>
+            </div>
+            </div>
+            <a href="#mycaroussel" class="left carousel-control" data-slide="prev">
+                <span class="glyphicon glyphicon-arrow-left"></span>
+            </a>
+            <a href="#mycaroussel" class="right carousel-control" data-slide="next">
+                <span class="glyphicon glyphicon-arrow-right"></span>
+            </a>
+        </div>
+    </div>
+</div>
+<button class="btn">按钮1</button>
+<button class="btn">按钮1</button>
+<button class="btn">按钮1</button>
+<button class="btn">按钮1</button>
+</body>
+<script>
+    $(function(){
+        $("#mycaroussel").carousel({
+//            设置间隔时间
+            interval:1000,
+            pause:"hover",
+//            wrap:false
+        })
+        $(".btn").eq(0).click(function(){
+            $("#mycaroussel").carousel(2);
+        })
+    })
+</script>
+</html>

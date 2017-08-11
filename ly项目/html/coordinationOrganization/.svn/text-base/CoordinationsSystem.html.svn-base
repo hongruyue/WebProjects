@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="sys">
+
+	<head>
+		<meta charset="utf-8">
+		<title>部门管理>>系统管理>>事项管理>>印章管理</title>
+		<link rel="stylesheet" href="../../bs/css/bootstrap.min.css">
+		<link rel="stylesheet" href="../../css/main.css" />
+		<link rel="stylesheet" href="../../css/style.css" />
+		<link rel="stylesheet" href="../../css/collaboration.css">
+		<script type="text/javascript" src="../../bs/js/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="../../bs/js/angular.min.js"></script>
+		<script type="text/javascript" src="../../bs/js/angular-route.min.js"></script>
+		<script type="text/javascript" src="../../bs/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../../js/url.js"></script>
+		<script src="../../bs/js/jquery.page.js"></script>
+		<script src="../../bs/js/jquery.form.js"></script>
+		<script src="js/CoordinationsSystem.js"></script>
+		<style type="text/css">
+			a,
+			a:hover {
+				text-decoration: none;
+			}
+			
+			table {
+				font-size: 12px;
+			}
+			p {
+			    margin: 5px 0;
+			    font-size: 12px;
+			}
+
+			.hover {
+				border-bottom: 1px solid #ddd;
+			}
+			
+			.top {
+				border-bottom: 2px solid #ddd;
+			}						
+			.View {
+				height: 28px;
+			}			
+			.table > tbody > tr > td {
+				border-top: 0
+			}
+			
+			.table {
+				margin-bottom: 0px;
+			}
+			
+			#approvalTable {
+				font-size: 12px;
+			}
+			
+			.table_style {
+				margin-bottom: 20px;
+			}					
+			.table > tbody > tr > td {
+				border-top: 0
+			}
+			
+			.table {
+				margin-bottom: 0px;
+			}
+			
+			td {
+				height: 30px;
+			}
+			
+			form {
+				margin: 0
+			}
+			
+			.list {
+				height: 380px;
+				overflow-y: auto;
+			}
+			
+			.listTree {
+				border: 1px solid #ddd;
+				padding-left: 20px;
+			}
+			
+			.formErrorContent {
+				min-width: 190px !important;
+			}
+			
+			.softtm b {
+				line-height: 40px;
+				margin-left: 20px;
+				color: #fff;
+			}
+			
+			#sel {
+				border: 1px solid #ddd;
+				padding-top: 5px;
+				height: 380px;
+				overflow-y: auto;
+			}
+			
+			.btm {
+				color: #fff;
+				background-color: #00BCF2;
+				border-radius: 6px;
+				font-weight: 400;
+				border: 1px solid #ddd;
+				padding: 1px 10px;
+			}
+			
+			.btm:hover {
+				color: #157fb3;
+				background-color: #fff;
+				border-color: #adadad;
+			}
+			
+			.nav-tabs {
+				border-bottom: 1px solid #ddd;
+			}
+			
+			.nav-tabs>li {
+				position: relative;
+				font-size: 12px;
+				top: 1px;
+			}
+			
+			.nav-tabs>li>a:hover {
+				color: #157fb3;
+				background-color: #fff !important;
+			}
+			
+			.active a {
+				border-bottom: none;
+			}
+			.nav-tabs > li > a{
+				border-radius: 10px 10px 0 0;
+			}
+			.nav > li > a {
+				border: 1px solid #ddd;
+				padding: 8px 15px;
+				background-color: #00BCF2;
+				color: #fff;
+			}
+		</style>
+	</head>
+
+	<body ng-controller="sysCtrl">
+		<div id="man_zone" class="mianbody">
+			<div class="softtm">
+				<div class="col-md-2 col-xs-3 col-sm-3"><b> > >  {{organizationName}}</b></div>
+
+				<a class="a" type="button" id="back" ng-click="back()" style="float:right;margin:5px 20px 5px 5px;">
+					<img alt="返回" src="../../img/back_buss.png" />
+				</a>
+			</div>
+			<div class="row show-grid" style="padding: 1% 1% 0% 1%;">
+				<div class="col-md-2 col-xs-3 col-sm-3" style="height:35px;">
+					<button class="btndel-handle" id="add" type="button" ng-click="intoAddDep()">增加</button>
+					<div class="operation" style="display:inline-block;">
+						<button type="button" class="btn btndel-handle" ng-click="intoUpdateDep()">修改</button>
+						<button type="button" class="btn btndel-handle" ng-click="deleteDep()">删除</button>
+					</div>
+					<!--区域id  -->
+					<input type="hidden" ng-value='regionalId' id="regionalId" />
+					<!--组织机构id  -->
+					<input type="hidden" ng-value='id' id="orgId" />
+					<!--选中部门id  -->
+					<input type="hidden" id="departId" ng-value="departId">
+					<div class="col-md-12 col-xs-12 col-sm-12 View"><span>部门列表</span></div>
+					<div id="sel" class="col-md-12 col-xs-12 col-sm-12">
+						<p ng-repeat="x in departs">
+							<span ng-if="x.departId == departId">
+								<input type="radio"  name="depart" id="{{x.departId}}" checked="checked" ng-click="depart(x.departId)">{{x.departName}}
+							</span>
+							<span ng-if="x.departId != departId">						
+								<input type="radio"  name="depart" id="{{x.departId}}" ng-click="depart(x.departId)">{{x.departName}}
+							</span>
+						</p>
+					</div>
+				</div>
+				<div class="col-md-10 col-xs-9 col-sm-9" id="myTab" style="display:inline-block;">
+					<div class="col-md-12 col-xs-12 col-sm-12">
+						<ul class="nav nav-tabs">
+							<li class="active" id="systemLi">
+								<a href="#systems" id="systems" data-toggle="tab" ng-click="intoSystem()">业务系统管理列表</a>
+							</li>
+							<li id="matterLi">
+								<a href="#matters" id="matters" data-toggle="tab" ng-click="selectHandMatter()">办理事项管理列表</a>
+							</li>
+							<li id="signetLi">
+								<a href="#signets" id="signets" data-toggle="tab" ng-click="selectsignets()">印章管理列表</a>
+							</li>
+						</ul>
+					</div>
+					<div id="myTabContent" class="tab-content" style="display:block;">
+						<div ng-view></div>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+
+		<!--添加部门-->
+		<div class="modal fade" id="addDep" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+			&times;
+		</button>
+						<h4 class="modal-title" id="myModalLabel">添加部门</h4>
+					</div>
+					<form class="form-horizontal" name="addDepForm" id="addDepForm">
+						<div class="modal-body">
+							<div class="form-group">
+								<label for="" class="col-sm-2 control-label">部门名称</label>
+								<div class="col-sm-5">
+									<input type="text" name="departName" data-validation-engine="validate[required,ajax[departNameAddAjax]]" class="input form-control" id="addDepName" placeholder="请输入部门名称">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="" class="col-sm-2 control-label">部门等级</label>
+								<div class="col-sm-5">
+									<select class="form-control" name="departLv" data-validation-engine="validate[required]">
+								<option value="等级一">等级一</option>
+		     				<option value="等级二">等级二</option>
+		     				<option value="等级三">等级三</option>							
+   						</select>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="" class="col-sm-2 control-label">部门信息</label>
+								<div class="col-sm-5">
+									<input type="text" name="departInfo" data-validation-engine="validate[required]" class="input form-control" id="" placeholder="请输入部门信息">
+								</div>
+							</div>
+							<!--组织机构id-->
+							<input type="hidden" name="orgId" ng-value="orgId">
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+							<button class="btn btn-primary" ng-click="addDep()">保存</button>
+						</div>
+					</form>
+				</div>
+				<!-- /.modal-content -->
+			</div>
+			<!-- /.modal-dialog -->
+		</div>
+		<!--修改部门-->
+		<div class="modal fade" id="updateDep" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+			&times;
+		</button>
+						<h4 class="modal-title" id="myModalLabel">修改部门</h4>
+					</div>
+					<form class="form-horizontal" name="updateDepForm" id="updateDepForm">
+						<div class="modal-body">
+							<div class="form-group">
+								<label for="" class="col-sm-2 control-label">部门名称</label>
+								<div class="col-sm-5">
+									<input type="text" name="departName" data-validation-engine="validate[required,ajax[departNameUpdateAjax]]" class="input form-control" id="updateDepName" placeholder="请输入部门名称">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="" class="col-sm-2 control-label">部门等级</label>
+								<div class="col-sm-5">
+									<select class="form-control" name="departLv" data-validation-engine="validate[required]">
+									<option value="等级一">等级一</option>
+			     				<option value="等级二">等级二</option>
+			     				<option value="等级三">等级三</option>				
+	      	   				</select>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="" class="col-sm-2 control-label">部门信息</label>
+								<div class="col-sm-5">
+									<input type="text" name="departInfo" data-validation-engine="validate[required]" class="input form-control" id="" placeholder="请输入部门信息">
+								</div>
+							</div>
+
+							<!--部门id-->
+							<input type="hidden" name="departId" ng-value="departId">
+							<!--组织机构id-->
+							<input type="hidden" name="orgId" ng-value="orgId">
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+							<button class="btn btn-primary" ng-click="updateDep()">保存</button>
+						</div>
+					</form>
+				</div>
+				<!-- /.modal-content -->
+			</div>
+			<!-- /.modal-dialog -->
+		</div>
+		<!--<script src="../../bs/js/jquery.validationEngine.min.js"></script>
+		<script src="../../bs/js/jquery.validationEngine-zh-CN.js"></script>
+		<script>
+			$.validationEngine.defaults.scroll = false;
+		</script>-->
+	</body>
+
+</html>

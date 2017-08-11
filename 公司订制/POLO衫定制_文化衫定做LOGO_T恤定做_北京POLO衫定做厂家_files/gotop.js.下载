@@ -1,0 +1,31 @@
+window.onload = function() {
+    var btn = document.getElementById('btn');
+    var timer = "";
+    var isTop = true;
+    btn.onclick = function() {
+        timer = setInterval(function() {
+            var top = document.documentElement.scrollTop || document.body.scrollTop;
+            var speed = Math.floor( - top / 6);
+            document.documentElement.scrollTop = document.body.scrollTop = top + speed;
+            isTop = true;
+            if (top <= 0) {
+                clearInterval(timer)
+            }
+        },
+        30)
+    }
+    window.onscroll = function() {
+        var btn = document.getElementById('btn');
+        var top = document.documentElement.scrollTop || document.body.scrollTop;
+        var clientHeight = document.documentElement.clientHeight
+        if (top > clientHeight) {
+            btn.style.display = "block"
+        } else {
+            btn.style.display = "none"
+        }
+        if (!isTop) {
+            clearInterval(timer)
+        }
+        isTop = false
+    }
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+
+		<div id="app-7">
+			<ol>
+				<!-- 现在我们为每个todo-item提供待办项对象    -->
+				<!-- 待办项对象是变量，即其内容可以是动态的 -->
+				<todo-item v-bind:todo="listItem">
+					
+				</todo-item>
+			</ol>
+		</div>
+		<script type="text/javascript">
+			Vue.component('todo-item', {
+				props: ['todo'],
+				template: '<li>{{ todo.item1 }}</li>'
+			})
+			var app7 = new Vue({
+				el: '#app-7',
+				data: {
+					listItem:{item1:'值一',item2:'值二'}
+				}
+			})
+		</script>
+	</body>
+
+</html>

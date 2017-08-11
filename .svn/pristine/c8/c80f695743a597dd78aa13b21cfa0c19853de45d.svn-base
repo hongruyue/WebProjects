@@ -1,0 +1,10 @@
+<div>
+		<img src="images/1.jpg">
+</div>
+<p>11</p>
+<script type="text/javascript">
+	var img=document.getElementsByTagName('img')[0];
+	img.onclick=function(){
+		alert(img.src)
+	}
+</script>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组</title>
+</head>
+<body>
+<script>
+   // parseInt();将字符串转换成整数，直到识别非数字
+    //parseFloat();将字符串转换成浮点数 识别直到第二个小数点或者第一个非数字
+    //parseInt("AF",16);转换16进制
+    //NaN永远不会相等其他东西，包括它自身
+    //number(true/false)true代表1，false代表0
+   // alert(Number(true));
+    //var arr=new Array();
+    //arr[0]
+    var arr1=["a","b","c"];
+    var arr2=["e","f","g"];
+    var arr3=["5","3","8","2"];
+   // arr1.push("f");//push向后添加到数组 还回数组长度
+    //alert(arr1.push("f"));
+    //arr1.unshift("k")//unshif默认向第一个位置添加元素
+    //arr1.shift();//shift删除第一个元素,不需要传参数
+    //arr1.pop();//删除最后一个
+    //var newArr=arr.concat(arr1,arr2);//合并arr跟arr1的数组
+    //alert(newArr);
+    //sort默认从小到大
+   //arr3.sort();
+   //alert(arr3.sort());
+    //reverse，倒序排序
+    //alert(arr3.reverse());
+    //splice(start截取开始的位置,num截取的长度,有添加的元素替换)
+    //alert(arr3,splice(0,1));
+   // slice(数组截取开始位置，数组截取结束位置)
+    //join将数组转换成字符串
+    //var k=["a","b","c"]
+    //var strk=k.join("1");
+    //alert(strk);
+//数组查重
+   //split函数是根据某个字符串进行拆分成数组
+    var str="a,s,c";
+    var kk=str.split(",")//以逗号分隔字符串
+    alert(kk[0]);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp"><!--ng-app="myApp"定义页面应用的范围 所有者-->
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="angular-1.5.8/angular.js"></script>
+</head>
+<body >
+<div ng-app="myApp">
+    <div ng-controller="con">
+        <ul>
+            <!--过滤器分为有参数和没有参数-->
+            <li ng-repeat="x in arr|orderBy:'age'">
+                <span>{{x.name}}</span>
+                <span>{{x.age|lowercase|uppercase|limitTo:5}}</span>
+                <span>{{x.sex|currency}}</span>
+<!--过滤器方法：竖线隔开-->
+                </li>
+        </ul>
+        <p>{{time|date:"yyyy年MM月dd日 HH:mm:ss"}}</p>
+    </div>
+</div>
+</body>
+
+<script>
+    var app=angular.module("myApp",[]);
+    app.controller("con",function($scope){
+        $scope.arr=[
+            {name:"熊大1",age:"14",sex:"12324"},
+            {name:"熊大2",age:"22",sex:"456"},
+            {name:"熊大3",age:"16",sex:"4569"},
+            {name:"熊大4",age:"20",sex:"58796"}
+        ];
+        $scope.time="1213414"
+    })
+</script>
+</html>

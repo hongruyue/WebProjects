@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+用户名：<input type="text" name="user" class="user"/>
+密码：<input type="password" name="pass" class="pass"/>
+<button>按钮</button>
+<div></div>
+</body>
+<script src="js/jquery-1.8.3.min.js"></script>
+<script>
+    $(function(){
+        $("button").click(function(){
+            $.ajax({
+                url:"http://192.168.100.56:8888/"+$(".user").attr("name")+"="+$(".user").val()+"&"+$(".pass").attr("name")+"="+$(".pass").val(),
+                type:"get",
+                dataType:"json",
+                data:"",//post提交，写在data后面
+                success:function(data){
+                    $("div").html(data.name)
+                },
+                error:function(){
+
+                },
+                asyns:true
+            })
+        })
+    })
+</script>
+</html>

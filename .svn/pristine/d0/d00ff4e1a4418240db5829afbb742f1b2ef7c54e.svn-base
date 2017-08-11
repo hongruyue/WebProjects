@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .inp{
+          width:500px;
+            height: 50px;
+            font-size: 30px;
+        }
+        progress{
+            width: 500px;
+        }
+    </style>
+</head>
+<body>
+<input list="name" class="inp">
+<datalist id="name">
+<option value="bj">北京</option>
+<option value="sh">上海</option>
+<option value="sz">深圳</option>
+<option value="gz">广州</option>
+</datalist>
+<p>今天下午<time>15：00</time><mark>去玩</mark></p><!--所有浏览器都不兼容-->
+<progress value=10 max=100 step=10></progress><!--样式可以改变宽高，但不能改变背景颜色 min不管用只能用max-->
+</body>
+<script>
+    var pro=document.getElementsByTagName("progress")[0];
+    var num=0;
+    setInterval(function(){
+        num++;
+        pro.value=num;
+        if(num>=100){
+            num=0;
+        }
+    },100)
+</script>
+</html>

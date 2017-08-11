@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div class="box">30</div>
+</body>
+<script>
+    var time;
+    var i=30;
+    var boxs=document.getElementsByClassName("box")[0];
+    time=setInterval(function(){
+        i--;
+        if(i>=0){
+            boxs.innerHTML=i;
+        }else{
+            alert("时间到！")
+        }
+    },50)
+</script>
+</html>

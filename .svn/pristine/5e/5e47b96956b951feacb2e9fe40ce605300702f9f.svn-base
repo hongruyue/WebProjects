@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../css/style1.css"/>
+    <link rel="stylesheet" href="../css/动画.css"/>
+    <link rel="stylesheet" href="../css/reset.css"/>
+    <script src="../js/jquery-1.8.3.js"></script>
+    <script src="../js/style.js"></script>
+</head>
+<body>
+
+<!--导航条 s-->
+<div id="header">
+    <a class="logo" href="#"></a>
+    <ul class="page1_right">
+        <li>Android</li>
+        <li>iPhone</li>
+        <li>iPad</li>
+        <li>手机网页版</li>
+    </ul>
+</div>
+<!--导航条 e-->
+<!--右侧圆点 s-->
+<ul id="yd">
+    <li class="active"></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+<!--右侧圆点 e-->
+<!--手机左侧1 s-->
+<div>
+    <div class="lunbo lb1">
+
+        <div id="page1" class="page">
+            <ul class="page1_text">
+                <li class="p1">手机折800<p>随时随地买，手机专享是你不变的特权</p></li>
+            </ul>
+            <div class="iphone"></div>
+            <div class="zx"></div>
+            <div class="yun"></div>
+        </div>
+
+    </div>
+    <!--手机左侧1 e-->
+    <!--手机左侧2 s-->
+    <div class="lunbo">
+        <div id="page2" class="page2">
+            <ul class="page1_text">
+                <li class="p2">9道人工审核<p>手机专享是你不变的特权</p></li>
+            </ul>
+            <div class="ml"></div>
+            <div class="zb"></div>
+            <div class="yc"></div>
+            <div class="rw"></div>
+        </div>
+
+    </div>
+    <!--手机左侧2 e-->
+
+    <!--手机左侧3 s-->
+    <div class="lunbo">
+        <div id="page3" class="page3">
+            <ul class="page1_text">
+                <li class="p3">第一时间售后<p>你购买我呵护，你有问题我赔付</p></li>
+            </ul>
+            <div class="sj"></div>
+            <div class="yc3"></div>
+            <div class="colock-s">
+                <div class="colock-ss">
+                    <p class="colock-p"></p>
+
+                    <p class="colock-pp"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--手机左侧3 e-->
+
+    <!--手机左侧4 s-->
+    <div class="lunbo">
+        <div id="page4" class="page4">
+            <ul class="page1_text">
+                <li class="p4">百款大牌千条街<p>积分直接当钱花 任性起来买买买</p></li>
+            </ul>
+            <div class="yc3s"></div>
+            <div class="sjs"></div>
+        </div>
+    </div>
+    <!--手机左侧4 e-->
+
+    <!--手机左侧5 s-->
+    <div class="lunbo">
+        <div id="page5" class="page5">
+            <ul class="page1_text">
+                <li class="p5">100积分=1元<p>品牌团 值得逛 想你所想 懂你所爱</p></li>
+            </ul>
+            <div class="yc3ss"></div>
+            <div class="sjss"></div>
+        </div>
+    </div>
+    <!--手机左侧5 e-->
+    <!--手机左侧6 s-->
+    <div class="lunbo">
+        <div id="page6" class="page6">
+            <ul class="page1_text">
+                <li class="p4">0元换购商品<p>签到购物返积分，免费商品等你来拿</p></li>
+            </ul>
+            <div class="qd"></div>
+            <div class="yc3sss"></div>
+            <div class="sjsss"></div>
+        </div>
+    </div>
+    <!--手机左侧6 e-->
+
+</div>
+<!--手机右侧 s-->
+<div class="page1_top">
+    <div class="page1_bottom">
+        <p>请扫二维码下载</p>
+
+        <div class="page1_rem"></div>
+        <a href="http://www.baidu.com" class="pages"></a>
+    </div>
+
+</div>
+<!--手机右侧 e-->
+<!--下方箭头 s-->
+<div class="next_page" style="display: block"></div>
+<!--下方箭头 e-->
+
+
+</body>
+
+</html>

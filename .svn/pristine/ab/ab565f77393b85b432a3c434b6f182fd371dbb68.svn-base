@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .outer{
+            width: 300px;
+            height: 300px;
+            border: 1px solid red;
+            margin: 0 auto;
+           /* overflow: hidden;*/
+            overflow: scroll;
+        }
+        .inner{
+            width: 500px;
+            height: 500px;
+            background: green;
+        }
+        .inner1{
+            float: left;
+            width: 150px;
+            height: 200px;
+            background:yellow;
+        }
+        .green{
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<div class="outer">
+    <div class="inner">
+        <div class="inner1"></div>
+        <div class="inner1 green"></div>
+    </div>
+</div>
+<button class="btn">点击</button>
+<button class="btn">点击</button>
+</body>
+<script>
+    var outer=document.getElementsByClassName("outer")[0];
+    var inner=document.getElementsByClassName("inner")[0];
+    var btn=document.getElementsByClassName("btn");
+    //onscroll 上卷或者左卷触发 对象是父级 子元素要大于父元素
+    outer.onscrooll=function(){
+        console.log(outer.scrollLeft);//获取元素左卷距离  只有上卷距离跟左卷距离 获取的是父级
+        console.log(outer.scrollTop);//获取元素上卷距离  只有上卷距离跟左卷距离
+    }
+    btn[0].onclick=function(){
+        outer.scrollLeft+=10;//设置元素左卷距离
+    }
+    btn[1].onclick=function(){
+       alert(outer.scrollHeight);//获取对象可滚动的距离
+       alert(outer.scrollWidth);//获取对象可滚动的距离
+    }
+
+</script>
+</html>

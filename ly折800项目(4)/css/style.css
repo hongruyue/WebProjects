@@ -1,0 +1,219 @@
+/*头部*/
+.header {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.header_box {
+    height: 120px;
+}
+
+.header_left {
+    width: 126px;
+    height: 70px;
+    display: inline-block;
+    float: left;
+    cursor: pointer;
+    background: url("../img/logo_new.png") 0 0 no-repeat;
+    margin-top: 20px;
+    margin-left: 100px;
+}
+
+.header_right {
+    width: 340px;
+    height: 40px;
+    display: inline-block;
+    float: right;
+    cursor: pointer;
+    background: url("../img/head_three_icon.png") 0 0 no-repeat;
+    margin-top: 35px;
+    margin-right: 100px;
+}
+
+/*关于折800*/
+.gy {
+    width: 100%;
+    height: 650px;
+    background: url("../img/aboutus_pic_1_w.jpg") center 0 no-repeat;
+}
+
+/*<!--nav start-->*/
+.nav{
+    width: 1200px;
+    height: 150px;
+    margin: 0 auto;
+
+}
+.nav1 {
+    width: 1200px;
+    height: 150px;
+    margin: 0 auto;
+    background: #FFFFFF;
+    border-bottom: 1px solid #ccc;
+}
+
+.nav1 li {
+    width: 75px;
+    height: 90px;
+    float: left;
+    margin-left: 85px;
+    margin-top: 30px;
+}
+
+.nav1 li:nth-child(1) a:hover .navp {
+    background: url("../img/7_03.png") no-repeat;
+}
+
+.nav1 li a:hover p {
+    color: #e50043;
+}
+
+.navp {
+    width: 75px;
+    height: 75px;
+    background: url("../img/about_us_icon_03.png") no-repeat;
+}
+
+.nav1 p {
+    font-size: 15px;
+    padding-top: 5px;
+    padding-left: 10px;
+    color: black;
+}
+
+.navp1 {
+    width: 75px;
+    height: 75px;
+    background: url("../img/about_us_icon_03%20(2).png") no-repeat;
+}
+
+.nav1 li:nth-child(2) a:hover .navp1 {
+    background: url("../img/8_03.png") no-repeat;
+}
+
+.navp2 {
+    width: 75px;
+    height: 75px;
+    background: url("../img/1_03.png") no-repeat;
+}
+
+.nav1 li:nth-child(3) a:hover .navp2 {
+    background: url("../img/9_03.png") no-repeat;
+}
+
+.navp3 {
+    width: 75px;
+    height: 75px;
+    background: url("../img/2_03.png") no-repeat;
+}
+
+.nav1 li:nth-child(4) a:hover .navp3 {
+    background: url("../img/10_03.png") no-repeat;
+}
+
+.navp4 {
+    width: 75px;
+    height: 75px;
+    background: url("../img/3_03.png") no-repeat;
+}
+
+.nav1 li:nth-child(5) a:hover .navp4 {
+    background: url("../img/11_03.png") no-repeat;
+}
+
+.navp5 {
+    width: 75px;
+    height: 75px;
+    background: url("../img/4_03.png") no-repeat;
+}
+
+.nav li:nth-child(6) a:hover .navp5 {
+    background: url("../img/12_03.png") no-repeat;
+}
+
+.navp6 {
+    width: 75px;
+    height: 75px;
+    background: url("../img/5_03.png") no-repeat;
+}
+
+.nav li:nth-child(7) a:hover .navp6 {
+    background: url("../img/13_03.png") no-repeat;
+}
+
+.count1 {
+    width: 1200px;
+    height: 790px;
+    background: url("../img/pic_2_w.jpg") no-repeat;
+    margin: 0 auto;
+    border-bottom: 1px solid #ccc;
+}
+
+.count2 {
+    width: 1200px;
+    height: 790px;
+    background: url("../img/pic_3_w.jpg") no-repeat;
+    margin: 0 auto;
+    border-bottom: 1px solid #ccc;
+}
+
+.count3 {
+    width: 1200px;
+    height: 790px;
+    background: url("../img/pic_4_w.jpg") no-repeat;
+    margin: 0 auto;
+    border-bottom: 1px solid #ccc;
+}
+
+.count4 {
+    width: 1200px;
+    height: 790px;
+    background: url("../img/pic_5_w.jpg") no-repeat;
+    margin: 0 auto;
+}
+
+.count5 {
+    width: 1200px;
+    height: 790px;
+    background: url("../img/pic_6_w.jpg") no-repeat;
+    margin: 0 auto;
+}
+
+.count6 {
+    width: 1200px;
+    height: 790px;
+    background: url("../img/pic_7_w.jpg") no-repeat;
+    margin: 20px 85px auto;
+    border-top: 1px solid #ccc;
+}
+.count7 {
+    width: 1200px;
+    height: 790px;
+    background: url("../img/pic_8_w.jpg") no-repeat;
+    margin: 0  auto;
+    border-top: 1px solid #ccc;
+}
+.count7 li{
+    width: 210px;
+    height: 50px;
+    background:  #e50043;
+    font-size: 25px;
+    border-radius: 5px;
+    line-height: 50px;
+    text-align: center;
+    float: left;
+    margin-left: 40px;
+
+}
+.count7_btn{
+    margin: 700px 200px auto;
+}
+.count7 li a{
+    color: white;
+}
+.count7 li li:nth-child(2){
+    margin: 700px 0 auto;
+}
+.count7 li li:nth-child(3){
+    margin: 700px 0 auto;
+}

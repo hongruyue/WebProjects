@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="angular-1.5.8/angular.js"></script>
+    <style>
+        .box{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body ng-app="myApp">
+    <div ng-controller="con1">
+    <div>{{a}}</div>
+    <div>{{b.name}}</div>
+    <!--<div ng-click="c()" class="box">点击</div>&lt;!&ndash;事件定义方法&ndash;&gt;-->
+    <div>{{arr}}</div>
+    <div>{{arr[0]}}</div>
+    <div>{{c()}}</div>
+</div>
+
+</body>
+<script>
+    var app=angular.module("myApp",[]);
+    app.controller("con1",function($scope){//scope作用域 连接js函数和视图的桥梁 他是一个对象 可以定义对象方法
+        $scope.a="123"//格式定义变量
+        $scope.b={"name":"熊大","age":"18","score":"80"};
+        $scope.c=function(){
+        alert(123);
+        };
+        $scope.arr=["a","b","c"];
+    })
+
+</script>
+</html>

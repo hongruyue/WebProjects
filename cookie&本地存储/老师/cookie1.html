@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div>cookie页面</div>
+</body>
+<script>
+//    document.cookie="key=user";//设置cookie   临时性的    关掉页面就消失
+//    document.cookie="user=name";
+//    document.cookie="pass=1234";
+//    document.cookie="pass=svfasefsadb";//修改cookie   直接覆盖
+
+   var time=new Date();  // 设置期限   关闭页面不会消失
+    time.setDate(time.getDate()+7);//设置天数    只能是天数
+    document.cookie="name=张小三;expires="+time;
+    document.cookie="name1=张小三1;expires="+time;
+    document.cookie="name2=张小三2;expires="+time;
+    document.cookie="name3=张小三3;expires="+time;
+
+    var time1=new Date();//删除cookie   将有效期设置为负数
+    time1.setDate(time1.getDate()-1);
+    document.cookie="name3=ser;expires="+time1;
+
+    var cookies=document.cookie;//获取cookie   分号与空格链接
+    document.write(cookies);
+
+    var arr=cookies.split("; ")
+    document.write(arr);
+    for(var i=0; i<arr.length;i++){
+        var arr1=arr[i].split("=");
+        console.log(arr1);
+        //i=0  arr1=["name","张小三"]
+        //i=1  arr1=["name1","张小三1"]
+        //i=2  arr1=["name2","张小三2"]
+        if(arr1[0]=="name1"){
+            alert(arr1[1]);
+        }
+    }
+
+    function setCookie(key,value,time){//设置cookie函数
+        var day=new Date();
+        day.setDate(day.getDate()+time);
+        document.cookie=key+"="+value+";expires="+day;
+    }
+    function removeCookie(key){//删除cookie函数
+        var day=new Date();
+        day.setDate(day.getDate()-1);
+        document.cookie=key+"=1111;expires="+day;
+    }
+
+    function getCookie(key){
+        var cookies=document.cookie;
+        var str=cookies.split("; ");
+        for(var i=0; i<str.length;i++){
+            var str1=str[i].split("=");
+            if(str1[0]==key){
+               return str1[1];
+            }
+        }
+    }
+
+    setCookie("name","xiaoming",3);
+    setCookie("age",14,7);
+    setCookie("sex","man",15);
+
+    removeCookie("age");
+    removeCookie("sex");
+
+    getCookie("name");
+
+
+
+</script>
+</html>

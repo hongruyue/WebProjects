@@ -1,0 +1,33 @@
+[
+  {"imageName":"../img/1.jpg",
+    "imageUrl":"#",
+    "title":"文化衫",
+    "shopTitle":"房多多-棒球服定制"
+  },
+  {"imageName":"../img/2.jpg",
+    "imageUrl":"http://127.0.0.1:8081/image/2.png",
+    "title":"员工服",
+    "shopTitle":"房产企业员工服定制"
+  },
+  {"imageName":"../img/3.jpg",
+    "imageUrl":"http://127.0.0.1:8081/image/3.png",
+    "title":"棒球衫",
+    "shopTitle":"享聚派棒球衫定制"
+  },
+  {"imageName":"../img/4.jpg",
+    "imageUrl":"http://127.0.0.1:8081/image/2.png",
+    "title":"员工服",
+    "shopTitle":"房产企业员工服定制"
+  },
+  {"imageName":"../img/5.jpg",
+    "imageUrl":"http://127.0.0.1:8081/image/2.png",
+    "title":"员工服",
+    "shopTitle":"房产企业员工服定制"
+  },
+  {"imageName":"../img/6.jpg",
+    "imageUrl":"http://127.0.0.1:8081/image/2.png",
+    "title":"员工服",
+    "shopTitle":"房产企业员工服定制"
+  }
+]
+

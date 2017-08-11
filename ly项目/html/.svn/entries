@@ -1,0 +1,150 @@
+10
+
+dir
+8231
+svn://192.168.4.225/BusinessCollaboration/src/main/webapp/html
+svn://192.168.4.225
+
+
+
+2017-08-10T06:30:11.110273Z
+8230
+liuying
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3d7b4b16-1b5b-4f6c-b6ba-aa880f006f6c
+
+metadata
+dir
+
+log
+dir
+
+include
+dir
+
+coordinationTemplate
+dir
+
+basicProperty
+dir
+
+main.html
+file
+
+
+
+
+2017-08-10T06:42:24.264795Z
+2c4540e9a9bc518c54cfa0b5e013df46
+2017-08-03T02:45:15.228229Z
+8096
+anning
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+975
+
+regionalManagement
+dir
+
+superUser
+dir
+
+role
+dir
+
+menu
+dir
+
+person
+dir
+
+templateContent
+dir
+
+main_p.html
+file
+
+
+
+
+2017-08-10T06:42:24.266795Z
+f14532389cde6e75baafb8f53bd7622b
+2017-08-03T07:53:08.259589Z
+8115
+anning
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1849
+
+approvalAttribute
+dir
+
+contentVitalDocument
+dir
+
+management
+dir
+
+coordinationOrganization
+dir
+
+contentLicense
+dir
+
+user
+dir
+
+industryManagement
+dir
+

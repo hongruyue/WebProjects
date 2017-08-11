@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+      /*  .wrap{
+            width: 200px;
+            height: 200px;
+            background:red;
+            position: relative;
+        }
+        .center{
+            width: 100px;
+            height: 100px;
+            background: green;
+            position: absolute;
+            top:0;
+            left:0;
+            right:0;
+            bottom: 0;
+            margin:auto;
+        }*/
+      /*  .wrap{
+            width: 200px;
+            height: 200px;
+            background: red;
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+        }
+        .center{
+            width: 100px;
+            height: 100px;
+            background: green;
+            display: inline-block;
+        }*/
+      .wrap{
+          width: 200px;
+          height: 200px;
+          background: red;
+          position: relative;
+      }
+      .center{
+          width: 100px;
+          height: 100px;
+          background: green;
+          position: absolute;
+          top:50%;
+          left:50%;
+          transform: translate(-50%,-50%);
+      }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <div class="center"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>删除替换节点</title>
+</head>
+<body>
+<div class="box">
+    <div class="inner">第一个子元素</div>
+    <div class="inner">第一个子元素</div>
+    <div class="inner">第一个子元素</div>
+    <div class="inner">第一个子元素</div>
+
+</div>
+<button>创建</button>
+<button>克隆</button>
+<button>删除</button>
+<button>替换</button>
+<script type="text/javascript">
+    var box=document.getElementsByClassName("box")[0];
+    var inner=document.getElementsByClassName("inner");
+    var btn=document.getElementsByTagName("button");
+   /* btn[0].onclick=function(){
+        var create=document.createElement("div");
+        create.clasNsame="inner";
+        create.innerHTML="第五个元素";
+        box.appendChild(create);
+
+    }
+    btn[1].onclick=function(){
+        var clone=inner[0].cloneNode(true);
+        clone.innerHTML="克隆的"
+        box.insertBefore(clone,inner[0]);
+    }
+    btn[2].onclick=function(){
+        box.removeChild(inner[2]);//删除 通过父级删除子节点
+    }
+    btn[3].onclick=function(){
+        var replace=document.createElement("div");
+        replace.innerHTML="替换";
+        box.replaceChild(replace,inner[0]);//替换元素 新的在前，旧的在后
+    }*/
+    var type=1;
+        btn[0].onclick=function(){
+            if(type){
+                var create=document.createElement("div");
+                create.className="inner";
+                create.innerHTML="新添加的内容";
+                box.appendChild(create);
+                type=0;
+            }
+    };
+
+    btn[1].onclick=function(){
+       var clone=inner[1].cloneNode(true);
+        clone.innerHTML="新克隆的内容";
+        box.insertBefore(clone,inner[1])
+    };
+btn[2].onclick=function(){
+    box.removeChild(inner[3])
+};
+btn[3].onclick=function(){
+    var replace=document.createElement("div");
+    replace.innerHTML="替换元素";
+    box.replaceChild(replace,inner[0])
+}
+</script>
+</body>
+</html>

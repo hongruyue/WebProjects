@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="angular-1.5.8/angular.js"></script>
+</head>
+<body ng-app="myApp">
+    <div ng-controller="con">
+        <ul>
+            <li ng-repeat="x in arr" class="my-directive">{{x}}</li>
+        </ul>
+    </div>
+
+</body>
+<script>
+    var app=angular.module("myApp",[]);
+    app.controller("con",function($scope){
+       $scope.arr=["acdc","cdsf","efref","frfrg"
+       ];
+        $scope.fun=function(n){
+            $scope.arr.splice(n,1);
+        }
+    });
+    app.directive("myDirective",function(){
+       return{
+           restrict:"ECMA",
+           template:"<span ng-transclude></span><span><a href='#' ng-click='fun($index)'>×</a></span>",
+           transclude:true
+       }
+    })
+</script>
+</html>

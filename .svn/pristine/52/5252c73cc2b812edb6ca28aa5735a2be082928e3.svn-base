@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .outer{
+              width: 100px;
+              height: 200px;
+            background: red;
+            color: yellow;
+            display: none;
+            position:fixed;
+            cursor: pointer;
+            text-align: center;
+          }
+
+    </style>
+</head>
+<body>
+<div class="outer">
+   <p>大家好</p>
+   <p>天气好</p>
+   <p>真漂亮</p>
+   <p>天天开心</p>
+</div>
+</body>
+<script>
+    var outer=document.getElementsByClassName("outer")[0];
+    var bodys=document.getElementsByTagName("body")[0];
+    var pt=document.getElementsByTagName("p");
+    document.oncontextmenu=function(ev){//鼠标右击事件
+        var event=ev||event;
+        if(event.preventDefault){
+            event.preventDefault();
+        }else{
+            event.returnValue=false;//ie阻止默认事件
+        }
+        var x=event.clientX;
+        var y=event.clientY;
+        if(x>=(document.documentElement.clientWidth-100)){
+            x=document.documentElement.clientWidth-200;
+        }
+        if(y>=(document.documentElement.clientHeight-100)){
+            y=document.documentElement.clientHeight-200;
+        }
+        outer.style.left=x+"px";
+        outer.style.top=y+"px";
+        outer.style.display="block";
+    }
+    document.onclick=function(){
+        outer.style.display="none";
+    }
+    // alert(event.clientX)//获取x坐标
+     //alert(event.clientY)//获取y坐标
+     //alert(document.documentElement.clientWidth)//获取可视浏览器的最大宽度
+     //alert(document.documentElement.clientHeight)//获取可视浏览器的最大高度
+</script>
+</html>

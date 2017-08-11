@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+<div class="box">
+    <img  :src="url" alt="" :width="w"/>
+    <p style="[a,b]">今天天气不错</p>
+
+</div>
+</body>
+<script>
+//class="[red,b,c]"  class="{red:true,blue:true}"  class="json"  style="json"
+
+    var c=new Vue({
+        el:".box",
+        data:{
+           url:"img/cptj.png",
+           w:"200px",
+            c:{color:'red'},
+            d:{background:'blue'},
+            json:{
+                red:true,
+                blue:true
+            }
+        },
+        methods:{
+
+
+
+        }
+
+    })
+</script>
+</html>

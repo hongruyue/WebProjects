@@ -1,0 +1,207 @@
+		.modal-content{
+	    	position: relative;top:35px;
+	    }
+	    .modal-header>span{
+	    	color:white;position: relative;left:45%;top:-6px;
+	    }
+	    .modal-body>div>table tr td span{
+	    	padding-left:10px;
+	    }	    
+	   .modal-body>div{
+	   	margin-left:10%;width:100%;
+	   }
+	   .modal-body>div>table tr label{width: 80px;
+			text-align: right;
+			margin-right: 10px;
+			}
+  
+	    .panel{margin: 10px;}
+	    .panel-body{
+	    	min-height:50px;
+	    	padding: 5px;	    	
+	    }
+	    .panel-body>div{
+	    	width: 100%;	    	
+	    }
+	    #madata>div{
+			padding:10px;
+			margin-bottom: 5px;
+			border: 1px solid #8b99e6;
+			border-radius: 5px;
+			
+		}	      
+	    table{WORD-WRAP: break-word;TABLE-LAYOUT: fixed;word-break:break-all;}	    
+	    label{font-weight: inherit;}
+	    input{
+	    	height: 22px;
+			transition: all 0.30s ease-in-out;
+			-webkit-transition: all 0.30s ease-in-out;
+			-moz-transition: all 0.30s ease-in-out;
+			border: rgba(81, 203, 238, 1) 1px solid;
+			border-radius: 3px;
+			outline: none;
+	    }
+	    .hide{
+	    	display: none;
+	    }
+	    .show{
+	    	display: inline-block;
+	    }	    
+	    .textt{
+			margin: 10px 0;
+			height: 24px !important;
+			border: 1px solid #1575AE;
+			border-radius: 5px 0px 0px 5px;
+			outline: none;
+			width: 158px;
+		}
+		.sousuo {
+		    background: #FFFFFF;
+			margin-left: -10px;
+			outline: none;
+			border: rgb(77, 206, 243) 1px solid;
+			border-radius: 0px 5px 5px 0px;
+			padding-top: 2px;
+			padding-bottom: 2px\9\0;
+			position: relative;
+			top:5px\9\0;
+			top: -1px;
+		}
+			
+		}
+		thead{
+			background:#F2F2F2;
+			height: 30px;
+		}
+		#Funarea button{
+	    	margin:10px 5px;	    	
+	    }
+	    #Metadata{
+	    	margin-left: 1%;	
+	    }
+	    #AddMetadata .modal-body table{
+	    	width:100%;
+			padding: 0 30px;			
+	    }	    
+	    .modal-body input{
+	    	width: 50%;
+	    }	    
+	    #madata div table tr td{
+	    	width:10%;
+	    }
+	    #madata a{		    
+		   cursor:pointer;
+		    margin-left: 1%;
+		}
+		
+    	#madata span{
+    		font-size:18px;   
+    	}	
+    	#madata div>label{
+	    	width: 14%;
+			text-align: right;
+			margin-top: 10px;
+	    }
+	    #madata div>input{
+	    	margin: 0 1%;
+			width: 12%;
+	    }
+	    #creden>div{
+	    	/* font-size:18px; */
+	    	/* padding: 10px 50px; */
+	    }
+	   /* #creden div b{
+	    	width: 100px;
+			height: 100px;
+			border: 1px solid #ddd;
+			display: inline-block;
+	    } */
+	    #creden div span{
+	    	padding-right: 3%;
+	    }
+	      
+	    #signature .modal-body>div>table tr td{
+	    	width:20%;
+	    } 
+	    #AddAttachments .modal-body>div>table tr td{
+	    	width:20%;
+	    }
+	    #AddCredentials .modal-body>div>table tr td{
+	    	width:20%;
+	    }	
+		.divWidth{
+			 font-size:14px;			
+		} 
+		.attacdiv{border:1px solid #ddd;height: 155px;width: 45%;position: relative;float: left;margin: 10px 25px;}
+		.transverse{width: 55%; height: 10%; background: #ddd;margin-left: 20%;margin-top: 11%;position: absolute;opacity:0.5;}
+		.vertical{width:3%; height: 88%; background: #ddd;position: absolute;margin-left: 45%;opacity:0.5;}
+		.Certificates{line-height: 118px;position: absolute;font-size: 30px;text-align: center;width: 93%;}
+		#AddCreden a{
+			cursor:pointer;
+			border:1px solid #fff;
+			border-radius: 3px;
+			padding: 1px 2px;
+		}
+		/* #creden table{
+			width:40%;
+			
+		} */
+		#creden>div>div>table>tbody>tr>td{
+			width:20%;
+			padding: 5px;
+		}
+		#creden table tr td label{
+			
+			text-align: right;
+		}
+		#creden>div{
+			height:150px;
+			border: 1px solid #8b99e6;
+			margin: 3px 0px;
+			border-radius: 5px;
+
+		}
+		#creden .pzsclass{
+			float: left;
+			height: 93%;
+			overflow: auto;
+			padding: 10px;
+		}
+		#creden .pzclass{
+			float: left;
+			border: 1px solid #ddd;
+			height: 93%;
+			overflow: auto;
+			padding: 10px;
+			margin: 5px 0px;
+			border-radius: 5px;
+			width: 100%;
+		}
+		.pzsclass td,.pzclass td{padding: 3px 0px;}
+		.pzclass table,.pzsclass table{width: 100%;}
+		.disig{
+			display:none;
+			margin: 5px;
+		}
+		.disig table{
+			width: 100%;
+		}
+		.disig table tr td{
+			padding: 0px;
+		}
+		
+		.show_sf:hover,.togs:hover{
+			cursor: pointer;
+		}
+
+	    #creden span,.pzclass span,.disig label,.pzsclass a{
+	  	font-size: 13px;
+	    
+	    }
+	    .togs{color: #1114e4;
+			font-weight: 900;
+	    }
+	    .pzclass a{font-size: 12px;}
+	    .left_name,.disig label{
+	    	color: #ea544f;
+	    }

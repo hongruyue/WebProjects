@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+/* div{
+         width:200px;
+         height:200px;
+         background:red;
+         position:absolute;
+         top:0;
+         left:0;
+         right:0;
+         bottom:0;
+         margin:auto;
+     }*/
+    .box{
+        width: 500px;
+        height: 500px;
+        background: green;
+        display: flex;
+    }
+        .box1{
+            width:200px;
+            height:200px;
+            background:red;
+            margin:auto;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="box1">
+
+    </div>
+    <!--<img src="3.jpg"/>-->
+    <!--<p>今天天气不好，天气有点雨，还有点冷！</p>-->
+</div>
+<a href="javascript:void(0);" >test</a>
+<a href="javascript:void(0)" onclick="doSomething()">test</a>
+<a href="#" onclick="doSomething();return false;">什么问题都解决了,包括浏览器不兼容问题</a>
+<a href="#" onclick="alert();event.returnValue=false;">test</a>
+<span style="cursor:pointer" onclick="foo()">Click Me!</span>
+</body>
+</html>

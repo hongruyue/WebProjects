@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>美丽说—登陆</title>
+    <script src="../chajian/jquery-2.1.0.min.js"></script>
+    <script src="../chajian/jquery.validate.js"></script>
+    <link rel="stylesheet" href="../css/shouye.css"/>
+</head>
+<body>
+<div class="dengluzong">
+<div class="denglulogo"><img src="../img/logo.png" alt=""/></div>
+    <div class="dengluzong1">
+        <img src="../img/denglu.jpg"  alt=""/>
+        <div class="dengluxinxi">
+            <div class="dengluxinxi1">
+               <p><span>登陆美丽说</span><a href="">新用户注册</a></p>
+            </div>
+            <div  class="dengluxinxi2">
+                <form action="" method="post" class="reg-form" id="reg-form">
+                <input type="text" value="手机号/邮箱/用户名" class="input" name="nick" id="nick"/>
+                <input type="text" value=""class="input1" name="psw" id="psw"/>
+                <button>立即登录</button>
+                <p><span><input type="checkbox" class="input2"/>记住我</span><a href="">忘记密码</a></p>
+                </form></div>
+                <p class="dengluwei">无需注册，即可登录</p>
+                   <div class="dengluanniu"></div>
+                   <div class="dengluanniu1"></div>
+                   <div class="dengluanniu2"></div>
+            </div>
+    </div>
+ </div>
+</div>
+<div class="weibu">
+    <div class="weibu1">
+        <ul>
+            <li>
+                <h2>买家帮助</h2>
+                <p><a href="#">新手指南</a></p>
+                <p><a href="#">服务保障</a></p>
+                <p><a href="#">常见问题</a></p>
+            </li>
+            <li>
+                <h2>商家帮助</h2>
+                <p><a href="#">商家入驻</a></p>
+                <p><a href="#">商家后台</a></p>
+            </li>
+            <li>
+                <h2>关于我们</h2>
+                <p><a href="#">关于美丽说</a></p>
+                <p><a href="#">联系我们</a></p>
+            </li>
+            <li>
+                <h2>关注我们</h2>
+                <p><a href="#"><div class="wei"></div>新浪微博</a></p>
+                <p><a href="#"><div class="wei1"></div>QQ空间</a></p>
+                <p><a href="#"><div class="wei2"></div>腾讯微博</a></p>
+            </li>
+            <li>
+                <h2>美丽说微信服务号</h2>
+                <p><a href="#"><img src="../img/weibu1.png" alt=""/></a></p>
+            </li>
+            <li>
+                <h2>美丽说客户端下载</h2>
+                <p><a href="#"><img src="../img/weibu2.png" alt=""/></a></p>
+            </li>
+        </ul>
+
+    </div>
+    <div class="weibu2">
+        <p>Copyright ©2016 Meilishuo.com <a href="#">电信与信息服务业务经营许可证100798号</a>  <a href="#">经营性网站备案信息</a>  </p>
+        <p>京ICP备11031139号  京公网安备110108006045   客服电话：4000-800-577  文明办网文明上网举报电话：010-82615762  <a href="#">违法不良信息举报中心</a> </p>
+    </div>
+</div>
+</body>
+<script>
+    $(function(){
+        $('.input').focus(function(){
+            $('.input').val('')
+            $('.input').css({fontStyle:'normal',color:'#03210d'})
+        })
+        $('.input1').focus(function(){
+            $('.input1').css({fontStyle:'normal',color:'#03210d'})
+        })
+        $("#reg-form").validate({
+            rules:{
+                nick:{
+                    required:true,
+                    rangelength:[6,10]
+                },
+                psw:{
+                    required:true,
+                    rangelength:[10,16]
+                },
+            },
+                messages:{
+                        nick:{
+                        required:"此选项是必须书写",
+                            rangelength:jQuery.validator.format("请输入{0}到{1}位字符!!!!!!!!")
+                    },
+                    psw:{
+                        required:"此选项是必须书写",
+                        rangelength:jQuery.validator.format("请输入{0}到{1}位字符!!!!!!!!")
+                    }
+                }
+            })
+    })
+</script>
+</html>

@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div>亲亲我额而发</div>
+</body>
+<script>
+	document.oncontextmenu=function(ev){//鼠标右击事件
+			var event=ev||window.event;
+			if(event.preventDefault){
+				event.preventDefault();
+			}else{
+				event.returnValue=false;
+			}
+			alert(event.clientX);//获取鼠标x坐标
+			alert(event.clientY);//获取鼠标y坐标
+
+	}
+</script>
+</html>

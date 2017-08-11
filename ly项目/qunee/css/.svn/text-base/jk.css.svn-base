@@ -1,0 +1,43 @@
+.nodemoni{
+            height: 15px;width: 50px;border: none;background: none;"disabled="disabled"
+        }
+ul#monitoring {
+    padding: 0;
+    border-bottom: #000000 1px solid;
+    height: 20px;
+    margin: 0px;
+}
+
+
+li#monitoringli {
+    border-left: #000000 1px solid;
+    /*设置表格左边框*/
+    border-bottom: #000000 1px solid;
+    /*设置表格下边框*/
+    /*设置单元格边框*/
+    list-style: none;
+    /*清除项目列表前的标记*/
+    float: left;
+    /*设置单元格浮动，用于水平排列*/
+    display: block;
+    /*设置单元格为块级元素于用语控制大小等*/
+    width: 120px;
+    /*设置单元格宽*/
+    height: 20px;
+    /*设置单元格高*/
+    text-align: center;
+    /*设置单元格内文本对齐方式*/
+}
+li#monitoringli input{
+    width: 120px;
+    height: 18px;
+    outline: none;
+    text-align: center;
+    border:none;
+   
+}
+#right_btn{
+	width:8px;
+	height:55px;
+	background:url("../images/rightbtn.png");
+	}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="js/vue.js"></script>
+    <script src="js/vue1.0.js"></script>
+</head>
+<body>
+<div class="box">
+   <input type="text" @keydown.ctrl="show | debounce 2000">
+</div>
+</body>
+<script>
+    Vue.directive('on').keyCodes.ctrl=17;//1.0版本
+    Vue.config.keyCodes.ctrl=17;//2.0版本
+    var c=new Vue({
+        el:".box",
+        data:{
+           msg:'welcome'
+        },
+        methods:{
+           show:function(){
+               alert(1)
+           }
+          }
+
+
+
+
+    })
+</script>
+</html>

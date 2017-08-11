@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box{
+            width: 640px;
+            height: 480px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .img{
+            position: absolute;
+            top:225px;
+            left: 280px;
+            cursor: pointer;
+        }
+        .range{
+            width: 640px;
+            height: 50px;
+            /*outline: 1px solid red;*/
+            position: absolute;
+            left: 0;
+            bottom:0;
+            border-radius: 25px;
+            background: #ccc;
+            overflow: hidden;
+        }
+        .range_inner{
+            width: 640px;
+            height: 50px;
+            background: green;
+            border-radius: 25px;
+            position: absolute;
+            left: -640px;
+        }
+        .range_inner1{
+            width: 50px;
+            height: 50px;
+            background: red;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            right: 0;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <video src="vedio/video.webm" poster="01.jpg" width="640px" height="480px" ></video>
+    <img src="自定义视频作业/img/afia_6.png" alt="" width="66" height="66" class="img"/>
+    <div class="range">
+        <div class="range_inner">
+            <div class="range_inner1"></div>
+        </div>
+    </div>
+</div>
+<button>暂停</button>
+</body>
+<script>
+    var vid=document.getElementsByTagName("video")[0];
+    var imgs=document.getElementsByClassName("img")[0];
+    var range=document.getElementsByClassName("range")[0];
+    var range_inner=document.getElementsByClassName("range_inner")[0];
+    var range_inner1=document.getElementsByClassName("range_inner1")[0];
+    var box=document.getElementsByClassName("box")[0];
+    imgs.onclick=function(){
+        vid.play();
+        this.style.display="none";
+    };
+    vid.ontimeupdate=function(){
+        var now=vid.currentTime;
+        var all=vid.duration;
+        var len=640-(now/all)*640;
+        range_inner.style.left=-len+"px";
+    };
+    range.onclick=function(ev){
+        var event=ev||window.event;
+        var X=event.clientX;
+        var L=640-(X-box.offsetLeft);
+        range_inner.style.left=-L+"px";
+        vid.currentTime=vid.duration*((X-box.offsetLeft)/640);
+    };
+    var type=false;
+    range_inner1.onmousedown=function(){
+            type=true;
+    };
+    range.addEventListener("mousemove",function(ev){
+        if(type){
+            var event=ev||window.event;
+            var X=event.clientX;
+            var L=640-(X-box.offsetLeft)-25;
+            range_inner.style.left=-L+"px";
+            vid.currentTime=vid.duration*((X-box.offsetLeft)/640);
+            console.log(123);
+        }
+    });
+    document.onmouseup=function(){
+        type=false;
+    }
+</script>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div class="box"></div>
+</body>
+<script>
+    var boxs=document.getElementsByClassName("box")[0];
+    if(window.XMLHttpRequest){
+        var xhr=new XMLHttpRequest();
+    }else{
+        var xhr=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xhr.open("get","http://192.168.100.56:8888","true");
+    xhr.send();
+    xhr.onreadystatechange=function(){
+        if(xhr.readyState==4&&xhr.status==200){
+            var str=xhr.responseText;
+            boxs.innerHTML=str;
+        }
+    }
+</script>
+</html>

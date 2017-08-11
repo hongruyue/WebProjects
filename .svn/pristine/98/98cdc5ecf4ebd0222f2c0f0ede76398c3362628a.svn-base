@@ -1,0 +1,83 @@
+<html>
+    <head>
+    	    <meta charset="utf-8"/>
+    	    
+        <script type="text/javascript">
+            function loadXMLDoc()
+            {
+                var xmlhttp;
+                if (window.XMLHttpRequest)
+                {// code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp=new XMLHttpRequest();
+                }
+                else
+                {// code for IE6, IE5
+                    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                 
+                 //发送数据
+                var userData = { "name": "cxh", "password":"123456","sex": "man" };
+                 //userData 需要转换成字符串。
+                 //var  str = userData.toString();  
+                //var  str = "hello world";
+                var str  = JSON.stringify(userData);
+                
+                 xmlhttp.open("POST","http://127.0.0.1/phpLearn/9file/receive.php",true);
+                 xmlhttp.setRequestHeader("cache-control","no-cache");  
+                 xmlhttp.setRequestHeader("contentType","text/html;charset=uft-8") //指定发送的编码  
+                 xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;");   //设置请求头信息  
+                // xmlhttp.onreadystatechange = StatHandler;    //判断URL调用的状态值并处理  
+                 //xmlhttp.send(str);
+                xmlhttp.send();
+                
+                xmlhttp.onreadystatechange=function()
+                {
+                	    if(0 ==  xmlhttp.readyState)
+                	    {
+                	    	    document.writeln("服务器没有连接上");
+                	    }
+                	     
+                    if (xmlhttp.readyState==4 && xmlhttp.status==200)
+                    {
+                        //document.getElementById("myDiv").innerHTML=xmlhttp.responseXML;
+                         //document.writeln(xmlhttp.responseText);
+                        var  strJson = xmlhttp.responseText;
+                       // alert(strJson);
+                       // var  str     = JSON.stringify(strJson);
+                     //   alert(typeof strJson);
+                        var    str     = JSON.parse(strJson);
+                        //alert(typeof str);
+                        //复杂一点的json的另一种形式  
+                      
+                       document.writeln("codeNumber = "+  str.codeNumber);
+                       document.writeln("<br>");
+                       document.writeln("msg = "+ str.msg);
+                       document.writeln("<br>");
+//                     document.writeln("boolean= "+ str.boolean);
+//                     document.writeln("<br>");
+//                     document.writeln("a ="+ str.object.a);
+                       //alert(obj2.list[0].password);
+
+                    }
+                    
+                }
+                
+            }
+        </script>
+    </head>
+    <body>
+        	<form action="" id="form">
+			  用户名：<input type="text" name="user"/></br>
+			  密  码：<input type="password" name="pass" /></br>
+			  性  别：<input type="radio" name="sex" value="男"/>男
+			          <input type="radio" name="sex" value="女"/>女
+			  头  像： <input type="file" id="file" name="file"/></br>
+		 <button type="button" onclick= "loadXMLDoc()">提交</button>
+		</form>
+		
+        <div class="con"></div>
+        <div id="myDiv"><h2>Let AJAX change this text</h2></div>
+        <button type="button" onclick="loadXMLDoc()">http request</button>
+        
+    </body>
+</html>

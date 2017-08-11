@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <!--<style>
+       /* 浏览器兼容*/
+      ::-webkit-input-placeholder{/*webkit browsers谷歌 苹果*/
+           color: #999;
+      }
+        :-moz-placeholder{/*Mozilla Firefox 4 to 18*/
+        color: #999;}
+        ::-moz-placeholder{/*Mozilla Firefor 19+ */
+        color: #999;}
+        :-ms-input-placeholder{/*Internet Explorer 10+ */
+            color: #999;
+        }
+        /*placeholder设置字体*/
+    </style>-->
+</head>
+<body>
+<form action="http:\\www.baidu.com">
+    <input type="text" autocomplete="on"/><br>
+    <!--autofocus自动获取焦点-->
+    <input type="password" autofocus="autofocus"/><br>
+    <!--placeholder提供一种提示  输入为空时显示  货得焦点时消失 站位符-->
+    <input type="password" placeholder="请输入电话号码"/><br>
+    <!--pattern正则表达式-->
+    <input type="text" pattern="^1[35789][0-9]{9}$" placeholder="请输入电话号码"/><br>
+    <input type="text" pattern="[a-z,A-Z,0-9]{6,12}" placeholder="密码"/><br>
+    <!--当input类型是image的时候 宽高的自属性 可以直接设置 作用就是提交的都submit属性-->
+    <!--<input type="image" src="img/...png" width="400px"height="400px"/>-->
+    <input type="submit"/>
+</form>
+</body>
+</html>

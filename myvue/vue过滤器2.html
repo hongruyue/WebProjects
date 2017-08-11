@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="js/vue.js"></script>
+    <script src="js/vue1.0.js"></script>
+</head>
+<body>
+<div class="box">
+ <input type="text" v-model="a">
+    <ul>
+        <li v-for="item in arr | filterBy a" v-html="item"></li>
+    </ul>
+</div>
+</body>
+<script>
+//filterBy "X"过滤数据 过滤谁
+//orderBy 1/-1 排序 1正序 -1倒序
+    var c=new Vue({
+        el:".box",
+        data:{
+            a:"",
+            arr:["ahhnu","weheii","bliss","zhuquanfu","hongjuan"]
+        },
+        methods:{
+
+          }
+
+
+
+
+    })
+</script>
+</html>

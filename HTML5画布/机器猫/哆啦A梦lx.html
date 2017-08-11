@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #canvas{
+            margin:0 auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvas" width="500" height="600"></canvas>
+</body>
+<script>
+    var canvas = document.getElementById("canvas");
+    var cvs = canvas.getContext("2d");
+    //头
+    var g=cvs.createLinearGradient(250,10,250,310);
+    g.addColorStop(0,"#7BDBF6");
+    g.addColorStop(0.06,"#09A5CF");
+    g.addColorStop(0.8,"#08B6E5");
+    g.addColorStop(1,"#096883");
+
+    cvs.beginPath();
+    cvs.save();
+    cvs.rotate(30*Math.PI/180);
+    cvs.translate(50,-150);
+    cvs.arc(250,160,150,0,2*Math.PI);
+    cvs.strokeStyle="#5C5C5C";
+    cvs.lineWidth=3;
+    cvs.fillStyle=g;
+    cvs.shadowOffsetX=-2;
+    cvs.shadowOffsetY=7;
+    cvs.shadowColor="#5C5C5C";
+    cvs.shadowBlur=15;
+    cvs.stroke();
+    cvs.fill();
+    cvs.restore();
+    cvs.closePath();
+    //眼睛
+/*    cvs.beginPath();
+    cvs.arc(220,100,30,0,Math.PI,true);
+    cvs.arc(220,120,30,0,Math.PI,false);
+    cvs.lineTo(190,100);
+    cvs.lineTo(250,120);
+
+    cvs.strokeStyle="#021B22";
+    cvs.fillStyle="white";
+    cvs.lineWidth=3;
+    cvs.fill();
+    cvs.stroke();
+    cvs.closePath();*/
+
+
+
+
+    //身体 胳膊
+    cvs.beginPath();
+    cvs.moveTo(145,260);
+    cvs.lineTo(80,300);
+    cvs.lineTo(110,335);
+    cvs.lineTo(140,320);
+    cvs.lineTo(140,310);
+    cvs.lineTo(140,430);
+    cvs.lineTo(240,430);
+    cvs.arc(250,430,10,Math.PI,2*Math.PI,false);
+    cvs.lineTo(360,430);
+    cvs.lineTo(360,310);
+    cvs.lineTo(360,320);
+    cvs.lineTo(390,335);
+    cvs.lineTo(420,300);
+    cvs.lineTo(355,260);
+    cvs.lineTo(145,260);
+    cvs.fillStyle="#09A5CF";
+    cvs.fill();
+    cvs.stroke();
+    cvs.closePath();
+
+    cvs.beginPath();
+    cvs.arc(90,320,25,0,2*Math.PI);
+    cvs.fillStyle="white";
+    cvs.fill();
+    cvs.stroke();
+    cvs.closePath();
+
+    cvs.beginPath();
+    cvs.arc(410,320,25,0,2*Math.PI);
+    cvs.fillStyle="white";
+    cvs.fill();
+    cvs.stroke();
+    cvs.closePath();
+
+
+    //口袋
+    cvs.beginPath();
+    cvs.arc(250,320,80,0,Math.PI*2);
+    cvs.strokeStyle="#021B22";
+    cvs.fillStyle="white";
+    cvs.lineWidth=3;
+    cvs.stroke();
+    cvs.fill();
+    cvs.closePath();
+
+    cvs.beginPath();
+    cvs.arc(250,335,50,0,Math.PI,false);
+    cvs.lineTo(300,335);
+    cvs.strokeStyle="#021B22";
+    cvs.lineWidth=2;
+    cvs.stroke();
+    cvs.closePath();
+
+    //脸
+    drawRoundRect(cvs, 130, 100, 250, 170, 85);
+    cvs.strokeStyle = "#021B22";
+    cvs.stroke();
+    //左眼
+    drawRoundRect(cvs, 190, 60, 60, 70, 28);//x的位置  y位置  宽 高 圆角
+    cvs.strokeStyle = "#021B22";
+    cvs.stroke();
+    //右眼
+    drawRoundRect(cvs, 250, 60, 60, 70, 28);
+    cvs.strokeStyle = "#021B22";
+    cvs.stroke();
+
+
+    //铃铛
+    drawRoundRect(cvs, 135, 260, 240, 26, 13);
+    cvs.fillStyle="#B02B00";
+    cvs.fill();
+    cvs.strokeStyle = "#021B22";
+    cvs.stroke();
+
+    var ring=cvs.createLinearGradient(250,265,250,305);
+    ring.addColorStop(0.4,"#F2EB2C");
+    ring.addColorStop(1,"#A89710");
+
+    cvs.beginPath();
+    cvs.arc(250,285,20,0,2*Math.PI);
+    cvs.fillStyle=ring;
+    cvs.strokeStyle="#021B22";
+    cvs.fill();
+    cvs.stroke();
+    cvs.closePath();
+
+    cvs.beginPath();
+    cvs.moveTo(233,275);
+    cvs.lineTo(268,275);
+    cvs.moveTo(230,279);
+    cvs.lineTo(270,279);
+    cvs.moveTo(250,305);
+    cvs.lineTo(250,290);
+    cvs.stroke();
+    cvs.closePath();
+
+    cvs.beginPath();
+    cvs.arc(250,290,6,0,2*Math.PI);
+    cvs.fillStyle="#000";
+    cvs.fill();
+    cvs.closePath();
+
+    function drawRoundRect(cvs, x, y, width, height, radius){
+               cvs.beginPath();
+               cvs.arc(x + radius, y + radius, radius, Math.PI, Math.PI * 3 / 2);
+               cvs.lineTo(width - radius + x, y);
+               cvs.arc(width - radius + x, radius + y, radius, Math.PI * 3 / 2, Math.PI * 2);
+               cvs.lineTo(width + x, height + y - radius);
+               cvs.arc(width - radius + x, height - radius + y, radius, 0, Math.PI*1 / 2);
+               cvs.lineTo(radius + x, height +y);
+               cvs.arc(radius + x, height - radius + y, radius, Math.PI*1 / 2, Math.PI);
+               cvs.lineWidth=2;
+               cvs.fillStyle="white";
+               cvs.fill();
+               cvs.closePath();
+            }
+
+    cvs.beginPath();
+    cvs.arc(235,100,6,0,2*Math.PI);
+    cvs.arc(265,100,6,0,2*Math.PI);
+    cvs.fillStyle="#000";
+    cvs.fill();
+    cvs.closePath();
+
+    //鼻子
+    cvs.beginPath();
+    cvs.arc(250,135,15,0,2*Math.PI);
+    cvs.strokeStyle="#240C05";
+    cvs.lineWidth=2;
+    cvs.fillStyle="#C63400";
+    cvs.fill();
+    cvs.stroke();
+    cvs.closePath();
+    cvs.beginPath();
+    cvs.shadowOffsetX=1;
+    cvs.shadowOffsetY=1;
+    cvs.shadowColor="white";
+    cvs.shadowBlur=5;
+    cvs.arc(258,135,3,0,2*Math.PI);
+    cvs.fillStyle="white";
+    cvs.fill();
+    cvs.closePath();
+    //嘴巴
+    cvs.beginPath();
+    cvs.moveTo(250,150);
+    cvs.lineTo(250,230);
+    cvs.strokeStyle="#240C05";
+    cvs.stroke();
+    cvs.closePath();
+
+    cvs.beginPath();
+    cvs.arc(250,130,100,45*Math.PI/180,135*Math.PI/180);
+    cvs.stroke();
+    cvs.closePath();
+
+    //胡须
+    cvs.beginPath();
+    cvs.moveTo(210,160);
+    cvs.lineTo(163,145);
+    cvs.moveTo(210,170);
+    cvs.lineTo(160,170);
+    cvs.moveTo(210,180);
+    cvs.lineTo(163,195);
+
+    cvs.moveTo(300,160);
+    cvs.lineTo(345,145);
+    cvs.moveTo(300,170);
+    cvs.lineTo(350,170);
+    cvs.moveTo(300,180);
+    cvs.lineTo(345,195);
+
+    cvs.strokeStyle="#686868";
+    cvs.stroke();
+    cvs.closePath();
+
+//脚
+    cvs.beginPath();
+    cvs.moveTo(240,430);
+    cvs.arc(232,441,15,310*Math.PI/180,60*Math.PI/180,false);
+    cvs.lineTo(140,454);
+    cvs.arc(148,441,15,120*Math.PI/180,230*Math.PI/180,false);
+    // cvs.arc(142,454,24,Math.PI,Math.PI*3/2);
+    cvs.strokeStyle="#686868";
+    cvs.fillStyle="white";
+    cvs.fill();
+    cvs.stroke();
+    cvs.closePath();
+
+    cvs.beginPath();
+    cvs.save();
+    cvs.translate(120,0);
+    cvs.moveTo(240,430);
+    cvs.arc(232,441,15,310*Math.PI/180,60*Math.PI/180,false);
+    cvs.lineTo(140,454);
+    cvs.arc(148,441,15,120*Math.PI/180,230*Math.PI/180,false);
+   // cvs.arc(142,454,24,Math.PI,Math.PI*3/2);
+    cvs.strokeStyle="#686868";
+    cvs.fillStyle="white";
+    cvs.fill();
+    cvs.stroke();
+    cvs.restore();
+    cvs.closePath();
+
+
+</script>
+</html>

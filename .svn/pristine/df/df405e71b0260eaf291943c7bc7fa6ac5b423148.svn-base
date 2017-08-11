@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../hj_css/reset.css"/>
+    <link rel="stylesheet" href="../hj_css/myFooter.css"/>
+</head>
+<body>
+<!--<div class="footer">-->
+    <!--&lt;!&ndash;大图 广告部分&ndash;&gt;-->
+    <!--<div class="top">-->
+        <!--<a href="#"></a>-->
+    <!--</div>-->
+<!--</div>-->
+<!--内容块-->
+<div class="content_y">
+    <div class="con_nav">
+        <ul class="con_top">
+            <li><a href="#">团800旗下网站</a></li>
+            <li>|</li>
+            <li>
+                <a href="#"><span class="my_font">iphone</span>手机版</a>
+                <div class="big_bg">
+                    <a href="#"><img src="../hj_img/big_bg_img_v3.png" alt=""/></a>
+                </div>
+            </li>
+            <li>|</li>
+            <li><a href="#">QQ登录</a></li>
+            <li>|</li>
+            <li><a style="color: #EC1611" href="#">登录 免注册</a></li>
+            <li>|</li>
+            <li><a href="#">我的订单</a></li>
+            <li>|</li>
+            <li><a href="#"><span class="my_f"></span>购物车 <span style="color: #EC1611">0</span></a></li>
+            <li>|</li>
+            <li><a href="#">帮助中心</a></li>
+            <li>|</li>
+            <li><a href="#">卖家中心</a></li>
+        </ul>
+    </div>
+    <div class="clear"></div>
+    <!--搜索栏-->
+    <div class="search">
+        <div class="logo">
+            <a href="#"><img src="../hj_img/logo_zhe800_new.png" alt=""/></a>
+        </div>
+        <div class="input_box">
+            <form action="">
+                <div class="search_text">搜索</div>
+                <input type="text" class="search_input" placeholder=" 连衣裙"/>
+                <input type="submit" class="search_icon" value=""/>
+            </form>
+            <ul>
+                <li><a href="#">618元红包</a></li>
+                <li><a href="#">全场买3免1</a></li>
+                <li><a href="#">潮服49元3件</a></li>
+                <li><a href="#">清仓99元5件</a></li>
+                <li><a href="#">好货1件5折</a></li>
+            </ul>
+        </div>
+        <div class="search_right"></div>
+        <div class="links"><a href="#"></a></div>
+    </div>
+    <!--teb栏-->
+    <div class="teb">
+        <ul>
+            <li>
+                首页
+                <div></div>
+            </li>
+            <li>品牌团<div></div></li>
+            <li>优品汇<div></div></li>
+            <li>淘宝精选<div></div></li>
+            <li>9块9包邮<div></div></li>
+            <li>精选预告<div></div></li>
+            <li>特卖商城<div></div></li>
+            <li>积分商城<div></div></li>
+            <li>签到送好礼<div></div></li>
+        </ul>
+    </div>
+</div>
+</body>
+<script src="../hj_js/jquery-1.10.2.min.js"></script>
+<script src="../hj_js/myFooter.js"></script>
+</html>

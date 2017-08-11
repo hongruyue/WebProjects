@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>string对象</title>
+</head>
+<body>
+<script type="text/javascript">
+    var str="abvnjvldsjfuij";
+    //console.log(str.length);//获取字符串长度
+    //console.log(typeof str.length);//字符串的类型
+    //console.log(str.toLowerCase())//将字符串转化为小写
+    //console.log(str.toUpperCase())//将字符串转化为大写
+    //console.log(str.charAt(10))//返回的是指定位置的字符
+    //console.log(str.indexOf("jD"));//返回字符串首次出现的位置 如果不存在字符会返回-1
+    //console.log(str.indexOf("jv",3));//从指定位置开始返回字符串首次出现的位置    如果不存在字符会返回-1
+    //console.log(str.substring(5,7));//截取字符串 从第一个位置开始到第二个数字位置结束之间的字符串
+
+
+</script>
+</body>
+</html>

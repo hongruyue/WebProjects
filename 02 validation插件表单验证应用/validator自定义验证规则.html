@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单验证</title>
+    <style>
+
+    </style>
+</head>
+<body>
+<form action="" method="post" id="oform" >
+
+</form>
+</body>
+<script src="js/jquery.validate.min.js"></script>
+<script>
+    //自定义规则的格式：jquery.validator.addMethod(name,function(value,eiement),message)
+      $(function(){
+          jQuery.validator.addMethod("checkPost",function(value,element){
+
+
+          },"请输入有效的")
+      })
+</script>
+</html>

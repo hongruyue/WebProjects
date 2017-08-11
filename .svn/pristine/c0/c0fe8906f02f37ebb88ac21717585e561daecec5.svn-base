@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+<div class="box">
+<input type="text" v-model="msg">
+    <br/>
+    {{{msg}}}
+    <br/>
+    {{*msg}}
+
+</div>
+</body>
+<script>
+
+//{{*}}只绑定一次 {{{让标签转义}}
+    var c=new Vue({
+        el:".box",
+        data:{
+            msg:"abc"
+        },
+        methods:{
+
+
+
+        }
+
+    })
+</script>
+</html>

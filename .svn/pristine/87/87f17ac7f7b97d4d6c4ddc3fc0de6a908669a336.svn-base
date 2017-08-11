@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="angular-1.5.8/angular.js"></script>
+    <style>
+    ul{
+        list-style: none;
+    }
+    </style>
+</head>
+<body ng-app="app">
+    <div ng-controller="con1">
+    <ul>
+        <li ng-repeat="x in arr">{{x}}</li><!--有重复的不能实现-->
+    </ul>
+        <ul>
+            <li ng-repeat="y in person">{{y}}</li>
+        </ul>
+        <ul>
+            <li ng-repeat="(x,v) in person">{{x}}:{{v}}</li>
+        </ul>
+        <ul>
+            <li ng-repeat="(x,v) in arr">{{x}}--{{v}}</li>
+        </ul>
+        <ul>
+            <li ng-repeat="p in people">{{p}}</li>
+        </ul>
+        <ul>
+            <li ng-repeat="p in people">
+                {{$index}}<p ng-repeat="x in p">{{x}}</p>
+            </li>
+        </ul>
+        <ul>
+            <li ng-repeat="p in people">
+                {{$index}}<p ng-repeat="(x,v) in p">{{x}}:{{v}}</p>
+            </li>
+        </ul>
+</div>
+
+</body>
+<script>
+    angular.module("app",[]).controller("con1",function($scope){
+        $scope.arr=["a","b","c","d"];
+        $scope.person={
+            name:"张三",
+            age:"18",
+            sex:"男"
+        }
+        $scope.people=[
+            {name:"王五1",age:"15",sex:"男"},
+            {name:"王五2",age:"16",sex:"男"},
+            {name:"王五3",age:"17",sex:"男"},
+            {name:"王五4",age:"18",sex:"男"},
+            {name:"王五5",age:"19",sex:"男"},
+        ]
+
+
+    })
+
+
+</script>
+</html>

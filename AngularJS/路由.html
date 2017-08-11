@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="angular-1.5.8/angular.js"></script>
+    <script src="angular-1.5.8/angular-route.js"></script>
+</head>
+<body ng-app="myApp">
+    <div ng-controller="con">
+        <!--连接需要加# 路由通过#特性实现的-->
+        <a href="#/user">用户名</a>
+        <a href="#/pass">密码</a>
+        <br/>
+        <ng-view></ng-view>
+    </div>
+</body>
+<script>
+    //路由都是有a标签来实现的
+    var app=angular.module("myApp",["ngRoute"]);
+    app.controller("con",function($scope){
+
+    });
+    //用来配置所需要的信息
+    app.config(function($routeProvider){
+        $routeProvider
+                .when("/user",{
+                    template:"<div>这是一个{{a}}</div>",
+                    controller:function($scope){
+                        $scope.a="路由内容";
+                    }
+                })
+                .when("/pass",{
+                    template:"这是一个{{b}}",
+                    controller:function($scope){
+                        $scope.b="这个密码"
+                    }
+                })
+    })
+</script>
+</html>

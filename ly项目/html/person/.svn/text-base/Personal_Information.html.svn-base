@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html ng-app="ps">
+	<head>
+		<meta charset="UTF-8">
+		<title>个人信息</title>
+			<meta http-equiv="pragma" content="no-cache">
+		<meta http-equiv="cache-control" content="no-cache">
+		<meta http-equiv="expires" content="0">
+		<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+		<meta http-equiv="description" content="This is my page">
+		<link rel="stylesheet" href="../../bs/css/bootstrap.min.css"/>
+		<link rel="stylesheet" href="../../css/main.css"/>
+		<link rel="stylesheet" href="../../css/style.css"/>
+		<script src="../../bs/js/jquery-1.11.3.min.js"></script>
+		<script src="../../bs/js/bootstrap.min.js"></script>
+		<script src="../../bs/js/angular.min.js"></script>
+		<script src="../../js/url.js"></script>
+		<script src="js/person.js"></script>
+		<style type="text/css">
+			#updatepwd .form-control{
+				display: inline-block;
+				width: 60%;
+				}
+			#updatepwd .control-label{
+				text-align: right;
+				width: 17%;
+			}
+   		</style>
+	</head>
+	<body ng-controller="person">
+		<div id="man_zone" class="mianbody">
+			<div class="softtm"></div>			
+			<div class="row show-grid" style="padding: 1% 1% 0% 1%;">
+				<div class="col-md-12 col-xs-12 col-sm-12">
+			   		<button class="btn btndel-handle3" type="button" ng-click="editInfo(user)">编辑个人信息</button>
+			  		<button class="btn btndel-handle2" type="button" data-toggle="modal" data-target="#updatepwd">修改密码</button>
+				</div>							
+				<div class="table-responsive  col-md-8 col-xs-8 col-sm-8" style="margin-top:1%">
+				  <table class="table table-bordered table-hover table-condensed">
+					<thead>					   
+				    <tr>
+					   	<th>个人信息</th>
+					   	<th>内容</th>					   	
+				   	</tr>
+				   </thead>
+				   <tbody style="font-weight: 900;">
+				   	<tr>
+					   	<td>姓名</td>
+					   	<td ng-model="user.alias">{{user.alias}}</td>  	
+				   	</tr>
+				   	<tr>
+					   	<td>登录账号</td>
+					   	<td ng-model="user.username">{{user.username}}</td>  	
+				   	</tr>
+				   	<tr>
+					   	<td>用户邮箱</td>
+					   	<td ng-model="user.email">{{user.email}}</td>  	
+				   	</tr>
+				   	<tr>
+					   	<td>手机号</td>
+					   	<td ng-model="user.phone">{{user.phone}}</td>  	
+				   	</tr>
+				   </tbody>
+				  </table>
+				</div>
+			</div>	
+	</div>
+<div ng-controller="password" class="modal fade" id="updatepwd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<form class="form"  id="editForm" ng-submit="submitForm()">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					&times;
+				</button>
+				<h4 class="modal-title" id="myModalLabel">
+					修改密码
+				</h4>
+			</div>
+			<div class="modal-body" style="padding:10px 30px;">
+				<div class="form-group">
+					 <label for="pwd" class="control-label">原密码 ：&nbsp;</label>
+					 <input type="password" class="input form-control"  placeholder="输入原密码" ng-model="pwd">						  
+				</div>
+				<div class="form-group">
+					 <label for="password" class="control-label">新密码 ：&nbsp;</label>
+					 <input type="password" class="input form-control"  placeholder="密码6-18位数字和字母，至少各一个大小写字母" ng-model="npwd">								  
+				</div>
+				<div class="form-group" style="margin-top:1%">
+				    <label for="password" class="control-label">确认密码 ：&nbsp;</label>
+				    <input type="password" class="input form-control" placeholder="再次输入" ng-model="napwd">								   								  
+				</div>
+				
+			</div>
+			<div class="modal-footer">
+				<b id="Msg" style="float:left;"></b>
+				<button type="button" class="btn btn-default" data-dismiss="modal" onclick="cleck();">关闭
+				</button>
+				<button type="submit" class="btn btn-primary" >
+					提交更改
+				</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal -->
+	</form>
+</div>
+<script type="text/javascript">
+	function cleck(){
+		$('.input').val(""); 
+		$('#Msg').html('');
+	} 
+</script>		
+	</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        ul{
+            list-style: none;
+        }
+        li{
+            width: 100px;
+            height: 100px;
+            background: red;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+    </style>
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+           $("li").eq(0).on("click",function(){
+               console.log("代替blind")
+           })
+
+            $("li").eq(1).on("click",function(){
+                console.log("代替live,可以为新的元素绑定事件")
+            })
+            $("ul").on("click",".lis",function(){
+                console.log("代替delegate,通过父元素绑定子元素")
+            })
+            $("li").eq(3).on({
+                mouseover:function(){
+                    console.log("on事件绑定多个");
+                },
+               click:function(){
+                    console.log("on事件绑定多个click");
+                },
+                mouseout:function(){
+                    console.log("on绑定多个事件")
+                },
+            })
+            $("li").eq(4).on("click",{name:"如月",age:"28"},function(ev){//data  传入的是函数的额外参数
+                console.log("姓名："+ev.data.name+"年龄："+ev.data.age);
+            });
+            $("button").eq(0).click(function(){
+                $("li").eq(3).off("click");//移除单个点击事件
+            })
+            $("button").eq(1).click(function(){
+                $("li").eq(3).off();//移除全部绑定事件
+            })
+
+        })
+    </script>
+</head>
+<body>
+<div class="box" >
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li class="lis">3</li>
+        <li>4</li>
+        <li>5</li>
+
+    </ul>
+<button>移除</button>
+<button>全部移除</button>
+
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+    <link href="../hj_css/reset.css"/>
+	<style>
+.guding_right{
+	width: 34px;
+	height: 100%;
+	background: #000;
+	position: fixed;
+	top: 0px;
+	right: 0px;
+}
+.guding_right li{
+    cursor: pointer;
+}
+.guding_right li:nth-child(1){
+	width: 34px;
+	height: 133px;
+    color: #fff;
+   margin-top: 40px;
+    font-size: 12px;
+    line-height: 16px;
+    cursor: pointer;
+    background: #000;
+    }
+.guding_right li:nth-child(1):hover{
+    	background: #c7000b;
+    }
+.guding_right li:nth-child(1):hover #yuan{
+    	background: #fff;
+    	color: red;
+    }
+.guding_right li:nth-child(1) p{
+    width: 34px;
+    text-align: center;
+    padding-top: 5px;
+    }
+.guding_right li:nth-child(1) img{
+ margin-left: 8px;
+ margin-top: 10px;
+}
+#yuan{
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background: #c7000b;
+	font-size: 8px;
+	line-height: 20px;
+	text-align: center;
+	 margin-left: 8px;
+	 margin-top: 10px;
+	  padding-top: 0;
+}
+.guding_right li:nth-child(2){
+	width: 34px;
+	height: 42px;
+	background: #000 url('../hj_img/side_golds.png') 8px -188px  no-repeat;
+    position:relative;
+}
+.guding_right li:nth-child(2) p{
+	width: 140px;
+    height: 42px;
+    background: #c7000b;
+    line-height: 42px;
+    text-align: center;
+    position: absolute;
+    left:-140px;
+    top: 0;
+    color: #fff;
+    font-size: 12px;
+    display: none;
+}
+.guding_right li:nth-child(2):hover {
+  
+     background: #c7000b url('../hj_img/side_golds.png') 8px -188px  no-repeat;
+}
+.guding_right li:nth-child(2):hover p{
+	display: block;
+}
+.guding_right li:nth-child(3){
+	width: 34px;
+	height: 42px;
+	background: #000 url('../hj_img/quan_iconnew.png') 0 9px  no-repeat;
+	margin-left: 8px;
+     position:relative;
+}
+.guding_right li:nth-child(3) p{
+	width: 140px;
+    height: 42px;
+    background: #c7000b;
+    line-height: 42px;
+    text-align: center;
+    position: absolute;
+    left:-140px;
+    top: 0;
+    color: #fff;
+    font-size: 12px;
+    display: none;
+}
+.guding_right li:nth-child(3):hover {
+  
+     background: #c7000b url('../hj_img/quan_iconnew.png') 0 9px  no-repeat;
+}
+.guding_right li:nth-child(3):hover p{
+	display: block;
+}
+.guding_right li:nth-child(4){
+	width: 34px;
+	height: 42px;
+	background: #000 url('../hj_img/myFavorites.png') 0 9px  no-repeat;
+	margin-left: 8px;
+     position:relative;
+}
+.guding_right li:nth-child(4) p{
+	width: 140px;
+    height: 42px;
+    background: #c7000b;
+    line-height: 42px;
+    text-align: center;
+    position: absolute;
+    left:-140px;
+    top: 0;
+    color: #fff;
+    font-size: 12px;
+    display: none;
+}
+.guding_right li:nth-child(4):hover {
+  
+     background: #c7000b url('../hj_img/myFavorites.png') 0 9px  no-repeat;
+}
+.guding_right li:nth-child(4):hover p{
+	display: block;
+}
+.guding_right li:nth-child(5){
+	width: 34px;
+	height: 42px;
+	background: #000 url('../hj_img/side_golds.png') 5px -226px  no-repeat;
+     position:relative;
+}
+.guding_right li:nth-child(5) p{
+	width: 140px;
+    height: 42px;
+    background: #c7000b;
+    line-height: 42px;
+    text-align: center;
+    position: absolute;
+    left:-140px;
+    top: 0;
+    color: #fff;
+    font-size: 12px;
+    display: none;
+}
+.guding_right li:nth-child(5):hover {
+  
+  background: #c7000b url('../hj_img/side_golds.png') 5px -226px  no-repeat;
+}
+.guding_right li:nth-child(5):hover p{
+	display: block;
+}
+.guding_right li:nth-child(6){
+	width: 34px;
+	height: 42px;
+	background: #000 url('../hj_img/sidePanel_checkin1N.gif') 0px 0px  no-repeat;
+	margin-top:110px; 
+     position:relative;
+}
+.guding_right li:nth-child(6) p{
+	width: 140px;
+    height: 42px;
+    background: #c7000b;
+    line-height: 20px;
+    text-align: center;
+    position: absolute;
+    left:-140px;
+    top: 0;
+    color: #fff;
+    font-size: 12px;
+    display: none;
+    padding-left: 5px;: 
+}
+.guding_right li:nth-child(6):hover {
+  
+  background: #c7000b url('../hj_img/side_golds.png') 0px -47px  no-repeat;
+}
+.guding_right li:nth-child(6):hover p{
+	display: block;
+}
+.guding_right li:nth-child(7){
+	width: 34px;
+	height: 42px;
+	background: #000 url('../hj_img/sidePanelIconsNew.png') -267px 0px  no-repeat;
+	position:relative;
+}
+.guding_right li:nth-child(7) img{
+    position: absolute;
+    left:-104px;
+    top: 0;
+   display: none;
+}
+.guding_right li:nth-child(7):hover {
+  
+  background: #c7000b url('../hj_img/sidePanelIconsNew.png') -267px 0px  no-repeat;
+}
+.guding_right li:nth-child(7):hover img{
+	display: block;
+}
+.guding_right li:nth-child(8){
+	width: 34px;
+	height: 42px;
+	background: #000 url('../hj_img/sidePanelIconsNew.png') -330px 0px  no-repeat;
+     position:relative;
+}
+.guding_right li:nth-child(8) p{
+	width: 140px;
+    height: 42px;
+    background: #c7000b;
+    line-height: 42px;
+    text-align: center;
+    position: absolute;
+    left:-140px;
+    top: 0;
+    color: #fff;
+    font-size: 12px;
+    display: none;
+}
+.guding_right li:nth-child(8):hover {
+  
+  background: #c7000b url('../hj_img/sidePanelIconsNew.png') -330px 0px  no-repeat;
+}
+.guding_right li:nth-child(8):hover p{
+	display: block;
+}
+.guding_right li:nth-child(9){
+	width: 34px;
+	height: 42px;
+	background: #000 url('../hj_img/sidePanelIconsNew.png') -500px 0px  no-repeat;
+     position:relative;
+}
+.guding_right li:nth-child(9) p{
+	width: 140px;
+    height: 42px;
+    background: #c7000b;
+    line-height: 42px;
+    text-align: center;
+    position: absolute;
+    left:-140px;
+    top: 0;
+    color: #fff;
+    font-size: 12px;
+    display: none;
+}
+.guding_right li:nth-child(9):hover {
+  
+  background: #c7000b url('../hj_img/sidePanelIconsNew.png') -500px 0px  no-repeat;
+}
+.guding_right li:nth-child(9):hover p{
+	display: block;
+}
+.guding_right li:nth-child(10){
+	width: 34px;
+	height: 42px;
+	background: #000 url('../hj_img/sidePanelIconsNew.png') -554px 0px  no-repeat;
+     position:relative;
+     display: none;
+}
+.guding_right li:nth-child(10) p{
+	width: 140px;
+    height: 42px;
+    background: #c7000b;
+    line-height: 42px;
+    text-align: center;
+    position: absolute;
+    left:-140px;
+    top: 0;
+    color: #fff;
+    font-size: 12px;
+    display: none;
+}
+.guding_right li:nth-child(10):hover {
+  
+  background: #c7000b url('../hj_img/sidePanelIconsNew.png') -554px 0px  no-repeat;
+}
+.guding_right li:nth-child(10):hover p{
+	display: block;
+}
+	</style>
+
+<script src="../hj_js/jquery-1.10.2.min.js"></script>
+</head>
+<body >
+<div class="guding_right">
+<ul>
+	<li>
+	<img src="../hj_img/sidebar_cart.png" height="17" width="19" alt="">
+		<p>购</p>
+		<p>物</p>
+		<p>车</p>
+		<p id="yuan">0</p>
+	</li>
+	<li>
+		<p>
+			我的订单
+		</p>
+	</li>
+	<li> 
+        <p>
+			我的优惠券
+		</p>
+	</li>
+	<li> 
+        <p>
+			我的收藏
+		</p>
+	</li>
+	<li> 
+        <p>
+			买家消息
+		</p>
+	</li>
+	<li> 
+        <p>
+			想领钱，先签到<br>
+			积分抵现又换礼
+		</p>
+	</li>
+	<li> 
+       <img src="../hj_img/side_two_dimension.png"  alt="">
+	</li>
+	<li> 
+        <p>
+			常见问题
+		</p>
+	</li>
+	<li> 
+        <p>
+		   意见反馈
+		</p>
+	</li>
+	<li id='fanhui'> 
+        <p>
+		  返回顶部
+		</p>
+	</li>
+</ul>
+	
+</div>
+	
+</body>
+<script>
+// 滚动条滚动显示   返回顶部
+  var  fanhui=document.getElementById('fanhui');
+	window.onscroll = function () {
+    var u = document.documentElement.scrollTop || document.body.scrollTop;
+
+    if (u >= 400) {
+    	fanhui.style.display='block';
+
+    } else {
+       fanhui.style.display='none';
+    }
+};
+
+// 缓慢回到顶部
+   fanhui.onclick=function(){
+    timer=setInterval(function(){
+           var scrollTop=document.documentElement.scrollTop||document.body.scrollTop;
+           var ispeed=Math.floor(-scrollTop/6);
+    if(scrollTop==0){
+               clearInterval(timer);
+           }
+           document.documentElement.scrollTop=document.body.scrollTop=scrollTop+ispeed;
+       },30)
+   };
+</script>
+</html>

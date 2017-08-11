@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	.outer{
+		border: 3px solid #ccc;
+		width: 400px;
+		height: 400px;
+background: red;
+/*padding: 30px;*/
+/*box-sizing: border-box;*/
+position: relative;
+	}
+	.inner{
+		width: 200px;
+		height: 200px;
+		background: green;
+		border: 1px solid yellow;
+	}
+	</style>
+</head>
+<body>
+	<div class="outer">
+		<div class="inner"></div>
+	</div>
+	<button>按钮</button>
+	<button>按钮</button>
+	<button>按钮</button>
+</body>
+<script>
+	var outer=document.getElementsByClassName('outer')[0];
+	var inner=document.getElementsByClassName('inner')[0];
+	var btn=document.getElementsByTagName('button');
+	btn[0].onclick=function(){
+		alert(inner.offsetLeft);//距离最近的定位父级边界的长度
+		alert(inner.offsetTop);//距离最近的定位父级边界的长度
+	}
+	btn[1].onclick=function(){
+		alert(inner.offsetWidth);
+		alert(outer.offsetWidth);//包换元素边框的宽度
+		alert(outer.offsetHeight);//包换元素边框的高度
+	}
+	btn[2].onclick=function(){
+		alert(inner.clientWidth);
+		alert(outer.clientWidth);//不包含边框的宽度
+	}
+</script>
+</html>

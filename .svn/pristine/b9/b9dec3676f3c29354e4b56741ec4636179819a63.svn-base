@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div>本地存储</div>
+<button>按钮</button>
+</body>
+<script>
+
+    if(window.localStorage){//浏览器支持性检测  sessionstorage数据不会共享  localstorage共享
+        window.localStorage.setItem("name","小明");//设置本地存储   永久性的
+        window.localStorage.setItem("name","辛宇");//key是唯一存在的   value没有限制
+        window.localStorage.setItem("user","鑫宇");
+        window.localStorage.setItem("user1","鑫宇1");
+        window.localStorage.setItem("user2","鑫宇2");
+        window.localStorage.setItem("user3","鑫宇3");
+        window.localStorage.setItem("user4","鑫宇4");
+
+//        alert(localStorage.getItem("name"));//获取存储  string
+//        alert(localStorage.key(1));//获取key值
+//        alert(localStorage.length);//获取长度    数据数量
+
+
+
+//        localStorage.clear();//删除全部
+//        localStorage.removeItem("name");//删除对应的
+        function getInfo(){
+            var arr=[];
+            var len=localStorage.length;
+            for(var i=0; i<len; i++){
+                arr.push(localStorage.getItem(localStorage.key(i)));
+            }
+            return arr;
+        }
+        alert(getInfo());
+    }else{
+        alert("low");
+    }
+
+//需要在新的页面改变值才会触发
+    window.onstorage=function(event){//事件   当存储的值发生变化   会触发
+        var ev=event||window.event;
+        alert(ev.key+":"+ev.oldValue+"改变为"+ev.newValue);
+    }
+</script>
+</html>

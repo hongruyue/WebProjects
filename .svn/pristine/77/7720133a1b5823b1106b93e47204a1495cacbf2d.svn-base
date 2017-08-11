@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="angular-1.5.8/angular.js"></script>
+    <script src="angular-1.5.8/angular-route.js"></script>
+    <script src="conn/con1.js"></script>
+</head>
+<body ng-app="myApp">
+    <div ng-controller="con">
+        <a href="{{x.url}}" ng-repeat="x in arr">{{x.con}}</a>
+        <br/>
+        <ng-view></ng-view>
+    </div>
+</body>
+<script>
+    var app=angular.module("myApp",["ngRoute","myModule1","myModule2"]);
+    app.controller("con",function($scope){
+        $scope.arr=[
+            {url:"#/news",con:"新闻"},
+            {url:"#/video",con:"视频"},
+            {url:"#/music",con:"音乐"},
+            {url:"#/other",con:"其他"}
+        ]
+    });
+    app.config(function($routeProvider){
+        $routeProvider
+                .when("/news",{
+                    templateUrl:"view/first.html",
+                    controller:"con2"
+                })
+                .when("/video",{
+                    templateUrl:"view/second.html",
+                    controller:"con3"
+                })
+
+
+
+    })
+</script>
+</html>

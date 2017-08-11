@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>浮动条</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<style>
+	body{height: 2000px; background: #ccc;}
+	#gg{width: 100px; height: 400px; background: red;}
+	#gg2{width: 100px; height: 400px; background: red;}
+</style>
+<!--[if IE 6]>
+	<script src="js/DD_belatedPNG.js"></script>
+	<script>
+		DD_belatedPNG.fix('.controlBar,.controlBar a,#div1,#div2 span');
+	</script>
+<![endif]-->
+<script type="text/javascript" src="jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="ylFloat.js"></script>
+</head>
+<body>
+	<div id="gg">云南白药11</div>
+	<div id="gg2">云南白药22</div>
+</body>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#gg2").jFloat({
+	    top:150,  //顶部距离
+        right:0,//右侧距离
+        minScreenW:1024,//最小出现宽度
+        position:"right", //在右侧
+        allowClose:true //是否允许关闭
+	});
+	$("#gg").jFloat({
+	    top:150,  //顶部距离
+        left:0,//左侧距离
+        minScreenW:1024,//最小出现宽度
+        position:"left", //在左侧
+        allowClose:true //是否允许关闭
+	});
+})
+</script>
+</html>

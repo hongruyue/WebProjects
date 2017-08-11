@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<!-- saved from url=(0030)http://www.zhipin.com/app.html -->
+<html class="standard"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>【官网】BOSS直聘-互联网招聘神器！官方IP:直直</title>
+    <meta name="keywords" content="BOSS直聘,直直,招聘,求职,找工作">
+    <meta name="description" content="BOSS直聘是一款互联网求职招聘找工作软件，让求职者与Boss直接开聊、加快面试、即时反馈，找工作就用BOSS直聘。直直为BOSS直聘IP，下载APP让直直带你轻松找工作！">
+    <link href="./【官网】BOSS直聘-互联网招聘神器！官方IP_直直_files/home.css" type="text/css" rel="stylesheet">
+    <script>
+        _PAGE={
+            checkMobileUrl:"/registe/sendSms.json",
+            regMobileUrl:"/registe/save.json",
+            loginMobileUrl:"/login/phone.json",
+            getRandomKeyUrl:"/captcha/randkey.json",
+            verifyImgUrl:"/captcha/?randomKey={randomKey}",
+            getPositionUrl:"/user/position.json"
+        }
+        if(top.location != location){
+            top.location.href = location.href;
+        }
+    </script>
+    <!--[if lte IE 9]>
+    <script src="https://img.bosszhipin.com/js/html5shiv.js"></script>
+    <script src="https://img.bosszhipin.com/js/jquery-1.11.0.min.js"></script>
+    <!--[if gt IE 9]><!-->
+    <script src="./【官网】BOSS直聘-互联网招聘神器！官方IP_直直_files/jquery-2.1.1.min.js.下载"></script>
+    <!--[endif]---->
+    <script src="./【官网】BOSS直聘-互联网招聘神器！官方IP_直直_files/require.js.下载" data-main="/v2/bosszhipin_home/js/pages/home/main"></script>
+
+<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="main" src="./【官网】BOSS直聘-互联网招聘神器！官方IP_直直_files/main.js.下载"></script></head>
+<body class="page-home">
+
+
+
+<div id="wrap">
+    
+
+
+
+
+<script>
+    _PAGE={
+        checkMobileUrl:"/registe/sendSms.json",
+        regMobileUrl:"/registe/save.json",
+        loginMobileUrl:"/login/phone.json",
+        loginAccountUrl:"/login/account.json",
+        getRandomKeyUrl:"/captcha/randkey.json",
+        verifyImgUrl:"/captcha/?randomKey={randomKey}",
+        getPositionUrl:"/user/position.json",
+        skillsUrl:"/webscan/positionSkill"
+        
+    }
+</script>
+
+
+<div id="header" class="small-header">
+    <div class="inner">
+        <h1 class="logo"><a href="http://www.zhipin.com/" ka="header-home-logo" title="BOSS直聘"><span>BOSS直聘</span></a></h1>
+        <div class="nav">
+            <ul>
+                <li class=""><a ka="header-home" href="http://www.zhipin.com/">首页</a></li>
+                <li class=""><a ka="header-job" href="http://www.zhipin.com/job_detail/">求职</a></li>
+                <li class="cur"><a ka="header-app" href="http://www.zhipin.com/app.html">APP</a></li>
+                <li class=""><a ka="header-article" href="http://www.zhipin.com/article/">新闻</a></li>
+            </ul>
+        </div>
+        
+        <div class="user-nav">
+            
+                
+                <!--未登录-->
+                <div class="btns"><a href="http://www.zhipin.com/user/login.html?initType=3" ka="header-sao" class="link-scan">Boss 扫码登录</a><a href="http://www.zhipin.com/user/signup.html" ka="header-register" class="btn btn-outline">注册</a><a href="http://www.zhipin.com/user/login.html" ka="header-login" class="btn btn-outline">登录</a></div>
+                
+            
+            
+        </div>
+    </div>
+</div>
+    <div id="main">
+        <div id="full-view">
+            <div class="sec full-app">
+                <div class="inner">
+                    <div class="figure animation fadeInLeft">
+                        <div class="app-chat">
+                            <div class="app-inner"></div>
+                        </div>
+                        <div class="app-tip"></div>
+                    </div>
+                    <div class="text animation fadeInRight">
+                        <h3 class="title">这一次，试试用聊天的方式找工作</h3>
+                        <div class="des">下载BOSS直聘APP</div>
+                        <div class="app-btns">
+                            <div class="app-qrcode animation fadeIn"><img src="./【官网】BOSS直聘-互联网招聘神器！官方IP_直直_files/common.json" alt=""></div>
+                            <a href="https://www.zhipin.com/d/v2/?type=ckios&amp;pkn=intro" class="btn-iphone" ka="iphone-app"><span>iPhone</span></a><a href="https://www.zhipin.com/d/v2/?type=ckand&amp;pkn=intro" class="btn-android" ka="android-app"><span>Android</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sec company-chat">
+                <div class="inner">
+                    <div class="text">
+                        <h3 class="title">BOSS直聘</h3>
+                        <div class="des">企业BOSS与职场牛人直接在线开聊</div>
+                    </div>
+                    <div class="figure">
+                        <div class="figure-phone"></div>
+                        <div class="figure-logo"><img src="./【官网】BOSS直聘-互联网招聘神器！官方IP_直直_files/logo.png" alt=""></div>
+                        <ul class="figure-users">
+                            <li class="user-1 scale-big"><img class="boss-img" src="./【官网】BOSS直聘-互联网招聘神器！官方IP_直直_files/boss-1.png" alt=""><img class="company-img" src="./【官网】BOSS直聘-互联网招聘神器！官方IP_直直_files/company-1.png" alt=""></li>
+                            <li class="user-2"><img class="boss-img" src="./【官网】BOSS直聘-互联网招聘神器！官方IP_直直_files/boss-2.png" alt=""><img class="company-img" src="./【官网】BOSS直聘-互联网招聘神器！官方IP_直直_files/company-2.png" alt=""></li>
+                            <li class="user-3"><img class="boss-img" src="./【官网】BOSS直聘-互联网招聘神器！官方IP_直直_files/boss-3.png" alt=""><img class="company-img" src="./【官网】BOSS直聘-互联网招聘神器！官方IP_直直_files/company-3.png" alt=""></li>
+                            <li class="user-4 scale-big"><img class="boss-img" src="./【官网】BOSS直聘-互联网招聘神器！官方IP_直直_files/boss-4.png" alt=""><img class="company-img" src="./【官网】BOSS直聘-互联网招聘神器！官方IP_直直_files/company-4.png" alt=""></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="sec full-direcruit">
+                <div class="inner">
+                    <div class="figure">
+                        <div class="chat-list">
+                            <div class="chat-inner"></div>
+                        </div>
+                        <div class="chat-tip"></div>
+                    </div>
+                    <div class="text">
+                        <h3 class="title">直聘 / direcruit</h3>
+                        <div class="des">在APP上跟未来BOSS直接开聊 与冷冰冰的简历投递说再见</div>
+                    </div>
+                </div>
+            </div>
+            <div class="sec full-company">
+                <div class="inner">
+                    <div class="text">
+                        <h3 class="title">名企 / BIG COMPANY</h3>
+                        <div class="des">阿里百度腾讯，滴滴美团京东。都在用BOSS直聘招人</div>
+                    </div>
+                    <div class="figure">
+                        <div class="figure-computer"></div>
+                        <ul class="figure-logos">
+                            <li class="logo-1"><img src="./【官网】BOSS直聘-互联网招聘神器！官方IP_直直_files/logo-baidu.png" alt=""></li>
+                            <li class="logo-2"><img src="./【官网】BOSS直聘-互联网招聘神器！官方IP_直直_files/logo-didi.png" alt=""></li>
+                            <li class="logo-3"><img src="./【官网】BOSS直聘-互联网招聘神器！官方IP_直直_files/logo-meituan.png" alt=""></li>
+                            <li class="logo-4"><img src="./【官网】BOSS直聘-互联网招聘神器！官方IP_直直_files/logo-ali.png" alt=""></li>
+                            <li class="logo-5"><img src="./【官网】BOSS直聘-互联网招聘神器！官方IP_直直_files/logo-jd.png" alt=""></li>
+                            <li class="logo-6"><img src="./【官网】BOSS直聘-互联网招聘神器！官方IP_直直_files/logo-tencent.png" alt=""></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="sec full-decent">
+                <div class="inner">
+                    <div class="figure animation fadeInRight">
+                        <div class="figure-phone"></div>
+                        <ul class="figure-cards show-card">
+                            <li class="card-1"></li>
+                            <li class="card-2"></li>
+                            <li class="card-3"></li>
+                            <li class="card-4"></li>
+                            <li class="card-5"></li>
+                            <li class="card-6"></li>
+                        </ul>
+                    </div>
+                    <div class="text animation fadeInLeft">
+                        <h3 class="title">DECENT PAY / 高薪</h3>
+                        <div class="des">除了真人在线之外 BOSS们认为最能表现诚意的是可观的薪资</div>
+                    </div>
+                </div>
+            </div>
+            <div class="sec sec-other">
+                <div class="inner">
+                    <div class="mod-media">
+                        <h3 class="title">媒体报道</h3>
+                        <ul class="media-list">
+                            <li class="media-ifeng"><a href="http://tech.ifeng.com/a/20151214/41522817_0.shtml" title="凤凰科技" ka="webhome-media-ifeng" target="_blank"></a></li>
+                            <li class="media-netease"><a href="http://tech.163.com/16/0713/18/BRSGED2700097U7R.html" title="网易科技" ka="webhome-media-netease" target="_blank"></a></li>
+                            <li class="media-sina"><a href="http://tech.sina.com.cn/i/2016-07-14/doc-ifxuapvs8357865.shtml" title="新浪科技" ka="webhome-media-sina" target="_blank"></a></li>
+                            <li class="media-bjnews"><a href="http://www.bjnews.com.cn/invest/2016/08/10/412995.html" title="新京报" ka="webhome-media-bjnews" target="_blank"></a></li>
+                            <li class="media-techweb"><a href="http://www.techweb.com.cn/finance/2016-07-13/2360378.shtml" title="TechWeb" ka="webhome-media-techweb" target="_blank"></a></li>
+                            <li class="media-cbn"><a href="http://storeweb.cbnweek.com/v/article?id=22445" title="第一财经周刊" ka="webhome-media-cbn" target="_blank"></a></li>
+                            <li class="media-people"><a href="http://finance.people.com.cn/n1/2016/0715/c153179-28558336.html" title="人民网" ka="webhome-media-people" target="_blank"></a></li>
+                            <li class="media-jiemian"><a href="http://www.jiemian.com/article/743488.html" title="界面" ka="webhome-media-jiemian" target="_blank"></a></li>
+                            <li class="media-36kr"><a href="https://36kr.com/p/5049487.html" title="36氪" ka="webhome-media-36kr" target="_blank"></a></li>
+                            <li class="media-bjtimes"><a href="http://epaper.jinghua.cn/html/2016-07/25/content_322040.htm" title="京华时报" ka="webhome-media-bjtimes" target="_blank"></a></li>
+                            <li class="media-huxiu"><a href="https://www.huxiu.com/article/135663/1.html" title="虎嗅" ka="webhome-media-huxiu" target="_blank"></a></li>
+                            <li class="media-eeo"><a href="http://www.eeo.com.cn/2016/0713/289579.shtml" title="经济观察网" ka="webhome-media-eeo" target="_blank"></a></li>
+                        </ul>
+                    </div>
+                    <div class="mod-always">
+                        <h3 class="title">他们一直在用</h3>
+                        <div class="scroll-wrap">
+                            <div class="bx-wrapper" style="max-width: 8250px; margin: 0px auto;">
+                                <div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: 88px;">
+                                    <ul class="company-list" style="width: 1615%; position: relative; transition-duration: 0s; transform: translate3d(-980px, 0px, 0px);">
+                                        <li style="float: left; list-style: none; position: relative; width: 130px; margin-right: 10px;" class="bx-clone"><img src="./【官网】BOSS直聘-互联网招聘神器！官方IP_直直_files/c-8.png" alt=""></li>
+                                        <li style="float: left; list-style: none; position: relative; width: 130px; margin-right: 10px;" class="bx-clone"><img src="./【官网】BOSS直聘-互联网招聘神器！官方IP_直直_files/c-9.png" alt=""></li>
+                                        <li style="float: left; list-style: none; position: relative; width: 130px; margin-right: 10px;" class="bx-clone"><img src="./【官网】BOSS直聘-互联网招聘神器！官方IP_直直_files/c-10.png" alt=""></li>
+                                        <li style="float: left; list-style: none; position: relative; width: 130px; margin-right: 10px;" class="bx-clone"><img src="./【官网】BOSS直聘-互联网招聘神器！官方IP_直直_files/c-11.png" alt=""></li>
+                                        <li style="float: left; list-style: none; position: relative; width: 130px; margin-right: 10px;" class="bx-clone"><img src="./【官网】BOSS直聘-互联网招聘神器！官方IP_直直_files/c-12.png" alt=""></li>
+                                        <li style="float: left; list-style: none; position: relative; width: 130px; margin-right: 10px;" class="bx-clone"><img src="./【官网】BOSS直聘-互联网招聘神器！官方IP_直直_files/c-13.png" alt=""></li>
+                                        <li style="float: left; list-style: none; position: relative; width: 130px; margin-right: 10px;" class="bx-clone"><img src="./【官网】BOSS直聘-互联网招聘神器！官方IP_直直_files/c-14.png" alt=""></li>
+
+                                <li style="float: left; list-style: none; position: relative; width: 130px; margin-right: 10px;"><img src="./【官网】BOSS直聘-互联网招聘神器！官方IP_直直_files/c-1.png" alt=""></li>
+                                <li style="float: left; list-style: none; position: relative; width: 130px; margin-right: 10px;"><img src="./【官网】BOSS直聘-互联网招聘神器！官方IP_直直_files/c-2.png" alt=""></li>
+                                <li style="float: left; list-style: none; position: relative; width: 130px; margin-right: 10px;"><img src="./【官网】BOSS直聘-互联网招聘神器！官方IP_直直_files/c-3.png" alt=""></li>
+                                <li style="float: left; list-style: none; position: relative; width: 130px; margin-right: 10px;"><img src="./【官网】BOSS直聘-互联网招聘神器！官方IP_直直_files/c-4.png" alt=""></li>
+                                <li style="float: left; list-style: none; position: relative; width: 130px; margin-right: 10px;"><img src="./【官网】BOSS直聘-互联网招聘神器！官方IP_直直_files/c-5.png" alt=""></li>
+                                <li style="float: left; list-style: none; position: relative; width: 130px; margin-right: 10px;"><img src="./【官网】BOSS直聘-互联网招聘神器！官方IP_直直_files/c-6.png" alt=""></li>
+                                <li style="float: left; list-style: none; position: relative; width: 130px; margin-right: 10px;"><img src="./【官网】BOSS直聘-互联网招聘神器！官方IP_直直_files/c-7.png" alt=""></li>
+                                <li style="float: left; list-style: none; position: relative; width: 130px; margin-right: 10px;"><img src="./【官网】BOSS直聘-互联网招聘神器！官方IP_直直_files/c-8.png" alt=""></li>
+                                <li style="float: left; list-style: none; position: relative; width: 130px; margin-right: 10px;"><img src="./【官网】BOSS直聘-互联网招聘神器！官方IP_直直_files/c-9.png" alt=""></li>
+                                <li style="float: left; list-style: none; position: relative; width: 130px; margin-right: 10px;"><img src="./【官网】BOSS直聘-互联网招聘神器！官方IP_直直_files/c-10.png" alt=""></li>
+                                <li style="float: left; list-style: none; position: relative; width: 130px; margin-right: 10px;"><img src="./【官网】BOSS直聘-互联网招聘神器！官方IP_直直_files/c-11.png" alt=""></li>
+                                <li style="float: left; list-style: none; position: relative; width: 130px; margin-right: 10px;"><img src="./【官网】BOSS直聘-互联网招聘神器！官方IP_直直_files/c-12.png" alt=""></li>
+                                <li style="float: left; list-style: none; position: relative; width: 130px; margin-right: 10px;"><img src="./【官网】BOSS直聘-互联网招聘神器！官方IP_直直_files/c-13.png" alt=""></li>
+                                <li style="float: left; list-style: none; position: relative; width: 130px; margin-right: 10px;"><img src="./【官网】BOSS直聘-互联网招聘神器！官方IP_直直_files/c-14.png" alt=""></li>
+                            <li style="float: left; list-style: none; position: relative; width: 130px; margin-right: 10px;" class="bx-clone"><img src="./【官网】BOSS直聘-互联网招聘神器！官方IP_直直_files/c-1.png" alt=""></li>
+                            <li style="float: left; list-style: none; position: relative; width: 130px; margin-right: 10px;" class="bx-clone"><img src="./【官网】BOSS直聘-互联网招聘神器！官方IP_直直_files/c-2.png" alt=""></li>
+                            <li style="float: left; list-style: none; position: relative; width: 130px; margin-right: 10px;" class="bx-clone"><img src="./【官网】BOSS直聘-互联网招聘神器！官方IP_直直_files/c-3.png" alt=""></li>
+                            <li style="float: left; list-style: none; position: relative; width: 130px; margin-right: 10px;" class="bx-clone"><img src="./【官网】BOSS直聘-互联网招聘神器！官方IP_直直_files/c-4.png" alt=""></li>
+                            <li style="float: left; list-style: none; position: relative; width: 130px; margin-right: 10px;" class="bx-clone"><img src="./【官网】BOSS直聘-互联网招聘神器！官方IP_直直_files/c-5.png" alt=""></li>
+                            <li style="float: left; list-style: none; position: relative; width: 130px; margin-right: 10px;" class="bx-clone"><img src="./【官网】BOSS直聘-互联网招聘神器！官方IP_直直_files/c-6.png" alt=""></li>
+                            <li style="float: left; list-style: none; position: relative; width: 130px; margin-right: 10px;" class="bx-clone"><img src="./【官网】BOSS直聘-互联网招聘神器！官方IP_直直_files/c-7.png" alt=""></li>
+                                    </ul>
+                                </div>
+                                <div class="bx-controls bx-has-controls-direction">
+                                    <div class="bx-controls-direction"><a class="bx-prev" href="http://www.zhipin.com/app.html" ka="webhome-company-prev">Prev</a><a class="bx-next" href="http://www.zhipin.com/app.html" ka="webhome-company-next">Next</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+
+<div id="footer">
+    <div class="inner">
+
+    
+    
+        <p class="copyright">Copyright © 2017 zhipin.com京ICP备14013441号-5</p>
+        <p class="copyright">zhipin.com.保留所有版权. 使用这些服务遵守用户协议</p>
+        <p class="copyright">北京华品博睿网络技术有限公司 | 联系地址：北京朝阳区太阳宫中路8号冠捷大厦3层 302 | 联系电话：010-84150633</p>
+    
+
+    </div>
+</div>
+
+</div>
+<input type="hidden" id="page_key_name" value="cpc_app">
+
+
+
+<script src="./【官网】BOSS直聘-互联网招聘神器！官方IP_直直_files/analytics.min.js.下载"></script>
+<script src="./【官网】BOSS直聘-互联网招聘神器！官方IP_直直_files/ka.js.下载"></script>
+<script>
+	function get_share_datas_from_html_inapp(){
+		var shid = "shdefault";
+		var urlShid = getQueryString('shid');
+		var urlSid = getQueryString('sid');
+		if(urlShid){
+			shid = urlShid;
+		}else if(urlSid){
+			shid = urlSid;
+		}
+		var pk = "pkdefault";
+		var pp = "ppdefault";
+		var pkn = document.getElementById("page_key_name");
+		if(pkn){
+			var pknVal = pkn.value;
+			if(pknVal){
+				var pkArray = pknVal.split("|")
+				if(pkArray.length==1){
+					pk = pkArray[0];
+				}else if(pkArray.length>=2){
+					pk = pkArray[0];
+					pp = pkArray[1];
+				}
+			}
+		}
+		var ret = new Array();
+		ret['shid'] = shid;
+		ret['pk'] = pk;
+		ret['pp'] = pp;
+		return ret;
+	}
+	function getQueryString(name)
+	{
+		var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+		var r = window.location.search.substr(1).match(reg);
+		if(r!=null)return  unescape(r[2]); return null;
+	}
+</script>
+
+
+</body></html>

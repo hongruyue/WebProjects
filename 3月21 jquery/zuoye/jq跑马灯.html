@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+       li{
+           width: 100px;
+           height: 100px;
+           float: left;
+           text-align: center;
+           line-height: 100px;
+           border: 1px solid black;
+           list-style: none;
+           margin: 10px;
+           font-size:40px;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li>红</li>
+    <li>橙</li>
+    <li>黄</li>
+    <li>绿</li>
+    <li>青</li>
+    <li>蓝</li>
+    <li>紫</li>
+
+</ul>
+</body>
+<script src="../js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript">
+    /*var lis=document.getElementsByTagName("li");
+    var arr=["red","orange","yellow","green","cyan","blue","purple"];
+    var num=-1;
+    setInterval(function(){
+        num++;
+        if(num>=lis.length){
+            num=0;
+        }
+        for(var i=0;i<lis.length;i++){//遍历每一个li元素
+            if(lis[i]==lis[num]){//判断与num相同的元素
+                lis[num].style.background=arr[num];}//将第num的li设置背景 背景从数组中获取
+            else{
+                lis[i].style.background="";}//将除num个li之外的其他li设置背景
+        }
+    },100)*/
+    $(function(){
+        var arr=["red","orange","yellow","green","cyan","blue","purple"];
+        var num=0;
+            setInterval(function(){
+                $("li").eq(num).css("background",arr[num]).siblings().css("background","#fff");
+
+                num++;
+                if(num>=arr.length){
+                    num=0;
+                }
+
+
+        },1000)
+    })
+</script>
+
+</html>

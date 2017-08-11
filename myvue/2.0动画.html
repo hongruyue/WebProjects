@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="js/vue.js"></script>
+    <!--<script src="js/vue1.0.js"></script>-->
+    <link rel="stylesheet" href="css/animate.min.css"/>
+    <style>
+        p{
+            width:300px;
+            height:300px;
+            background: red;
+            margin:0 auto;
+        }
+
+        .fade-enter-active, .fade-leave-active{
+            transition: 1s all ease;
+        }
+
+        .fade-enter-active{
+            opacity:1;
+            width:300px;
+            height:300px;
+        }
+        .fade-leave-active{
+            opacity:0;
+            width:100px;
+            height:100px;
+        }
+
+        .fade-enter,.fade-leave{
+            opacity:0;
+            width:100px;
+            height:100px;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <input type="button" value="按钮" @click="show=!show">
+    <transition name="fade">
+        <p v-show="show"></p>
+    </transition>
+</div>
+</body>
+<script>
+    var c=new Vue({
+        el:".box",
+        data:{
+          show:false
+        }
+    })
+
+</script>
+</html>

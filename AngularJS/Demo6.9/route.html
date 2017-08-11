@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../angular-1.5.8/angular.min.js"></script>
+    <script src="../angular-1.5.8/angular-route.js"></script>
+</head>
+<body ng-app="app1">
+<div ng-controller="con1">
+    <a ng-href="{{x.url}}" ng-repeat="x in arr">{{x.con}}    </a><br>
+    <div ng-hide="type">数据请求中……</div>
+    <ng-view ng-hide="!type"></ng-view>
+</div>
+</body>
+<script>
+    var app=angular.module("app1",["ngRoute"]);
+    app.controller("con1",function($scope){
+        $scope.type=false;
+        $scope.arr=[
+            {url:"#/news",con:"新闻"},
+            {url:"#/video",con:"视频"},
+            {url:"#/music",con:"音乐"},
+            {url:"#/other",con:"其他"},
+            {url:"#/other1",con:"其他1"},
+            {url:"#/other2",con:"其他2"},
+            {url:"#/other3",con:"其他3"}
+        ]
+        $scope.$on("$routeChangeStart",function(){
+//            alert("开始请求");
+            $scope.type=false;
+        });
+        $scope.$on("$routeChangeSuccess",function(){
+//            alert("成功请求");
+            $scope.type=true;
+        });
+        $scope.$on("$routeChangeError",function(){
+            alert("错误请求");
+        });
+    });
+    app.config(function($routeProvider){
+        $routeProvider
+                .when("/news",{
+                    template:"<ul><li ng-repeat='x in news'>{{x}}</li></ul>",
+                    controller:function($scope){
+                        $scope.news=["体育","时事","娱乐"];
+                    },
+                    resolve: {
+                        delay: function($q) {
+                            var delay=$q.defer();//生成delay这个对象
+                            setTimeout(function (){
+                                delay.resolve();		//resolve执行
+                            }, 2000);
+                            return delay.promise;//只有return出去之后系统才能知道什么时候完事
+                        }
+                    }
+                })
+                .when("/video",{
+                    template:"<ul><li ng-repeat='x in vid'>{{x}}</li></ul>",
+                    controller:function($scope){
+                        $scope.vid=["电影","电视","直播"];
+                    },
+                    resolve: {
+                        delay: function($q) {
+                            var delay=$q.defer();//生成delay这个对象
+                            setTimeout(function (){
+                                delay.resolve();		//resolve执行
+                            }, 3000);
+                            return delay.promise;//只有return出去之后系统才能知道什么时候完事
+                        }
+                    }
+                })
+                .when("/music",{
+//                    可以定义点击事件
+                    template:
+                            "<ul><li ng-repeat='x in aui' ng-click=''><a href='http://www.baidu.com'>{{x}}</a></li></ul>",
+                    controller:function($scope){
+                        $scope.aui=["青花瓷","洋葱","直is多久发货撒的"];
+                        $scope.fun=function(){
+                            alert(123);
+                        }
+                    }
+                })
+                .when("/other",{
+                    template:"没有了"
+                })
+//                当没有对应的链接的时候    就跳转到特定的链接处
+                .otherwise({
+                    redirectTo:"/other"
+                })
+    })
+</script>
+</html>

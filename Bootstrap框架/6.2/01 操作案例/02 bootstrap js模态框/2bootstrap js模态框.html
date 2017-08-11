@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>模态框</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <link rel="stylesheet" href="../css/bootstrap.min.css"/>
+    <style>
+
+    </style>
+</head>
+
+<body>
+<!--按钮-->
+<!--<a href="#mymodal" class="btn btn-primary" data-toggle="modal">点击按钮触发弹框</a>-->
+<button class="btn btn-primary" data-toggle="modal" data-target="#mymodal">点击按钮触发弹框2</button>
+
+<!--弹出的模态框-->
+    <div id="mymodal" class="modal"><!-- modal固定布局，上下左右都是0表示充满全屏，支持移动设备上使用触摸方式进行滚动。。-->
+        <div class="modal-dialog"><!-- modal-dialog默认相对定位，自适应宽度，大于768px时宽度600，居中-->
+            <div class="modal-content"><!-- modal-content模态框的边框、边距、背景色、阴影效果。-->
+                <div class="modal-header">
+                    <button class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">我是标题</h4>
+                </div>
+                <div class="modal-body">
+                    <p>  我是内容。。。。</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button class="btn btn-primary">保存</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+<script src="../js/jquery-1.10.2.min.js"></script>
+<script src='../js/bootstrap.min.js'></script>
+    <script>
+//        默认弹出（激活弹窗）
+        $('.modal').modal();
+
+//属性的使用，表示按下esc键不关闭弹窗
+        $('#mymodal').modal({
+            keyboard: true
+        })
+
+//方法的使用，隐藏弹框
+       $('#mymodal').modal('hide');
+
+//事件的使用
+        $('#mymodal').on('hidden.bs.modal', function (e) {
+            // do something...
+            alert(1);
+        })
+
+    </script>
+</body>
+</html>

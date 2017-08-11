@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.num{
+			font-size: 50px;
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<button>循环</button>
+		<button>顺序</button>
+	</div>
+	<div>
+		<button>左</button>
+		<button>右</button>
+		<div class="num">
+			0
+		</div>
+	</div>
+</body>
+<script>
+	var btn=document.getElementsByTagName('button');
+	var divs=document.getElementsByClassName('num')[0];
+	var type=true;//true代表循环播放    false代表顺序播放
+	btn[0].onclick=function(){
+		type=true;
+		alert(type);
+	}
+	btn[1].onclick=function(){
+		type=false;
+		alert(type);
+	}
+	var num=0;
+	btn[2].onclick=function(){
+		num--;
+		if(type){
+			if(num<0){
+				num=4;
+			}
+				divs.innerHTML=num;
+		}else{
+			if (num<0) {
+				num=0;
+				alert("不能再减小了");
+			};
+				divs.innerHTML=num;
+		}
+	}
+	btn[3].onclick=function(){
+		num++;
+		if(type){
+			if(num>4){
+				num=0;
+			}
+				divs.innerHTML=num;
+		}else{
+			if(num>4){
+				num=4;
+				alert("不能再增加了");
+			}
+				divs.innerHTML=num;
+		}
+	}
+</script>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;padding: 0;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background: red;
+            cursor: pointer;
+        }
+        .box1{
+            width: 500px;
+            height: 500px;
+            border: 3px solid green;
+        }
+    </style>
+</head>
+<body>
+<div class="box" draggable="true">
+div拖动
+</div>
+<div class="box1">
+
+</div>
+</body>
+<script>
+    var box=document.getElementsByClassName("box")[0];
+    var box1=document.getElementsByClassName("box1")[0];
+    box.ondragstart=function(){
+        console.log("开始拖动");
+        this.style.background="green";
+    };
+    //拖动过程 只需鼠标不抬起 就一直触发
+    box.ondrag=function(){
+        console.log("拖拽的过程");
+        this.style.background="yellow";
+    };
+    //拖动结束
+    box.ondragend=function(){
+        console.log("结束");
+        this.style.background="red";
+    };
+    box1.ondragenter=function(){//相当于onmousemove
+       // alert("进入")
+    };
+    box1.ondragover=function(ev){//ondragover必须要写默认阻止事件
+        ev.preventDefault();
+        console.log("移动")
+    };
+    box1.ondragleave=function(){
+        console.log("离开")
+    };
+    box1.ondrop=function(){//进入投放区
+        console.log("投放")
+
+    }
+</script>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        ul{
+            list-style: none;
+            width: 150px;
+            height: 100px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<p>这是一个段落</p>
+<p>这是另一个段落</p>
+<ul>
+    <li>今天天气挺不错1</li>
+    <li>今天天气挺不错2</li>
+    <li class="add">今天天气挺不错3</li>
+    <li>今天天气挺不错4</li>
+</ul>
+<button>dom元素</button>
+<button>html方法</button>
+<button>jquery方法</button>
+<button>之后插入</button>
+<button>之前插入</button>
+<button>开始插入</button>
+<button>删除remove</button>
+<button>删除empty</button>
+</body>
+<script src="js/jquery-1.8.3.min.js"></script>
+<script>
+    $(function(){
+
+      $("button").eq(0).click(function(){
+          var newdom=document.createElement("li");//dom元素创建
+          newdom.innerHTML="newdom";
+          $("ul")[0].appendChild(newdom);
+        });
+        $("button").eq(1).click(function(){
+            var text="<li>html添加的新的元素</li>";//以html创建元素
+            $("ul").append(text);//向父元素末尾添加子元素
+        });
+        $("button").eq(2).click(function(){
+           var text1=$("<li></li>").html("jquery创建元素");
+           $("ul").append(text1);
+        })
+        $("button").eq(3).click(function(){
+            $(".add").after("<li>添加新的列表</li>").css("color","green");
+
+        })
+        $("button").eq(4).click(function(){
+            $(".add").before("<li>添加新的列表</li>").css("color","red");
+
+        })//向自己之前添加
+        $("button").eq(5).click(function(){
+            var text1=$("<li></li>").html("jquery创建元素");
+            $("ul").prepend(text1);//向父元素之前添加
+        })
+        $("button").eq(6).click(function(){
+            $("ul").remove();//删除本身
+        })
+        $("button").eq(7).click(function(){
+
+            $("ul").empty();//删除元素里面的内容 子元素
+        })
+    })
+</script>
+</html>

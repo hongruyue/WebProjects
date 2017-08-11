@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+</body>
+<script>
+    var arr=["2","8","9","6","4","3","5"];
+    var arr1=[];
+    function sort(){
+        for(var i=0;i<arr.length;i++){
+          for(var j=0;j<i-1;j++){
+              if(arr[i]<arr[j]){
+                  arr1=arr[i];
+              }else{
+                  arr1=arr[j];
+              }
+          }
+        }
+        document.write(arr1)
+    }
+  sort();
+</script>
+</html>

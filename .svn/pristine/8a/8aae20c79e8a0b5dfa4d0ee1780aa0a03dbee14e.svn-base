@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>购物车</title>
+    <link href="reset.css" rel="stylesheet"/>
+    <link href="taobao.css" rel="stylesheet"/>
+
+</head>
+<body>
+<div class="taobao">
+  <div class="logo"><img src="image/taobao_logo.gif"/></div>
+  <div class="nav"><p>您的位置:<a href="#">首页</a>><a href="#">我的淘宝</a> >我的购物车</p></div>
+<div class="line">
+    <ul>
+      <li>1.查看购物车</li>
+      <li>2.确认订单信息</li>
+      <li>&nbsp;3.付款到支付宝</li>
+      <li>&nbsp;4.确认收货</li>
+      <li>5.评价</li>
+    </ul>
+</div>
+
+    <div class="table">
+        <table width="720" style="border-collapse: collapse;border:none;outline: none;">
+            <tbody>
+            <tr style="border-bottom: 3px solid #a7cbff;">
+                <th  scope="col"><input onclick="selectAll()" type="checkbox"   name="controlAll"  id="controlAll"/>全选</th>
+                <th  scope="col">店铺宝贝</th>
+                <th  scope="col">货积分</th>
+                <th  scope="col">单元(元)</th>
+                <th  scope="col">数量</th>
+                <th scope="col" style="width:60px">小计(元)</th>
+                <th  scope="col">操作</th>
+            </tr>
+
+            <tr style="line-height: 40px;line-height: 40px; " class="tr1">
+                <td colspan="7">店铺：<a href="#">纤巧百媚时尚鞋芳</a>  卖家：<a href="#">纤巧百媚</a> <a href="#"><img src="image/taobao_relation.jpg"/></a> </td>
+            </tr>
+            <tr class="bg">
+                <td ><input type="checkbox" name="selected" value="1"/></td>
+                <td><img src="image/taobao_cart_01.jpg"><a href="#">日韩流行时尚美眉最爱拼图金</a> <br/>颜色：棕色 尺码：37<br/>保障：<img src="image/taobao_icon_01.jpg"/></td>
+                <td class="jifen">1</td>
+                <td class="jiage">138.00</td>
+                <td ><span class="jian_1">-</span><span class="numb">1</span><span class="jia_1">+</span></td>
+                <td><span class="num zongjia">138</span></td>
+                <td ><input type="button" value="删除" class="button" ></td>
+            </tr>
+            <tr style="line-height: 40px;height: 40px; " class="tr1">
+                <td colspan="5">店铺：<a href="#">纤巧百媚时尚鞋芳</a>  卖家：<a href="#">纤巧百媚</a> <a href="#"><img src="image/taobao_relation.jpg"/></a> </td>
+            </tr>
+            <tr class="bg">
+                <td ><input type="checkbox" name="selected" value="1"/></td>
+                <td><img src="image/taobao_cart_02.jpg"><a href="#">日韩流行时尚美眉最爱拼图金</a> <br/>颜色：棕色 尺码：37<br/>保障：<img src="image/taobao_icon_01.jpg"/></td>
+                <td class="jifen" >1</td>
+                <td class="jiage">138.00</td>
+                <td ><span class="jian_1">-</span><span class="numb">1</span><span class="jia_1">+</span></td>
+                <td><span class="num zongjia">138</span></td>
+                <td ><input type="button" value="删除" class="button"></td>
+            </tr>
+            <tr style="line-height: 40px;height: 40px; " class="tr1">
+                <td colspan="5">店铺：<a href="#">纤巧百媚时尚鞋芳</a>  卖家：<a href="#">纤巧百媚</a> <a href="#"><img src="image/taobao_relation.jpg"/></a> </td>
+            </tr>
+            <tr class="bg">
+                <td ><input type="checkbox" name="selected" value="1"/></td>
+                <td><img src="image/taobao_cart_03.jpg"><a href="#">日韩流行时尚美眉最爱拼图金</a> <br/>颜色：棕色 尺码：37<br/>保障：<img src="image/taobao_icon_01.jpg"/></td>
+                <td class="jifen">1</td>
+                <td class="jiage">138.00</td>
+                <td ><span class="jian_1">-</span><span class="numb">1</span><span class="jia_1">+</span></td>
+                <td><span class="num zongjia">138</span></td>
+                <td ><input type="button" value="删除" class="button" /></td>
+            </tr>
+            <tr style="line-height: 40px;height: 40px; " class="tr1">
+                <td colspan="5">店铺：<a href="#">纤巧百媚时尚鞋芳</a>  卖家：<a href="#">纤巧百媚</a> <a href="#"><img src="image/taobao_relation.jpg"/></a> </td>
+            </tr>
+            <tr class="bg">
+                <td ><input type="checkbox" name="selected" value="1"/></td>
+                <td><img src="image/taobao_cart_04.jpg"><a href="#">日韩流行时尚美眉最爱拼图金</a> <br/>颜色：棕色 尺码：37<br/>保障：<img src="image/taobao_icon_01.jpg"/></td>
+                <td class="jifen">1</td>
+                <td class="jiage">138.00</td>
+                <td ><span class="jian_1">-</span><span class="numb">1</span><span class="jia_1">+</span></td>
+                <td><span class="num zongjia">138</span></td>
+                <td ><input type="button" value="删除" class="button"></td>
+            </tr>
+
+            <tr style="height: 40px;line-height: 40px;text-align: right;">
+                <td colspan="7" style="width: 720px">商品总价(不含运费)：<span class="num num3 numz
+">552</span>元</td>
+            </tr>
+            <tr class="jifen" style="line-height: 40px;height: 40px;">
+                <td colspan="7" style=""><button id="button">删除所选</button>可获积分<span class="num num3 numj">4</span>点</td>
+            </tr>
+            <tr style="line-height: 40px;height: 40px; text-align: right">
+                <td colspan="7"><a href="#"><img src="image/taobao_subtn.jpg"/></a></td>
+            </tr>
+            </tbody>
+        </table>
+
+
+    </div>
+</div>
+
+</body>
+<script src="taobao.js" type="text/javascript"></script>
+</html>

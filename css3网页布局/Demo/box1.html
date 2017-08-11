@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            padding: 0 ;
+            margin: 0;
+        }
+        html{height: 100%;  }
+        body{
+            height: 100%;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;/*垂直*/
+        }
+      .one{
+          height: 100px;
+          display: -webkit-box;
+      }
+    .one_in{
+        height: 100px;
+        width: 200px;
+        background: red;
+    }
+        .one_inn{
+            background: #ccc;
+            -webkit-box-flex:1;/*份数 跟百分比是一样的*/
+        }
+        .two{
+            -webkit-box-flex: 4;
+            background: yellow;
+            display: -webkit-box;
+        }
+        .two_in1{
+            -webkit-box-flex: 2;
+            background: pink;
+            -webkit-box-ordinal-group: 2;
+        }
+        .two_in2{
+            -webkit-box-flex: 4;
+            background: purple;
+            /*定义元素排列顺序（在子元素中使用）*/
+            -webkit-box-ordinal-group: 3;
+        }
+         .two_in3{
+            -webkit-box-flex: 1;
+            background: red;
+             -webkit-box-ordinal-group: 1;
+        }
+        .three{
+            -webkit-box-flex: 1;
+            background: green;
+        }
+    </style>
+</head>
+<body>
+<div class="one">
+    <div class="one_in">上左，宽高固定</div>
+    <div class="one_inn">上右，高固定，宽自适应</div>
+</div>
+<div class="two">
+    <div class="two_in1">中1</div>
+    <div class="two_in2">中2</div>
+    <div class="two_in3">中3</div>
+</div>
+<div class="three"></div>
+</body>
+</html>

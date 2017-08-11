@@ -1,0 +1,152 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>其他JS功能</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+</head>
+<body>
+
+<!-- 让低版本IE支持HTML5元素方法 -->
+html5.js让IE（包括IE6）支持HTML5元素方法
+微软的浏览器IE8及以下IE版本对HTML5标签的支持是有限的，我们可以通过在网页中添加脚本的方式来解决目前IE浏览器
+
+对HTML5支持的问题。
+让IE（包括IE6）支持HTML5元素，我们需要在HTML头部添加以下JavaScript，这是一个简单的document.createElement_x声明，利用条件注释针对IE来调用这个js文件。
+Opera，FireFox等其他非IE浏览器就会忽视这段代码，也不会存在http请求。
+<!--[if IE]>
+	<script src="js/html5.js"></script>
+<![endif]-->
+上面这段代码仅会在IE浏览器下运行，还有一点需要注意，在页面中调用html5.js文件必须添加在页面的head元素内，因为IE浏览器必须在元素解析前知道这个元素，所以这个js文件不能在页面底部调用。
+
+
+<!-- IE6支持显示png透明图片 -->
+DD_belatedPNG.js
+是一个能是IE6支持显示png透明图片，而且还支持背景循环（background-repeat）和定位（backgrond-position） ，支持focus，Hover。
+使用方法：
+<!--[if IE 6]>
+	<script src="js/DD_belatedPNG.js"></script>
+	<script>
+		DD_belatedPNG.fix('.controlBar,.controlBar a,#div1,#div2 span');
+	</script>
+<![endif]-->
+其中:
+DD_belatedPNG.js 为文件路径，.png_bg 为需要引用的容器名，如果需要多处引用可以使用如下方法：
+DD_belatedPNG.fix('.example1, .example2, img');
+其中.example1 和 .example2 为class 选择器，img 就是标签了。
+如果需要修复页面上的所有PNG图片，则可以使用
+DD_belatedPNG.fix('*');
+
+ID选择器例子：
+DD_belatedPNG.fix('#png');
+
+伪类例子：
+DD_belatedPNG.fix('.png a:hover,.png a:focus');
+
+img标签例子：
+DD_belatedPNG.fix('img');
+
+如果是多个直接加逗号（英文下的）就行。例如：
+DD_belatedPNG.fix('.png_bg,#png,.png a:hover,.png a:focus,img');
+
+<!-- 用DD_belatedPNG在ie6中的问题 -->
+1，页面是用iframe载入的 。页面里面的用DD_belatedPNG， 在ie6下会出现空白一大片，但是是占位的。
+2，页面中的png图片有版本号，在ie6会出现不透明情况。
+3，做滑动门背景图是png 需要透明，在ie6下hover会出现背景跑到屏幕左上角。
+4，a用absolute 背景用png ，在ie6 hover效果同上（这个问题是根据记忆，没有具体写demo去测试）
+5，<li><a href=""><img src="***.png"/></a></li> li只是浮动，ie6图片会跑到屏幕左上角。
+在看了DD_belatedPNG的代码之后，发现1，3，4，5其实是同一个问题。
+
+giveLayout: function (el) {
+    el.style.zoom = 1;
+    if (el.currentStyle.position == 'static') {
+        el.style.position = 'relative';
+    }
+}
+看了这个代码发现 只要position没有设置那么 DD_belatedPNG.JS 就会把position设置为relative；
+我只是加了一个判断 去除一些标签，修改如下
+giveLayout: function (el) {
+	el.style.zoom = 1;
+	if (el.currentStyle.position == 'static') {
+		var tags=el.nodeName.toLowerCase();
+        	if(tags!='html' && tags!='a'&& tags!='img'){
+            		el.style.position = 'relative'
+        	};
+    	}
+}
+这样修改 问题就解决了。
+
+现在看第二个问题 
+2，页面中的png图片有版本号，在ie6会出现不透明情况。
+下面是DD_belatedPNG 对判断是img的代码
+if (el.nodeName == 'IMG') {
+	if(el.src.toLowerCase().search(/\.png$/) != -1) {
+		el.isImg = true;
+		el.style.visibility = 'hidden';
+	}
+
+这段只是匹配了这张图片是不是png，但是如果图片加了版本号例如：logo.png?v=1321303913这样的图片在ie6下就不会透明，这个问题是同事大师帮忙修改的，修改如下：
+if (el.nodeName == 'IMG') {
+	if(/\.png(?:\W|$)/.test(el.src.toLowerCase())) {
+		el.isImg = true;
+		el.style.visibility = 'hidden';
+	}
+
+
+<!-- 基于jQuery对联飘浮广告插件ylFloat.js -->
+此插件要求运行在jQuery v1.3 或更高版本上
+此插件功能
+1、单独设置左、右浮动对联各自内容;
+2、设置左右浮动对联内容一样;
+3、仅单独使用左或右侧对联;
+4、可以在屏幕分辨率宽度小于多少时不出现对联广告;
+5、设置是否允许关闭对联，每侧对联单独关闭。
+6、使用jQuery使网页内容和行为分离。
+7、可以设置左或右侧对联距容器顶部及左侧或右侧的距离。
+8、灵活设置左或右侧对联的高或宽,当您的内容大小超过您的设置值时，将自动隐藏超出部分。
+9、只要您愿意，您可以设置无数多个浮动内容。
+
+
+<!-- Js中sort()方法的用法 -->
+sort()方法返回一个元素已经进行了排序的 Array 对象。 
+arrayobj.sort(sortfunction)  
+参数 
+arrayObj  必选项。任意 Array 对象。  
+sortFunction  可选项。是用来确定元素顺序的函数的名称。如果这个参数被省略， 
+那么元素将按照 ASCII字符顺序进行升序排列。 
+
+ASCII（American Standard Code for Information Interchange，美国标准信息交换代码）是基于拉丁字母的一套电脑编码系统，主要用于显示现代英语和其他西欧语言。
+
+大写字母、小写字母和数字三种字符的ASCII码从小到大的排列顺序:
+数字0-9的ASCII码为：048到057
+大写字母A-Z的ASCII为：065-090
+小写字母a-z的ASCII为：097到122
+
+<!-- Demo1（默认按字母排序）：  -->
+<script language="javascript">  
+  var nameArr = new Array("douguoqiang","hedan","redhacker","panliu888","maxuan","xuejianping","lanse","zhangsan","lisi","wangwu");
+  nameArr.sort();  
+  for (var i = 0; i < nameArr.length; i++) {  
+    document.write(nameArr[i]);  
+  }  
+</script> 
+
+<!-- Demo2（数字排序，sort(prama)带参数）： -->
+<script>  
+  var numArr = new Array(12,23,1,4,23,34,2,5);  
+  numArr.sort(function compare(a,b){return a-b;});  
+  for (var i = 0; i<numArr.length; i++) {  
+    document.write(numArr[i] +"<br>");  
+  }  
+</script> 
+<script>
+  var numArr = new Array(12,23,1,4,23,34,2,5);  
+  numArr.sort(function compare(a,b){return b-a;});  
+  for (var i = 0; i<numArr.length; i++) {  
+    document.write(numArr[i] +"<br>");  
+  }  
+</script> 
+<!-- 参考文献:http://www.jb51.net/article/4168.htm  -->
+</body>
+</html>

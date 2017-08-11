@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box{
+            width:330px;
+            height: 200px;
+            position: relative;
+
+        }
+        .box ul{
+            list-style: none;
+        }
+       .box li{
+           position: absolute;
+           left: 0;
+           top: 0;
+       }
+        .sz{
+            width: 120px;
+            height: 20px;
+            position: absolute;
+            left:200px;
+            top:150px;
+            z-index:5;
+        }
+        .sz p{
+            float: left;
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            border: 1px solid red;
+            text-align: center;
+            margin-left:2px;
+            border-radius: 50%;
+            background:#ccc;
+
+
+        }
+        .lis{
+            z-index: 2;
+        }
+        .sz .p1{
+            background: red;
+        }
+    </style>
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            var num=0;
+           setInterval(function(){
+               $("li").eq(num).css("display","block").siblings().css("display","none");
+                $("p").eq(num).css("background","red").siblings().css("background","#ccc");
+               num++;
+                if(num>=5){
+                    num=0;
+                }
+           },1000)
+        })
+    </script>
+</head>
+<body>
+<div class="box">
+    <ul>
+        <li class="lis"><img src="img/focus.jpg" width="330px" height="200px" ></li>
+        <li><img src="img/focus1.jpg" width="330px" height="200px" ></li>
+        <li><img src="img/focus2.jpg" width="330px" height="200px" ></li>
+        <li><img src="img/focus3.jpg" width="330px" height="200px" ></li>
+        <li><img src="img/focus4.jpg" width="330px" height="200px" ></li>
+    </ul>
+    <div class="sz">
+        <p class="p1">1</p>
+        <p>2</p>
+        <p>3</p>
+        <p>4</p>
+        <p>5</p>
+    </div>
+</div>
+
+
+</body>
+</html>

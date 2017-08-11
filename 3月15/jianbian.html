@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>渐变，上下移动</title>
+    <style>
+        .box{
+            width: 360px;
+            height: 865px;
+            background: url("img/qq.png") no-repeat;
+            position:fixed;
+            right:20px;
+            top:20px;
+
+        }
+        .photo{
+            width: 80px;
+            height: 80px;
+            border: 1px solid red;
+            position: absolute;
+            top:60px;
+            left:10px;
+            cursor: pointer;
+        }
+        .xinxi{
+            width: 416px;
+            height: 190px;
+            opacity: 0;
+            position: absolute;
+            left:-410px;
+            background: url("img/xi.png") no-repeat;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="photo"></div>
+    <div class="xinxi"></div>
+</div>
+<script>
+    var box=document.getElementsByClassName("box")[0];
+    var photo=document.getElementsByClassName("photo")[0];
+    var xinxi=document.getElementsByClassName("xinxi")[0];
+    var time,time1;
+    photo.onmouseover=function () {
+        var opa = 0;
+        time = setInterval(function () {
+            if (opa >= 1) {
+                opa = 1;
+            }
+            opa += 0.1;//opa = opa + 0.1;
+            xinxi.style.opacity = opa;
+            //console.log(opa);
+        }, 100);
+    };
+    photo.onmouseout=function () {
+            var opa1=xinxi.style.opacity;//获取元素透明度
+            time1=setInterval(function () {
+                if(opa1<=0){
+                    opa1=0;
+                    clearInterval(time1);
+                }
+                opa1-=0.1;
+                xinxi.style.opacity=opa1;
+            },100);
+
+        clearInterval(time);
+        }
+
+
+</script>
+
+</body>
+</html>

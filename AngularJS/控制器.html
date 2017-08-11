@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="angular-1.5.8/angular.js"></script>
+</head>
+<body >
+<div ng-app="myApp">
+    <div ng-controller="con1">
+    <input type="text" ng-model="a"/>
+    <div>{{a}}</div>
+</div>
+    <div ng-controller="con2">
+        <div>{{b}}</div>
+    </div>
+</div>
+</body>
+
+<script>
+    //控制器需要在js代码中定义  []用来依赖注入的 控制器相当于js函数 数据 事件等操作
+    var app=angular.module("myApp",[]);
+    app.controller("con1",function($scope){
+        $scope.a="123"//格式定义变量
+    })
+    app.controller("con2",function($scope){
+        $scope.b="12345"//格式定义变量
+    })
+</script>
+</html>

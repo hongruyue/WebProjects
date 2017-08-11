@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	.outer{
+		width: 1005px;
+		height:136px;
+		border: 1px solid red;
+		margin: 0 auto;
+		overflow: hidden;
+	}
+	.inner{
+		width: 10000px;
+		height: 136px;
+	}
+	.inn img{
+		float: left;
+		margin-right: 10px;
+	}
+	</style>
+</head>
+<body>
+	<div class="outer">
+		<div class="inner">
+			<div class="inn">
+				<img src="images/01.jpg" height="136" width="193" alt="">
+				<img src="images/02.jpg" height="136" width="193" alt="">
+				<img src="images/03.jpg" height="136" width="193" alt="">
+				<img src="images/04.jpg" height="136" width="193" alt="">
+				<img src="images/05.jpg" height="136" width="193" alt="">
+			</div>
+		</div>
+	</div>
+	<button>向左</button>
+	<button>向右</button>
+</body>
+<script>
+	var outer=document.getElementsByClassName('outer')[0];
+	var inner=document.getElementsByClassName('inner')[0];
+	var inn=document.getElementsByClassName('inn')[0];
+	var imgs=inn.getElementsByTagName('img');//在inn中的img
+	var btn=document.getElementsByTagName('button');
+	var newNode=inn.cloneNode(true);//复制五张图片
+	inner.appendChild(newNode);//将复制的图片插入inner
+	var timer1,timer2,timer3,timer4;//定义计时器
+	var type=true;//true代表左    false代表右   代表图片运动的方向
+	function clear(){//定义函数清除所有计时器
+		clearInterval(timer1);
+		clearInterval(timer2);
+		clearInterval(timer3);
+		clearInterval(timer4);
+	}
+	function runLeft(){//定义向左滚动的函数
+		outer.scrollLeft++;//获取当前左卷并增加
+		if(outer.scrollLeft>=(imgs[0].width+10)*imgs.length){//判断左卷距离大于等于显示图片总宽度   就让左卷归零
+			outer.scrollLeft=0;
+		}
+		if (outer.scrollLeft%(imgs[0].width+10)==0) {//判断左卷距离等于图片的整数倍   就停顿两秒钟
+			clear();
+			timer3=setTimeout(function(){
+				timer1=setInterval(runLeft,10);
+			},2000)
+		};
+	}
+	timer1=setInterval(runLeft,10);//定义计时器   让图片左滚
+	function runRight(){
+		outer.scrollLeft--;//获取当前左卷并减小
+		if(outer.scrollLeft==0){
+			outer.scrollLeft=(imgs[0].width+10)*imgs.length;
+		}
+		if (outer.scrollLeft%(imgs[0].width+10)==0) {
+			clear();
+			timer4=setTimeout(function(){
+				timer2=setInterval(runRight,10);
+			},2000)
+		};
+	}
+	btn[0].onclick=function(){
+		clear();
+		timer1=setInterval(runLeft,10);
+		type=true;
+	}
+	btn[1].onclick=function(){
+		clear();
+		timer2=setInterval(runRight,10);
+		type=false;
+	}
+	outer.onmouseover=function(){
+		clear();
+	}
+	outer.onmouseout=function(){
+		if(type){
+			timer1=setInterval(runLeft,10);
+		}else{
+			timer2=setInterval(runRight,10);
+		}
+	}
+</script>
+</html>

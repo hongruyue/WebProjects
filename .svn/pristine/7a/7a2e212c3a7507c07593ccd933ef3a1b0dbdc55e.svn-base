@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+</body>
+<script>
+
+    for(var i=0;i<=5;i++){
+        var newinput=document.createElement("input");
+        newinput.setAttribute("type","button");
+        newinput.setAttribute("value","button");
+        document.body.appendChild(newinput);
+        function showNum(n){
+            newinput.onclick=function(){
+                alert(n.toString());
+            }
+        }
+       showNum(i);
+    }
+
+
+</script>
+</html>

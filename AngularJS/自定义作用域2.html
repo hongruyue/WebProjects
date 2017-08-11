@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="angular-1.5.8/angular.js"></script>
+</head>
+<body ng-app="myApp">
+   <div ng-controller="con1"></div>
+   <div ng-controller="con2"></div>
+
+</body>
+<script>
+    var app=angular.module("myApp",[]);
+    //共享数据和函数
+   /* app.provider("test",function(){//可以用依赖注入 外部调用
+       this.$get= function (){//this指当前的环境
+            return "abc";
+       }
+    });*/
+    app.provider("test",function(){
+        this.$get= function (){
+            return {
+                a:"adsdfdf",
+                b:"dadfvdf"
+            }
+        }
+    });
+    app.controller("con1",function($scope,test){
+      alert(JSON.stringify(test))
+        test.b="123"
+
+    });
+    app.controller("con2",function($scope,test){
+      alert(test.b)
+    })
+
+
+
+</script>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #canvas{
+            border: #cccccc;
+        }
+        div{
+            width: 800px;
+            height: 600px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <canvas id="canvas" width="800px" height="600px"></canvas>
+</div>
+
+</body>
+<script>
+    var canvas=document.getElementById("canvas");
+    var cvs=canvas.getContext("2d");
+    /*二次贝塞尔曲线*/
+    cvs.beginPath();
+    cvs.moveTo(221,67);
+    cvs.quadraticCurveTo(379,139,193,209);
+    cvs.fillStyle="blue";
+    cvs.strokeStyle="red";
+    cvs.fill();
+    cvs.closePath();
+    cvs.stroke();
+    /*三次贝塞尔曲线*/
+    cvs.beginPath();
+    cvs.save();//保存本次的变化
+    //cvs.translate(100,100);
+    cvs.rotate(Math.PI/180*30);//旋转中心在画布的原点处
+    //cvs.scale(1.1,1.1);
+    cvs.moveTo(234,88);
+    cvs.bezierCurveTo(136,37,137,177,234,218);
+    cvs.fillStyle="red";
+    cvs.strokeStyle="yellow";
+    cvs.lineWidth=3;
+    cvs.fill();
+    cvs.stroke();
+    cvs.restore();//恢复上一次的变化
+    cvs.closePath();
+
+
+    cvs.beginPath();
+    cvs.save();
+    //cvs.translate(100,100);//上一个位移基础上移动
+    //cvs.rotate(Math.PI/180*30);//旋转也会在第一个基础上
+    //cvs.scale(1.1,1.1);//缩放
+    cvs.moveTo(234,88);
+    cvs.bezierCurveTo(332,37,333,177,234,218);
+    cvs.fillStyle="black";
+    cvs.strokeStyle="yellow";
+    cvs.lineWidth=3;
+    cvs.stroke();
+    cvs.fill();
+    cvs.restore();
+    cvs.closePath();
+
+</script>
+</html>

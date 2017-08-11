@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css"></style>
+</head>
+<style type="text/css">
+	*{margin:0;padding: 0}
+	li{float: left;width: 100px;height: 40px;background: pink;text-align: center;line-height: 40px;border: solid 1px black;}
+	img{float: left;clear: left;width: 408px;}
+	li{list-style: none; cursor: pointer;}
+</style>
+<body>
+	<ul>
+		<li>春</li>
+		<li>夏</li>
+		<li>秋</li>
+		<li>冬</li>
+	</ul>
+	<div>
+		<img src="images/1.jpg">
+	</div>
+</body>
+<script src="jquery-2.1.0.min.js"></script>
+<script>
+$(function(){
+	$("li").click(function(){//每一个都有点击事件，不需要给下标
+		var index=$(this).index()+1;
+		$.ajax({
+			url:"tab"+index +".html",
+			type:"get",
+			data:"send",
+			datatype:"html",
+			success:function(data){
+				$("div").html(data);
+				eval($("script").eq(0).html());
+			},
+			error:function(){
+				alert("失败")
+			},
+		     async:true
+
+		})
+	})
+/*//	点击某个li获取对应的文件
+	$("li").click(function(){
+		var index=$(this).index()+1;//获取当前点击元素的下标    0123
+		$.ajax({
+			url:"tab"+index+".html",
+			type:"get",
+			data:"send",
+			dataType:"html",
+			success:function(data){
+				$("div").html(data);
+				eval($("script").eq(0).html());//将括号内的代码转化为可以执行的 js代码    找到图片路径
+			},
+			error:function(){
+				alert("失败");
+			},
+			async:true
+		})
+	})*/
+})
+</script>
+</html>

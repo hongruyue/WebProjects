@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+
+        .box{
+            width: 400px;
+            height:400px;
+            background:red;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+
+    </div>
+
+</body>
+<script>
+    var divs=document.getElementsByTagName("div")[0];
+   /* divs.onmousewheel=function(ev){//非火狐中鼠标滚轮事件
+    var event=ev||window.event;
+     //alert(event.wheelDelta);
+     if(event.wheelDelta>0){
+     alert("向前")
+     }else{
+     alert("向后")
+     }
+     }*/
+    divs.addEventListener("DOMMouseScroll",function(){//火狐浏览器
+        alert(ev.detail);
+    });
+
+   /* divs.innerHTML=window.navigator.userAgent.toLowerCase();//判断浏览器类型*/
+</script>
+</html>

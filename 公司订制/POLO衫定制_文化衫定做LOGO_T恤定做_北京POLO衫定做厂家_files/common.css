@@ -1,0 +1,129 @@
+.banner{margin-bottom: 0px;}
+.content .container{width: 1000px;padding: 0;}
+.content h2{font-size: 40px;font-weight: normal;text-align: center;margin: 0 auto;color: #626262;padding: 0;padding-bottom: 60px;}
+.content h3{font-size: 18px;padding-bottom: 40px;margin: 0 auto;padding: 0;text-align: center;color: #626262;margin-top: 15px;padding-bottom: 60px;}
+.content .nav-tabs li{font-size: 18px;}
+.content .tab-content{border: 1px solid #EDEDED;border-top: none;padding-top: 20px;padding-bottom: 20px;margin-top: 20px;}
+.content .breadcrumb{background-color:#1cb89d;margin-bottom: 0;border-radius:10px 10px 0px 0px;-webkit-border-radius:10px 10px 0px 0px;height: 66px;line-height: 54px;}
+.content .breadcrumb>p{display: none !important;}
+.content .breadcrumb li, .content .breadcrumb li a, .content .breadcrumb p{color: #fff;font-size: 15px;}
+.content .breadcrumb li:hover a{color:#1a529c;}
+
+.content .breadcrumb li:nth-child(13){
+	display: none;
+}
+.content .breadcrumb li:nth-child(14){
+	display: none;
+}
+.content .breadcrumb li:nth-child(15){
+	display: none;
+}
+.content .breadcrumb li:nth-child(16){
+	display: none;
+}
+
+.content .breadcrumb li:nth-child(17){
+	display: none;
+}
+.breadcrumb > li + li::before {padding: 0 3px 0 0;color: #ccc;content: ">";}
+.breadcrumb .pull-right::before{padding: 0 7px;color: #ccc;content: "|";font-size: 13px;}
+.newlist{border:1px solid #e4e4e4;margin-bottom: 55px;}
+.newlist .title p{font-size: 15px; padding-left:10px;border-left: 3px solid #f49902;margin: 15px;}
+.newlist em{font-style: normal;font-size: 13px;}
+.newlist .summary{margin: 15px;overflow: hidden;text-align: justify;height: 100px;}
+.pagelist{width: 100%;margin: 0 auto;text-align: center;}
+.newshow .title{font-size: 18px;padding-top: 45px;}
+.case p{height: 28px;line-height: 40px;font-size: 15px;color: #6d6d6d;}
+.related{margin: 20px 0;}
+.othercase{width: 100%;height: 250px;overflow: hidden;}
+.othercase ul li{float: left;overflow: hidden;padding: 10px;}
+
+
+
+/*album*/
+#play{text-align:center;position:relative;overflow:hidden;margin:5px auto;}
+#play .change_a{width:50%;height:100%;position:absolute;top:0;z-index:1;cursor:pointer;display:block;overflow:hidden;background:url(about:blank);}
+#play .prev_a{left:0;}
+#play .next_a{right:0}
+#play .change_a span{width:24px;height:43px;display:block;position:absolute;top:50%;margin-top:-21px;display:none}
+#play .prev_a span{background:url("../images/s_gallery_2012110702.png") no-repeat 0px -50px;left:0;}
+#play .next_a span{background:url("../images/s_gallery_2012110702.png") no-repeat -30px -50px;right:0;}
+#play .img_ul{position:relative;z-index:1;}
+.img_hd {width:100%;border-top:1px solid #ccc;border-bottom:1px solid #ccc;background-color:#eee;overflow:hidden;height:66px;padding:2px 0;margin-top:15px;margin:5px auto;position:relative;margin-bottom: 90px;}
+.img_hd ul{position:absolute;z-index:1}
+.img_hd ul li{float:left;width:80px;height:60px;border:3px solid #eee;cursor:pointer;margin:0 3px 0 1px;overflow:hidden;*display:inline;padding:1px;text-align:center}
+.img_hd ul li img{height:60px;}
+.img_hd ul li.on{border-color:rgb(45, 150, 233);}
+.img_hd .bottom_a{background:url(../images/s_gallery_2012110702.png) no-repeat;width:22px;height:22px;position:absolute;display:block;top:50%;margin-top:-11px;cursor:pointer;z-index:10}
+.img_hd .prev_a{background-position:0 -24px;left:5px;}
+.img_hd .next_a{background-position:-30px -24px;right:5px;}
+
+/*othercase*/
+.picScroll-left{ width:100%;  overflow:hidden; position:relative;  border:1px solid #ccc; height: 290px;margin-bottom: 25px;  }
+.picScroll-left .title{position: absolute;left: 10px;top: 5px; }
+.picScroll-left .hd{ overflow:hidden;  height:30px; background:#f4f4f4; padding:0 10px;  }
+.picScroll-left .hd .prev,.picScroll-left .hd .next{ display:block;  width:5px; height:9px; float:right; margin-right:5px; margin-top:10px;  overflow:hidden;
+	 cursor:pointer; background:url("../images/arrow.png") no-repeat;}
+.picScroll-left .hd .next{ background-position:0 -50px;  }
+.picScroll-left .hd .prevStop{ background-position:-60px 0; }
+.picScroll-left .hd .nextStop{ background-position:-60px -50px; }
+.picScroll-left .hd ul{ float:right; overflow:hidden; zoom:1; margin-top:10px; zoom:1; }
+.picScroll-left .hd ul li{ float:left;  width:9px; height:9px; overflow:hidden; margin-right:5px; text-indent:-999px; cursor:pointer; background:url("../images/icoCircle.gif") 0 -9px no-repeat; }
+.picScroll-left .hd ul li.on{ background-position:0 0; }
+.picScroll-left .bd ul{ overflow:hidden; zoom:1; }
+.picScroll-left .bd ul li{ margin:0 8px; float:left; _display:inline; overflow:hidden; text-align:center;  }
+.picScroll-left .bd ul li{ text-align:center; }
+.picScroll-left .bd ul li img{width: 330px;height: 220px; display:block;  padding:2px 10px; overflow: hidden;}
+
+/*buy*/
+.buy{background-color: #f3f3f3}
+.buy .row{margin-left: 0px !important;margin-right: 0px !important;/*padding: 0 28px;*/}
+.buy .section{margin-bottom: 10px; background: #fff;padding:15px 17px;}
+.buy .section h2{font-size: 25px;color: #454545;text-align: left;font-weight: normal;margin-bottom: -69px;line-height:80px;height: 159px;}
+.buy .section h2 small{color:#d1d1d1;font-size: 60%;text-transform:uppercase; }
+.buy .section h2 span{font-size: 60%;padding-right: 16px;padding-top: 10px;}
+.buy .section2{background-color: #f3f3f3}
+.section1 .pro-list{width: 970px;overflow: hidden;}
+.section1 .pro-list img{}
+.section2 .ad{padding: 0;width: 231px;border:1px solid rgb(230, 230, 230); border-right: none;}
+/*@-moz-document url-prefix() { .section2 .ad {margin-top:19px; } }*/
+.section2 .ad .tj{width: 231px; height: 248px; overflow: hidden; padding:0 25px;background: #fff;}
+.section2 .ad .tj p{border-bottom: 1px solid #f1f1f1;font-size: 14px;margin-top: 20px;}
+.section2 .ad .tj ul li{float: left;width: auto;height: auto;padding: 0 7px;}
+.section2 .ad .tj ul li a{font-size: 12px;color: #888;}
+.section2 .rec{padding: 0;} 
+.section2 .rec .pros{border:1px solid #e6e6e6; background: #fff;width: 236px;height: 321px;overflow: hidden;padding: 0;}
+.section2 .rec .pros .title{font-size: 14px; text-align: center;height: 70px;line-height: 70px;margin: 0;}
+/*.section2 .rec .pros .price{color: #ec0026;}*/
+.section2 .rec .pros img{width: 237px;height: 246px;padding: 0 4px;}
+.section2 ul li{float: left; width:241px;height: 234px;overflow: hidden;margin: 0 13px 13px 0;position: relative;}
+.section2 ul li p{position: absolute;left: 0;bottom: 0;width: 100%;font-size: 100%;text-align: center;height: 30px;line-height: 30px;background:rgba(232,232,232,0.7);margin: 0;display: none;}
+.section2 ul li:hover p{display: block;}
+.section2 ul li img{border:1px solid #e6e6e6;margin-bottom: 3px; width: 239px; height: 232px;}
+.section2 .ad_pic{width: 100%;margin:22px auto;display: none;}
+.multipleColumn{ overflow:hidden; position:relative;}
+.multipleColumn .hd{ overflow:hidden;  height:30px; background:#f4f4f4; padding:0 10px;display: inline-block;position: absolute;top: 4px;right: 0px;  }
+.multipleColumn .hd .prev,.multipleColumn .hd .next{ display:block;  width:5px; height:9px; float:right; margin-right:5px; margin-top:10px;  overflow:hidden;
+	 cursor:pointer; background:url("../images/icoLeft.gif") no-repeat;}
+.multipleColumn .hd .next{ background:url("../images/icoRight.gif") no-repeat;  }
+.multipleColumn .hd ul{ float:right; overflow:hidden; zoom:1; margin-top:10px; zoom:1; }
+.multipleColumn .hd ul li{ float:left;  width:9px; height:9px; overflow:hidden; margin-right:5px; text-indent:-999px; cursor:pointer; background:url("../images/icoCircle.gif") 0 -9px no-repeat; }
+.multipleColumn .hd ul li.on{ background-position:0 0; }
+.multipleColumn .bd ul{ overflow:hidden; zoom:1; width:250px;  float:left; _display:inline;  }
+.multipleColumn .bd ul li{height: 165px;margin-bottom: 22px;}
+.multipleColumn .bd ul li img{height: 166px;}
+.nbuy .details{border: solid 1px #dedfde;margin-top: 40px;margin-bottom:40px; width: 100%;overflow: hidden;}
+.nbuy img{max-width: 100%;}
+.nbuy .details li{float: left;padding: 10px 42px;width: 345px;height: 45px;}
+.pagination span, .pagination a{border: 1px solid #e6e6e6;padding: 2px 6px;margin: 0px 5px;}
+.cur{ color: #1a529c}
+.cur a{ color: #1a529c}
+.nbanner img{
+	width: 100%;
+}
+blockquote{
+	padding: 0 !important;
+	margin: 0 !important;
+	font-size: 0 !important;
+	border-left: none !important;
+}

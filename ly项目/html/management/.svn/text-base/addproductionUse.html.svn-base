@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html ng-app="addproductionApp" ng-controller="addproduction">
+	<head>
+		<meta charset="UTF-8">
+		<title>添加凭证制发与使用管理</title>
+		<link rel="stylesheet" href="../../bs/css/bootstrap.min.css">   
+		<link type="text/css" rel="stylesheet" href="../../css/main.css" />
+		<link type="text/css" rel="stylesheet" href="../../css/style.css" />
+		<link type="text/css" rel="stylesheet" href="../../css/collaboration.css" />
+		<!--<link type="text/css" rel="stylesheet" href="../../bs/css/validationEngine.jquery.css" />-->
+   		<script type="text/javascript" src="../../bs/js/jquery-1.11.3.min.js" ></script>
+		<script type="text/javascript" src="../../bs/js/angular.min.js" ></script>
+		<script type="text/javascript" src="../../bs/js/bootstrap.min.js" ></script>
+		<script type="text/javascript" src="../../js/url.js" ></script>
+		<script type="text/javascript" src="js/productionUse.js" ></script>
+		<script src="../../bs/js/jquery.form.js"></script>
+		<script src="../../bs/js/jquery.page.js"></script>
+		<style type="text/css">
+		.View2{
+			margin-top:10px;
+			font-weight: 900;
+			color: #006091;
+			padding-left: 10px;
+		}
+		.View{padding-left: 5px;}
+		.tablet{
+			border-bottom:1px solid #ddd;
+			font-size:12px;
+		}
+		.heigh{
+			max-height: 340px;
+			overflow-y: auto;
+		}
+		.nav-tabs {
+		    border-bottom: none;
+		}
+		 .nav-tabs>li{position: relative;font-size: 12px;top: 12px;border-radius: 8px 8px 0px 0px;}
+		.nav-tabs>li>a:hover{
+		background-color:#3693EF;
+		border-color: #fff;
+		}
+		  .active>a{
+		 	border-bottom:none;
+		 }
+		 .active>a:hover{
+		 	background-color:  #fff;
+			color:#ddd;
+		 } 
+		.nav > li > a{
+			border-radius: 8px 8px 0px 0px;
+			margin-left: 5px;
+			border:1px solid #fff;
+			padding: 5px 15px;
+			background-color: #00BCF2;
+			color: #fff;
+		}
+		.col-md-8{overflow:hidden; 
+			white-space:nowrap; 
+			text-overflow:ellipsis;}
+		.selAttributes,.bottom{
+				height: 150px !important;
+				width: 170px;
+			}
+			.btn-bar{
+				text-align: center;
+			}
+			.btn-bar span{
+				cursor:pointer;
+			}
+			.bordott{border: 2px dotted #2aaae9;
+					padding: 20px 10px;}
+			option{word-wrap: break-word;}			
+		</style>
+		
+	</head>
+<body >
+<div id="man_zone" class="mianbody">
+		<div class="softtm">
+				<ul id="myTab" class="nav nav-tabs">
+					<li class="active">
+						<a href="#data" class="getContentBasic" data-toggle="tab">数据核实凭证使用规则</a>
+					</li>
+					<li>
+						<a href="#licence" class="getContentLicense" data-toggle="tab">证照核实凭证使用规则</a>
+					</li>
+					<li>
+						<a href="#important" class="getContentLicense2" data-toggle="tab">要件核实凭证使用规则</a>
+					</li>
+				</ul>
+				<a class="a" type="button" id="back" ng-click="rt()" style="float:right;position: relative;bottom: 25px;right: 10px;">
+					<img alt="返回" src="../../img/back_buss.png" />
+				</a>
+		</div>			
+		<div class="row show-grid" style="padding: 1% 1% 0% 1%;">
+			<div id="myTabContent" class="tab-content">	
+			
+<!--//////////////数据核实凭证使用规则////////////////////  -->
+
+			<div class="tab-pane fade in active" id="data">
+				<div class="col-md-5 col-xs-5 col-sm-5">
+				<form class="form-horizontal" ng-submit="datasubmitForm()" id="dataForm">
+					<input type="hidden" class="credentialsWithBLOBID" name="credentialsWithBLOBID" />
+					<input type="hidden" id="typeId" name="typeId" value="0"/>
+				<div class="col-md-12 col-xs-12 col-sm-12 View2"><span >填写规则</span></div>
+				<div class="col-md-12 col-xs-12 col-sm-12 bordott">
+					<div class="form-group">
+							    <label for="ruleName" class="col-sm-3 control-label">填写规则名称</label>
+						    <div class="col-md-8 col-xs-10 col-sm-10">
+							    <input type="text" class="input form-control ruleName" id="ruleName" name="RuleName" data-validation-engine="validate[required]" placeholder="请填写名称"/>
+						    </div>
+					</div>
+					<div class="form-group">
+							    <label for="ruleCenter" class="col-sm-3 control-label">填写规则内容</label>
+						    <div class="col-md-8 col-xs-10 col-sm-10">
+							    <input type="text" class="input form-control ruleCenter" id="ruleCenter" name="RuleCenter" data-validation-engine="validate[required]" placeholder="请填写规则"/>
+						      <a href="javascript:;" class="file" >
+						        	<input type="file" name="dataFile" title="选择文件">添加样例
+						    	</a>
+						    	<span></span>
+						    </div>
+					</div>
+					<div class="col-md-5 col-xs-5 col-sm-5">
+								<div class=" col-md-12 col-xs-12 col-sm-12" >
+									<span>选择基本属性</span>
+								</div>
+								<div class="col-md-12 col-xs-12 col-sm-12" >
+									<select multiple="multiple" id="dataName" name="dataName" class="bottom" >
+								   		<option ng-repeat="gd in getData">
+								   			{{gd.metaData.metadataCname}}
+								   		</option>
+								   		
+									</select>							
+								</div>
+					</div>
+					<div class="btn-bar col-md-1 col-xs-1 col-sm-1">
+								<br>
+								<br>
+								<br>
+								<p><span class="addatt" >&gt;&gt;</span></p>
+						     <p><span class="removeatt" >&lt;&lt;</span></p>
+					</div>
+			        <div class="col-md-5 col-xs-5 col-sm-5">
+								<div class="lf_top col-md-12 col-xs-12 col-sm-12" >
+									<span>已选基本属性</span>
+								</div>
+								<div class="col-md-12 col-xs-12 col-sm-12" >
+									<select multiple="multiple" name="dataSel" class="selAttributes"></select>
+								</div>
+					</div>
+				</div>
+				
+				<div class="col-md-12 col-xs-12 col-sm-12">
+				<div class="col-md-4 col-xs-4 col-sm-4" ></div>
+					<button class="btndel-handle2" type="submit" style="margin-top: 10px;">添加规则</button>
+				</div>
+				</form>
+				</div>
+				
+				<div class="col-md-7 col-xs-7 col-sm-7">
+					<div class="col-md-12 col-xs-12 col-sm-12"><span class="col-md-12 col-xs-12 col-sm-12 View">规则列表</span></div>
+					<div class="col-md-12 col-xs-12 col-sm-12 heigh">
+						<div class="table_style">
+								<table class="table table-hover table-condensed tablet">
+									<thead>
+									<tr>
+										<th width="20%">规则名称</th>								
+										<th width="25%">规则</th>
+										<th width="20%">规则样例</th>
+										<th width="25%">已选基本属性</th>															
+										<th width="10%">操作</th>
+									</tr>
+									</thead>
+									<tbody>				
+									<tr ng-repeat= "d in dataLists">
+										<td width="20%">{{d.ruleName}}</td>								
+										<td width="25%">{{d.singleBusinessVerification}}</td>																		
+										<td width="20%">{{d.verificationSampleName}}</td>																		
+										<td width="25%">{{d.ruleDataName}}</td>														
+				                        <td width="10%" id="{{d.id}}">
+				                          	<a ng-click="deles(d.id)" > 删除</a>	                           
+			                            </td>
+									</tr>
+									</tbody>
+								</table>
+						</div>
+					</div>
+					
+				</div>
+				</div>
+				
+				
+<!-- //////////////证照核实凭证使用规则////////////// -->
+				
+			<div class="tab-pane fade" id="licence">
+				<div class="col-md-5 col-xs-5 col-sm-5">
+				<form class="form-horizontal" ng-submit="licencesubmitForm()" id="licenceForm">
+					<input type="hidden" class="credentialsWithBLOBID" name="credentialsWithBLOBID" />
+					<input type="hidden" id="typeId" name="typeId" value="1"/>
+				<div class="col-md-12 col-xs-12 col-sm-12 View2"><span >填写规则</span></div>
+				<div class="col-md-12 col-xs-12 col-sm-12 bordott" >
+					<div class="form-group">
+							    <label  class="col-sm-3 control-label">填写规则名称</label>
+						    <div class="col-md-8 col-xs-10 col-sm-10">
+							    <input type="text" class="input form-control ruleName" name="RuleName" data-validation-engine="validate[required]" placeholder="请填写名称"/>
+						    </div>
+					</div>
+					<div class="form-group">
+							    <label  class="col-sm-3 control-label">填写规则内容</label>
+						    <div class="col-md-8 col-xs-10 col-sm-10">
+							    <input type="text" class="input form-control ruleCenter" name="RuleCenter" data-validation-engine="validate[required]" placeholder="请填写规则"/>
+						      <a href="javascript:;" class="file">
+						        	<input type="file" title="选择文件" name="contentLicenseFile">添加样例
+						    	</a>
+						    	<span></span>
+						    </div>
+					</div>
+					<div class="col-md-5 col-xs-5 col-sm-5">
+								<div class=" col-md-12 col-xs-12 col-sm-12" >
+									<span>选择基本属性</span>
+								</div>
+								<div class="col-md-12 col-xs-12 col-sm-12" >
+									<select multiple="multiple" id="contentLicenseName" class="bottom">
+										<option ng-repeat="cs in contentLicenseLists" >
+								   			{{cs.name}}
+								   		</option>																																				     
+								    </select>							
+								</div>
+					</div>
+					<div class="btn-bar col-md-1 col-xs-1 col-sm-1">
+								<br>
+								<br>
+								<br>
+								<p><span class="addatt" >&gt;&gt;</span></p>
+						     <p><span class="removeatt" >&lt;&lt;</span></p>
+					</div>
+			        <div class="col-md-5 col-xs-5 col-sm-5">
+								<div class="lf_top col-md-12 col-xs-12 col-sm-12" >
+									<span>已选基本属性</span>
+								</div>
+								<div class="col-md-12 col-xs-12 col-sm-12" >
+									<select multiple="multiple" class="selAttributes" name="licenceSel"></select>
+								</div>
+					</div>
+				</div>
+				
+				<div class="col-md-12 col-xs-12 col-sm-12">
+				<div class="col-md-4 col-xs-4 col-sm-4" ></div>
+					<button class="btndel-handle2" type="submit" style="margin-top: 10px;">添加规则</button>
+				</div>
+				</form>
+				</div>
+				
+				<div class="col-md-7 col-xs-7 col-sm-7">
+					<div class="col-md-12 col-xs-12 col-sm-12"><span class="col-md-12 col-xs-12 col-sm-12 View">规则列表</span></div>
+					<div class="col-md-12 col-xs-12 col-sm-12 heigh">
+						<div class="table_style">
+								<table class="table table-hover table-condensed tablet">
+									<thead>
+									<tr>
+										<th width="20%">规则名称</th>								
+										<th width="25%">规则</th>
+										<th width="20%">规则样例</th>
+										<th width="25%">已选基本属性</th>															
+										<th width="10%">操作</th>
+									</tr>
+									</thead>
+									<tbody>				
+									<tr ng-repeat= "v in contentLicenseList">
+										<td width="20%">{{v.ruleName}}</td>								
+										<td width="25%">{{v.singleBusinessVerification}}</td>																		
+										<td width="20%">{{v.verificationSampleName}}</td>																		
+										<td width="25%">{{v.ruleDataName}}</td>														
+				                        <td width="10%" id="{{v.id}}">
+				                          	<a ng-click="deles(v.id)" > 删除</a>	                           
+			                            </td>
+									</tr>
+									</tbody>
+								</table>
+						</div>
+					</div>
+					
+				</div>
+			</div> 
+			
+<!-- ////////////要件核实凭证使用规则///////////////////// -->
+			
+			<div class="tab-pane fade" id="important">
+				<div class="col-md-5 col-xs-5 col-sm-5">
+				<form class="form-horizontal" ng-submit="importantsubmitForm()" id="importantForm">
+					<input type="hidden" class="credentialsWithBLOBID" name="credentialsWithBLOBID" />
+					<input type="hidden" id="typeId" name="typeId" value="2"/>
+				<div class="col-md-12 col-xs-12 col-sm-12 View2"><span >填写规则</span></div>
+				<div class="col-md-12 col-xs-12 col-sm-12 bordott">
+					<div class="form-group">
+							    <label  class="col-sm-3 control-label">填写规则名称</label>
+						    <div class="col-md-8 col-xs-10 col-sm-10">
+							    <input type="text" class="input form-control ruleName" id="" name="RuleName" data-validation-engine="validate[required]" placeholder="请填写名称"/>
+						    </div>
+					</div>
+					<div class="form-group">
+							    <label  class="col-sm-3 control-label">填写规则内容</label>
+						    <div class="col-md-8 col-xs-10 col-sm-10">
+							    <input type="text" class="input form-control ruleCenter" id="" name="RuleCenter" data-validation-engine="validate[required]" placeholder="请填写规则"/>
+						      <a href="javascript:;" class="file">
+						        	<input type="file" title="选择文件" name="contentVitalDocumentFile">添加样例
+						    	</a>
+						    	<span></span>
+						    </div>
+					</div>
+					<div class="col-md-5 col-xs-5 col-sm-5">
+								<div class=" col-md-12 col-xs-12 col-sm-12" >
+									<span>选择基本属性</span>
+								</div>
+								<div class="col-md-12 col-xs-12 col-sm-12" >
+									<select multiple="multiple" id="contentVitalDocumentName" class="bottom">
+										<option ng-repeat="vs in contentVitalDocumentLists" >
+								   			{{vs.name}}
+								   		</option>																																						     
+								    </select>							
+								</div>
+					</div>
+					<div class="btn-bar col-md-1 col-xs-1 col-sm-1">
+								<br>
+								<br>
+								<br>
+								<p><span class="addatt" >&gt;&gt;</span></p>
+						     <p><span class="removeatt" >&lt;&lt;</span></p>
+					</div>
+			        <div class="col-md-5 col-xs-5 col-sm-5">
+								<div class="lf_top col-md-12 col-xs-12 col-sm-12" >
+									<span>已选基本属性</span>
+								</div>
+								<div class="col-md-12 col-xs-12 col-sm-12" >
+									<select multiple="multiple" class="selAttributes" name="importantSel"></select>
+								</div>
+					</div>
+				</div>
+				
+				<div class="col-md-12 col-xs-12 col-sm-12">
+				<div class="col-md-4 col-xs-4 col-sm-4" ></div>
+					<button class="btndel-handle2" type="submit" style="margin-top: 10px;">添加规则</button>
+				</div>
+				</form>
+				</div>
+				
+				<div class="col-md-7 col-xs-7 col-sm-7">
+					<div class="col-md-12 col-xs-12 col-sm-12"><span class="col-md-12 col-xs-12 col-sm-12 View">规则列表</span></div>
+					<div class="col-md-12 col-xs-12 col-sm-12 heigh">
+						<div class="table_style">
+								<table class="table table-hover table-condensed tablet">
+									<thead>
+									<tr>
+										<th width="20%">规则名称</th>								
+										<th width="25%">规则</th>
+										<th width="20%">规则样例</th>
+										<th width="25%">已选基本属性</th>															
+										<th width="10%">操作</th>
+									</tr>
+									</thead>
+									<tbody>				
+									<tr ng-repeat= "c in contentVitalDocumentList">
+										<td width="20%">{{c.ruleName}}</td>								
+										<td width="25%">{{c.singleBusinessVerification}}</td>																		
+										<td width="20%">{{c.verificationSampleName}}</td>																		
+										<td width="25%">{{c.ruleDataName}}</td>														
+				                        <td width="10%" id="{{c.id}}">
+				                          	<a ng-click="deles(c.id)"> 删除</a>	                           
+			                            </td>
+									</tr>
+									</tbody>
+								</table>
+						</div>
+					</div>
+					
+				</div>
+				</div>
+		</div> 
+	</div>	
+</div>
+
+<script>
+  var Id;
+jQuery(document).ready(function(){	
+  //选择文件		
+	$(".file").on("change","input[type='file']",function(){
+        var filePath = $(this).val().split('\\');
+        var fileName = filePath[filePath.length-1];
+        $(this).parent().next().html(fileName);
+        $(this).parent().next().attr("title",fileName);
+    })
+			Id=$(".in").attr("id");
+				$("#myTab li").click(function(){
+					Id=$(this).children().attr("href").replace("#","");
+					console.log(Id)
+				});
+			$(".addatt").click(function(){
+				//先判断是否有选中
+				console.log(Id)
+				//先判断是否有选中
+				if(!$("#"+Id+" .bottom option").is(":selected")){			
+					alert("请选择需要移动的选项")
+				}
+				//获取选中的选项，删除并追加给对方
+				else{
+					$("#"+Id+" .bottom option:selected").appendTo("#"+Id+" .selAttributes");
+				}
+			});
+   //移到左边
+			$(".removeatt").click(function(){
+				//先判断是否有选中
+				if(!$("#"+Id+" .selAttributes option").is(":selected")){			
+					alert("请选择需要移动的选项")
+				}
+				else{
+					$("#"+Id+" .selAttributes option:selected").appendTo("#"+Id+" .bottom");
+				}
+			});
+});
+		//添加到列表，并清空
+   		function addClick(dataid){
+			var array = new Array();
+			$("#"+Id+" .selAttributes option").each(function(){  //遍历所有option  
+		          var txt = $(this).text();   //获取option值   
+		               array.push(txt);  //添加到数组中  
+		     })
+			console.log(dataid)//<a ng-click="deles(dataid)"> 删除</a>
+			$("#"+Id+" .tablet tbody").append('<tr><td width="20%">'+$("#"+Id+" .ruleName").val()+'</td><td width="25%">'+
+			$("#"+Id+" .ruleCenter").val()+'</td><td width="20%">'+$("#"+Id+" .file").next().text()+
+			'</td><td width="25%">'+array+'</td><td width="10%" id="'+dataid+'"></td></tr>');
+			
+			$("#"+Id+" .ruleName").val("");
+			$("#"+Id+" .ruleCenter").val("");
+			$("#"+Id+" .file").next().text("");
+			$("#"+Id+" .selAttributes option").appendTo("#"+Id+" .bottom");
+		}
+		function del(data){
+			$("#"+data).parent().remove();		
+		}
+</script>
+</body>
+</html>

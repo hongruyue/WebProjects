@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title></title>
+    <link rel="stylesheet" href="../06bootstrap/bootstrap.min.css"/>
+
+    <style>
+
+    </style>
+</head>
+<body>
+<button>按钮一</button>
+<input type="button" value="按钮2"/>
+<a href="#" role="button">按钮3</a>
+<br><br><br><br>
+<!--btn代表按钮  btn-danger代表颜色-->
+<!--active 阴影像里面延伸 disabled禁用-->
+<button class="btn btn-danger active">按钮</button>
+<button class="btn btn-default disabled">按钮</button><!--默认白色-->
+<button class="btn btn-primary">按钮</button><!--蓝色-->
+<button class="btn btn-success">按钮</button><!--绿色-->
+<button class="btn btn-warning">按钮</button><!--橙色-->
+<button class="btn btn-info">按钮</button><!--浅蓝-->
+<button class="btn btn-link">按钮</button><!--没有边框背景-->
+<br>
+<br>
+<br>
+<!--按钮大小-->
+<button class="btn btn-info btn-lg">按钮</button>
+<button class="btn btn-info btn-sm">按钮</button>
+<button class="btn btn-info btn-xs">按钮</button>
+</body>
+</html>

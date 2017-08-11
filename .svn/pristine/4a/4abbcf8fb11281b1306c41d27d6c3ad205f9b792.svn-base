@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var arr=["1","2","3","4","1"];
+    var arr1=["a","b","c","d"];
+    var str1="a,b,c,d,e";
+   /* for(var i=0;i<arr.length;i++){
+        if(true){
+
+        }else{
+
+        }
+    }
+    alert(arr.indexOf());*/
+  /*  arr.push("f");
+    arr.unshift("k");
+    arr.shift();
+    arr.pop();
+    var arr2=arr.concat(arr1);
+    arr.sort();
+    arr.reverse();
+    arr.splice(1,2,"e","d");
+    var str3=str1.split(",");
+    str3.splice(1,2);
+    var arr3=arr.join("$");
+    //alert(typeof arr)
+    var str="a,b,c";
+    var kk=str.split(",");
+    //alert(typeof kk)*/
+    //var arr2=arr.slice(0,arr.length);//组成新的数组 第二个元素可以不用
+    //document.write(arr2)
+    document.write(arr)
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>发布1</title>
+<style>
+.wrap{width: 600px;margin: 20px auto;background: #A9A3A3;padding: 20px;overflow: hidden;}
+.p1{font-size: 25px;font-weight: bold;}
+#bt{width: 500px;height: 30px;margin-bottom: 20px;}
+#nr{width: 500px;height: 150px;}
+#shuru{font-size: 30px;color: green;float: right;margin-right: 20px;}
+#btn{font-size: 25px;margin: 20px 0px 20px 20px;}
+#list li{background: #fff;font-size: 20px;overflow: hidden;}
+#list li h3{background: #878484;overflow: hidden;padding: 10px;}
+#list li h3 a{float: right;}
+#list li p{text-indent: 2em;}
+</style>
+</head>
+<body>
+	<div class="wrap">
+		<p class="p1">标题：<input type="text" id="bt"></p>
+		<p class="p1">内容：<textarea id="nr"></textarea></p>
+		<span id="shuru">还可以输入<span id="num">200</span>个字</span>
+		<button id="btn">发布</button>
+		<h1>显示内容</h1>
+		<ul id="list">
+			<!--<li>-->
+				<!--<h3>-->
+					<!--我是标题-->
+					<!--<a href="###">删除</a>-->
+				<!--</h3>-->
+				<!--<p>我是段落我是段落我是段落我是段落我是段落我是段落我是段落我是段落我是段落我是段落我是段落我是段落我是段落我是段落我是段落</p>-->
+			<!--</li>-->
+		</ul>
+	</div>
+</body>
+
+	<script type="text/javascript">
+	var btn=document.getElementsByTagName("button")[0];
+	var textar=document.getElementsByTagName("textarea")[0];
+	var inp=document.getElementsByTagName("input")[0];
+	var num=document.getElementById("num");
+	var as=document.getElementsByTagName("a");
+	var list=document.getElementById("list");
+	var time;
+	var maxnum=200;
+	var inputnum=0;
+
+	btn.onclick=function(){
+		if(inp.value==""||textar.value==""){
+			alert("鼠标和内容不能为空")
+		}else{
+			var tit=inp.value;
+			var text;
+			if (textar.value.length >= maxnum) {
+				text=textar.value.substr(0,maxnum);
+			} else {
+				text=textar.value;
+			}
+			var newtit=document.createElement("li");
+			newtit.innerHTML="<h3>"+tit+"<a href='###'>删除</a></h3><p>"+text+"</p>";
+			list.appendChild(newtit);
+		}
+		// tex2.value = ipt.value+"\n"+tex1.value;
+		for(var i=0;i<as.length;i++){
+			as[i].onclick=function(){
+				list.removeChild(this.parentNode.parentNode);
+
+			}
+	    }
+		inp.value="";
+		textar.value="";
+		num.style.color="green";
+		num.innerHTML=maxnum;
+		};
+
+	textar.onkeydown=function(){
+		if(this.value.length >= maxnum)
+			event.returnValue = false;//当捕捉到事件event时，判断为flash，则阻止事件继续进行
+	};
+
+	textar.onfocus=function(){
+
+		time=setInterval(function(){
+			var len=textar.value.length;
+			var num1=maxnum-len;
+			if(num1<=30){
+				num.style.color="red";
+			}
+			num.innerHTML=num1;
+		},20);
+		textar.onblur=function(){
+			clearInterval(time);
+		}
+	}
+</script>
+
+</html>

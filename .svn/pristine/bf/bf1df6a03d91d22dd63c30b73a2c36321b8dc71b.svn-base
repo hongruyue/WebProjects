@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="angular-1.5.8/angular.js"></script>
+    <style>
+    ul{
+        list-style: none;
+    }
+    </style>
+</head>
+<body ng-app="app" ng-init="arr=['a','b','c','d']">
+
+        <input type="checkbox" ng-model="type"/>选择
+        <p>{{type}}</p>
+        <div ng-show="type">显示和隐藏</div><!--ng-show后面跟的是布尔值 true的话是显示 false的话是隐藏 ng-hide相反-->
+       <ul>
+           <li ng-repeat="x in arr">
+               <p ng-hide="$even" style="color:red">{{x}}</p>
+               <p ng-hide="$odd" style="color:green">{{x}}</p>
+           </li>
+       </ul>
+
+
+</body>
+<script>
+    angular.module("app",[]).controller("con1",function($scope){
+
+
+
+    })
+
+
+</script>
+</html>

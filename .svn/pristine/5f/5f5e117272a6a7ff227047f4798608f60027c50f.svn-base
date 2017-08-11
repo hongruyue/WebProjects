@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="angular-1.5.8/angular.js"></script>
+    <style>
+        .color1{
+            background: #CCCCCC;
+        }
+        .color2{
+            background: white;
+        }
+    </style>
+</head>
+<body ng-app="myApp">
+<div ng-controller="con">
+    <input type="text" ng-model="str" ng-keydown="jumpLine()"/>
+    <ul>
+        <li ng-repeat="x in arr">{{x}}</li>
+    </ul>
+</div>
+</body>
+<script>
+    var app=angular.module("myApp",[]);
+    app.controller("con",function($scope,$http){
+        $scope.str="";
+        $scope.arr=[];
+        $scope.script='';
+        $scope.$watch("str",function(){
+            $http.jsonp("http://suggestion.baidu.com/su?jsoncallback=jQuery110202779146576057885_1496818642089&",{params:
+            {wd:$scope.str, cb:"JSON_CALLBACK"}
+            }).then(function(json){
+              $scope.arr=json.data.s;
+            })
+    });
+
+
+
+
+
+
+    })
+
+
+</script>
+</html>

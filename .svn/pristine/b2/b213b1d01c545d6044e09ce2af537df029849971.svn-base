@@ -1,0 +1,21 @@
+.box{
+    width: 90%;
+    margin: 0 auto;
+}
+.box li{
+    width: 22%;
+    height: 100px;
+    background: #999;
+    font-size: 30px;
+    line-height: 50px;
+    float: left;
+    margin: 10px;
+}
+.box .bg2{
+   display: none;
+}
+.bg1{
+    width: 293px ;
+    height: 134px;
+    margin: 0 auto;
+}

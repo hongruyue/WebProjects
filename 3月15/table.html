@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+      .tit{
+          float:left;
+          width: 198px;
+          cursor: pointer;
+
+      }
+      .content{
+          width: 600px;
+          height: 500px;
+          border: 1px solid #000;
+          height: 48px;
+
+      }
+      li{
+          width: 600px;
+          height: 500px;
+          font-size: 100px;
+          line-height: 500px;
+          text-align: center;
+          list-style: none;
+
+      }
+        .non{
+            display: none;
+        }
+
+
+
+    </style>
+</head>
+<body>
+<div class="title">
+    <div class="tit">标题1</div>
+    <div class="tit">标题2</div>
+    <div class="tit">标题3</div>
+     <ul class="content">
+         <li>内容1</li>
+         <li class="non">内容2</li>
+         <li class="non">内容3</li>
+
+     </ul>
+</div>
+</body>
+<script>
+    var tit=document.getElementsByClassName("tit");
+    var lis=document.getElementsByTagName("li");
+    for(var i=0;i<tit.length;i++){//遍历每一个标题
+      tit[i].onclick=function(){
+          for(var v=0;v<tit.length;v++){
+              if(tit[v]==this){
+                  //this指针 代表的是点击事件的触发的对象
+                  lis[v].style.display="block";  //改变元素的css的样式
+              }else{
+                  lis[v].style.display="none";
+              }
+          }
+      }
+
+
+    }
+
+</script>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+<div class="box">
+   {{msg}}
+</div>
+</body>
+<script>
+//class="[red,b,c]"  class="{red:true,blue:true}"  class="json"  style="json"
+//钩子函数
+    var c=new Vue({
+        el:".box",
+        data:{
+         msg:'well'
+        },
+        created:function(){
+            alert('实例已经创建');
+        },
+        beforeCompile:function(){
+            alert('编译之前');
+        },
+        compiled:function(){
+            alert('编译之后');
+        },
+        ready:function(){
+            alert('插入到文档中（加载完了）');
+        },
+        beforeDestroy:function(){
+            alert('销毁之前');
+        },
+        destroyed:function(){
+            alert('销毁之后');
+        }
+
+    });
+    //点击页面销毁vue对象
+    document.onclick=function(){
+        c.$destroy();
+
+    }
+
+</script>
+</html>

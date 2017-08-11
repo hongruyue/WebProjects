@@ -1,0 +1,52 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{padding: 0; margin:0; list-style: none;}
+	ul{
+		width: 120px;
+		height: 120px;
+		background: red;
+		display: none;
+		position: fixed;
+		cursor: pointer;
+	}
+	</style>
+</head>
+<body>
+	<ul>
+		<li>山一页</li>
+		<li>下一页</li>
+		<li>刷新</li>
+	</ul>
+</body>
+<script>
+var menu=document.getElementsByTagName('ul')[0];
+var bodys=document.getElementsByTagName('body')[0];
+	document.oncontextmenu=function(ev){
+		var event=ev||window.event;
+			if(event.preventDefault){
+				event.preventDefault();
+			}else{
+				event.returnValue=false;
+			}
+			var X=event.clientX;
+			var Y=event.clientY;
+			if(X>=(document.documentElement.clientWidth-120)){
+				X=document.documentElement.clientWidth-120;
+			}
+			if(Y>=(document.documentElement.clientHeight-120)){
+				Y=document.documentElement.clientHeight-120;
+			}
+			menu.style.left=X+"px";
+			menu.style.top=Y+"px";
+			menu.style.display="block";
+	}
+	document.onclick=function(){
+		menu.style.display="none";
+	}
+</script>
+</html>

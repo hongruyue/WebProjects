@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="css/reset.css" rel="stylesheet">
+    <link href="css/swiper-3.4.1.min.css" rel="stylesheet">
+    <style>
+        .swiper-container {
+            width: 600px;
+            height: 500px;
+            border: 1px solid yellow;
+            margin-top: 100px;
+            cursor: pointer;
+        }
+        .red{
+            color: red;
+            text-align: center;
+            font-size: 50px;
+            line-height: 500px;
+        }
+    img{
+        width: 600px;
+        height: 500px;
+    }
+    </style>
+
+</head>
+<body>
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide red"><img src="img/bird.jpg"/> </div>
+        <div class="swiper-slide red"><img s="img/sky.jpg" /></div>
+        <div class="swiper-slide red"><img src="img/bird.jpg" /></div>
+    </div>
+    <!-- 如果需要分页器 -->
+    <div class="swiper-pagination"></div>
+
+    <!-- 如果需要导航按钮 -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
+    <!-- 如果需要滚动条 -->
+    <div class="swiper-scrollbar"></div>
+</div>
+</body>
+<script src="js/swiper-3.4.1.min.js"></script>
+<script>
+    var mySwiper = new Swiper ('.swiper-container', {
+        direction: 'vertical',//vertical竖向 horizontal横向
+        loop: true,
+
+        // 如果需要分页器
+        pagination: '.swiper-pagination',
+
+        // 如果需要前进后退按钮
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+
+        // 如果需要滚动条
+        scrollbar: '.swiper-scrollbar',
+    })
+</script>
+</html>

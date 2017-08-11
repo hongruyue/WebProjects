@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>简易留言板</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <script src="../js/jquery-1.10.2.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/vue.js"></script>
+    <script src="../js/vue1.0.js"></script>
+</head>
+<body>
+    <div class="container" id="box">
+       <form role="form">
+           <div class="form-group" id="neew">
+               <label for="username">用户名</label>
+               <input type="text" id="username" class=" form-control" placeholder="请输入用户名" v-model="username">
+               </div>
+           <div class="form-group">
+               <label for="age">年龄</label>
+               <input type="text" id="age" class="form-control" placeholder="请输入密码" v-model="age">
+           </div>
+           <div class="form-group">
+               <input type="button" value="添加" class="btn btn-primary" v-on:click="add()">
+               <input type="reset" value="重置" class="btn btn-danger">
+           </div>
+       </form>
+       <hr>
+        <!-- table-->
+        <table class="table table-bordered table-hover">
+            <caption class="h2 text-info text-center">用户信息表</caption>
+            <tr class="text-danger">
+                <th class="text-center">序号</th>
+                <th class="text-center">名字</th>
+                <th class="text-center">年龄</th>
+                <th class="text-center">操作</th>
+            </tr>
+            <tr class="text-center" v-for="item in myData">
+                <td>{{$index+1}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.age}}</td>
+                <td>
+                    <input class="btn btn-sm btn-primary" type="button" value="删除" data-toggle="modal" data-target="#layer" v-on:click="nowIndex=$index">
+                </td>
+            </tr>
+
+            <tr v-show="myData.length!==0">
+                <td colspan="4" class="text-right">
+                    <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#layer" v-on:click="nowIndex=-2">全部删除</button>
+                </td>
+            </tr>
+            <tr v-show="myData.length==0">
+                <td colspan="4" class="text-center text-muted">
+                   <span>暂无数据....</span>
+                </td>
+            </tr>
+        </table>
+    <!--模态框-->
+     <div role="dialog" class="modal fade" id="layer" aria-labelledby="neew" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                    <h4 class="modal-title">确认删除吗？</h4>
+                </div>
+                <div class="modal-body text-right">
+                    <button class="btn btn-sm btn-primary" data-dismiss="modal">取消</button>
+                    <button class="btn btn-sm btn-danger" data-dismiss="modal" v-on:click="deleteMsg(nowIndex)">确认</button>
+                </div>
+            </div>
+        </div>
+     </div>
+
+
+    </div>
+</body>
+<script>
+    new Vue({
+        el:"#box",
+        data:{
+          myData:[],
+          username:"",
+          age:"",
+          nowIndex:-1
+        },
+        methods:{
+            add:function(){
+                if(this.username==""||this.age==""){
+                    alert("数据不能为空！")
+                }else{
+                    this.myData.push({
+                        name:this.username,
+                        age:this.age
+                    });
+                }
+                this.username="";
+                this.age="";
+            },
+            deleteMsg:function(n){
+                if(n==-2){
+                    this.myData=[];
+                }else{
+                    this.myData.shift(n,1);
+                }
+
+            }
+        }
+    })
+</script>
+</html>

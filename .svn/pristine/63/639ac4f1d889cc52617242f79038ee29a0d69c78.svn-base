@@ -1,0 +1,35 @@
+@charset "utf-8";
+/*=========================Reset_start==========================*/
+body,h1,h2,h3,h4,h5,h6,div,p,dl,dt,dd,ol,ul,li,form,table,th,td,a,img,span,strong,var,em,input,textarea,select,option{margin: 0; padding: 0;}
+html,body{font-family:"宋体","微软雅黑",Arail,Tabhoma; font-size: 12px; text-align: left;}
+ul,ol{list-style: none;}
+img{border: 0;}
+input,select,textarea{outline:0;}
+textarea{resize:none; overflow: auto;}
+table{border-collapse: collapse; border-spacing: 0;}
+th,strong,var,em{font-weight: normal; font-style: normal;}
+a{text-decoration: none;}
+html,body{
+    height:100%;
+}
+/*==========================Reset_End===========================*/
+@font-face {
+    font-family: 'myfont';
+    src: url('../font/LigatureSymbols.eot');
+    src: url('../font/LigatureSymbols.eot?#iefix') format('embedded-opentype'),
+    url('../font/LigatureSymbols.woff') format('woff'),
+    url('../font/LigatureSymbols.ttf') format('truetype'),
+    url('../font/LigatureSymbols.svg#LigatureSymbols') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+/*
+span{
+    font-family: 'myfont';
+    -webkit-font-feature-settings: "liga" 1, "dlig" 1;
+    -moz-font-feature-settings: "liga=1, dlig=1";
+    -ms-font-feature-settings: "liga" 1, "dlig" 1;
+    font-feature-settings: "liga" 1, "dlig" 1;
+    font-size: 80px;
+}
+*/

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title></title>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <button class="btn btn-danger btn-lg" data-toggle="modal" data-target="#mymodal">模态框</button>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="mymodal"role="dialog" aria-labelledby="mymodallabel" aria-hidden="true">
+    <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <span class="close" data-dismiss="modal">关闭</span>
+               <h1>你想要吗？</h1>
+            </div>
+            <div class="modal-body">
+                <p>这是一点内容</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-success" data-dismiss="modal">确定</button>
+                <button class="btn btn-info">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<button class="btn123">按钮</button>
+</body>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+$(function(){
+    $(".btn123").click(function(){
+        $("#mymodal").modal("toggle");
+    })
+})
+</script>
+</html>

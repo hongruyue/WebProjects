@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 300px;
+            height:50%;
+            background: #9dddff;
+            margin:50px auto;
+            border: 1px solid black;
+        }
+        ul li{
+            list-style:none;
+            height: 20px;
+            font-size: 16px;
+            text-align: center;
+            width:300px;
+            border-bottom: 1px solid black;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <ul class="tit">我的好友
+            <li>张三</li>
+            <li>张三</li>
+            <li>张三</li>
+            <li>张三</li>
+        </ul>
+        <ul class="tit1">企业好友
+            <li>李四</li>
+            <li>李四</li>
+            <li>李四</li>
+            <li>李四</li>
+            <li>李四</li>
+        </ul>
+        <ul class="tit2">黑名单
+            <li>王五</li>
+            <li>王五</li>
+        </ul>
+    </div>
+</body>
+<script src="js/jquery-1.8.3.min.js"></script>
+<script>
+   $(function(){
+       var inde1=true;
+
+       $(".tit").click(function(){
+           if(inde1==true){
+               $(".tit").css("background","yellow");
+               inde1=false;
+           }else {
+               $(".tit").css("background","#9dddff");
+               inde1=true
+           }
+           $(".tit li").css("background","#f6f6f6");
+           var index=$(".tit li").index;
+           $(".tit li").slideToggle(1000,function(){
+               $(this).hover(function(){
+                   $(this).css("background","#56fff7");
+               },function(){ $(this).css("background","#f6f6f6");})
+           });
+       })
+       var inde1=true;
+
+       $(".tit1").click(function(){
+           if(inde1==true){
+               $(".tit1").css("background","yellow");
+               inde1=false;
+           }else {
+               $(".tit1").css("background","#9dddff");
+               inde1=true
+           }
+           $(".tit1 li").css("background","#f6f6f6");
+           var index=$(".tit1 li").index;
+           $(".tit1 li").slideToggle(1000,function(){
+               $(this).hover(function(){
+                   $(this).css("background","#56fff7");
+               },function(){ $(this).css("background","#f6f6f6");})
+
+           });
+
+       })
+       var inde1=true;
+
+       $(".tit2").click(function(){
+           if(inde1==true){
+               $(".tit2").css("background","yellow");
+               inde1=false;
+           }else {
+               $(".tit2").css("background","#9dddff");
+               inde1=true
+           }
+           $(".tit2 li").css("background","#f6f6f6");
+           var index=$(".tit2 li").index;
+           $(".tit2 li").slideToggle(1000,function(){
+               $(this).hover(function(){
+                   $(this).css("background","#56fff7");
+               },function(){ $(this).css("background","#f6f6f6");})
+
+           });
+
+       })
+
+   })
+</script>
+</html>

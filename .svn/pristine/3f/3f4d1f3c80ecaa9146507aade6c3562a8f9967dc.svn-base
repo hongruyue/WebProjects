@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<form action="success.html">
+用户名：<input type="text"/><br>
+密码：<input type="password"/><br>
+<input type="checkbox"/>记住密码
+    <input type="submit"/>
+</form>
+</body>
+<script>
+    var forms=document.getElementsByTagName("form")[0];
+    var input=document.getElementsByTagName("input");
+    function setCookie(key,value,time){//设置cookie函数
+        var day=new Date();
+        day.setDate(day.getDate()+time);
+        document.cookie=key+"="+value+";expires="+day;
+    }
+    function removeCookie(key){//删除cookie函数
+        var day=new Date();
+        day.setDate(day.getDate()-1);
+        document.cookie=key+"=1111;expires="+day;
+    }
+
+    function getCookie(key){
+        var cookies=document.cookie;
+        var str=cookies.split("; ");
+        for(var i=0; i<str.length;i++){
+            var str1=str[i].split("=");
+            if(str1[0]==key){
+                return str1[1];
+            }
+        }
+    }
+//    alert(getCookie("pass"));
+    if(getCookie("pass")){//""   ''    0   null
+        input[0].value=getCookie("name");
+        input[1].value=getCookie("pass");
+    }
+    forms.onsubmit=function(){
+        if(input[0].value==""||input[1].value==""){
+        return false;//阻止表单提交
+         }else if(input[2].checked){
+            setCookie("name",input[0].value,7);
+            setCookie("pass",input[1].value,7);
+            setCookie("time",new Date().getTime(),7);
+        }else{
+            removeCookie("name");
+            removeCookie("pass");
+            removeCookie("time");
+        }
+    }
+</script>
+</html>

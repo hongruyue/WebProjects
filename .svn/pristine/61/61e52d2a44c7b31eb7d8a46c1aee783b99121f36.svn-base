@@ -1,0 +1,218 @@
+/*第一页动画 */
+.zx {
+    animation: one 2s ease forwards;
+}
+
+@keyframes one {
+    0% {
+        left: 0;
+        opacity: 0;
+    }
+    100% {
+        margin-left: -400px;
+        opacity: 1;
+    }
+}
+
+.yun {
+    animation: one1 1s ease forwards;
+}
+
+@keyframes one1 {
+    0% {
+        right: 0;
+        opacity: 0;
+    }
+    100% {
+        right: 800px;
+        opacity: 1;
+    }
+}
+
+.next_page {
+    animation: one2 650ms ease-in-out infinite alternate;
+}
+
+@keyframes one2 {
+    0% {
+        height: 45px;
+    }
+    100% {
+        height: 28px;
+
+    }
+}
+
+/*第二页动画 */
+.zb {
+    animation: two 2s ease forwards;
+}
+
+@keyframes two {
+    0% {
+        left: 0;
+        opacity: 0;
+    }
+    100% {
+        margin-left: -500px;
+        opacity: 1;
+    }
+}
+
+.yc {
+
+    animation: two1 2s ease forwards;
+}
+
+@keyframes two1 {
+    0% {
+        left: 50%;
+        opacity: 0;
+    }
+    100% {
+        margin-left: 270px;
+        opacity: 1;
+    }
+}
+
+.rw {
+
+    animation: two2 2s ease forwards;
+}
+
+@keyframes two2 {
+    0% {
+        top: -300px;
+        opacity: 0;
+    }
+    100% {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+
+/*第三页动画 */
+.yc3 {
+    animation: three1 2s ease forwards;
+}
+
+@keyframes three1 {
+    0% {
+        left: 100%;
+        opacity: 0;
+    }
+    100% {
+        left: 0;
+        opacity: 1;
+    }
+}
+
+.colock-p {
+     transform-origin: 0% 17%;
+     animation: three2 50s 2s linear infinite ;
+ }
+
+@keyframes three2 {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.colock-pp {
+    transform-origin:45% 5%;
+    animation: three3 5s 2s linear infinite ;
+}
+
+@keyframes three3 {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.colock-s{
+    animation: three4 2s ease forwards;
+}
+@keyframes three4 {
+    0% {
+       left:0;
+    }
+    100% {
+       left: 250px;
+    }
+}
+
+.yc3s{
+    animation: three5 2s ease forwards;
+}
+@keyframes three5 {
+    0% {
+        top:-100px;
+        opacity: 0;
+
+    }
+    100% {
+      top:400px;
+        opacity: 1;
+    }
+}
+.yc3ss{
+    animation: three6 2s ease forwards;
+}
+@keyframes three6 {
+    0% {
+       left:0;
+        opacity: 0;
+
+    }
+    100% {
+        left:150px;
+        opacity: 1;
+    }
+}
+.sjss{
+    animation: three7 2s ease forwards;
+}
+@keyframes three7 {
+    0% {
+        right:0;
+        opacity: 0;
+
+    }
+    100% {
+        right:690px;
+        opacity: 1;
+    }
+}
+.yc3sss{
+    animation: three8 2s ease forwards;
+}
+@keyframes three8 {
+    0% {
+       left:0;
+        opacity: 0;
+
+    }
+    100% {
+        left:205px;
+        opacity: 1;
+    }
+}
+.sjsss{
+    animation: three9 2s ease forwards;
+}
+@keyframes three9 {
+    0% {
+        bottom:0;
+        opacity: 0;
+
+    }
+    100% {
+        bottom:100px;
+        opacity: 1;
+    }
+}

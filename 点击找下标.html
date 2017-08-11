@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-1.10.2.min.js"></script>
+    <style>
+        li{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<ul id="test">
+    <li>这是第一条</li>
+    <li>这是第二条</li>
+    <li>这是第三条</li>
+    <li>这是第四条</li>
+</ul>
+<script>
+//   $(function(){
+//       $("li").click(function(){
+//           var index=$(this).index();
+//           alert(index)
+//
+//       })
+//   });
+
+   var tt=document.getElementById("test");
+   var lis=document.getElementsByTagName("li");
+    function list(){
+        for(var i= 0;i<lis.length;i++){
+            lis[i].index=i;
+            lis[i].onclick=function(){
+                alert(this.index);
+                return
+            }
+        }
+ }
+    list();
+//for (var i = 0; i < lis.length; i++) {
+//    var a = lis[i];
+//    a.index = i;//给每个className为child的元素添加index属性;
+//    a.onclick = function () {
+//        alert(this.index)
+//    }
+//}
+//    var x=new Boolean(false);
+//    if(x){
+//        alert('hi');
+//    }
+//    var y=Boolean(0);
+//    if(y){
+//        alert('hello');
+//    }
+
+
+
+</script>
+</body>
+</html>

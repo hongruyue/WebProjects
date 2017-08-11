@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div></div>
+<div></div>
+</body>
+<script src="js/jquery-1.8.3.min.js"></script>
+<script>
+    $(function(){
+        var json={"name":"熊大","age":"32","sex":"man"};
+        //json格式{"key(关键字)":"值","key":"value"}(对象格式)
+       // $("div").html("姓名："+json.name+"年龄："+json.age+"性别"+json.sex);
+    })
+//数组格式
+    var person=[
+        {"name":"熊大","age":"32","sex":"man"},
+        {"name":"熊二","age":"28","sex":"man"},
+        {"name":"吉吉","age":"18","sex":"man"}
+    ]
+    $("div").eq(1).html("姓名："+person[2].name+"<br>"+ "年龄: "+person[2].age+"<br>"+"性别："+person[2].sex);
+</script>
+</html>

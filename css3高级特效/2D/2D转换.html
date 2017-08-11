@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div{
+            width: 300px;
+            height: 300px;
+            background: green;
+            cursor: pointer;
+            /*四个属性合写中间加空格*/
+            /*-webkit-transform: translate(100px,100px);
+            -moz-transform: translate(100px,100px);
+            -ms-transform: translate(100px,100px);
+            -o-transform: translate(100px,100px);*/
+            /*transform: translate(100px,100px);*/
+            transform: translateX(100px);/*横向位移*/
+            transform: translateY(100px);/*纵向位移*/
+            transform: rotate(100deg);/*旋转度数 正数是顺时针方向 负数是逆时针*/
+            transform: scale(1.2);/*缩放 第一个数是横向 第二个数字是纵向 只写一个值表示两个方向相同变化   scaleX横向  scaleY纵向*/
+            margin:100px;
+            transform:skew(30deg,30deg) ;/*倾斜中心不变，四个角变*/
+            transform:skewX(30deg);/*X轴不动，Y轴倾斜*/
+            transform:skewY(30deg);/*Y轴不动，X轴倾斜*/
+
+        }
+    </style>
+</head>
+<body>
+<div></div>
+</body>
+</html>

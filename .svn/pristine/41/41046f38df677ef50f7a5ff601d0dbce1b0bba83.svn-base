@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>post</title>
+		<script>
+			 function httpRequest(){
+			 	var xmlhttp;
+			 	if(window.XMLHttpRequest){
+			 		//IE,Firefox,Chrome,Safari
+			 		xmlhttp = new XMLHttpRequest();
+			 	}
+			 	else
+			 	{
+			 		xmlhttp = new ActiveXObject("Microsoft.XMLHTTP")
+			 	}
+			 	//获取到的要发送的数据
+			 	var userData = {
+			 		    "userName":"张龙",
+			 		    "passWord":"123456"
+			 	};
+			 	
+			 	var str = JSON.stringify(userData);
+			 	
+			 	xmlhttp.open("POST","http://127.0.0.1/phpLearn/9file/register.php",true);
+			 	//设置http头部
+			 	xmlhttp.setRequestHeader("Content-Type","application/json;charset=utf8");
+			 	//发请求
+			 	xmlhttp.send(str);
+			 	
+			 	xmlhttp.onreadystatechange = function(){
+			 		if(0 == xmlhttp.readyState){
+			 			document.writeln("");
+			 		}
+			 		
+			 		if(4 == xmlhttp.readyState && xmlhttp.status == 200)
+			 		{
+			 			//服务器返回的数据
+			 			document.writeln(xmlhttp.responseText);
+			 		}
+			 	}
+			 	
+			 }
+		</script>
+		
+	</head>
+	<body>
+		<div>
+			<button type = "button" onclick = "httpRequest()">request</button>
+		</div>
+	</body>
+</html>

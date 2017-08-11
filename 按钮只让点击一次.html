@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<input type="button" value="点击" disabled="disabled" />
+</body>
+<script>
+    var ipt=document.getElementsByTagName("input");
+    var time=true;
+    ipt[0].onclick=function(){
+        if(time){
+            alert("123");
+            time=false;
+        }
+
+    }
+</script>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        img{
+            width: 400px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+<img src="" alt=""/>
+<p>你好：</p>
+
+<script>
+    var arr = ["IMG/2222.jpg","IMG/3333.jpg","IMG/le3.jpg","IMG/le4.jpg","IMG/lr9.jpg"];
+    var imgs = document.getElementsByTagName("img")[0];
+    var key = window.localStorage.getItem("name");
+    //console.log(num);
+    imgs.src = arr[key];
+</script>
+
+</body>
+</html>

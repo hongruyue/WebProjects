@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="editPerson">
+ 	<head>
+		<title>个人信息编辑页面</title>
+		<meta charset="utf-8" />
+		<meta http-equiv="pragma" content="no-cache">
+		<meta http-equiv="cache-control" content="no-cache">
+		<meta http-equiv="expires" content="0">
+		<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+		<meta http-equiv="description" content="This is my page">
+		<link rel="stylesheet" href="../../bs/css/validationEngine.jquery.css" />
+		<link rel="stylesheet" href="../../bs/css/bootstrap.min.css"/>
+		<link rel="stylesheet" href="../../css/main.css"/>
+		<link rel="stylesheet" href="../../css/style.css"/>
+		<script src="../../bs/js/jquery-1.11.3.min.js"></script>
+		<script src="../../bs/js/jquery.form.js"></script>
+		<script src="../../bs/js/bootstrap.min.js"></script>
+		<script src="../../bs/js/angular.min.js"></script>
+		<script src="../../js/url.js"></script>
+		<script src="js/EditPerson_Information.js"></script>
+		<style type="text/css">
+		     #person_content{	         
+		    	 margin:0 auto;
+		         text-align: center;  
+		    }
+		</style>
+	</head>
+
+	<body ng-controller="editPersonCtrl">
+		<div id="man_zone" class="mianbody">
+			<div class="softtm"></div>					
+			<div class="row show-grid" style="padding: 1% 1% 0% 1%;">
+			<div class="col-md-12 col-xs-12 col-sm-12">					
+				<form class="form-horizontal" name="editForm" method="post" id="editForm">
+				 	<input type="hidden"  id="userId" name="userId" ng-value="user.userId" >
+			 		  <div class="form-group">
+					    <label for="userName" class="col-sm-1 control-label">姓名</label>
+					    <div class="col-sm-5">
+					      <input type="text" class="form-control" id="userName" name="alias" ng-model="user.alias" data-validation-engine="validate[required,custom[chineseName]]" placeholder="请输入2-20位以内中文">
+					    </div>
+					  </div>
+					  <div class="form-group">
+					    <label for="loginName" class="col-sm-1 control-label">登录账号</label>
+					    <div class="col-sm-5">
+					      <input type="text" class="form-control" id="loginName" name="username" ng-model="user.username" readonly>
+					    </div>
+					  </div>
+					  <div class="form-group">
+					    <label for="userMail" class="col-sm-1 control-label">邮箱</label>
+					    <div class="col-sm-5">
+					      <input type="email" class="form-control" id="userMail" name="email" ng-model="user.email" data-validation-engine="validate[required,custom[email]]" placeholder="请输入标准邮箱格式">
+					    </div>
+					  </div>
+					  <div class="form-group">
+					    <label for="userPhone" class="col-sm-1 control-label">手机</label>
+					    <div class="col-sm-5">
+					      <input type="text" class="form-control" id="userPhone" ng-model="user.phone" data-validation-engine="validate[required,custom[userPhone]]" name="phone" placeholder="请输入11位以内中国大陆手机号">
+					    </div>
+					  </div>
+					  <div class="col-md-12 col-xs-12 col-sm-12">
+					  	<div class="col-md-1 col-xs-1 col-sm-1"></div>
+					  	<div class="col-md-3 col-xs-3 col-sm-3">
+					  		<button class="btn btndel-handle1" type="button" ng-click="rt()">返回</button>
+					  	</div>
+					  	 <div class="col-md-5 col-xs-5 col-sm-5">
+					  		<button class="btn btndel-handle1" type="button" ng-click="update()">保存</button>
+					  	</div>
+					 </div>		  		          		
+	          </form>
+	       </div>
+		</div>
+	</div>
+<<!--script src="../../bs/js/jquery.validationEngine.min.js"></script>	
+<script src="../../bs/js/jquery.validationEngine-zh-CN.js"></script>	
+<script>
+	$.validationEngine.defaults.scroll = false;
+		jQuery(document).ready(function(){
+	 	jQuery('#editForm').validationEngine();
+	});
+</script> -->
+  </body>
+</html>

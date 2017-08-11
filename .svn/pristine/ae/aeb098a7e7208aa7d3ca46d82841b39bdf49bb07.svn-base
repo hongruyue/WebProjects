@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        select {
+            width: 100px;
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+<select name="" id="left" multiple="multiple">
+    <option value="">菠萝</option>
+    <option value="">苹果</option>
+    <option value="">西瓜</option>
+    <option value="">杨梅</option>
+    <option value="">葡萄</option>
+    <option value="">香蕉</option>
+</select>
+<input id="btn1" type="button" value="&gt;&gt;"/>
+<input id="btn2" type="button" value="&lt;&lt;"/>
+<input id="btn3" type="button" value="&gt;"/>
+<input id="btn4" type="button" value="&lt;"/>
+<select name="" id="right" multiple="multiple"></select>
+<script>
+    var btn1 = $("btn1");
+    var left = $("left");
+    var right = $("right");
+    function $(idName) {
+        return document.getElementById(idName);
+    }
+    btn1.onclick = function () {
+        var options = left.children;
+        for (var i = 0; i < options.length; i++){
+            var option = options[i];
+            right.appendChild(option);
+            i--;
+        }
+    };
+    $("btn2").onclick = function () {
+        var options = right.children;
+        for (var i = 0; i < options.length; i++) {
+            var option = options[i];
+            left.appendChild(option);
+            i--;
+        }
+    };
+    $("btn3").onclick = function () {
+        var options = left.children;
+        for (var i = 0; i < options.length; i++) {
+            var option = options[i];
+            if (option.selected === true) {
+                right.appendChild(option);
+                i--;
+            }
+        }
+    };
+    $("btn4").onclick = function () {
+        var options = right.children;
+        for (var i = 0; i < options.length; i++) {
+            var option = options[i];
+            if (option.selected === true) {
+                left.appendChild(option);
+                i--;
+            }
+        }
+    };
+</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title></title>
+    <link rel="stylesheet" href="Demo/css/bootstrap.min.css"/>
+    <script src="Demo/js/jquery-1.10.2.min.js"></script>
+    <script src="Demo/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 col-lg-offset-3">
+           <div class="input-group"><!--input输入框  输入框组-->
+               <span class="input-group-addon btn btn-danger">百度一下</span>
+               <input type="text" class="form-control" placeholder="请输入"/>
+               <span class="input-group-addon">百度一下</span>
+           </div>
+        </div>
+    </div>
+        <div class="row">
+            <!--input按钮改变颜色-->
+            <div class="col-lg-12">
+                <div class="input-group">
+                    <input type="text" class="form-control input-lg"/> <!--form-control 100%宽-->
+                    <span class="input-group-btn">
+                        <button class="btn bg-info btn-lg">按钮</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+ <div class="row">
+     <!--自定义图标-->
+     <div class="col-lg-6">
+         <span class="glyphicon glyphicon-ok"></span>
+         <span class="glyphicon glyphicon-asterisk"></span>
+         <div class="before"></div>
+     </div>
+     <!--dropdown下拉列表组 必须引入js文件才可以实现-->
+      <div class="col-lg-6">
+          <div class="dropdown open"><!--open 刷新自动弹开-->
+              <button class="btn btn-danger" data-toggle="dropdown">下拉列表
+              <span class="caret"></span><!--caret下箭头-->
+              </button>
+              <ul class="dropdown-menu">
+                  <li>111111</li>
+                  <li>222222</li>
+                  <li>3333333</li>
+                  <li>4444444</li>
+              </ul>
+          </div>
+      </div>
+ </div>
+</div>
+</body>
+</html>

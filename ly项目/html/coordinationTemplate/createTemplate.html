@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="creat">
+	<head>
+		<meta charset="UTF-8">
+		<title>创建模板</title>
+		<meta http-equiv="pragma" content="no-cache">
+		<meta http-equiv="cache-control" content="no-cache">
+		<meta http-equiv="expires" content="0">
+		<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+		<meta http-equiv="description" content="This is my page">
+		<link rel="stylesheet" href="../../bs/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="../../css/main.css" />
+		<link rel="stylesheet" href="../../css/style.css" />
+		<script src="../../bs/js/jquery-1.11.3.min.js"></script>
+		<script src="../../bs/js/bootstrap.min.js"></script>
+		<script src="../../bs/js/angular.min.js"></script>
+		<script type="text/javascript" src="js/coordinationTemplate.js"></script>
+		<script type="text/javascript" src="../../js/url.js"></script>
+	</head>
+	<body ng-controller="creatTemplate">
+		<div id="man_zone" class="mianbody">
+			<div class="softtm"></div>			
+			<div class="row show-grid" style="padding: 1% 1% 0% 1%;">
+				<div class="col-md-12 col-xs-12 col-sm-12">					
+					<h4>&nbsp;&nbsp;&nbsp;  项目名称 >> 创建模板</h4>
+					<form id="testForm" class="form-horizontal" ng-submit="submitForm()">
+					<div class="form-group">
+						<label for="projName" class="col-sm-1 control-label">模板名称</label>
+						<div class="col-sm-4">
+							<input type="text" data-validation-engine="validate[required]" name="templateName" ng-model="templateName" class="input form-control"  placeholder="请输入2-20位以内中文英文加数字且不能数字开头" >
+						</div>
+					</div>
+					<div class="col-md-12 col-xs-12 col-sm-12">
+						<div class="col-md-2 col-xs-2 col-sm-2">
+						</div>
+						<div class="col-md-5 col-xs-5 col-sm-5">
+							<button class="btn btndel-handle1" type="submit">保存</button>
+						</div>
+					</div>
+				</form>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

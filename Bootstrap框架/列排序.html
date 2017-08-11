@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title></title>
+    <script src="06bootstrap/bootstrap.min.js"></script>
+    <script src="06bootstrap/jquery-1.10.2.min.js"></script>
+    <link rel="stylesheet" href="06bootstrap/bootstrap.min.css"/>
+    <style>
+        .row div{
+            outline: 1px solid red;
+
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4">3份</div>
+        <div class="col-lg-4">3份</div>
+        <div class="col-lg-4">3份</div>
+    </div>
+         <!--col-lg-pull-2 向前移动2份，对其他元素没有影响-->
+            <div class="row">
+                <div class="col-lg-4">3份</div>
+                <div class="col-lg-4 col-lg-pull-2">3份</div>
+                <div class="col-lg-4">3份</div>
+            </div>
+    <div class="row">
+        <!--col-lg-push-2 向后移动2份，对其他元素没有影响-->
+        <div class="col-lg-4">3份</div>
+        <div class="col-lg-4 col-lg-push-2">3份</div>
+        <div class="col-lg-4">3份</div>
+    </div>
+
+</div>
+</body>
+</html>

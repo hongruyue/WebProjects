@@ -1,0 +1,9 @@
+.lusuo_left_3,.lusuo_left_2{
+    transition: transform 0.8s ease-out;
+}
+.lusuo_left_3:hover{
+    transform:rotate(360deg);-webkit-transform:rotate(360deg)
+}
+.lusuo_left_2:hover{
+    transform:rotate(360deg);-webkit-transform:rotate(360deg)
+}

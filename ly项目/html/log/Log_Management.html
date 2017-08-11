@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="log">
+
+	<head>
+		<title>日志管理</title>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="../../bs/css/bootstrap.min.css">
+		<link rel="stylesheet" href="../../css/main.css" />
+		<link rel="stylesheet" href="../../css/style.css" />
+		<script type="text/javascript" src="../../bs/js/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="../../bs/js/angular.min.js"></script>
+		<script type="text/javascript" src="../../bs/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../../js/url.js"></script>
+		<script src="../../bs/js/jquery.page.js"></script>
+		<script src="../../bs/laydate/laydate.js"></script>
+	</head>
+
+	<body ng-controller="logCtrl">
+		<div id="man_zone" class="mianbody">
+			<div class="softtm"></div>
+			<div class="row show-grid" style="padding: 1% 1% 0% 1%;">
+				<div class="col-md-12 col-xs-12 col-sm-12">
+					<form action="" class="form-inline">
+						<div class="form-group">
+							<label>操作菜单：</label>
+							<input class="tempLogdes form-control form-sm" type="text" ng-model="tempLogdes">
+							<input type="hidden" ng-value="logdes">
+							<label>日期范围：</label>
+							<input id="start" class="tempLogStart form-control" required readonly type="text" ng-value="tempLogStart">
+							<input type="hidden" class="hlogStart" ng-value="logStart"> --
+							<input id="end" class="tempLogEnd form-control" type="text" required readonly ng-value="tempLogEnd">
+							<input type="hidden" class="hlogEnd" ng-value="logEnd">
+							<button type="button" class="btn btndel-handle1" ng-click="showlog()">查询</button>
+						</div>
+
+					</form>
+				</div>
+				<div class="col-md-12 col-xs-12 col-sm-12">
+					<div class="table-responsive">
+						<table class="table table-bordered table-hover table-condensed">
+							<thead>
+								<tr>
+									<th width="20%">操作菜单</th>
+									<th width="20%">操作用户</th>
+									<th width="20%">所在公司</th>
+									<th width="20%">操作IP</th>
+									<th width="20%">操作时间</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ng-repeat="x in operationLogs">
+									<td>{{x.operationDes}}</td>
+									<td>{{x.operationUsername}}</td>
+									<td>{{x.text}}</td>
+									<td>{{x.operationIp}}</td>
+									<td>{{x.operationTime}}</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<!--分页  -->
+				<div class="tcdPageCode"></div>
+			</div>
+		</div>
+	</body>
+	<script src="js/Log_Management.js"></script>
+</html>

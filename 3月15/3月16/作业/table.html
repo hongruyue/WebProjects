@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>table操作</title>
+    <style>
+    th{
+         color: red;
+     }
+
+    </style>
+</head>
+<body class="box">
+<table width="360" border="1" class="tab">
+    <tbody>
+    <tr>
+        <th scope="col">书名</th>
+        <th scope="col">价格</th>
+    </tr>
+    <tr class="line">
+        <td>看的见风景的房价<!--colspan合并单元格-->
+        <td>￥30</td>
+    <tr>
+        <td>生活如此好</td>
+        <td>￥62</td>
+    </tr>
+    </table>
+    <button>增加一行</button>
+    <button>删除第二行</button>
+    <button>修改标题样式</button>
+    <button>复制最后一行</button>
+    <button>替换元素</button>
+    </tbody>
+
+</body>
+<script type="text/javascript">
+    var tboby=document.getElementsByTagName("tbody")[0];
+    var btn=document.getElementsByTagName("button");
+    var line=document.getElementsByClassName("line")[0];
+    var tr=document.getElementsByTagName("tr");
+    btn[0].onclick=function(){
+        var addtr=document.createElement("tr");
+        addtr.innerHTML="<td>js学习教程</td><td>￥50</td>";
+       // line.parentNode.insertBefore(addtr,line);
+        tboby.appendChild(addtr);
+    };
+    btn[1].onclick=function(){
+        tr[2].remove();
+    };
+    btn[2].onclick=function(){
+        tr[0].style.color="blue";
+    };
+    btn[3].onclick=function(){
+         var copytr=tboby.lastElementChild.cloneNode(true);
+        tboby.appendChild(copytr);
+    };
+    btn[4].onclick=function(){
+     var change=document.createElement("tr");
+        change.innerHTML="<td>c语言学习教程</td><td>￥100</td>";
+        tboby.replaceChild(change,tr[1]);
+    }
+</script>
+</html>

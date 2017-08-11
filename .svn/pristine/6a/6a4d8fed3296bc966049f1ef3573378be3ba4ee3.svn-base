@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="angular-1.5.8/angular.js"></script>
+</head>
+<body ng-app="myApp">
+   <div ng-controller="con1"></div>
+   <div ng-controller="con2"></div>
+
+</body>
+<script>
+    var app=angular.module("myApp",[]);
+    app.factory("test",function(){
+        return{
+            a:'factory',
+            b:function(){
+                alert("first")
+            }
+        }
+    });
+    app.provider("test1",function(){
+        this.$get=function(){
+            return{
+                c:"provider",
+                d:function(){
+                    alert("second")
+                }
+            }
+        }
+    });
+    app.service("test2",function(){
+        this.e="service";
+        this.f=function(){
+            alert("third")
+        }
+    });
+    app.constant("test3",{
+            g:"constant",
+           h:function(){
+        alert("fourth")
+    }
+    });//定义常量
+    app.value("test4",{
+        i:"value",
+        j:function(){
+            alert("fifth")
+        }
+    });//定义变量
+
+    app.decorator("test",function($delegate){
+        $delegate.a="a";
+        return $delegate
+    });
+    app.decorator("test1",function($delegate){
+        $delegate.d=123;//把函数变成数字
+        return $delegate
+    });
+    app.decorator("test3",function($delegate){//常量不可以改变 不可以修饰
+        $delegate.g=123;
+        return $delegate
+    });
+    app.controller("con1",function($scope,test,test1,test2,test3,test4){
+      test.b();
+       // alert(test.a);
+      test1.d();
+       // alert(test1.d);
+      test2.f();
+      test3.h();
+      test4.j();
+    });
+    app.controller("con2",function($scope,test){
+
+    })
+
+
+</script>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{margin: 0px;padding: 0px;}
+        ul{list-style: none;}
+        .box{
+            width: 600px;
+            height: 600px;font-size: 20px;
+            margin: 0 auto;
+            cursor: pointer;
+
+        }
+        .box h1{text-align: center;}
+        .con{
+            width: 600px;
+            height: 600px;
+            border: 1px solid #333333;
+            border-radius: 10px;
+        }
+        .header{width: 580px; height:50px;background: #C6F3F7;line-height: 50px;padding-left: 20px;border-radius: 10px;}
+        .con ul{width: 200px; height: 400px; }
+        .con li{
+            width: 200px;height: 40px;line-height: 40px;}
+        .con li:hover{background: #ccc;}
+        .left{width: 220px; height: 400px;margin:10px; float: left;border: 1px solid #333333;
+            border-radius: 10px;}
+        .center{width: 60px; height: 400px;float: left;}
+        .right{width: 220px;height: 400px;margin: 10px;border: 1px solid #333333;  border-radius: 10px;float: right;}
+        button{width: 100px;height: 40px; border-radius: 10px;margin-top: 40px;background: transparent;outline: none;border:1px solid #ccc;cursor: pointer;}
+        button:hover{border: 1px solid #089efd;}
+    </style>
+</head>
+<body>
+<div class="box">
+    <h1>列表选择</h1>
+    <div class="con">
+        <p class="header">想吃什么水果呢。。。</p>
+        <div class="con_content">
+            <div class="left">
+                <ul id="leftfru">
+                    <li>菠萝</li>
+                    <li>苹果</li>
+                    <li>蜜桃</li>
+                    <li>桑果</li>
+                    <li>杨梅</li>
+                    <li>葡萄</li>
+                    <li>鸭梨</li>
+                    <li>香蕉</li>
+                </ul>
+            </div>
+            <div class="center">
+                <button>></button>
+                <button>>></button>
+                <button><</button>
+                <button><<</button>
+            </div>
+            <div class="right">
+                <ul id="rightfru">
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>
+</body>
+<script>
+    var left=document.getElementsByClassName("left")[0];
+    var ulL=left.getElementsByTagName("ul")[0];
+    var lis=left.getElementsByTagName("li");
+    var right=document.getElementsByClassName("right")[0];
+    var ulR = right.getElementsByTagName("ul")[0];
+    var lisR=right.getElementsByTagName("li");
+    //var ulR = document.getElementById("rightfru");
+    //var ulL = document.getElementById("leftfru");
+    var btn=document.getElementsByTagName("button");
+    var selfru;
+    var curIndex;
+
+    btn[0].onclick=function(){
+        if (selfru != " ") {
+            var li = document.createElement("li");
+            li.innerHTML = selfru;
+            ulR.appendChild(li);
+            //alert("t:"+curIndex);
+            ulL.removeChild(lis[curIndex]);
+            selfru = " ";
+            //删除之后更新索引
+            updateIndex(lis);
+            updateIndex(lisR);
+        }
+    };
+    btn[1].onclick=function(){
+        //var newul=document.createElement("ul");
+        var newul = document.getElementById("rightfru");
+        newul.innerHTML+=ulL.innerHTML;
+        right.appendChild(newul);
+        ulL.innerHTML="";
+        updateIndex(lisR);
+    };
+    btn[2].onclick=function(){
+        //var lisR=right.getElementsByTagName("li");
+        if (lisR != null) {
+            //updateIndex(lisR);
+
+            var li = document.createElement("li");
+            li.innerHTML = selfru;
+            ulL.appendChild(li);
+            ulR.removeChild(lisR[curIndex]);
+            selfru = " ";
+            //删除之后更新索引
+            updateIndex(lisR);
+            updateIndex(lis);
+        }
+    };
+    btn[3].onclick=function(){
+        ulL.innerHTML+=right.innerHTML;
+        right.innerHTML="";
+        updateIndex(lis);
+    };
+    //initialize
+    updateIndex(lis);
+    function updateIndex(lis) {
+        for(var i=0;i<lis.length;i++) {
+            lis[i].index = i;
+            var index_= lis[i];
+            index_.onclick = function(){
+                selfru=this.innerHTML;
+                this.style.backgroundColor = "#AB85E4";
+                curIndex=this.index;
+            };
+        }
+    }
+
+
+
+</script>
+</html>

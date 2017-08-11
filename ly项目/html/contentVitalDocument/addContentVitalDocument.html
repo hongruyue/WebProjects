@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html ng-app="addcl">
+	<head>
+		<meta charset="UTF-8">
+		<title>添加证照</title>
+		<meta http-equiv="pragma" content="no-cache">
+		<link rel="stylesheet" href="../../bs/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="../../css/main.css" />
+		<link rel="stylesheet" href="../../css/style.css" />
+		<link rel="stylesheet" href="../../css/template.css" />
+		<script type="text/javascript" src="../../bs/js/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="../../bs/js/angular.min.js"></script>
+		<script type="text/javascript" src="../../bs/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../../js/url.js"></script>
+		<script src="js/contentVitalDocument.js"></script>
+		<script src="js/addContentVitalDocument.js"></script>
+		<script type="text/javascript" src="../../bs/js/jquery.form.js"></script>
+		<script type="text/javascript">
+			$(function() {
+			$('.input').val("");			
+			$(".file").on("change","input[type='file']",function(){
+	            var filePath = $(this).val().split('\\');
+	            var fileName = filePath[filePath.length-1]
+	            $('#showFileName').html(fileName)
+	       	 })
+			})
+			function rt(){
+				window.location.href="contentVitalDocument.html";
+			}
+		</script>
+	</head>
+	<body ng-controller="addcontentVitalDocument">
+		<div id="man_zone" class="mianbody">
+			<div class="softtm"></div>			
+			<div class="row show-grid" style="padding: 1% 1% 0% 1%;">
+				<div class="col-md-12 col-xs-12 col-sm-12">	
+					<form id="testForm" class="form-horizontal"  ng-submit="submitForm()" method="POST"  enctype="multipart/form-data"  name="addForm">
+					  <div class="form-group">
+					    <label for="name" class="col-sm-1 control-label">要件名称</label>
+					    <div class="col-sm-5">
+					      <input type="text" class="input form-control"  name="name" placeholder="请输入要件名称">
+					    <a href="javascript:;" class="file">
+					        <input type="file" name="files" title="选择文件" ng-model="contentVitalDocument.file">选择文件
+					    </a>
+					     <span id="showFileName" style="margin: 1px"></span>					 					    
+					    </div>
+					  </div>
+					  <div class="form-group">
+					    <label for="verify" class="col-sm-1 control-label"><nobr>是否需要核实</nobr></label>
+					    <div class="col-sm-5">
+					      <select  name="ifCheck" class="form-control" ng-model="contentVitalDocument.ifCheck" ng-init="contentVitalDocument.ifCheck='0'" id="verify" >
+								<option  value="1" >需要</option>
+								<option  value="0" >不需要</option>
+							</select>
+					    </div>
+					  </div>
+					  <div ng-if="contentVitalDocument.ifCheck==1" >
+						  <div class="form-group">
+						    <label for="fromCheck" class="col-sm-1 control-label">由谁核实</label>
+						    <div class="col-sm-5 input-group" >
+						      <input type="text" class="form-control col-sm-3" ng-model="contentVitalDocument.fromCheck"  id="fromCheck" readonly  placeholder="该要件由谁核实">
+						      <input type="hidden"  name="fromCheck" id="fromCheck1"  >
+						      <span class="input-group-btn">
+	        					<button class="btn btn-default" type="button" onclick = "modalShow('byVerify')">选择</button>
+	      					  </span>
+						    </div>
+						  </div>
+						  <div class="form-group">
+						    <label for="toCheck" class="col-sm-1 control-label">向谁核实</label>
+						    <div class="col-sm-5 input-group" >
+						      <input type="text" class="form-control col-sm-3" id="toCheck" readonly  placeholder="该要件向谁核实">
+						      <input type="hidden"  name="toCheck" id="toCheck1" ng-model="contentVitalDocument.toCheck" >
+						      <span class="input-group-btn">
+	        					<button class="btn btn-default" type="button" onclick = "modalShow('toVerify')">选择</button>
+	      					  </span>
+						    </div>
+						  </div>
+					  </div>
+					  <div class="form-group">
+					    <label for="checkShareOrgIds" class="col-sm-1 control-label">共享方</label>
+						<div class="col-sm-5 input-group" >
+					      <input type="text" class="form-control col-sm-3"  id="checkShareHandlMatterIds"  readonly  placeholder="该核实结果谁需要共享">
+					      <input type="hidden" name="checkShareHandlMatterIds" ng-model="contentVitalDocument.checkShareHandlMatterIds" id="checkShareHandlMatterIds1" >
+					      <span class="input-group-btn">
+        					<button class="btn btn-default" type="button" onclick = "modalShow('shared')">选择</button>
+      					  </span>
+					    </div>
+					  </div>
+					  <div class="form-group">
+					    <label for="storageOrgIds" class="col-sm-1 control-label">入库方</label>
+					    <div class="col-sm-5 input-group" >
+					      <input type="text" class="form-control col-sm-3"  id="storageOrgIds" readonly  placeholder="该核实结果谁需要入库">
+					      <input type="hidden" name="storageOrgIds" id="storageOrgIds1" ng-model="contentVitalDocument.storageOrgIds" >
+					      <span class="input-group-btn">
+        					<button class="btn btn-default" type="button" onclick = "modalShow('putStorage')">选择</button>
+      					  </span>
+					    </div>
+					  </div>
+					  <div class="col-md-12 col-xs-12 col-sm-12">
+					  	<div class="col-md-1 col-xs-1 col-sm-1"></div>
+					  	<div class="col-md-3 col-xs-3 col-sm-3">
+					  		<button class="btn btndel-handle1" type="button" onclick="rt()">返回</button>
+					  	</div>
+					  	 <div class="col-md-5 col-xs-5 col-sm-5">
+					  		<button class="btn btndel-handle1" type="submit">保存</button>
+					  	</div>
+					  </div>		  		          		
+	          		</form>
+				</div>
+			</div>
+		</div>
+<!-- 由谁核实 -->
+	<div class="modal fade" id="fromVerify"  aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content"  style="width: 80%">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+						&times;
+					</button>
+					<h4 class="modal-title" id="fromVerifyTitle">
+					选择数据来源
+					</h4>
+				</div>
+				<div class="modal-body">
+				<div style="width:585px;height: 200px;">
+					<div class="left left_1" >
+						
+						<div class="lists listTree">
+							<table class="table top table-condensed">
+							<thead>
+								<tr>
+									<th width="5%"><input type="checkbox"  onclick="if(this.checked==true) { checkAll('fromDpat'); } else { clearAll('fromDpat'); }"> </th>								
+									<th width="30%">部门名称（所属组织机构）</th>
+								</tr>				
+							 </thead>
+							   <tbody>
+							   	<tr ng-repeat= "x in shareOrgDeparts">
+						   			<td width="5%"><input type="checkbox" id="{{x.depart.departId}}" value ="{{x.depart.departName}}（{{x.organization.organizationName}}）" name="fromDpat"> </td>								
+									<td width="30%">{{x.depart.departName}}（{{x.organization.organizationName}}）</td>	
+								</tr>	
+							   </tbody>
+							  </table>	
+						</div>
+					</div>
+				
+					</div>	
+					<input type="hidden" id="fromVerifySec">			
+				</div>
+				<div class="modal-footer">
+					<span id="Msg" style="float: left;color: red"></span>
+					<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+					</button>
+					<button type="button" class="btn btn-primary" onclick = "saveFromVerify()">
+						保存
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 向谁核实 -->
+	<div class="modal fade" id="toVerify"  aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content"  style="width: 80%">
+				<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+						&times;
+					</button>
+					<h4 class="modal-title" id="toVerifyTitle">
+					选择数据来源
+					</h4>
+				</div>
+				<div class="modal-body"  >
+				<div style="width:585px;height: 200px">
+					<div class="left left_1" >
+						
+						<div class="lists listTree">
+							<table class="table  top table-condensed">
+							<thead>
+								<tr>
+									<th width="5%"><input type="checkbox"  onclick="if(this.checked==true) { checkAll('toDpat'); } else { clearAll('toDpat'); }"> </th>								
+									<th width="30%">部门名称（所属组织机构</th>
+								</tr>				
+							 </thead>
+							   <tbody>
+							   	<tr  ng-repeat= "x in shareOrgDeparts">
+						   			<td width="5%"><input type="checkbox" id="{{x.depart.departId}}" value ="{{x.depart.departName}}（{{x.organization.organizationName}}）" name="toDpat"> </td>								
+									<td width="30%">{{x.depart.departName}}（{{x.organization.organizationName}}）</td>	
+								</tr>	
+							   </tbody>
+							  </table>	
+						</div>
+					</div>
+			
+					</div>	
+					<input type="hidden" id="toVerifySec">			
+				</div>
+				<div class="modal-footer" >
+					<span id="Msg" style="float: left;color: red"></span>
+					<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+					</button>
+					<button type="button" class="btn btn-primary" onclick = "saveToVerify()">
+						保存
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 共享 -->
+	<div class="modal fade" id="share"  aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content" style="width: 630px">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+						&times;
+					</button>
+					<h4 class="modal-title" id="shareTitle">
+					选择数据来源
+					</h4>
+				</div>
+				<div class="modal-body">
+				<div style="width:600px;height: 300px">
+					<div class="left" >
+						<div class="View"></div>
+						<div class="list listTree">
+							<table class="table top table-condensed">
+							<thead>
+								<tr>
+									<th width="5%"><input type="checkbox"  onclick="if(this.checked==true) { checkAll('dpat2'); } else { clearAll('dpat2'); }"> </th>								
+									<th width="30%">部门名称（所属组织机构）</th>
+								</tr>				
+							 </thead>
+							   <tbody>
+							    <tr ng-repeat= "x in shareOrgDeparts">
+						   			<td width="5%"><input type="checkbox" onclick="handlMatter()" value="{{x.depart.departId}}" name="dpat2"> </td>								
+									<td width="30%">{{x.depart.departName}}（{{x.organization.organizationName}}）</td>	
+								</tr>	
+							   </tbody>
+							  </table>	
+						</div>
+					</div>
+					<div class="right">		
+						<div class="View"><span id="rmname"></span></div>
+						<input type="hidden" id="rmid">
+						<div class="list">
+							<table class="table top table-condensed">
+							<thead>
+								<tr>
+									<th width="5%"><input type="checkbox"  onclick="if(this.checked==true) { checkAll('handlMatter'); } else { clearAll('handlMatter'); }"> </th>							
+									<th width="25%">办理事项名称</th>
+									<th width="30%">办理事项内容</th>
+									<th width="30%">所属部门</th>
+								</tr>				
+							 </thead>
+							   <tbody id="shareTbody">
+							   </tbody>
+							  </table>											
+							</div>						
+					</div>
+					</div>	
+					<input type="hidden" id="shareSec">			
+				</div>
+				<div class="modal-footer">
+					<span id="Msg" style="float: left;color: red"></span>
+					<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+					</button>
+					<button type="button" class="btn btn-primary" onclick = "saveShare()">
+						保存
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 入库方 -->
+	<div class="modal fade" id="storage"  aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content" style="width: 630px">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+						&times;
+					</button>
+					<h4 class="modal-title" id="storageTitle">
+					选择数据来源
+					</h4>
+				</div>
+				<div class="modal-body">
+				<div style="width:600px;height: 300px">
+					<div class="left" >
+						<div class="View"></div>
+						<div class="list listTree">
+							<table class="table top table-condensed">
+							<thead>
+								<tr>
+									<th width="5%"><input type="checkbox"  onclick="if(this.checked==true) { checkAll('dpatSysm'); } else { clearAll('dpatSysm'); }"> </th>								
+									<th width="30%">部门名称（所属组织机构）</th>
+								</tr>				
+							 </thead>
+							   <tbody>
+							   	<tr ng-repeat= "x in shareOrgDeparts">
+						   			<td width="5%"><input type="checkbox" onclick="depart()" value="{{x.depart.departId}}" name="dpatSysm"> </td>								
+									<td width="30%">{{x.depart.departName}}（{{x.organization.organizationName}}）</td>	
+								</tr>	
+							   </tbody>
+							  </table>	
+						</div>
+					</div>
+					<div class="right">		
+						<div class="View"><span id="rmname"></span></div>
+						<input type="hidden" id="rmid">
+						<div class="list">
+							<table class="table top table-condensed">
+							<thead>
+								<tr>
+									<th width="5%"><input type="checkbox"  onclick="if(this.checked==true) { checkAll('syetem'); } else { clearAll('syetem'); }"> </th>							
+									<th width="25%">系统名称</th>
+									<th width="30%">系统地址</th>
+									<th width="30%">所属机构</th>
+								</tr>				
+							 </thead>
+							   <tbody id="storagemTbody">
+							   </tbody>
+							  </table>											
+							</div>						
+					</div>
+					</div>	
+					<input type="hidden" id="storageSec">			
+				</div>
+				<div class="modal-footer">
+					<span id="Msg" style="float: left;color: red"></span>
+					<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+					</button>
+					<button type="button" class="btn btn-primary" onclick = "saveStorage()">
+						保存
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	</body>
+</html>

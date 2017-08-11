@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<!--具有src href标签可以直接实现跨域属性-->
+<input type="text">
+<ul></ul>
+</body>
+<script src="js/jquery-1.8.3.min.js"></script>
+<script>
+    $(function(){
+        $("input").change(function(){
+            $.ajax({//淘宝关键字接口
+                url:"https:suggest.taobao.com/sug?code=utf-8&q="+$(this).val()+"&callback=JSON_CALLBACK",
+                type:"post",
+                dataType:"jsonp",
+                //jsonp:"callback",
+                success:function(data){
+                    $("ul").empty();
+                  var arr=data.result;
+                    for(var i=0;i<arr.length;i++){
+                        var newnode="<li>"+arr[i][0]+"</li>";//arr[i][0]首关键字
+                        console.log(newnode);
+                        $("ul").append(newnode);
+                    }
+                },
+                error:function(){
+
+                },
+                asyns:true
+            })
+
+    })
+    })
+
+</script>
+</html>

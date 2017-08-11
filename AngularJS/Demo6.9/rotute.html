@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../angular-1.5.8/angular.min.js"></script>
+    <script src="../angular-1.5.8/angular-route.js"></script>
+    <script src="cont/ctrl1.js"></script>
+    <script src="cont/ctrl2.js"></script>
+</head>
+<body ng-app="app1">
+<div ng-controller="con1">
+    <ul>
+        <li ng-repeat="x in obj">
+            <p ng-repeat="v in x">
+                <a href="{{v.url}}">{{v.con}}</a>
+            </p>
+        </li>
+    </ul>
+    <ng-view></ng-view>
+</div>
+</body>
+<script>
+    var app=angular.module("app1",["ngRoute","myModule1","myModule2"]);
+    app.controller("con1",function($scope){
+        $scope.obj={
+            news:[
+                {url:"#/news?type=yule",con:"娱乐"},
+                {url:"#news?type=tiyu",con:"体育"},
+                {url:"#news?type=guoji",con:"国际"}
+            ],
+            vid:[
+                {url:"#vid?type=dy",con:"电影"},
+                {url:"#vid?type=dsj",con:"电视剧"},
+                {url:"#vid?type=zb",con:"直播"}
+            ]
+        }
+    });
+    app.config(function($routeProvider){
+        $routeProvider
+                .when("/news",{
+                    templateUrl:"view/one.html",
+                    controller:"con2"
+                })
+                .when("/vid",{
+                    templateUrl:"view/two.html",
+                    controller:"con3"
+                })
+    })
+</script>
+</html>

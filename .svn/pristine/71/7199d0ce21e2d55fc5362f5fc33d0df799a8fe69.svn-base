@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            bac;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<a href="http:\\www.baidu.com" onclick="window.onload='https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=0&rsv_idx=1&tn=baidu&wd=https%E8%AE%A4%E8%AF%81%E8%BF%87%E7%A8%8B&rsv_pq=f39d570f00003b90&rsv_t=8874X3IMugV%2BWPRZB8eWsMehRGUrqhgP0vs4UtzJTXlsgC6h6MBw3Zti3sE&rqlang=cn&rsv_enter=1&rsv_sug3=25&rsv_sug2=0&inputT=20885&rsv_sug4=20886'">123</a>
+</body>
+</html>

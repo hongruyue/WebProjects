@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #canvas{
+            background: #cccccc;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvas" width="800px" height="800px"></canvas>
+</body>
+<script>
+    var canvas=document.getElementById("canvas");
+    var cvs=canvas.getContext("2d");
+    //字体可以设置渐变 阴影
+    var g=cvs.createLinearGradient(0,200,800,200);
+    g.addColorStop(0,'red');
+    g.addColorStop(0.25,'purple');
+    g.addColorStop(0.5,'green');
+    g.addColorStop(0.75,'yellow');
+    g.addColorStop(1,'blue');
+
+    cvs.beginPath();
+    cvs.moveTo(400,0);
+    cvs.lineTo(400,800);
+    //cvs.strokeStyle="black";
+    cvs.stroke();
+    cvs.closePath();
+    cvs.beginPath();
+    cvs.moveTo(0,400);
+    cvs.lineTo(800,400);
+    //cvs.strokeStyle="black";
+    cvs.stroke();
+    cvs.closePath();
+
+
+
+    cvs.beginPath();
+    cvs.fillStyle=g;
+    cvs.strokeStyle=g;
+    //cvs.fillStyle="red";
+    cvs.font="50px 宋体";
+    cvs.textAlign="left";
+    cvs.textBaseline="bottom";
+    cvs.shadowBlur=5;
+    cvs.shadowColor="#999";
+    cvs.shadowOffsetX=10;
+    cvs.shadowOffsetY=10;
+    cvs.fillText("大家好吗？",400,400);//填充
+    cvs.strokeText("大家好！",600,300);//描边
+    cvs.closePath();
+
+</script>
+
+</html>

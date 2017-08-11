@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+
+    </style>
+</head>
+<body>
+<div contentEditable="true"></div><!--true能编辑flash不能编辑 规定局部可不可以编辑-->
+<div>看能不能编辑</div>
+<p hidden="hidden">这是隐藏元素</p><!--hidden只要存在与标签中，标签就是隐藏的-->
+<p spellcheck="true">大家哈殴打DE FE E </p><!--规定是否必须对元素进行拼写或语法检查-->
+<!--tabindex规定元素的tab键迭制次序-->
+<input type="text">
+<input type="text">
+<input type="text">
+<div contentEditable="true" tabindex="1">今天天气真好</div>
+<div contentEditable="true" tabindex="3">今天天气太好了</div>
+<div contentEditable="true" tabindex="2">明天天气真的挺好的</div>
+</body>
+<script>
+document.designMode="off";//on规定全局是否可以编辑，off不让编辑
+</script>
+</html>

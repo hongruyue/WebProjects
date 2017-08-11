@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .outer{
+            width: 300px;
+            height: 500px;
+            background: url("img/6.png") 0 0 no-repeat;
+            background-size: 100% 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        .inner{
+            width: 50px;
+            height: 500px;
+            background: linear-gradient(to right, transparent 0%,rgba(245,252,22,0.2) 50%,transparent 100%);
+            transform: skewX(-20deg);
+            position: absolute;
+            top:0px;
+            left: -130px;
+        }
+        @keyframes run {
+            from{left:-130px;}
+            to{left:300px;}
+        }
+        .outer:hover .inner{
+            animation: run 1s linear;
+        }
+    </style>
+</head>
+<body>
+<div class="outer">
+    <div class="inner"></div>
+</div>
+</body>
+</html>

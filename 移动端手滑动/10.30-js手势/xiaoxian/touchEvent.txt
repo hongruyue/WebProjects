@@ -1,0 +1,13 @@
+touches是当前屏幕上所有触摸点的列表;
+targetTouches是当前对象上所有触摸点的列表;
+changedTouches是涉及当前事件的触摸点的列表。
+但实际这三个属性输出都是一样的.....
+
+
+screenX clientX pageX的区别
+screenX:鼠标位置相对于用户屏幕水平偏移量，而screenY也就是垂直方向的，此时的参照点也就是原点是屏幕的左上角。
+clientX:跟screenX相比就是将参照点改成了浏览器内容区域的左上角，该参照点会随之滚动条的移动而移动。
+pageX：参照点也是浏览器内容区域的左上角，但它不会随着滚动条而变动(鼠标到窗口+滚动条)
+
+
+参考网站：http://blog.csdn.net/clh604/article/details/9861411

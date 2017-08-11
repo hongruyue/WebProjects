@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+      *{
+            margin: 0px;
+            padding: 0px;
+        }
+        video{
+            width: 400px;
+            height: 300px;/*宽高必须用4:3*/
+        }
+        div{
+            width: 50px;
+            height:50px ;
+            border-radius: 50%;
+            float: left;
+            background: yellow;
+            text-align: center;
+            line-height: 50px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<video controls poster="6.png" loop >
+    <source src="vedio/video.webm">
+    <source src="vedio/vedio.mpg">
+    <source src="vedio/vedio.ogg">
+    <source src="vedio/vedio.mp4">
+    <source src="vedio/vedio.avi">
+</video>
+<p>
+    <span></span>
+    <span>/</span>
+    <span></span>
+</p>
+<input type="range" max="1" min="0" step="0.01"/>
+<div>播放</div>
+<div>暂停</div>
+<div>播放</div>
+<div>快进</div>
+<div>播放到60s</div>
+<div>快退</div>
+<div>静音</div>
+<div>全屏</div>
+</body>
+<script>
+    var btn=document.getElementsByTagName("div");
+    var vid=document.getElementsByTagName("video")[0];
+    var spans=document.getElementsByTagName("span");
+    var inp=document.getElementsByTagName("input")[0];
+    btn[0].onclick=function(){
+        vid.play();//播放
+    }
+    btn[1].onclick=function(){
+        vid.pause();//暂停
+    }
+    btn[2].onclick=function(){
+       if(vid.paused){
+           vid.play();
+           this.innerHTML="暂停";
+       }else{
+           vid.pause();
+           this.innerHTML="播放";
+       }
+    }
+    vid.onended=function(){//用这个属性，不用用loop循环播放
+      alert("谢谢观看！")
+    }
+   /* vid.addEventListener("ended",function(){
+        alert("完毕")
+    })*/
+    setInterval(function(){
+        spans[0].innerHTML=parseInt(vid.currentTime);//获取当前时间
+        spans[2].innerHTML=vid.duration;//获取总时间
+    },1000);
+    btn[3].onclick=function(){
+        vid.currentTime+=2;//暂停
+    }
+    btn[4].onclick=function(){
+        vid.currentTime=60;//设置当前播放时间
+    }
+    btn[5].onclick=function(){
+        vid.currentTime-=2;//暂停
+    }
+    btn[6].onclick=function(){
+        //alert("vid.muted")
+        //muted可以设置静音 还可以设置状态
+        if(vid.muted){
+            vid.muted=false;
+        }else{
+            vid.muted=true;
+        }
+    }
+    inp.oninput=function(){
+        vid.volume=inp.value;
+    }
+    vid.ontimeupdate=function(){//时间更新  只要播放时间在变化就会触发
+        console.log(vid.currentTime)
+    }
+   /* vid.oncanplay=function(){//当前状态可以播放
+        alert("成功")
+    }*/
+    btn[7].onclick=function(){
+       vid.webkitRequestFullscreen();
+    }
+</script>
+</html>

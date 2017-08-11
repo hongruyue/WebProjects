@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+<style>
+    *{
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+    }
+    div{
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
+        margin-top: 160px;
+        margin-bottom: 200px;
+    }
+    ul{
+        width: 200px;
+        height:200px;
+        perspective-origin:center center ;/*视点 看到元素的那个点*/
+        transform-style: preserve-3d;/*定义元素的3D属性*/
+        position: relative;
+        transform: rotateX(-20deg) rotateY(-20deg);
+        animation: name 10000ms linear infinite;
+    }
+    ul img{
+        width: 200px;
+        height:200px;
+    }
+    ul li{
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        top:0px;
+        left: 0px;
+        box-shadow: 0px 0px 3px 3px yellow;
+    }
+    ul li:nth-child(1){
+        transform: rotateY(30deg) translateZ(370px);
+    }
+    ul li:nth-child(2){
+        transform: rotateY(-30deg) translateZ(370px);
+    }
+    ul li:nth-child(3){
+        transform: rotateY(60deg) translateZ(370px);
+    }
+    ul li:nth-child(4){
+        transform: rotateY(-60deg) translateZ(370px);
+    }
+    ul li:nth-child(5){
+        transform: rotateY(90deg) translateZ(370px);
+    }
+    ul li:nth-child(6){
+        transform: rotateY(-90deg) translateZ(370px);
+    }
+    ul li:nth-child(7){
+        transform: rotateY(120deg) translateZ(370px);
+    }
+    ul li:nth-child(8){
+        transform: rotateY(-120deg) translateZ(370px);
+    }
+    ul li:nth-child(9){
+        transform: rotateY(150deg) translateZ(370px);
+    }
+    ul li:nth-child(10){
+        transform: rotateY(-150deg) translateZ(370px);
+    }
+    ul li:nth-child(11){
+        transform: rotateY(180deg) translateZ(370px);
+    }
+    ul li:nth-child(12){
+        transform: rotateY(-180deg) translateZ(-370px);
+    }
+  input{
+      width:100%;
+  }
+    @keyframes name {
+        from{transform:rotateX(-20deg) rotateY(0deg)}
+        to{transform:rotateX(-20deg) rotateY(360deg)}
+    }
+</style>
+</head>
+<body>
+<div>
+    <ul>
+        <li><img src="img/01.jpg"> </li>
+        <li><img src="img/02.jpg"> </li>
+        <li><img src="img/03.jpg"> </li>
+        <li><img src="img/04.jpg"> </li>
+        <li><img src="img/05.jpg"> </li>
+        <li><img src="img/06.jpg"> </li>
+        <li><img src="img/07.jpg"> </li>
+        <li><img src="img/08.jpg"> </li>
+        <li><img src="img/09.jpg"> </li>
+        <li><img src="img/10.jpg"> </li>
+        <li><img src="img/11.jpg"> </li>
+        <li><img src="img/12.jpg"> </li>
+    </ul>
+</div>
+
+</body>
+<!--<script>
+    var inp=document.getElementsByTagName("input");
+    var uls=document.getElementsByTagName("ul")[0];
+    var inp=document.getElementsByTagName("input");
+
+    var num=-20;
+    time=setInterval(function(){
+        uls.style.transform="rotateX(-20deg) rotateY("+num+"deg) ";
+        num++;
+    },100)
+
+</script>-->
+</html>

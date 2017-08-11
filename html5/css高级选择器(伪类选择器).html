@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+       /* li:first-of-type{/!*首个子元素的所有元素*!/
+            color: red;
+        }
+        li:last-of-type{/!*最后一个子元素的所有元素*!/
+            color: red;
+        }*/
+        li:last-child{
+            color: red;
+        }
+       li:nth-child(1){
+           color: red;
+       }
+        .div1:before{
+              content: "新添加的内容1";
+          }
+       .div1:after{
+           content: "新添加的内容2";
+       }
+    </style>
+</head>
+<body>
+<ul>
+    <li>
+        <ul>
+            <li>内部li元素</li>
+            <li>内部li元素</li>
+            <li>内部li元素</li>
+        </ul>
+    </li>
+    <li>li元素</li>
+    <li>li元素</li>
+    <li>li元素</li>
+    <li>li元素</li>
+
+</ul>
+<div class="div1">内容1</div>
+</body>
+</html>

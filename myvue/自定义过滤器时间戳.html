@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="js/vue.js"></script>
+    <script src="js/vue1.0.js"></script>
+</head>
+<body>
+<div class="box">
+   {{a | date}}
+</div>
+</body>
+<script>
+    Vue.filter('date',function(input){
+        var oDate=new Date(input);
+        return oDate.getFullYear()+'-'+(oDate.getMonth()+1)+'-'+oDate.getDate()+'  '+oDate.getHours()+':'+oDate.getMinutes()+':'+oDate.getSeconds();
+    });
+    var c=new Vue({
+        el:".box",
+        data:{
+            a:Date.now()
+        },
+        methods:{
+
+          }
+
+
+
+
+    })
+</script>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0px ;
+          padding: 0px;
+            list-style: none;
+        }
+        div{
+            display:inline-block;
+        }
+
+        .kuang{
+            width: 800px;
+            height: 400px;
+            margin:30px 30px;
+            background-color: #e7eff7;
+            border-radius: 8px;
+
+        }
+        .kuang1{
+            width: 780px;
+            height: 380px;
+            margin:10px 10px;
+            background-color: #c0c0c0;
+            border-radius: 8px;
+        }
+        .kuang2{
+            width: 760px;
+            height: 360px;
+            margin:10px 10px;
+            background-color: #fff;
+            border-radius: 8px;
+        }
+        .kuang3{
+            width: 740px;
+            height: 340px;
+            margin:10px 10px;
+            background-color: #fff;
+            border-radius: 8px;
+
+        }
+        .zuo{
+
+            float: left;
+        }
+        .zhong{
+            width:136px;
+            height: 338px;
+            float: left;
+            background-color: #fff;
+        }
+        .you{
+
+            float: right;
+        }
+        button{
+            width:120px;
+            height:50px;
+            font-size: 20px;
+            color: #fff;
+            background-color: #0e128b;
+        text-align: center;
+            line-height:50px ;
+            margin-left: 8px;
+            border-radius: 8px;
+        }
+        p{
+            text-align: center;
+            margin-top: 20px;
+        }
+        .paomadeng li{
+            width:10px ;
+            height: 10px;
+            border: 1px solid #000000;
+            margin-left:2px;
+            float: left;
+            line-height: 10px;
+            background-color: #fff;
+            display: none;
+        }
+        textarea{
+            background-color: #031b0d;
+        }
+        .paomadeng{
+           margin-left: 20px;
+            margin-top: 20px;
+        }
+       .you textarea{
+            width: 299px;
+            height: 338px;
+            float: right;
+            background-color: #4a8e4e;
+            border: 1px dashed #000;
+           line-height: 20px;
+           font-size: 25px;
+           line-height: 40px;
+           border-radius: 8px;
+        }
+        .zuo textarea{
+            width: 299px;
+            height: 338px;
+            float: left;
+            background-color: #e7eff7;
+            border: 1px dashed #000;
+            line-height: 20px;
+            font-size: 25px;
+            line-height: 40px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+<div class="kuang">
+    <div class="kuang1">
+          <div class="kuang2">
+              <div class="kuang3">
+                  <div class="zuo">
+                      <textarea name="" id="" cols="30" rows="10"></textarea>
+                  </div>
+                  <div class="zhong">
+                      <button>把文字右移</button>
+                       <p><span id="shu">0</span>/<span id="shu1">0</span></p>
+                      <div class="paomadeng">
+                          <ul>
+                          <li></li>
+                          <li></li>
+                          <li></li>
+                          <li></li>
+                          <li></li>
+                          <li></li>
+                          <li></li>
+                          </ul>
+                      </div>
+                  </div>
+                  <div class="you">
+                      <textarea name=""  cols="30" rows="10"></textarea>
+                  </div>
+              </div>
+          </div>
+      </div>
+</div>
+</body>
+<script src="js/jquery-1.8.3.min.js"></script>
+<script>
+    $(function(){
+        $('button').click(function(){
+            if($('textarea').eq(0).val()==""){
+                    alert("内容不能为空");
+            } else {
+                $('textarea').html("")
+                //    跑马灯
+                var o = 0;
+                time=setInterval(function () {
+                    if (o <= $('li').length) {
+                        $('li').eq(o).css('background', 'blue').siblings().css('background', '#fff');
+                    }
+                    else {o = -1;}
+                    o++;
+                }, 60)
+//            跑马灯
+                $('#shu1').html($('textarea').eq(0).val().length);
+                $('button').css('backgroundColor','#66668E')
+                $('li').css('display','block')
+                time = setInterval(function () {
+                if ($('textarea').eq(0).val()==""){
+                    clearInterval(time)
+                    $('li').css('display', 'none')
+                    $('button').css('backgroundColor','#0e128b')
+                } else {
+                    var str = $('textarea').eq(0).val();
+                        var str1 = $('textarea').eq(1).val();
+                        var every = str.substring(0,1);
+                        var every1 = str.substring(1);
+                        $('textarea').eq(0).val(every1)
+                        $('textarea').eq(1).html(str1 + every)
+                        $('#shu').html($('textarea').eq(1).val().length);
+                }
+                    }, 100)
+
+            }
+        })
+})
+</script>
+</html>

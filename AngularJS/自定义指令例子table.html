@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="angular-1.5.8/angular.js"></script>
+</head>
+<body ng-app="myApp">
+    <div ng-controller="con">
+        <my-directive></my-directive>
+    </div>
+
+</body>
+<script>
+    var app=angular.module("myApp",[]);
+    app.controller("con",function($scope){
+        $scope.now="";
+       $scope.tit=["新闻","体育","音乐"];
+       $scope.con=["内容1","内容2","内容3"];
+        $scope.fun=function(num){
+            $scope.now=num;
+        }
+    });
+    app.directive("myDirective",function(){
+       return{
+           restrict:"ECMA",
+           template:"<button ng-repeat='x in tit' ng-click='fun($index)'>{{x}}</button>\
+               <ul>\
+               <li ng-repeat='v in con' ng-show='now==$index'>{{v}}</li>\
+            </ul>",
+           replace:false
+       }
+    })
+</script>
+</html>

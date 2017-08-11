@@ -1,0 +1,103 @@
+body {
+	overflow: hidden;
+	outline:none;
+	filter:chroma(color=#000000);
+}
+
+.mianbody {
+	position: absolute;
+	top: 5px;
+	height: 98%;
+	width: 99%;
+	border: 1px solid #01a3cc;
+	left: 5px;
+	overflow: hidden;
+}
+
+
+.softtm {
+	width: 100%;
+	height: 40px;
+	background: url(../img/nav2.png) repeat-x;
+	border-bottom-style: 1px solid #cacaca;
+}
+
+small{
+	color:#999;
+}
+.back{
+	float: right;
+	margin:-5px 10px 0px 0px;
+}
+.btndel-handle{
+	display:inline-block;
+	height:34px;
+	width:50px;
+	background:url(../image/btn_50.png) no-repeat;
+	border-radius:5px;
+	text-algin:center;
+	border:none;
+	border-color:#dbdbdb;
+	color:#fff;
+}
+.btndel-handle1{
+	display:inline-block;
+	height:34px;
+	width:80px;
+	background:url(../image/btn_80.png) no-repeat;
+	border-radius:5px;
+	text-algin:center;
+	border:none;
+	border-color:#dbdbdb;
+	color:#fff;
+}
+.btndel-handle2{
+	display:inline-block;
+	height:34px;
+	width:100px;
+	background:url(../image/btn_100.png) no-repeat;
+	border-radius:5px;
+	text-algin:center;
+	border:none;
+	border-color:#dbdbdb;
+	color:#fff;
+}
+.btndel-handle3{
+	display:inline-block;
+	height:34px;
+	width:120px;
+	background:url(../image/btn_120.png) no-repeat;
+	border-radius:5px;
+	text-algin:center;
+	border:none;
+	border-color:#dbdbdb;
+	color:#fff;
+}
+.btndel-handle4{
+	display:inline-block;
+	height:30px;
+	width:65px;
+	background:url(../image/btn_120.png) no-repeat;
+	border-radius:5px;
+	text-algin:center;
+	border:none;
+	border-color:#dbdbdb;
+	color:#fff;
+}
+.table-responsive{
+height:375px;
+overflow: auto;
+margin:10px auto;
+}
+.btn :hover{color:#fff;}
+a{cursor:pointer;}
+a:hover{
+	color:#271bed;
+			
+	}
+/* 分页样式 */
+.tcdPageCode{padding: 15px 20px;text-align: left;color: #ccc;text-align:center;}
+.tcdPageCode a{display: inline-block;color: #428bca;display: inline-block;height: 25px;	line-height: 25px;	padding: 0 10px;border: 1px solid #ddd;	margin: 0 2px;border-radius: 4px;vertical-align: middle;}
+.tcdPageCode a:hover{text-decoration: none;border: 1px solid #428bca;}
+.tcdPageCode span.current{display: inline-block;height: 25px;line-height: 25px;padding: 0 10px;margin: 0 2px;color: #fff;background-color: #428bca;	border: 1px solid #428bca;border-radius: 4px;vertical-align: middle;}
+.tcdPageCode span.disabled{	display: inline-block;height: 25px;line-height: 25px;padding: 0 10px;margin: 0 2px;	color: #bfbfbf;background: #f2f2f2;border: 1px solid #bfbfbf;border-radius: 4px;vertical-align: middle;}

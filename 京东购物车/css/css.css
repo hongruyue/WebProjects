@@ -1,0 +1,97 @@
+.caret{
+   transition: all 50ms;
+}
+.caret:hover{
+    transform: rotateZ(180deg)
+}
+.header{
+    width: 100%; background: #F1F1F1;
+}
+.one{
+    width: 110px;
+}
+.two{
+    width: 130px;
+}
+.three{
+    width: 110px;
+}
+.header{
+    height: 30px;
+    line-height:20px;
+    text-align: center;
+}
+.header .col-lg-1{
+    height: 20px;
+    margin-top: 5px;
+    border-right: 1px solid #CCCCCC;
+}
+.logo{
+    margin-top: 30px;
+}
+.logo input{
+    border: 1px solid #C91623;
+}
+.peisong{
+    display: inline-block;
+    width:150px;
+    height: 20px;
+    line-height: 20px;
+    border: 1px solid #CCCCCC;
+}
+.seach{
+    margin-top: 30px;
+    font-size:13px;
+    cursor: pointer;
+
+}
+
+.text1{
+    padding-left: 0;
+}
+.text{
+    font-weight: bold;
+}
+.text:hover{
+    color: #E4393C;
+}
+/*.text:hover{
+    color: #E4393C;
+}*/
+.all{
+    background: #F3F3F3;
+    border-top:1px solid #AAAAAA;
+    margin-top: 10px;
+    position: relative;
+}
+.all div{
+    height: 40px;
+    line-height: 40px;
+}
+.line{
+    position: absolute;
+    top:30px;
+    left:-100px;
+    width:70px ;
+    border-top: 2px solid #E4393C;
+}
+.text2:hover .line{
+    animation: line 1s forwards;
+}
+@keyframes line{
+    from{left:0;}
+    to{left:12px;}
+}
+
+/*
+.text2:hover .text1{
+     animation: color 1s forwards;
+ }
+@keyframes color{
+    from{ color: #E4393C;}
+    to{color: #000000;}
+}*/
+.table td{
+    vertical-align: middle;
+    color: blue;
+}

@@ -1,0 +1,802 @@
+body,h1,h2,h3,h4,h5,h6,div,p,dl,dt,dd,ol,ul,li,form,table,th,td,a,img,span,strong,var,em,input,textarea,select,option{margin: 0; padding: 0;}
+html,body{font-family:"微软雅黑","宋体",Arail,Tabhoma; font-size: 14px; text-align: left;}
+ul,ol{list-style: none;}
+img{border: 0;}
+h1,h2,h3,h4,h5,h6{font-weight: normal;}
+input,select,textarea{outline:0;}
+textarea{resize:none;}
+table{border-collapse: collapse; border-spacing: 0;}
+th,strong,var,em{font-weight: normal; font-style: normal;}
+a{text-decoration: none;}
+li{display: list-item;
+    text-align: -webkit-match-parent;  }
+
+
+.box{
+    width: 100%;
+}
+.header{
+    width: 1200px;
+    height: 80px;
+    margin: 0 auto;
+    line-height: 80px;
+    font-size: 16px;
+
+}
+.header a{
+    color: #031b0d;
+}
+.header a:hover{
+    color: #5dd5c8;
+}
+.header_left{
+    width: 600px;
+    height: 80px;
+    float: left;
+}
+.header_left p:nth-child(1){
+    margin-top: 20px;
+}
+.header_left p:nth-child(4) a{
+    color: #5dd5c8;
+}
+.header_left p{
+    float: left;
+    margin-left: 30px;
+}
+.header_right{
+    width: 300px;
+    height:80px;
+    float: right;
+}
+.header_right p{
+    float: left;
+    margin-left: 20px;
+}
+.header_right p:nth-child(2){
+    width: 60px;
+    height: 26px;
+    line-height: 26px;
+    border: 1px solid #5dd5c8;
+    border-radius:100px;
+    text-align: center;
+    margin-top: 26px;
+}
+.header_right p:nth-child(2) a{
+    background: #ffffff;
+    transition: color 600ms linear,background 600ms linear;
+    display:block;
+    border-radius:100px;
+}
+.header_right p:nth-child(2) a:hover{
+    background: #5dd5c8;
+    color: #ffffff;
+    display:block;
+    border-radius:100px;
+}
+.header_right p:nth-child(3){
+    width: 60px;
+    height: 26px;
+    line-height: 26px;
+    border: 1px solid #5dd5c8;
+    border-radius:100px;
+    text-align: center;
+    margin-top: 26px;
+}
+.header_right p:nth-child(3) a{
+    background: #ffffff;
+    transition: color 600ms linear,background 600ms linear;
+    display:block;
+    border-radius:100px;
+}
+.header_right p:nth-child(3) a:hover{
+    background: #5dd5c8;
+    color: #ffffff;
+    display:block;
+    border-radius:100px;
+}
+/*............phone..............*/
+.phone{
+    width: 100%;
+    height: 800px;
+    background: #5ECEC1;
+    padding-top: 100px;
+}
+.phone_con{
+    width:1000px;
+    margin: 0 auto;
+}
+.phone_left{
+    width:357px ;
+    height: 666px;
+    float: left;
+    padding-top:80px;
+    position: relative;
+    background: url("img/figure-phone-3.png") no-repeat;
+    animation: phone_left 2000ms linear forwards;
+}
+@keyframes phone_left {
+    0%{ margin-left: 0px;opacity: 0;}
+    50%{margin-left: 60px;}
+    100%{ margin-left:60px;opacity: 1}
+}
+.phone_left_img{
+    width:255px;
+    height: 430px;
+    overflow: hidden;
+    margin-left: 60px;
+    margin-top: 30px;
+
+}
+.phone_left_img_top{
+    position: absolute;
+    left:20px;
+    animation: phone_left_top 2000ms linear forwards;
+}
+@keyframes phone_left_top {
+    0%{ opacity: 0;top:400px;}
+    50%{top:300px}
+    100%{top:200px;opacity: 1}
+}
+.phone_right{
+    width:400px ;
+    float: right;
+    margin-left: 60px;
+    padding-top:160px;
+    animation: phone_right 2000ms linear forwards;
+}
+@keyframes phone_right {
+    0%{ margin-right: 0px;opacity: 0}
+    50%{margin-right: 60px;}
+    100%{ margin-right: 60px;opacity: 1}
+}
+.phone_right p{
+    line-height:60px;
+}
+.phone_right p:nth-child(1){
+    color: #ffffff;
+    font-size: 60px;
+}
+.phone_right p:nth-child(2){
+    color: #ffffff;
+    font-size: 30px;
+}
+.phone_right p:nth-child(3){
+    color: #ffffff;
+    font-size: 20px;
+    opacity: 0.8;
+}
+.phone_pic{
+    width: 213px;
+    height: 64px;
+    background: url("img/app-download-btns.png") no-repeat 0 0;
+    cursor: pointer;
+    transition:background 1s ease;
+    margin-top:30px;
+}
+.phone_pic1{
+    width: 213px;
+    height: 64px;
+    background: url("img/app-download-btns.png") no-repeat 0 -64px;
+    cursor: pointer;
+    transition:background 1s ease;
+}
+.phone_pic2{
+    background: transparent;
+    opacity: 0;
+    transition:background 2s ease;
+}
+.phone_pic1:hover .phone_pic2{
+    width: 213px;
+    height: 64px;
+    background:#5ECEC1;
+    opacity: 0.2;
+}
+.phone_pic:hover .phone_pic2{
+    width: 213px;
+    height: 64px;
+    background:#5ECEC1;
+    opacity: 0.2;
+}
+.ewm{
+    float: right;
+    margin-top: -130px;
+    padding-right:40px;
+}
+/*.............zhiping.............*/
+.zhiping{
+    width:100%;
+    height: 800px;
+    margin: 0 auto;
+    background:#F5F7F9;
+    text-align: center;
+}
+.zhiping_w{
+    width: 100%;
+    height: 250px;
+}
+.zhiping_con{
+    width: 100%;
+    height: 200px;
+    animation: zhiping_con 2000ms linear forwards;
+}
+@keyframes zhiping_con {
+    from{ padding-top: 0px;opacity: 0;visibility: hidden;}
+    to{padding-top: 100px;opacity: 1;visibility:visible;}
+}
+
+.zhiping h1{
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+.zhiping p{
+    font-size:30px;
+}
+
+.zhiping ul{
+    width: 1200px;
+    height:200px;
+    margin:30px 0 0 -600px;
+    position: relative;
+    left: 50%;
+    animation: nameul 1000ms linear forwards;
+}
+.zhiping li{
+    cursor: pointer;
+}
+
+@keyframes nameul {
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+.zhiping li{
+    float: left;
+    margin-left:124px;
+}
+.zhiping li:nth-child(1){
+    margin-right: 54px;
+    width: 120px;
+    height: 120px;
+    background: url("img/company-1.png") no-repeat;
+    animation: li1 1000ms  linear forwards;
+    transition: all 3s 2s ease
+}
+.zhiping li:nth-child(2){
+    margin-right: 54px;
+    width: 83px;
+    height: 83px;
+    background: url("img/company-2.png") no-repeat;
+    animation: li2 1000ms  linear forwards;
+
+}
+.zhiping li:nth-child(3){
+    margin-right: 54px;
+    width: 83px;
+    height: 83px;
+    background: url("img/company-3.png") no-repeat;
+    animation: li3 1000ms  linear forwards;
+
+
+}
+.zhiping li:nth-child(4){
+    margin-right: 54px;
+    width: 120px;
+    height: 120px;
+    background: url("img/company-4.png") no-repeat;
+    animation: li4 1000ms  linear forwards;
+
+}
+@keyframes li1 {
+   0%{opacity:0;visibility: hidden;}
+    50%{background: url("img/company-1.png") no-repeat;opacity:1;visibility: visible;transform:scale(1.2);}
+    100%{background:url("img/boss-1.png") no-repeat; opacity:1;visibility: visible;}
+}
+@keyframes li2 {
+    0%{opacity:0;visibility: hidden;}
+    50%{background: url("img/company-2.png") no-repeat;opacity:1;visibility: visible;transform:scale(1.2);}
+    100%{background:url("img/boss-2.png") no-repeat; opacity:1;visibility: visible;}
+}
+@keyframes li3 {
+    0%{opacity:0;visibility: hidden;}
+    50%{background: url("img/company-3.png") no-repeat;opacity:1;visibility: visible;transform:scale(1.2);}
+    100%{background:url("img/boss-3.png") no-repeat; opacity:1;visibility: visible;}
+}
+@keyframes li4 {
+    0%{opacity:0;visibility: hidden;}
+    50%{background: url("img/company-4.png") no-repeat;opacity:1;visibility: visible;transform:scale(1.2);}
+    100%{background:url("img/boss-4.png") no-repeat; opacity:1;visibility: visible;}
+}
+
+
+.line{
+margin-top: -80px;
+    margin-left: -10px;
+}
+.phone1{
+    width: 710px;
+    height: 152px;
+    background: url("img/figure-phone-1.png") no-repeat;
+    margin: 0 auto;
+    margin-top: -40px;
+}
+.phone1 img{
+    margin-top: -40px;
+}
+/*............phone2..............*/
+.phone2{
+    width: 100%;
+    height: 800px;
+    background: #5ECEC1;
+    padding-top: 100px;
+}
+.phone2_con{
+    width:1000px;
+    margin: 0 auto;
+}
+.phone2_left{
+    width:357px ;
+    height: 666px;
+    float: left;
+    padding-top:80px;
+    position: relative;
+    background: url("img/figure-phone-2.png") no-repeat;
+    animation: phone2_left 2000ms linear forwards;
+}
+@keyframes phone2_left {
+    from{ margin-left: 0px;opacity: 0;visibility: hidden;}
+    to{ margin-left:60px;opacity: 1;visibility: visible;}
+}
+.hidden{
+    width:255px;
+    height: 430px;
+    margin-top:90px;
+    overflow: hidden;
+    margin-left:60px;
+}
+.phone2_left_img{
+    width:255px;
+    animation: phone2_left_img 1000ms  linear forwards;
+}
+@keyframes phone2_left_img {
+   from{margin-top:430px}
+    to{margin-top:0px}
+}
+.phone2_left_img_top{
+    position: absolute;
+    left:20px;
+    visibility:hidden;
+    animation: phone2_left_top 2000ms 1s linear forwards;
+}
+@keyframes phone2_left_top {
+    0%{ opacity: 0;top:300px;visibility:hidden; }
+    50%{top:250px;opacity: 0.5;}
+    100%{top:200px;opacity: 1;visibility: visible;}
+}
+.phone2_right{
+    width:400px ;
+    float: right;
+    margin-left: 60px;
+    padding-top:160px;
+    animation: phone2_right 2000ms linear forwards;
+}
+@keyframes phone2_right {
+    0%{ margin-right: 0px;opacity: 0;visibility: hidden;}
+    50%{margin-right: 60px;}
+    100%{ margin-right: 60px;opacity: 1;visibility: visible;}
+}
+.phone2_right p{
+    line-height:60px;
+}
+.phone2_right p:nth-child(1){
+    color: #ffffff;
+    font-size: 50px;
+}
+.phone2_right p:nth-child(2){
+    color: #ffffff;
+    font-size: 28px;
+}
+.phone2_right p:nth-child(3){
+    color: #ffffff;
+    font-size: 20px;
+    opacity: 0.8;
+}
+/*...........company...............*/
+.company{
+    width: 100%;
+    height: 968px;
+    background:url("img/bg-company.jpg") repeat-x;
+    color: #ffffff;
+}
+.company_center{
+    width: 1200px;
+    height: 1700px;
+    margin: 0 auto;
+    text-align: center;
+}
+.company_w{
+    width: 100%;
+    height: 250px;
+}
+.company_con{
+    width: 100%;
+    height: 200px;
+    animation: company_con 1s linear forwards;
+}
+@keyframes company_con {
+    from{ padding-top: 0px;opacity: 0;visibility: hidden;}
+    to{padding-top: 100px;opacity: 1;visibility:visible;}
+}
+.company h1{
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+.company p{
+    font-size:30px;
+}
+.computer{
+    width:1000px;
+    height: 342px;
+    background: url("img/figure-computer.png") no-repeat center;
+    margin:0 auto;
+    margin-top:200px;
+    animation: computer 1000ms linear forwards;
+}
+@keyframes computer {
+    from{ padding-top:50px;opacity: 0;visibility: hidden;}
+    to{padding-top: 00px;opacity: 1;visibility:visible;}
+}
+.computer li{
+visibility: hidden;
+}
+.computer li:nth-child(1){
+    margin-top:100px;
+    float: left;
+    animation: computer1 1000ms 500ms linear forwards;
+}
+@keyframes computer1{
+     from{ opacity: 0;visibility: hidden;}
+     to{opacity: 1;visibility:visible;}
+ }
+@keyframes computer2{
+    from{ opacity: 0;visibility: hidden;}
+    to{opacity: 1;visibility:visible;}
+}
+@keyframes computer3{
+    from{ opacity: 0;visibility: hidden;}
+    to{opacity: 1;visibility:visible;}
+}
+@keyframes computer4{
+    from{ opacity: 0;visibility: hidden;}
+    to{opacity: 1;visibility:visible;}
+}
+@keyframes computer5{
+    from{ opacity: 0;visibility: hidden;}
+    to{opacity: 1;visibility:visible;}
+}
+@keyframes computer6{
+    from{ opacity: 0;visibility: hidden;}
+    to{opacity: 1;visibility:visible;}
+}
+.computer li:nth-child(2){
+    float: left;
+    animation: computer2 1000ms 1000ms linear forwards;
+}
+.computer li:nth-child(3){
+    float: left;
+    margin-top:200px;
+    margin-left: 50px;
+    animation: computer3 1000ms 1500ms linear forwards;
+}
+.computer li:nth-child(4){
+    margin-top:100px;
+    float: right;
+    margin-right: 20px;
+    animation: computer4 1000ms 2000ms linear forwards;
+}
+.computer li:nth-child(5){
+    float: right;
+    animation: computer5 1000ms 2500ms linear forwards;
+
+}
+.computer li:nth-child(6){
+    float: right;
+    margin-top:100px;
+    margin-right:30px;
+    animation: computer6 1000ms 3000ms linear forwards;
+}
+/*............phone3..............*/
+
+.phone3{
+    width: 100%;
+    height: 800px;
+    background: #5ECEC1;
+    padding-top: 100px;
+}
+.phone3_con{
+    width:1000px;
+    margin: 0 auto;
+}
+.phone3_right{
+    width:357px ;
+    height: 666px;
+    float: right;
+    padding-top:80px;
+    position: relative;
+    background: url("img/figure-phone-3.png") no-repeat;
+    animation: phone3_right 2000ms linear forwards;
+}
+@keyframes phone3_right {
+    0%{ margin-right: 0px;opacity: 0;}
+    50%{margin-right: 60px;}
+    100%{ margin-right:60px;opacity: 1}
+}
+.phone3_right_img_top{
+    width: 255px;
+    height: 394px;
+    position: absolute;
+    top:0px;
+    left:-38px;
+    animation: phone3_right_top 2000ms linear forwards;
+}
+
+.phone3_left{
+    width:400px ;
+    float: left;
+    margin-left: 60px;
+    padding-top:160px;
+    animation: phone3_left 2000ms linear forwards;
+}
+@keyframes phone3_left {
+    0%{ margin-left: 0px;opacity: 0}
+    50%{margin-left: 60px;}
+    100%{ margin-left: 60px;opacity: 1}
+}
+.phone3_left p{
+    line-height:60px;
+}
+.phone3_left p:nth-child(1){
+    color: #ffffff;
+    font-size: 40px;
+}
+.phone3_left p:nth-child(2){
+    color: #ffffff;
+    font-size: 20px;
+    text-align: right;
+}
+
+.figure-cards{position:absolute;width:255px;height:394px;top:143px;left:98px}
+.figure-cards li{width:230px;height:90px;margin:8px 0 0 12px;background:url(img/cards-list.png) no-repeat;display:none}
+.show-card{-webkit-animation:cardShow .8s ease .2s;animation:cardShow .8s ease .2s;-webkit-animation-fill-mode:both;animation-fill-mode:both}
+.show-card li{display:block;-webkit-animation-fill-mode:both;animation-fill-mode:both;-webkit-transform-style:preserve-3d}
+.figure-cards li.card-1{-webkit-animation:cardShow1 2.1s ease .2s;animation:cardShow1 2.1s ease .2s}
+.figure-cardsli.card-2{-webkit-animation:cardShow2 1.8s ease .2s;animation:cardShow2 1.8s ease .2s;background-position:0 -100px}
+.figure-cards li.card-3{-webkit-animation:cardShow3 1.5s ease .2s;animation:cardShow3 1.5s ease .2s;background-position:0 -200px}
+.figure-cards li.card-4{-webkit-animation:cardShow4 1.2s ease .2s;animation:cardShow4 1.2s ease .2s;background-position:0 -316px;-webkit-transform:perspective(500px) rotateX(-5deg) scale(1.14) translateY(-30px);transform:perspective(500px) rotateX(-5deg) scale(1.14) translateY(-30px);margin-top:-10px}
+.figure-cards li.card-5{-webkit-animation:cardShow5 .9s ease .2s;animation:cardShow5 .9s ease .2s;background-position:0 -433px;margin-top:-80px;-webkit-transform:perspective(500px) rotateX(-10deg) scale(1.23) translateY(-15px);transform:perspective(500px) rotateX(-10deg) scale(1.23) translateY(-15px)}
+.figure-cards li.card-6{-webkit-animation:cardShow6 .6s ease .2s;animation:cardShow6 .6s ease .2s;background-position:0 -541px;margin-top:-81px;box-shadow:0 -2px 15px rgba(0,0,0,.1);-webkit-transform:perspective(500px) rotateX(-10deg) scale(1.32) translateY(0);transform:perspective(500px) rotateX(-10deg) scale(1.32) translateY(0)}
+@-webkit-keyframes cardShow1{
+    0%{-webkit-transform:translateY(-10px)}
+    100%{-webkit-transform:translateY(0)}}
+@keyframes cardShow1{
+    0%{transform:translateY(-10px)}
+    100%{transform:translateY(0)}}
+@-webkit-keyframes cardShow2{
+    0%{-webkit-transform:translateY(-80px)}
+    100%{-webkit-transform:translateY(0)}}
+@keyframes cardShow2{
+    0%{transform:translateY(-80px)}
+    100%{transform:translateY(0)}}
+@-webkit-keyframes cardShow3{
+    0%{-webkit-transform:translateY(-170px)}
+    100%{-webkit-transform:translateY(0)}}
+@keyframes cardShow3{
+    0%{transform:translateY(-170px)}
+    100%{transform:translateY(0)}}
+@-webkit-keyframes cardShow4{
+    0%{-webkit-transform:translateY(-250px)}
+    60%{-webkit-transform:perspective(0) rotateX(-5deg) scale(1) translateY(-10px)}
+    100%{-webkit-transform:perspective(500px) rotateX(-5deg) scale(1.14) translateY(-30px)}}
+@keyframes cardShow4{
+    0%{transform:translateY(-250px)}
+    60%{transform:perspective(0) rotateX(-10deg) scale(1) translateY(-10px)}
+    100%{transform:perspective(500px) rotateX(-10deg) scale(1.14) translateY(-30px)}}
+@-webkit-keyframes cardShow5{
+    0%{-webkit-transform:translateY(-290px)}
+    70%{-webkit-transform:perspective(0) rotateX(-10deg) scale(1) translateY(-5px)}
+    100%{-webkit-transform:perspective(500px) rotateX(-10deg) scale(1.23) translateY(-15px)}}
+@keyframes cardShow5{
+    0%{transform:translateY(-290px)}
+    70%{transform:perspective(0) rotateX(-10deg) scale(1) translateY(-5px)}
+    100%{transform:perspective(500px) rotateX(-10deg) scale(1.23) translateY(-15px)}}
+@-webkit-keyframes cardShow6{
+    0%{-webkit-transform:translateY(-290px)}
+    80%{-webkit-transform:perspective(0) rotateX(-10deg) scale(1) translateY(0)}
+    100%{-webkit-transform:perspective(500px) rotateX(-10deg) scale(1.32) translateY(0)}}
+@keyframes cardShow6{
+    0%{transform:translateY(-290px)}
+    80%{transform:perspective(0) rotateX(-10deg) scale(1) translateY(0)}
+    100%{transform:perspective(500px) rotateX(-10deg) scale(1.32) translateY(0)}}
+
+/*....................媒体报道.................,..........*/
+.media{
+    width: 100%;
+    height: 540px;
+    background:#F5F7F9;
+}
+.media_con{
+    width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    animation:media_h1 2000ms ease forwards;
+}
+.media_h1{
+    font-size:26px;
+    width: 1200px;
+    height: 200px;
+}
+@keyframes media_h1 {
+    from{padding-top: 0;opacity: 0;}
+    to{padding-top:100px;opacity: 1;}
+}
+.media-list{
+    width: 1200px;
+}
+.media-list li{
+    width:189px;
+    height:80px;
+    float:left;
+    background: url("img/media-logos.png") no-repeat;
+}
+.media-list li:nth-child(1):hover{
+    background-position:-181px 0 ;
+}
+.media-list li:nth-child(2){
+   background-position: 0 -80px;
+}
+.media-list li:nth-child(2):hover{
+    background-position: -181px -80px;
+}
+.media-list li:nth-child(3):hover{
+    background-position: -181px -170px;
+}
+.media-list li:nth-child(4):hover{
+    background-position: -181px -250px;
+}
+.media-list li:nth-child(5):hover{
+    background-position: -181px -330px;
+}
+.media-list li:nth-child(6):hover{
+    background-position: -173px -410px;
+}
+.media-list li:nth-child(7):hover{
+    background-position: -181px -490px;
+}
+.media-list li:nth-child(8):hover{
+    background-position: -181px -570px;
+}
+.media-list li:nth-child(9):hover{
+    background-position: -181px -650px;
+}
+.media-list li:nth-child(10):hover{
+    background-position: -181px -723px;
+}
+.media-list li:nth-child(11):hover{
+    background-position: -181px -800px;
+}
+.media-list li:nth-child(12):hover{
+    background-position: -171px -880px;
+}
+.media-list li:nth-child(3){
+    background-position: 0 -170px;
+}
+.media-list li:nth-child(4){
+    background-position: 0 -250px;
+}
+.media-list li:nth-child(5){
+     background-position: 0 -330px;
+ }
+.media-list li:nth-child(6){
+      background-position:8px -410px;
+  }
+.media-list li:nth-child(7){
+    background-position: 0 -490px;
+}
+.media-list li:nth-child(8){
+    background-position: 0 -570px;
+}
+.media-list li:nth-child(9){
+    background-position: 0 -650px;
+}
+.media-list li:nth-child(10){
+    background-position: 0 -723px;
+}
+.media-list li:nth-child(11){
+    background-position: 0 -800px;
+}
+.media-list li:nth-child(12){
+    background-position: 10px -880px;
+}
+/*.....................一直用滚动....................*/
+.mod-alway{
+    width: 100%;
+    height: 540px;
+    background:#F5F7F9;
+}
+.mod-alway_con{
+    width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+.mod-alway_con h1{
+    font-size:50px;
+    width: 1200px;
+    height: 200px;
+}
+.gundong{
+    width: 1200px;
+    height:80px;
+}
+.gundong_1{
+    width:1000px;
+    height: 80px;
+    float: left;
+    overflow: hidden;
+    margin-left:70px;
+    position: relative;
+}
+
+.inner{
+    width:4000px;
+    height: 68px;
+    position: relative;
+}
+.inner_ul{
+    width:4000px;
+    position:relative;
+    left: 0px;
+    top: 0px;
+    /*transform: translate3d(-1000px, 0px, 0px)*/
+}
+
+.gundong ul li{
+    float: left;
+    margin-right:66px;
+}
+.jiantou_left{
+    width: 35px;
+    height: 68px;
+    float: left;
+    position: relative;
+    z-index: 1;
+    background: url("img/jiantou2.png") no-repeat left center;
+}
+.jiantou_left:hover{
+    background: url("img/jiantou3.png") no-repeat left center;
+}
+.jiantou_right{
+    position: relative;
+    z-index: 1;
+    width: 35px;
+    height: 68px;
+    float: right;
+    background: url("img/jiantou1.png") no-repeat right center;
+}
+.jiantou_right:hover{
+    background: url("img/jiantou4.png") no-repeat left center;
+}
+
+.footer{
+    width: 100%;
+    height: auto;
+    background: #000000;
+    text-align: center;
+}
+.footer_con{
+    width: 1200px;
+    height: 100px;
+    margin: 0 auto;
+    color: #ffffff;
+}
+.footer_con{
+    line-height: 30px;
+}

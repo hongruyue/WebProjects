@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="angular-1.5.8/angular.js"></script>
+    <script src="conn/module3.js"></script>
+</head>
+<body ng-app="myApp">
+    <div ng-controller="con">
+      <my-directive></my-directive><br/>
+        <div my-directive></div><br/>
+        <div class="my-directive"></div><br/>
+        <!--directive:my-directive --><!--两侧必须要有空格 后面空格必须有，前面空格可以没有-->
+    </div>
+
+</body>
+<script>
+    var app=angular.module("myApp",["myModule"]);
+    app.controller("con",function($scope){
+
+    });
+
+</script>
+</html>

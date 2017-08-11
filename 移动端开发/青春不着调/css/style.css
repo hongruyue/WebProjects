@@ -1,0 +1,186 @@
+html{
+    font-size: 100px;
+    height: 100%;
+}
+body{
+    height: 100%;
+}
+.outer{
+    width: 6.4rem;
+    margin: 0 auto;
+    /*height:100%;*/
+    background: url("../images/wrap_bd.png");
+    background-size: 100% 100%;
+}
+.header{
+    width: 6.4rem;
+    height: 0.88rem;
+    background: #22292c;
+    position: relative;
+    z-index: 2;
+}
+.header_left{
+    color: #fff;
+    line-height: 0.88rem;
+    margin-left: 0.2rem;
+    float: left;
+    font-size: 0.28rem;
+    font-weight: bold;
+}
+.header_center{
+    font-size: 0.36rem;
+    color: #fff;
+    line-height: 0.88rem;
+    font-weight: bold;
+    width: 3.5rem;
+    overflow: hidden;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    margin-left: -1.5rem;
+}
+.header_right{
+    float: right;
+    margin-right: 0.3rem;
+    color: #fff;
+    line-height: 0.88rem;
+    font-size: 0.36rem;
+}
+.content{
+    width: 6.4rem;
+    position: relative;
+    height: 10.5rem;
+}
+.content_hand_down{
+    width: 4.97rem;
+    height: 7.17rem;
+    background: url("../images/hand_up.png") 0 0 no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    left: 0.72rem;
+    top:-0.88rem;
+    animation: handdown 2s linear;
+}
+.content_hello{
+    width: 3.24rem;
+    height: 2.16rem;
+    position: absolute;
+    left: 0.1rem;
+    top: 0.36rem;
+    background: url("../images/nihao.png") 0 0 no-repeat;
+    background-size: 100% 100%;
+    animation: hello 2s linear;
+}
+.content_no{
+    width: 1.76rem;
+    height: 1.74rem;
+    background: url("../images/bu.png") 0 0 no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    left: 1.8rem;
+    top: 1.12rem;
+    z-index: 10;
+    animation: no 2s linear;
+}
+.content_zd{
+    width: 3.20rem;
+    height: 2.03rem;
+    background: url("../images/zhaodiao.png") 0 0 no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    right: 0.14rem;
+    top: 0.7rem;
+    animation: zd 2s linear;
+}
+.content_circle{
+    width: 0.68rem;
+    height: 0.68rem;
+    background: url("../images/quan.png") 0 0 no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    opacity: 0;
+    right: 2.18rem;
+    top: 1.66rem;
+    animation: circle 2s 2s linear forwards;
+}
+.content_text{
+    width: 4.78rem;
+    height: 0.59rem;
+    background:url("../images/title_1.png") 0 0 no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    left: 50%;
+    margin-left: -2.39rem;
+    top: 3.18rem;
+}
+.content_txt{
+    font-size: 0.2rem;
+    text-align: center;
+    line-height:0.36rem;
+    color: #005faf;
+    position: absolute;
+    top: 6.28rem;
+    width: 6.4rem;
+}
+.content_hand_up{
+    width: 6.11rem;
+    height: 3.61rem;
+    background: url("../images/hand_down.png") 0 0 no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    bottom: 0rem;
+    left: 0.16rem;
+    animation: handup 2s linear;
+    z-index: 0;
+}
+.footer{
+    width: 6.4rem;
+    height: 0.8rem;
+    position: relative;
+    z-index: 100;
+}
+.footer div{
+    float: left;
+}
+.footer_left{
+    width: 3.19rem;
+    border-right: 0.02rem #006198 solid;
+    line-height: 0.8rem;
+    text-align: center;
+    background: #008cdb;
+    font-size: 0.26rem;
+    color: yellow;
+}
+.footer_right{
+    width: 3.19rem;
+    line-height: 0.8rem;
+    text-align: center;
+    background: #008cdb;
+    font-size: 0.26rem;
+    color: yellow;
+}
+@keyframes handdown {
+    from{top:-7.17rem;}
+    to{top:-0.88rem;}
+}
+@keyframes hello{
+    from{left: -3rem;transform: rotate(-180deg);}
+    to{left: 0.1rem;transform: rotate(0deg);}
+}
+@keyframes zd {
+    from{right: -3rem; transform: rotate(180deg)}
+    to{right: 0.14rem;transform: rotate(0deg)}
+}
+@keyframes circle {
+    from{opacity: 0;}
+    to{opacity: 1}
+}
+@keyframes no {
+    0%{transform: scale(1);}
+    50%{transform: scale(0.1);}
+    100%{transform: scale(1);}
+}
+@keyframes handup {
+    from{bottom: -3.61rem}
+    to{bottom: 0rem;}
+}

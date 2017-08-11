@@ -1,0 +1,106 @@
+html{
+    font-size: 100px;
+    height: 100%;
+}
+.header{
+    width: 6.4rem;
+    height: 0.88rem;
+    background: #22292c;
+    position: relative;
+    z-index: 2;
+}
+body{
+    height: 100%;
+}
+.outer{
+    width: 6.4rem;
+    margin: 0 auto;
+    height: 100%;
+    background: url("../images/wrap_bd.png") 0 0 no-repeat;
+    background-size: 100% 100%;
+}
+.header_left{
+    color: #fff;
+    line-height: 0.88rem;
+    margin-left: 0.2rem;
+    float: left;
+    font-size: 0.28rem;
+    font-weight: bold;
+}
+.header_center{
+    font-size:0.36rem;
+    color: #FFFFFF;
+    line-height: 0.88rem;
+    font-weight: bold;
+    width: 3.5rem;
+    overflow: hidden;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    margin-left:-1.5rem;
+}
+.header_right{
+    float: right;
+    margin-right: 0.3rem;
+    line-height: 0.88rem;
+    font-size: 0.36rem;
+}
+.content{
+    width: 6.4rem;
+}
+.content_hand_down{
+    width: 4.97rem;
+    height: 7.17rem;
+    background:url("../images/hand_up.png") 0 0 no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    left:0.72rem;
+    top:-0.88rem;
+}
+.content_hello{
+    width: 3.24rem;
+    height: 2.16rem;
+    position: absolute;
+    left:0.1rem;
+    top:0.36rem;/*没有单数*/
+    background:url("../images/wrap_bd.png") 0 0 no-repeat;
+    background-size: 100% 100%;
+}
+.content_no{
+    width: 1.76rem;
+    height: 1.74rem;
+    position: absolute;
+    left:1.8rem;
+    top:1.12rem;/*没有单数*/
+    background:url("../images/bu.png") 0 0 no-repeat;
+    background-size: 100% 100%;
+    z-index: 10;
+}
+.content_zd{
+    width:3.20rem;
+    height:2.03rem;
+    position: absolute;
+    right:0.14rem;
+    top:0.7rem;/*没有单数*/
+    background:url("../images/zhaodiao.png") 0 0 no-repeat;
+    background-size: 100% 100%;
+}
+.content_circle{
+    width:0.68rem;
+    height:0.68rem;
+    position: absolute;
+    right:2.20rem;
+    top:1.66rem;/*没有单数*/
+    background:url("../images/quan.png") 0 0 no-repeat;
+    background-size: 100% 100%;
+}
+.content_text{
+    width: 4.78rem;
+    height: 0.59rem;
+    background:url("../images/title_1.png") 0 0 no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    left:50%;
+    top:3.18rem;
+   margin-left: -2.39rem;
+}

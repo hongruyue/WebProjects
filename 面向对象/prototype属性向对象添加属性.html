@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+</body>
+<script>
+    //继承
+    /*String.prototype.len=function(){//定义原型的方法 定义的是string
+        alert(this.length);
+    };
+    Object.prototype.abc=function(){
+        alert(1234)
+    };
+    var str="asdfdfgfgfggfg";
+    str.len();
+    str.abc();*/
+    Object.prototype.abc1=function(){
+        var arr1=[1,2,3,4,5];
+        alert(arr1.length);
+    };
+    Array.prototype.len1=function(){
+        alert(this.length);
+    };
+    var arr=[1,2,3,4];
+    arr.len1();
+    arr.abc1();
+
+   /* function employee(name,job,born){
+        this.name=name;
+        this.job=job;
+        this.born=born;
+    }
+    var bill=new employee("Bill Gates","Enginner","1985");
+    employee.prototype.salary=null;
+    bill.salary=20000;
+    document.write(bill.salary);*/
+
+</script>
+</html>

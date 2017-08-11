@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>过渡效果</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <link rel="stylesheet" href="../css/bootstrap.min.css"/>
+    <style>
+        #div1{
+            width:100px;
+            height: 100px;
+            background: red;
+            transition: all 3s ;
+        }
+        #div1:hover{
+            background: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div1"></div>
+
+<script src="../js/jquery-1.10.2.min.js"></script>
+<script src='../js/bootstrap.min.js'></script>
+    <script>
+       var div = document.getElementById('div1');
+//       transitionend事件的一个基本辅助工具，也是对 CSS 过渡效果的模拟。它被其它插件用来检测当前浏览器对是否支持 CSS 的过渡效果。
+//       不过它要做的事情bootstrap已经封装了，一般不需要我们自己写
+        div.addEventListener('transitionend',function(e){
+            alert(1)
+        })
+    </script>
+</body>
+</html>

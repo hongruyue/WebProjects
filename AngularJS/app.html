@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="angular-1.5.8/angular.js"></script>
+</head>
+<body>
+<div ng-app="name">
+    <div ng-controller="con" >
+        <input type="text" ng-model="a"/>
+        <p>{{a}}</p>
+    </div>
+</div>
+<div ng-app="name1"  id="name2">
+    <div ng-controller="con1" >
+        <input type="text" ng-model="b"/>
+        <p>{{b}}</p>
+    </div>
+</div>
+<div ng-app="name2"  id="name3">
+    <div ng-controller="con2" >
+        <input type="text" ng-model="c"/>
+        <p>{{c}}</p>
+    </div>
+</div>
+</body>
+<script>
+    //第一个app可以自动启动 第二个或者更多的app需要手动启动
+    var app=angular.module("name",[]);
+    var app1=angular.module("name1",[]);
+    var app2=angular.module("name2",[]);
+
+   app.controller("con",function($scope){
+          $scope.a="a"
+    })
+    app1.controller("con1",function($scope){
+        $scope.b="b"
+    });
+    app2.controller("con2",function($scope){
+        $scope.c="c"
+    });
+    angular.bootstrap(document.getElementById("name2"),["name1"]);//启动name1
+    angular.bootstrap(document.getElementById("name3"),["name2"]);//启动name2
+</script>
+</html>

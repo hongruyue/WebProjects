@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp"><!--ng-app="myApp"定义页面应用的范围 所有者-->
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="angular-1.5.8/angular.js"></script>
+</head>
+<body >
+<div ng-app="myApp">
+    <div ng-controller="con">
+        <UL>
+            <li ng-repeat="x in arr">{{x|myFilter}}</li>
+        </UL>
+    </div>
+</div>
+</body>
+
+<script>
+    //自定义过滤器需要两层函数  定义一个过滤器，可以在所有的地方用 如果取相同名字就会覆盖前一个
+    var app=angular.module("myApp",[]);
+    app.filter("myFilter",function(){
+        return function(input){//参数表示需要过滤的数据 外层函数执行1次 内层函数执行若干次（数据决定） 对每一个数据都进行操作一次
+            return input+3;//返回的最终数据
+        }
+    });
+    app.controller("con",function($scope){
+       $scope.arr=[1,2,3,4,5]
+    })
+</script>
+</html>

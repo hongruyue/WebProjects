@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <script src="angular-1.5.8/angular.js"></script>
+</head>
+<body ng-app="myApp">
+<div ng-controller="con">
+  <div ng-click="parent()">
+      <div ng-click="son($event)">
+          <div ng-click="sunzi()">
+              这是一段话
+          </div>
+      </div>
+      </div>
+    </div>
+</body>
+<script>
+    angular.module("myApp",[]).controller("con",function($scope) {
+        $scope.parent=function(){
+            alert("parent")
+        }
+        $scope.son=function($event){//阻止默认事件
+            alert("son");
+            $event.stopPropagation();
+        }
+        $scope.sunzi=function(){
+            alert("sunzi")
+        }
+    })
+</script>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div onclick="javascript:divClick();" style="background: #ccc;width:100px;height: 100px" class="box">
+    <button onclick="javascript:buttonClick();" style="background: #fff;width: 50px;height: 30px;">ok</button>
+</div>
+</body>
+<script>
+    var box=document.getElementsByClassName("box")[0];
+    var btn=document.getElementsByTagName("button")[0];
+    function divClick(){
+        alert("div is clicked");
+    }
+    function buttonClick(ev){
+        var event=ev||event;
+        if(Event.stopPropagation){
+            Event.stopPropagation();}//非ie游览器
+        else{
+            event.cancelBubble=true;//ie浏览器
+
+        };
+        alert("button is clicked");
+
+    }
+
+
+
+</script>
+</html>

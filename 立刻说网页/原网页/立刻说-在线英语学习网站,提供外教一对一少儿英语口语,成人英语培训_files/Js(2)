@@ -1,0 +1,1 @@
+$(function(){$("#home_teacher a.videostart").on("click",function(){var n=$(this).data("file"),t=$(this).data("title");$("#Ajax_VideoModal").load("/Home/BlockVideo",{fileName:n,name:t},function(){$("#shared_block_video").modal("show")})})})

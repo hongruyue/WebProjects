@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="angular-1.5.8/angular.js"></script>
+</head>
+<body ng-app="myApp">
+   <div ng-controller="con1"></div>
+   <div ng-controller="con2"></div>
+
+</body>
+<script>
+    var app=angular.module("myApp",[]);
+    app.constant("test","abc");//定义常量
+    app.value("test1","efde");//定义变量
+    app.controller("con1",function($scope,test,test1){
+       alert(test);
+       alert(test1);
+    });
+    app.controller("con2",function($scope,test){
+
+    })
+
+
+</script>
+</html>

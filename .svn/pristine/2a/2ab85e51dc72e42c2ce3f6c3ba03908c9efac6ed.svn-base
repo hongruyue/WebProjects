@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        /*自定义字体*/
+        /*@font-face {*/
+        /*font-family: 'selffont';*/
+        /*src: url('fonts/shimesone_personal-webfont.eot');*/
+        /*src: url('fonts/shimesone_personal-webfont.eot?#iefix') format('embedded-opentype'),*/
+        /*url('fonts/shimesone_personal-webfont.woff') format('woff'),*/
+        /*url('fonts/shimesone_personal-webfont.ttf') format('truetype'),*/
+        /*url('fonts/shimesone_personal-webfont.svg#SingleMaltaRegular') format('svg');*/
+        /*font-weight: normal;*/
+        /*font-style: normal;*/
+        /*}*/
+        /*div{*/
+        /*font-family:selffont ;*/
+        /*font-size: 50px;*/
+        /*color: red;*/
+        /*}*/
+
+
+        /*自定义图标LigatureSymbols*/
+        /*引入字体文件*/
+
+        @font-face {
+            font-family: 'myfont';
+            src: url('font/LigatureSymbols.eot');
+            src: url('font/LigatureSymbols.eot?#iefix') format('embedded-opentype'),
+            url('font/LigatureSymbols.woff') format('woff'),
+            url('font/LigatureSymbols.ttf') format('truetype'),
+            url('font/LigatureSymbols.svg#LigatureSymbols') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+        span{
+            font-family: 'myfont';
+            -webkit-font-feature-settings: "liga" 1, "dlig" 1;
+            -moz-font-feature-settings: "liga=1, dlig=1";
+            -ms-font-feature-settings: "liga" 1, "dlig" 1;
+            font-feature-settings: "liga" 1, "dlig" 1;
+            font-size: 80px;
+        }
+
+
+    </style>
+</head>
+<body>
+<div>
+    how are you? book house phone
+</div>
+</body>
+</html>

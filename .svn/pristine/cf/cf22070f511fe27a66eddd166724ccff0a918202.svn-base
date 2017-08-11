@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .outer{
+            width: 289px;
+            height: 584px;
+            background-image: url("image/phone.png");
+            margin: 20px auto;
+            position: relative;
+        }
+        .pic {
+            width: 34px;
+            height: 34px;
+            border: 1px solid #C0C0C0;
+            background:url("image/ku.png")0 0 no-repeat;
+            background-position: center;
+            position: absolute;
+            left: 2px;
+            bottom: 2px;
+            border-radius: 5px;
+        }
+        img{
+            display: none;
+        }
+        .foot{
+            width: 239px;
+            height: 40px;
+            border-top: 1px solid #C0C0C0;
+            background-color: #F3ECEC;
+            position: absolute;
+            left: 25px;
+            bottom: 76px
+        }
+        .inp{
+            width: 145px;
+            height: 30px;
+            position: absolute;
+            bottom: 3px;
+            left: 40px;
+        }
+        button{
+            width: 46px;
+            height: 36px;
+            position: absolute;
+            right: 2px;
+            bottom: 2px;
+        }
+        ul{
+            width: 230px;
+            height: 372px;
+            list-style: none;
+            position: absolute;
+            left: 29px;
+            bottom: 120px;
+            overflow: auto;
+        }
+        .left{
+            width: 210px;
+            background:url("image/ku.png")0 0 no-repeat;
+            margin-top: 5px;
+            float: left;
+        }
+        .left .p1{
+            background:#DED6E7;
+            margin-left:28px;
+            line-height:23px;
+            padding:2px;
+            box-sizing:border-box;
+            float: left;
+        }
+        .right{
+            width:210px;
+            background:url("image/ku2.png")187px 0 no-repeat;
+            margin-top:5px;
+            float: right;
+        }
+        .right .p2{
+            background:#21C618;
+            margin-right:28px;
+            line-height:23px;
+            color:white;
+            padding:2px;
+            box-sizing:border-box;
+            float:right;
+        }
+
+    </style>
+</head>
+<body>
+<div class="outer">
+    <ul>
+      <!-- <li class="left"><p class="p1">我收一个小毛驴我从来也不骑有一天我骑着它去赶集</p></li>
+       <li class="right"><p class="p2">我收一个小毛驴我从来也不骑有一天我骑着它去赶集</p></li>-->
+    </ul>
+    <div class="foot">
+        <div class="pic"></div>
+        <input type="text" class="inp">
+        <button>发送</button>
+    </div>
+</div>
+</body>
+<script>
+var pic=document.getElementsByClassName("pic")[0];
+var btn=document.getElementsByTagName("button")[0];
+var inp=document.getElementsByClassName("inp")[0];
+var uls=document.getElementsByTagName("ul")[0];
+//头像切换
+var pics=true;
+pic.onclick=function () {
+    if(pics){
+        pic.style.backgroundImage="url('image/ku2.png')";
+        pics=false;
+    }else{
+        pic.style.backgroundImage="url('image/ku.png')";
+        pics=true;
+    }
+}
+//发送内容
+    btn.onclick=function () {
+        if(inp.value==""){
+           return;
+       }
+        if(pics){
+            var newli=document.createElement("li");
+            newli.className="left";
+            uls.appendChild(newli);
+            var ps=document.createElement("p");
+            ps.className="p1";
+            newli.appendChild(ps);
+            ps.innerHTML="说："+inp.value;
+            inp.value="";
+        }else{
+            var newli=document.createElement("li");
+            newli.className="right";
+            uls.appendChild(newli);
+            var ps=document.createElement("p");
+            ps.className="p2";
+            newli.appendChild(ps);
+            ps.innerHTML="说："+inp.value;
+            inp.value="";
+        }
+        //下面的if else 是为了让新建的内容放在最前面
+        var lis=uls.children;
+        if(lis.length==0){
+            uls.appendChild(newli);
+        }else{
+            uls.insertBefore(newli,lis[0]);
+        }
+    }
+
+
+</script>
+</html>

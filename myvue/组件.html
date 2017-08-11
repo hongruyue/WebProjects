@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="js/vue.js"></script>
+    <script src="js/vue1.0.js"></script>
+    <link rel="stylesheet" href="css/animate.min.css"/>
+    <style>
+
+
+    </style>
+</head>
+<body>
+<div class="box">
+<aaa></aaa>
+</div>
+</body>
+<script>
+    //定义一个组件 全局组件
+    var Aaa=Vue.extend({
+        data: function (){
+            return{//还回的必须是对象
+                msg:'我是一个标题'
+            }
+        },
+        template:"<h3>{{msg}}</h3>"
+    });
+//    Vue.component('aaa',Aaa);
+//    var a=new Aaa();//a相当于下面的vm
+    var vm=new Vue({
+        el:".box",
+        data:{
+          bSign:true
+        },
+        components:{//局部组件(放到某个组件的内部)
+            "aaa":Aaa
+        }
+
+
+
+
+
+    })
+</script>
+</html>

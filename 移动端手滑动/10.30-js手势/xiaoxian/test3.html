@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>测试</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<style>
+*{margin:0; padding:0;}
+figure img{width: 100%; display: block;}
+</style>
+<script type="text/javascript" src="js/common.js"></script>
+</head>
+<body>
+<div id="tu1">
+	<figure><img src="images/bg1.jpg" alt=""></figure>
+</div>
+<div id="tu2" style="display:none;">
+	<figure><img src="images/bg2.jpg" alt=""></figure>
+</div>
+<div id="tu3" style="display:none;">
+	<figure><img src="images/bg3.jpg" alt=""></figure>
+</div>
+<div id="tu4" style="display:none;">
+	<figure><img src="images/bg4.jpg" alt=""></figure>
+</div>
+<div id="tu5" style="display:none;">
+	<figure><img src="images/bg5.jpg" alt=""></figure>
+</div>
+<script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+<script>
+	var startY=0,startX=0,endY=0,endX=0,n=1;
+	document.addEventListener('touchstart',function (ev){
+		startY=ev.touches[0].pageY;
+		startX=ev.touches[0].pageX;
+	},false);
+	document.addEventListener('touchmove',function (ev){
+		endY=ev.touches[0].pageY;
+		endX=ev.touches[0].pageX;
+	},false);
+	document.addEventListener('touchend',function (){
+		if (startY-endY>0) {//向上滑动
+			if (n==5) {return;};
+			switch(n){
+				case 1:
+					$('#tu1').slideUp(600);
+					$('#tu2').show();
+					break;
+				case 2:
+					$('#tu2').slideUp(600);
+					$('#tu3').show();
+					break;
+				case 3:
+					$('#tu3').slideUp(600);
+					$('#tu4').show();
+					break;
+				case 4:
+					$('#tu4').slideUp(600);
+					$('#tu5').show();
+					break;
+			}
+			n++;
+			console.log(n);
+		};
+		if (startY-endY<0) {//向下滑动
+			if (n==1) {return;};
+			switch(n){
+				case 2:
+					$('#tu1').slideDown(600,function (){
+						$('#tu2').hide();
+					});
+					break;
+				case 3:
+					$('#tu2').slideDown(600,function (){
+						$('#tu3').hide();
+					});
+					break;
+				case 4:
+					$('#tu3').slideDown(600,function (){
+						$('#tu4').hide();
+					});
+					break;
+				case 5:
+					$('#tu4').slideDown(600,function (){
+						$('#tu5').hide();
+					});
+					break;
+			}
+			n--;
+			console.log(n);
+		};
+	},false);
+</script>
+</body>
+</html>

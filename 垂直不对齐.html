@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <!--[if IE 7]>
+
+    <![endif]-->
+    <style>
+        input{
+            vertical-align: middle;
+        }
+        img{
+            vertical-align:top;
+        }
+        p{
+            width: 0;
+            height: 0;
+            border:10px solid red;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top:10px solid transparent;
+            cursor: pointer;
+        }
+        p:hover{
+            width: 0;
+            height: 0;
+            border: 10px solid red;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom:10px solid transparent;
+        }
+        div{
+            cursor: pointer;
+            width: 200px;
+            height: 200px;
+            background: red;
+            _background:green;
+            *background:blue;
+            /*background:black\9;*/
+        }
+    </style>
+</head>
+<body>
+<input type="text">输入信息
+<a href=""><img src="3.jpg"></a>这个图片是介绍我的家
+<p></p>
+<div onclick="fun()">hello word!</div>
+<div onclick="test()">helloJS!</div>
+</body>
+<script>
+    var divs=document.getElementsByTagName("div");
+    fun=function(){
+        divs[0].style.background="black";
+        divs[0].style.color="white";
+    };
+    var num=60;
+    function test(){
+        setInterval(function(){
+            num--;
+            if(num<=0){
+                num=0;
+            }
+          divs[1].innerHTML=num;
+
+        },1)
+    }
+</script>
+</html>

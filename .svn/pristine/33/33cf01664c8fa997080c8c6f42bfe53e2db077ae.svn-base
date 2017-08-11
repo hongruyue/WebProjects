@@ -1,0 +1,220 @@
+.myfont{
+    font-family:'myfont';
+}
+.head{
+    width: 100%;
+    height:100%;
+    overflow: hidden;
+}
+.content{
+    width: 100%;
+    height:100%;
+    background:#F5F5F5;
+    border-top: 1px solid #E5E5E5;
+}
+.cen{
+    width: 1200px;
+    margin: 0 auto;
+}
+.cen_h{
+    height: 60px;
+}
+.cen_h p{
+    width:100px;
+    height: 60px;
+    line-height: 60px;
+    float: left;
+}
+.cen_h ul{
+    width:600px;
+    float: right;
+    height: 60px;
+}
+.cen_h li{
+    width:50px;
+    margin-top:27px;
+    text-align: center;
+    height:12px;
+    line-height:12px;
+    float: left;
+    border-right: 1px solid #999999;
+}
+.cen_h li:nth-child(3){
+    width: 70px;
+}
+.cen_h li:nth-child(6){
+    width: 70px;
+}
+.cen_h li:nth-child(11){
+border-right: none;
+}
+.cen li a:hover{
+    color: #EC1611;
+}
+
+.cen_h2{
+    height:40px;
+    line-height: 40px;
+    background: #FFFFFF;
+    border-radius:5px;
+}
+.cen_h2 ul{
+    width:1200px;
+    height: 60px;
+}
+.cen_h2 li{
+    width:90px;
+    margin-top:16px;
+    text-align: center;
+    height:12px;
+    line-height:12px;
+    float: left;
+}
+.cen_h2 li:nth-child(1) a{
+color:#EC1611 ;
+}
+.cen_h2 li:nth-child(9){
+    border-right: 1px solid #999999;
+}
+.cen_h2 li:nth-child(10){
+    border-right: 1px solid #999999;
+}
+
+.cen_h3{
+    margin-top: 20px;
+    height:40px;
+    line-height:40px;
+    background: #FFFFFF;
+    border-radius:5px;
+}
+.cen_h3 ul{
+    width:600px;
+    height:40px;
+    float:left;
+}
+.cen_h3 li{
+    width:60px;
+    text-align: center;
+    height:40px;
+    line-height:40px;
+    float: left;
+    border-right: 1px solid #F5F5F5;
+}
+.cen_h3 li:nth-child(1){
+    background:#EC1611;
+    color: #FFFFFF;
+}
+.cen_h3 li:nth-child(5){
+    width: 120px;
+    border: none;
+    background: url("../hj_img/yuan1.png") 8px 14px no-repeat;
+}
+.cen_h3 li:nth-child(5):hover{
+    background: url("../hj_img/yuan2.png") 8px 14px no-repeat;
+}
+.cen_h3 li:nth-child(6){
+    width: 120px;
+    border: none;
+    background: url("../hj_img/yuan1.png") 8px 14px no-repeat;
+}
+.cen_h3 li:nth-child(6):hover{
+    background: url("../hj_img/yuan2.png") 8px 14px no-repeat;
+}
+.cen_h3 span{
+    font-weight: bold;
+    color: #999999;
+}
+.cen_h3 p{
+    float: right;
+    padding-right: 30px;
+}
+.cen_h3 p a:hover{
+    color: #EC1611;
+}
+.cen_h3 p span:hover{
+    color: #EC1611;
+}
+.cen_h3 li:nth-child(3){
+    background: url("../hj_img/jiantouf.png") 44px 12px no-repeat;
+}
+.cen_h3 li:nth-child(3):hover{
+    background: url("../hj_img/jiantouhf.png") 44px 12px no-repeat;
+}
+.shop{
+    margin-top: 20px;
+}
+.shop img{
+    width: 280px;
+}
+.shop_m{
+    width: 280px;
+    height: 360px;
+    cursor: pointer;
+    position: relative;
+    float: left;
+    margin-right:20px;
+}
+.shop_m p{
+    width: 280px;
+}
+.day{
+    margin-left: 125px;
+}
+.sc{
+    margin-left:58px ;
+    font-size: 12px;
+}
+.sc a{
+    color:#999999;
+}
+.sc a:hover{
+    color:#EC1611 ;
+}
+.price{
+    font-size: 14px;
+    color: #EC1611;
+}
+.pic a:hover{
+    text-decoration: underline;
+}
+.xs{
+    width: 280px;
+    height:30px;
+    line-height: 30px;
+    position: absolute;
+    top:250px;
+    left:0px;
+    background: #000000;
+    opacity: 0.7;
+    color: #FFFFFF;
+    text-align: center;
+    display: none;
+}
+.by{
+    border-top:1px solid #999999;
+    color: #EC1611;
+    display:none;
+    padding-top: 5px;
+}
+
+.sc_s{
+    color: #999999;
+    margin-left:60px;
+}
+.sc_s a:hover{
+    color: #EC1611;
+}
+.shop_m:hover .xs,.shop_m:hover .by{
+    display: block;
+}
+.shop_m:hover{
+    box-shadow: 0 0 5px 5px #dbdbdb;
+}
+.shop_m1{
+    width: 280px;
+    height: 340px;
+    cursor: pointer;
+    position: relative;
+    float: left;
+    margin-right:20px;
+}

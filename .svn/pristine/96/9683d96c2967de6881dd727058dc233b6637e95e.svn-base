@@ -1,0 +1,35 @@
+/**
+ * Created by Administrator on 2017/6/23.
+ */
+
+$(function () {
+    var X=document.documentElement.clientWidth;
+    var Y=document.documentElement.clientHeight ;
+    for(var i=0;i<$(".lunbo").length;i++){
+        $(".lunbo").eq(i).css("width",X);
+        $(".lunbo").eq(i).css("height",Y);
+    }
+
+    var num = 0, time;
+   function run(){
+        $(".lunbo").eq(num).css("display", "block").siblings().css("display", "none");
+        $("#yd li").eq(num).css({"background":"white","opacity":"1"}).siblings().css({"background":"white","opacity":"0.5"});
+        $(".page1_text li").eq(num).css("display", "block").siblings().css("display", "none");
+        num++;
+        if (num >=6) {
+            num = 0;
+        }
+    }
+   time=setInterval(run,3000);
+    $("#yd li").click(function () {
+        clearInterval(time);
+        time=setInterval(run,2000);
+        var index = $(this).index();
+         num=index;
+        //console.log(index);
+        $(".lunbo").eq(index).css("display", "block").siblings().css("display", "none");
+        $("#yd li").eq(index).css({"background":"white","opacity":"1"}).siblings().css({"background":"white","opacity":"0.5"});
+        $(".page1_text li").eq(num).css("display", "block").siblings().css("display", "none");
+    })
+})
+

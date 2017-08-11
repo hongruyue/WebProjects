@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html ng-app="industry_Management">
+ 	<head>
+		<meta charset="UTF-8">
+		<title>行业管理页面</title>
+		<meta http-equiv="pragma" content="no-cache">
+		<meta http-equiv="cache-control" content="no-cache">
+		<meta http-equiv="expires" content="0">
+		<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+		<meta http-equiv="description" content="This is my page">
+		<link rel="stylesheet" href="../../bs/css/bootstrap.min.css">   
+		<link type="text/css" rel="stylesheet" href="../../css/main.css" />
+		<link type="text/css" rel="stylesheet" href="../../css/style.css" />
+   		<script src="../../bs/js/jquery-1.11.3.min.js"></script>
+   		<script src="../../bs/js/bootstrap.min.js"></script>	
+   		<script src="../../bs/js/angular.min.js"></script>
+   		<script src="../../bs/js/jquery.page.js"></script>
+   		<script src="../../js/url.js"></script>
+   		<script src="js/industry.js"></script>
+   		
+	</head>				
+	<body ng-controller="industry">
+		<div id="man_zone" class="mianbody">
+			<div class="softtm"></div>			
+			<div class="row show-grid" style="padding: 1% 1% 0% 1%;">
+				<div class="col-md-12 col-xs-12 col-sm-12">	
+					<button type="button"  ng-click="addindustrys();" class="btn btndel-handle1"> &nbsp;&nbsp; 添加 &nbsp;&nbsp;</button>
+				</div>
+				<div class="col-md-12 col-xs-12 col-sm-12" >	
+					<div class="table-responsive">
+					  <table class="table table-bordered table-hover table-condensed">
+					   <thead>
+					   <tr>
+					   		<th>序号</th>
+						   	<th>行业名称</th>
+						   	<th>行业编码</th>
+						   	<th>备注</th>
+						   	<th>操作</th>
+					   </tr>
+					   </thead>
+					   <tbody>
+					   	<tr ng-repeat= "x in industrys">
+					   		<td>{{ $index+1 }}</td>
+							<td>{{x.industryName}}</td>
+							<td>{{x.industryCode}}</td>
+							<td>{{x.industryDesc}}</td> 
+					   		<td>
+					   			<a ng-click="updateMeta(x)">修改</a> 
+					   			<a ng-click="deleteRole(x.industryId)">删除</a>
+					  		</td>	
+					   	</tr>
+					  </tbody>
+					  </table>
+					</div>
+				</div>
+				
+				
+				<div class="tcdPageCode"></div>
+				<script type="text/javascript">
+				/* var pageC=${Total};
+				 var curren=${pageNum};
+				$(".tcdPageCode").createPage({
+					
+			        pageCount:pageC,
+			        current:curren,
+			       
+			        backFn:function(p){
+			            console.log(p);
+			            $.ajax({
+							type:"POST",
+							url : "<%=basePath%>industryManagement/industry.do",
+							data : {  
+								pageNo : p  
+						    },  
+						    success : function(result) {
+						    	
+						    	  window.location="<%=basePath%>industryManagement/industry.do?pageNo="+p;
+						    },
+						    error:function (XMLHttpRequest, textStatus, errorThrown) {      
+					            alert("网络错误");
+					        }
+						});
+			        }
+			    });*/
+				</script>
+			</div>
+						
+		</div>  	   	 	   
+  </body>
+</html>
+ 

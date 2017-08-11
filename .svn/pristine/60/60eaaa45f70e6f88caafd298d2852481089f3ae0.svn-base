@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #canvas{
+            border: #cccccc;
+        }
+        div{
+            width: 800px;
+            height: 600px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <canvas id="canvas" width="800px" height="600px"></canvas><!--画布是行元素 但是可以设置宽高 默认宽高300*150-->
+    <!--如果在css中为画布定义宽度 画布会被拉伸  必须在标签内部定义宽高-->
+</div>
+
+</body>
+<script>
+    var canvas=document.getElementById("canvas");//获取画布
+    var cvs=canvas.getContext("2d");//定义画布
+    cvs.moveTo(10,10);//起点 坐标中 向右是x轴正方向 向下是y轴正方向
+    cvs.lineTo(200,200);//终点
+    cvs.strokeStyle="red";//线条颜色
+    cvs.lineWidth=10;//线条宽度
+    cvs.stroke();//画直线
+</script>
+</html>

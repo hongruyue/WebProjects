@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        img{
+            width:400px;
+            height:300px;
+        }
+    </style>
+</head>
+<body>
+<a href="index2.html"><img src="IMG/2222.jpg" alt=""/></a>
+<a href="index2.html"><img src="IMG/3333.jpg" alt=""/></a>
+<a href="index2.html"><img src="IMG/le3.jpg" alt=""/></a>
+<a href="index2.html"><img src="IMG/le4.jpg" alt=""/></a>
+<a href="index2.html"><img src="IMG/lr9.jpg" alt=""/></a>
+<script>
+    var imgs = document.getElementsByTagName("img");
+    var num;
+    for(var i=0;i<imgs.length;i++){
+        imgs[i].index=i;
+        imgs[i].onclick = function(){
+           num = this.index;
+            if(window.localStorage){
+                window.localStorage.setItem("name",num);
+                console.log(num);
+            }
+        }
+    }
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单验证</title>
+    <style>
+    .green{
+        color: green;
+    }
+    .red{
+        color: red;
+    }
+    </style>
+</head>
+<body>
+<form action="http://www.baidu.com">
+    用户名:<input type="text" name="username" class="username"/><span class="usernamestr"></span><br/>
+    <input type="submit" value="用户名"/><br/>
+    密码：<input type="password" name="password" class="password"/><span class="passstr"></span><br/>
+    验证密码：<input type="password" name="password1" class="password1"/><span class="pass1str"></span><br/>
+    邮箱：<input type="text" name="email" class="email"/><span class="emailstr"></span><br/>
+    手机号：<input type="text" name="tel" class="tel"/><span class="telstr"></span><br/>
+    <input type="submit"/>
+</form>
+</body>
+<script src="js/jquery-1.8.3.min.js"></script>
+<script>
+       var oform=document.getElementsByTagName("form")[0];
+        oform.onsubmit=function(){//阻止form提交事件
+            return false;
+        }
+        $(function(){
+            $(".username").blur(function(){
+                var str=$(".username").val();
+                if(str==""){
+                    alert("不能为空！")
+                }else{
+                    if(str.length<=10&&str.length>=6){
+                        $(".usernamestr").html("√").removeClass("red").addClass("green")
+                    }else{
+                        $(".usernamestr").html("×").removeClass("green").addClass("red")
+                    }
+
+                }
+
+            })
+            $(".password").blur(function(){
+                var str=$(".password").val();
+                if(str.length==0){
+                    alert("内容不能为空！")
+                }else{
+                    if(str.length<=16&&str.length>=10){
+                        $(".passstr").html("√").removeClass("red").addClass("green")
+                    }else{
+                        $(".passstr").html("×").removeClass("green").addClass("red")   }
+                }
+
+            })
+
+            $(".password1").blur(function(){
+                var str=$(".password").val();
+                var str1=$(this).val();
+                if(str1==str){
+                    $(".pass1str").html("内容正确").removeClass("red").addClass("green")
+                }else{
+                    $(".pass1str").html("内容不正确").removeClass("green").addClass("red")   }
+
+            })
+
+            $(".email").blur(function(){
+                var str=$(this).val();
+                if(str.indexOf("@")>=0){//检验邮箱是否有@符号
+                    $(".emailstr").html("√").removeClass("red").addClass("green")
+                }else{
+                    $(".emailstr").html("×").removeClass("green").addClass("red")
+                }
+            })
+
+            $(".tel").blur(function(){
+                var str=$(this).val();
+                if(str.length==11){//验证是不是11位
+                   for(var i=0;i<str.length;i++){
+                       var every=str.substring(i,i+1);
+                       if(isNaN(every)){
+                           $(".telstr").html("×").removeClass("green").addClass("red");
+                           break;
+                       }else{
+                           $(".telstr").html("√").removeClass("red").addClass("green");
+                       }
+                   }
+                }else{
+                    $(".telstr").html("请输入11为手机号码").addClass("red");
+                }
+            })
+
+        })
+
+</script>
+</html>

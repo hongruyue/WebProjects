@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #canvas{
+            border: #cccccc;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvas"width="800px"height="800px"></canvas>
+</body>
+<script>
+    var canvas=document.getElementById("canvas");
+    var cvs=canvas.getContext("2d");
+    var g=cvs.createLinearGradient(0,0,500,200);//线性渐变(开始x 开始y 结束x 结束y)
+    g.addColorStop(0,'red');//添加渐变颜色 以比例确定
+    g.addColorStop(0.25,'purple');
+    g.addColorStop(0.5,'green');
+    g.addColorStop(0.75,'yellow');
+    g.addColorStop(1,'blue');
+
+    cvs.beginPath();
+    cvs.moveTo(100,200);
+    cvs.lineTo(600,200);
+    cvs.strokeStyle=g;
+    cvs.lineWidth=6;
+    cvs.stroke();
+    cvs.closePath();
+
+    cvs.beginPath();
+    cvs.moveTo(0,0);
+    cvs.lineTo(800,500);
+    cvs.strokeStyle=g;
+    cvs.lineWidth=6;
+    cvs.stroke();
+    cvs.closePath();
+
+    cvs.beginPath();
+    cvs.arc(500,300,100,0,Math.PI*2);
+    cvs.fillStyle=g;
+    cvs.fill();
+    cvs.closePath();
+
+</script>
+</html>

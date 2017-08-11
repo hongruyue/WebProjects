@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+#content{
+    margin-bottom: 1000px;
+    margin-top: 600px;
+}
+#content1{
+    margin-bottom: 1000px;
+    margin-top: 600px;
+}
+    </style>
+</head>
+<body>
+<a id="turnToContent1" href="#content1">按钮点击</a>
+<div id="content">
+    <h2>
+        <a href="###">HTML5</a>
+    </h2>
+    <p>
+        html5html5html5
+    </p>
+    <p class="addMes">标签： <span>HTML5</span><small>2015年4月19日</small></p>
+</div>
+<div id="content1">
+    <h2>
+        <a href="###">HTML6</a>
+    </h2>
+    <p>
+        html5html5html5
+    </p>
+    <p class="addMes">标签： <span>HTML5</span><small>2015年4月19日</small></p>
+</div>
+<a id="turnToContent" href="#content">按钮点击</a>
+
+
+</body>
+<script src="js/jquery-1.8.3.min.js"></script>
+<script>
+    $('#turnToContent').click(function (){
+        $('html, body').animate({
+            scrollTop: $($.attr(this, 'href')).offset().top
+        }, 500);
+       // return false;
+    });
+    $('#turnToContent1').click(function (){
+        $('html, body').animate({
+            scrollTop: $($.attr(this, 'href')).offset().top
+        }, 500);
+        //return false;
+    });
+
+   /* $(function(){
+        $('a[href*=#],area[href*=#]').click(function() {
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+                var $target = $(this.hash);
+                $target = $target.length && $target || $('[name=' + this.hash.slice(1) + ']');
+                if ($target.length) {
+                    var targetOffset = $target.offset().top;
+                    $('html,body').animate({
+                                scrollTop: targetOffset
+                            },
+                            1000);
+                    return false;
+                }
+            }
+        });
+    })*/
+</script>
+</html>

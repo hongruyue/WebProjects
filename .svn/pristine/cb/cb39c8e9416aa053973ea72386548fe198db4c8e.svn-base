@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="angular-1.5.8/angular.js"></script>
+    <style>
+    ul{
+        list-style: none;
+    }
+    </style>
+</head>
+<body ng-app="" >
+<select name="" ng-model="switch">
+    <option value="BJ" ng-selected="true">北京</option>
+    <option value="SH" >上海</option>
+    <option value="DB">东北</option>
+</select>
+<span ng-switch="switch">
+    <select name="" ng-switch-default="">
+        <option value="HD">海淀区</option>
+        <option value="CY" >朝阳区</option>
+        <option value="DX">大兴区</option>
+    </select>
+    <select name="" ng-switch-when="SH">
+        <option value="HPJ">黄浦江</option>
+        <option value="DF" >东方明珠</option>
+        <option value="WT">外滩</option>
+    </select>
+    <select name="" ng-switch-when="DB">
+        <option value="TL">铁岭</option>
+        <option value="LN" >辽宁</option>
+        <option value="HLJ">黑龙江</option>
+    </select>
+</span>
+
+
+</body>
+
+</html>

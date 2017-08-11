@@ -1,0 +1,111 @@
+<!-- 业务系统列表 -->
+<div class="tab-pane fade in active" id="businessSystem">
+	<div class="col-md-12 col-xs-12 col-sm-12">
+		<div class="col-md-12 col-xs-12 col-sm-12">
+			<span class="col-md-12 col-xs-12 col-sm-12 View">
+				业务系统管理列表
+				<button class="btm" type="button" ng-click="intoAddSys()">增加</button>
+			</span>
+		</div>
+		<div class="col-md-12 col-xs-12 col-sm-12">
+			<div class="table_style">
+				<table class="table top table-condensed">
+					<tr>
+						<th width="5%">序号</th>
+						<th width="35%">系统名称</th>
+						<th width="35%">系统地址</th>
+						<th width="25%">操作</th>
+					</tr>
+				</table>
+				<table class="table hover table-hover table-condensed" ng-repeat="x in systems">
+					<tr>
+						<td width="5%">{{$index+1}}</td>
+						<td width="35%">{{x.systemName}}</td>
+						<td width="35%">{{x.systemAddress}}</td>
+						<td width="25%">
+							<a ng-click="intoUpdateSys(x)">修改</a>&nbsp;&nbsp;&nbsp;&nbsp;
+							<a ng-click="deleteSystem(x.systemId)">删除</a>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--分页  -->
+<div class="tcdPageCode" id="tcdPageCode1"></div>
+
+<!--添加系统信息-->
+<div class="modal fade" id="addSys" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+			&times;
+		</button>
+				<h4 class="modal-title" id="myModalLabel">添加系统信息</h4>
+			</div>
+			<form class="form-horizontal" name="addSystemForm" id="addSystemForm">
+				<div class="modal-body">
+					<div class="form-group">
+						<label for="systemName" class="col-sm-2 control-label">系统名称</label>
+						<div class="col-sm-5">
+							<input type="text" name="systemName" data-validation-engine="validate[required]" class="input form-control" id="systemName" placeholder="请输入系统名称">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="systemAddress" class="col-sm-2 control-label">系统地址</label>
+						<div class="col-sm-5">
+							<input type="text" name="systemAddress" data-validation-engine="validate[required]" class="input form-control" id="systemAddress" placeholder="请输入系统地址">
+						</div>
+					</div>
+					<input type="hidden" name="departId" ng-value="departId">
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+					<button class="btn btn-primary" ng-click="addSystem()">保存</button>
+				</div>
+			</form>
+		</div>
+		<!-- /.modal-content -->
+	</div>
+	<!-- /.modal-dialog -->
+</div>
+<!--修改系统信息-->
+<div class="modal fade" id="updateSys" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+			&times;
+		</button>
+				<h4 class="modal-title" id="myModalLabel">修改系统信息</h4>
+			</div>
+			<form class="form-horizontal" name="updateSystemForm" id="updateSystemForm">
+				<div class="modal-body">
+					<div class="form-group">
+						<label for="upsystemName" class="col-sm-2 control-label">系统名称</label>
+						<div class="col-sm-5">
+							<input type="text" name="systemName" ng-model="upSystem.systemName" data-validation-engine="validate[required]" class="input form-control" id="upsystemName">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="upsystemAddr" class="col-sm-2 control-label">系统地址</label>
+						<div class="col-sm-5">
+							<input type="text" name="systemAddress" ng-model="upSystem.systemAddress" data-validation-engine="validate[required]" class="input form-control" id="upsystemAddr">
+						</div>
+					</div>
+					<input type="hidden" name="systemId" ng-value="upSystem.systemId">
+					<input type="hidden" name="departId" ng-value="upSystem.departId">
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+					<button class="btn btn-primary" ng-click="updateSystem()">保存</button>
+				</div>
+			</form>
+		</div>
+		<!-- /.modal-content -->
+	</div>
+	<!-- /.modal-dialog -->
+</div>

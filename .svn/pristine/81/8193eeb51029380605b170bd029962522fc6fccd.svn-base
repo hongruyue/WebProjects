@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="angular-1.5.8/angular.js"></script>
+</head>
+<body ng-app="myApp">
+   <div ng-controller="con1">
+
+   </div>
+
+</body>
+<script>
+    //自定义作用域 本来有的作用域：$scope $http(ajax交换数据) $interval计时器
+    var app=angular.module("myApp",[]);
+   /* app.factory("test",function(){//还回简单元素
+        return "a";
+    });*/
+   /* app.factory("test",function(){//还回数字
+        return 123;
+    });*/
+   /* app.factory("test",function(){//还回json文件
+     return {
+     name:"张三",age:12
+     };
+     });*/
+    app.factory("test",function(){//还回函数
+        return {
+           a:"zcer",
+            b:function(){
+                console.log(123);
+            }
+        };
+    })
+    app.controller("con1",function($scope,test){
+        //alert(JSON.stringify(test));//json转换字符串
+        test.b()
+    })
+
+
+</script>
+</html>

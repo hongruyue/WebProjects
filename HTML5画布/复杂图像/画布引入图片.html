@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #canvas{
+            background: #cccccc;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvas" width="800px" height="800px"></canvas>
+</body>
+<script>
+    var canvas=document.getElementById("canvas");
+    var cvs=canvas.getContext("2d");
+    var img=new Image();//创建Image对象
+    img.src="img/1.jpg";//设置图像路径
+    img.onload=function(){
+
+        cvs.drawImage(img,100,100);//图片开始显示的位置
+        //cvs.drawImage(img,10,10,200,300);//图片开始显示的位置 及宽高
+        //cvs.drawImage(img,70,70,200,200,10,10,100,100);//前4个是图片的坐标(切割)  后4个是画布的坐标
+        //cvs.drawImage(img,100,100,100,100,300,300,100,100);
+        //cvs.drawImage(img,200,200,100,100,500,500,100,100);
+
+    };
+
+    cvs.beginPath();
+    //cvs.rect(200,200,100,100);
+    cvs.arc(480,300,100,0,Math.PI*2,true);
+    cvs.strokeStyle="red";
+    cvs.lineWidth=6;
+    cvs.stroke();
+    cvs.clip();//切割图片
+    cvs.closePath();
+
+</script>
+
+</html>

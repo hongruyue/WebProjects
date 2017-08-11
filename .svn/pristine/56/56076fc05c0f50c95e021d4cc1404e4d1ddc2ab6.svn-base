@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>第一次vue页面</title>
+    <script src="js/vue.js"></script>
+    <script src="js/vue1.0.js"></script>
+</head>
+</head>
+<body>
+   <div class="box">
+       <p><input type="text" v-model="msg"/></p>
+       <p><input type="text" v-model="msg"/></p>
+      <br/>
+       {{msg}}
+       <br/>
+       <ul>
+           <li v-for="(val,index) in arr">
+               {{arry}}  {{index}}
+           </li>
+       </ul>
+      <ul>
+          <li v-for="(k,v) in json">
+              {{v}}  {{k}} {{$key}}
+          </li>
+      </ul>
+       <input type="button" value="按钮" v-on:click="show()">
+
+
+       </div>
+   </div >
+
+   <script>
+       var c=new Vue({
+           el:'.box',
+           data:{
+               a:false,
+               msg:'这是我的第一个vue页面',
+               arr:['apple','orange','pear','banana'],
+               json:{
+                   a:'red',
+                   b:'yellow',
+                   c:'blue'
+               }
+           },
+           methods:{
+               show:function(){
+                   this.arr.push("tomoto");
+               }
+           }
+       })
+   </script>
+</body>
+
+</html>

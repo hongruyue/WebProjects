@@ -1,0 +1,15 @@
+.toolbar-default{background-image:url(../imgs/default_icon.png);background-position:center;margin:1px -1px;width:16px;height:16px}
+.toolbar-rectangle_selection{background-image:url(../imgs/rectangle_selection_icon.png);background-position:center;margin:1px -1px;width:16px;height:16px}
+.toolbar-pan{background-image:url(../imgs/browse.png);background-position:center;margin:1px -1px;width:16px;height:16px}
+.toolbar-zoomin{background-image:url(../imgs/zoomin_icon.png);background-position:center;margin:1px -1px;width:16px;height:16px}
+.toolbar-zoomout{background-image:url(../imgs/zoomout_icon.png);background-position:center;margin:1px -1px;width:16px;height:16px}
+.toolbar-zoomreset{background-image:url(../imgs/contrast.png);background-position:center;margin:1px -1px;width:16px;height:16px}
+/* .toolbar-overview{background-image:url(../imgs/);background-position:center;margin:1px -1px;width:16px;height:16px} */
+.toolbar-edge{background-image:url(../imgs/edge_icon.png);background-position:center;margin:1px -1px;width:16px;height:16px}
+.toolbar-edge_VH{background-image:url(../imgs/edge_VH_icon.png);background-position:center;margin:1px -1px;width:16px;height:16px}
+.toolbar-print{background-image:url(../imgs/print.png);background-position:center;margin:1px -1px;width:16px;height:16px}
+.icon-dottedline{background-image:url(../imgs/dottedline.png);background-position:center;margin:1px -1px;width:16px;height:16px}
+.icon-vertical{background-image:url(../imgs/line.png);background-position:center;margin:1px -1px;width:16px;height:16px}
+.icon-level{background-image:url(../imgs/level.png);background-position:center;margin:1px -1px;width:16px;height:16px}
+.icon-vertical1{background-image:url(../imgs/vertical1.png);background-position:center;margin:1px -1px;width:16px;height:16px}
+.icon-horizontal{background-image:url(../imgs/horizontal.png);background-position:center;margin:1px -1px;width:16px;height:16px}

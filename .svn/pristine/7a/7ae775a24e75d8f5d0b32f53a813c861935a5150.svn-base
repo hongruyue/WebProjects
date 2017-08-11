@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box{
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+用户名：<input type="text" value="张三"/>
+密码：<input type="password"  value="123456"/>
+</body>
+<script>
+    var inp=document.getElementsByTagName("input");
+    if(window.XMLHttpRequest){
+       var xhr=new XMLHttpRequest();
+    }else{
+        var xhr=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xhr.open("post","json",true);
+    xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    xhr.send("user="+inp[0].value+"&pass="+inp[1].value);
+    xhr.onreadystatechange=function() {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            var str = xhr.responseText;
+            var str1 = JSON.parse(str);
+            alert(str)
+
+        }
+
+    }
+</script>
+</html>

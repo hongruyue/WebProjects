@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div>cookie</div>
+</body>
+<script>
+/*    document.cookie="key=name";//设置cookie 临时性的 关掉页面就消失
+    document.cookie="user=name";
+    document.cookie="passwad=13456";
+
+     var dates=new Date();//设置日期 关闭页面不会消失
+     dates.setDate(dates.getDate()+7);//设置天数 只能是的天数
+    document.cookie="name=王五;expires="+dates;
+    document.cookie="name1=王五1;expires="+dates;
+    document.cookie="name2=王五2;expires="+dates;
+    document.cookie="name3=王五3;expires="+dates;
+    document.cookie="psaa=123456987";//修改cookie 直接覆盖
+
+    var time1=new Date();//删除cookie 将有效期设置为负数
+    time1.setDate(time1.getDate()-1);
+    document.cookie="name3=ser;expires="+time1;
+
+    var cookies=document.cookie;//获取cookie 分号与空格连接
+    document.write(cookies);
+
+    var arr=cookies.split("; ");
+    document.write(arr);
+    for(var i=0;i<arr.length;i++){
+        var arr1=arr[i].split("=");
+        if(arr1[0]=="name1"){
+           // document.write(arr1[1])
+            alert(arr1[1])
+        }
+    }*/
+
+    function setCookie(key,value,time){//设置cookie函数
+        var day=new Date();
+        day.setDate(day.getDate()+time);
+        document.cookie=key+"="+value+";expires="+day;
+    };
+    function removecookie(key){//删除cookie函数
+        var day=new Date();
+        day.setDate(day.getDate()-1);
+        document.cookie=key+"=11111;expires="+day;
+    }
+    function getCookie(key){
+        var cookies=document.cookie;
+        var str=cookies.split("; ");
+        for(var i=0;i<str.length;i++){
+            var str1=str[i].split("=");
+            if(str1[0]==key){
+                return str1[1];//表示这个函数的值就是str1[1]
+
+            }
+        }
+    }
+    setCookie("name","xiaoming",3);
+    setCookie("age","14",3);
+    setCookie("sex","man",15);
+
+    removecookie("name");
+
+    alert(getCookie("age"));
+
+    /*HttpCookie.cookie = new HttpCookie("username");
+    cookie.Value = HttpUtility.UrlEncode("张三,14,images/1.jpg",Encoding.GetEncoding("UTF=8"));
+    cookie.Expires = DateTime.Now.AddDays(1);
+    Response.Cookies.Add(cookie);*/
+
+
+</script>
+</html>

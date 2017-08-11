@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box{
+            width: 300px;
+            height: 200px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<button>隐藏/显示</button>
+<p>这是一个文本段落</p>
+<p>这是另外一个文本段落</p>
+<div class="box"></div>
+</body>
+<script src="js/jquery-1.8.3.min.js"></script>
+<script>
+    window.onload=function(){
+        $(function(){
+
+//            $("button").click(function(){
+//                $("p").hide(1000,function(){
+//                    alert("隐藏完毕")
+//                })//将元素隐藏
+//            })
+//            $("button").click(function(){
+//                $("p").show(1000)//将元素显示
+//            })
+            $("button").click(function(){
+                $(".box").toggle(1000,function(){
+                    $(".box").css("background","green")
+                })//完成隐藏显示功能
+            })
+
+
+        })
+    }
+</script>
+</html>

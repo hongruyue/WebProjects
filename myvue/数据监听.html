@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="js/vue.js"></script>
+    <script src="js/vue1.0.js"></script>
+</head>
+<body>
+<div class="box">
+   <p>{{json | json}}</p>
+    <p>{{b}}</p>
+</div>
+</body>
+<script>
+    var vm=new Vue({
+        el:".box",
+        data:{
+               json:{name:'bliss',age:'16'},
+               b:2
+        }
+    });
+    vm.$watch('json',function(){//一般的都是浅度监听  json必须要深度监听deep:true
+        this.b=this.a+100;
+    },{deeep:true});
+    document.onclick=function(){
+        vm.json.name='aaa';
+        vm.json.age=18;
+    };
+</script>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>点名系统 </title>
+</head>
+<body>
+<div class="name1">姓名</div>
+<div class="name2">张三</div>
+<button class="btn">按钮</button>
+<script>
+    var name1=document.getElementsByClassName("name1")[0];
+    var name2=document.getElementsByClassName("name2")[0];
+    var arr=["李四","李五","王六","多多","酷飞","小爱","小青","大三","灰灰","路马","小丽","大福"];
+    var btn=document.getElementsByClassName("btn")[0];
+    var time;
+    var type=true;
+    btn.onclick=function (){
+        if(type) {
+            clearInterval(time);
+            time = setInterval(function () {
+                var num = parseInt(Math.random() * arr.length);
+                name2.innerHTML = arr[num];
+            }, 50);
+            type = false;
+        }
+        else{
+            clearInterval(time);
+            type=true;
+        }
+    }
+
+</script>
+
+</body>
+
+</html>

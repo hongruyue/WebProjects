@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        button{
+            width: 100px;
+            height: 30px;
+        }
+
+    </style>
+</head>
+<body>
+<button>点击</button>
+<div>
+
+    <ul>
+        <li>大家好</li>
+        <li>大家好1</li>
+        <li>大家好2</li>
+    </ul>
+    <ul>
+        <li>大家好</li>
+        <li>大家好1</li>
+        <li>大家好2</li>
+    </ul>
+    <ul>
+        <li>大家好</li>
+        <li>大家好1</li>
+        <li>大家好2</li>
+    </ul>
+
+</div>
+</body>
+<script src="js/jquery-1.8.3.min.js"></script>
+<script>
+    $("button").click(function(){
+        $("ul").eq(0).slideToggle(1000)
+    })
+    $("ul").eq(0).css("color","red").siblings().css("color","green")
+
+</script>
+</html>

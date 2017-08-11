@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<table border="1" style="border-collapse: collapse;">
+    <tbody>
+        <tr>
+            <th>姓名</th>
+            <th>颜色</th>
+            <th>年龄</th>
+        </tr>
+    </tbody>
+</table>
+<button>点击获取</button>
+</body>
+<script src="js/jquery-2.1.0.min.js"></script>
+<script>
+    $(function(){
+        $("button").click(function(){
+//            $("tbody").empty();//讲tbody清空
+//            var head="<tr><th>姓名</th><th>颜色</th><th>年龄</th></tr>";
+//            $("tbody").append(head);
+//            $.ajax({
+//                url:"json",
+//                type:"get",
+//                dataType:"json",
+//                success:function(data){
+//                    for(var i=0;i<data.length;i++){
+//                        var news="<tr><td>"+data[i].name+"</td><td>"+data[i].color+"</td><td>"+data[i].age+"</td></tr>";
+//                        $("tbody").append(news);
+//                    }
+//                },
+//                error:function(){
+//                    alert(123);
+//                },
+//                async:true
+//            })
+
+            $.getJSON("json",function(data){//get方法获取json的简写方式   只能获取json格式
+                alert(data[0].name);
+            })
+        })
+    })
+</script>
+</html>

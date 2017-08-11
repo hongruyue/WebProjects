@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="js/vue.js"></script>
+    <script src="js/vue1.0.js"></script>
+</head>
+<body>
+<div class="box">
+{{12|currency:'￥'}}
+    <br/>
+{{'welcome'|lowercase|capitalize}}
+    <p v-text="msg"></p>
+    <input type="text" @click="show|debounce 2000" >
+    <!-- v-text="msg" 或 v-html="msg"等价与 {{msg}}  v-text="msg"防止网速慢的时候看到大括号-->
+    <ul>
+        <li v-for="item in arr | limitBy 3 1" v-html="item"></li>
+    </ul>
+</div>
+</body>
+<script>
+//{{12|currency '￥'}}改成人民币 直接后面传参
+//常用过滤器有：currency美元 uppercase大写 lowercase小写 capitalize首字母大写
+//debounce 延迟2000毫米 配合事件
+
+//配合数组的过滤器
+  //limitBy n m 限制显示几条数据  从哪开始
+//filterBy "X"
+
+    var c=new Vue({
+        el:".box",
+        data:{
+            msg:"abc",
+            arr:["1","2","3","4","5"]
+        },
+        methods:{
+//          show:function(){
+//              alert(1)
+          }
+
+
+
+
+    })
+</script>
+</html>

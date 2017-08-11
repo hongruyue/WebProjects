@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+     .box{
+         width: 300px;
+         height: 300px;
+         background:cyan ;
+     }
+        .class1{
+            background: green;
+        }
+     .class2{
+         background: red;
+     }
+     .class3{
+         background: yellow;
+     }
+     .class4{
+         background: blue;
+     }
+     .class5{
+         background: pink;
+     }
+     .class6{
+         background: black;
+     }
+     .class7{
+         background: purple;
+     }
+    </style>
+</head>
+<body>
+<div class="box"></div>
+<button>改变颜色</button>
+</body>
+<script src="js/jquery-1.8.3.min.js"></script>
+<script>
+    $(function(){
+     $("button").click(function(){
+         var num=parseInt(Math.random()*8+1);
+         //$(".box").removeClass().addClass("class"+num+" box");//先移除再增加 removeClass()不加参数是全部移除 加两个类名中间需要加个空格
+         $("div").toggleClass("box")
+     })
+      //attr指元素属性
+        $(".box").attr("style","width:500px;height:500px;");
+        alert($("div").height());//获取div的高度
+        alert($("div").width());//获取div的高度
+        $(".box").attr("style","width:500px;height:500px;");//宽高不属于div的属性 style是div的属性
+        $("img").attr({"height":"400","width":"400","src":"img/2.png"});//宽高属于img的属性
+    })
+</script>
+</html>

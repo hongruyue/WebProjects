@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box{width: 400px;height: 300px; overflow: hidden; margin-bottom: 10px; position: relative; left: 0; top:0;}
+        button{
+          margin-left: 300px;
+        }
+        p{
+            font-size: 80px;
+            text-align: center;
+            z-index:6;
+            position: absolute;
+            top:20px;
+            left:170px;
+            color: #CC0000;
+            display: none;
+        }
+        .p1{
+            display:block;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <img src="img/1.jpg"/>
+    <img src="img/2.jpg"/>
+    <img src="img/3.jpg"/>
+    <img src="img/4.jpg"/>
+    <img src="img/5.jpg"/>
+</div>
+<div>
+    <p class="p1">1</p>
+    <p>2</p>
+    <p>3</p>
+    <p>4</p>
+    <p>5</p>
+</div>
+<button>点击停止</button>
+<script src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript">
+    /* var imgs=document.getElementsByTagName("img");
+    var num=0;
+    setInterval(function(){
+        if(num<=imgs.length){
+            n
+            imgs[0].style.display="block";
+        }
+
+    },50)*/
+    var num=0;
+    var time;
+    var start=1;
+        $(function(){
+            var timr=function(){
+
+                $("p").eq(num).css("display","block").siblings().css("display","none");
+                $("img").eq(num).css("display", "block").siblings().css("display", "none");
+                num++;
+                if (num >= 5) {
+                    num = 0;
+                }
+            }
+        time=setInterval(timr,1000);
+
+            $("button").click(function(){
+                if(start==1){
+                    clearInterval(time);
+                    $("button").html("点击开始");
+                    start = 0;
+                }else{
+                    //$.mytimer.start();
+                    time=setInterval(timr,1000);
+                    $("button").html("点击停止");
+                    start = 1;
+          }
+      })
+       
+    })
+
+
+</script>
+</body>
+</html>

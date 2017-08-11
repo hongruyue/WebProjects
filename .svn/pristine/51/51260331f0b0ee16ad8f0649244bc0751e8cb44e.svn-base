@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en"><!--ng-app="myApp"定义页面应用的范围 所有者-->
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="angular-1.5.8/angular.js"></script>
+</head>
+<body >
+<div ng-app="myApp">
+    <div ng-controller="con">
+        <UL>
+            <li ng-repeat="x in arr">{{x|myFilter:3}}</li>
+        </UL>
+    </div>
+</div>
+</body>
+
+<script>
+    var app=angular.module("myApp",[]);
+    app.filter("myFilter",function(){
+        return function(input,num){//过滤器添加参数
+            return input+num;
+        }
+    });
+    app.controller("con",function($scope){
+       $scope.arr=[1,2,3,4,5]
+    })
+</script>
+</html>

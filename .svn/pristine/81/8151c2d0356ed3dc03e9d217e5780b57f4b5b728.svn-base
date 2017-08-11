@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>测试</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<style>
+*{margin: 0;padding: 0;}
+#box{
+	font-size: 22px;
+	width: 300px;
+	height: 150px;
+	line-height: 130px;
+	text-align: center;
+	border: 10px dotted #000;
+	box-sizing: border-box;
+	margin:50px 0 0 50px;
+}
+#cvs{
+	position: absolute;
+	left: 50px;
+	top: 50px;
+}
+</style>
+</head>
+<body>
+	<div id="box">256321</div>
+	<canvas id="cvs" width="300" height="150"></canvas>
+</body>
+<script>
+var box=document.getElementById('box');
+var arr=[];
+for (var i = 0; i < 6; i++) {
+	var sjs=Math.floor(Math.random()*10);//当前生成的随机数
+	arr.push(sjs);
+};
+box.innerHTML=arr;
+
+var cvs=document.getElementById('cvs');
+var ctx=cvs.getContext('2d');
+ctx.fillStyle='#ccc';
+ctx.fillRect(0,0,300,150);
+function draw(ev){
+	ctx.globalCompositeOperation='destination-out';
+	var x=ev.clientX-cvs.offsetLeft;
+	var y=ev.clientY-cvs.offsetTop;
+	ctx.beginPath();
+	ctx.arc(x,y,6,0,2*Math.PI,true);
+	ctx.fill();
+	ctx.closePath();
+}
+cvs.addEventListener('mousedown',function (){
+	cvs.addEventListener('mousemove',draw,false);
+},false);
+cvs.addEventListener('mouseup',function (){
+	cvs.removeEventListener('mousemove',draw,false);
+},false);
+</script>
+</html>

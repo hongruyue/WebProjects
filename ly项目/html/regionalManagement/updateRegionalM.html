@@ -1,0 +1,126 @@
+<!--<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../../bs/js/jquery-1.11.3.min.js" ></script>
+		<script>
+			
+			console.log(rms)
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
+-->
+<!DOCTYPE html>
+<html >
+	<head>
+		<meta charset="UTF-8">
+		<title>修改区域</title>
+		<meta http-equiv="Access-Control-Allow-Origin" content="*">
+		<link rel="stylesheet" href="../../bs/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="../../css/main.css" />
+		<link rel="stylesheet" href="../../css/style.css" />
+		<link rel="stylesheet" href="../../bs/css/zTreeStyle.css" />
+		<link rel="stylesheet" href="../../bs/css/validationEngine.jquery.css" />
+		<script type="text/javascript" src="../../bs/js/jquery-1.11.3.min.js" ></script>
+		<script type="text/javascript" src="../../bs/js/angular.min.js" ></script>
+   		<script type="text/javascript" src="../../bs/js/bootstrap.min.js"></script>
+ 		<script type="text/javascript" src="../../js/url.js" ></script>	
+	</head>
+	<body ng-app="updRM" ng-controller="updCtrl">
+		<div id="man_zone" class="mianbody">
+			<div class="softtm"></div>			
+			<div class="row show-grid" style="padding: 1% 1% 0% 1%;">
+				<div class="col-md-12 col-xs-12 col-sm-12">	
+					<form id="testForm" class="form-horizontal" name="addForm" novalidate ng-submit="processForm()" ><!--action="regionalManagement/add.do"--> 			 				
+					  <div class="form-group">
+					    <label for="areaName" class="col-sm-1 control-label">区域名称</label>
+					    <div class="col-sm-5">
+					    	<input type="text" data-validation-engine="validate[required,custom[chineseName],ajax[upareaNameAjax]]" ng-model="formData.qname" class="input form-control" id="areaName" name="qname">
+					   		
+					    </div>
+					  </div>
+					  <div class="form-group">
+					    <label for="areaCode" class="col-sm-1 control-label">区域编码</label>
+					    <div class="col-sm-5">
+					      <input type="text"  data-validation-engine="validate[required,custom[rmcode],ajax[upareaCodeAjax]]" ng-model="formData.qcode" class="input form-control" id="areaCode"  name="qcode" placeholder="请输入4位数字区域编码">
+					    </div>
+					  </div>
+					  <div class="form-group">
+					    <label for="qtype" class="col-sm-1 control-label">区域类型</label>
+					    <div class="col-sm-5">
+					      <select  class="form-control" id="qtype" name="qtype" ng-model="formData.qtype">
+								<option selected="selected" value="国家">国家</option>
+								<option value="省、直辖市">省、直辖市</option>
+								<option value="地市">地市</option>
+								<option value="区、县">区、县</option>
+							</select>
+					    </div>
+					  </div>
+					   <div class="form-group">
+							<label for="text" class="col-sm-1 control-label">备注</label>
+							<div class="col-sm-5">
+					     	<textarea class="input form-control" rows="3" ng-model="formData.text" id="text" name="text" ></textarea>
+					    </div>
+							
+						</div>
+					
+					  <div class="col-md-12 col-xs-12 col-sm-12">
+					  	<div class="col-md-1 col-xs-1 col-sm-1"></div>
+					  	<div class="col-md-3 col-xs-3 col-sm-3">
+					  		<button class="btn btndel-handle1" type="button" ng-click="rt()">返回</button>
+					  	</div>
+					  	 <div class="col-md-3 col-xs-3 col-sm-3">
+					  		<button class="btn btndel-handle1" type="submit">保存</button>
+					  	</div>
+					  </div>	
+	  		</form>
+	          		
+				</div>
+			</div>
+			
+		</div>	
+
+</body>
+<script type="text/javascript" src="../../bs/js/jquery.validationEngine.min.js" ></script>
+<script type="text/javascript" src="../../bs/js/jquery.validationEngine-zh-CN.js" ></script>
+
+<script>
+$.validationEngine.defaults.scroll = false;
+angular.module('updRM', []).controller('updCtrl', function($scope, $http) {	
+	$scope.rt=function(){
+		location.href="regionalManagement.html";
+	}	
+	$scope.formData = {};	
+	rms = JSON.parse(sessionStorage.getItem("rms"));
+	$scope.formData.qid=rms.rmId;
+	$scope.formData.pid=rms.pid;	
+	$scope.formData.qname=rms.name;
+	$scope.formData.qtype=rms.type;
+	$scope.formData.qcode=rms.code;
+	$scope.formData.text=rms.desc;
+	
+	jQuery('#testForm').validationEngine();
+	$scope.processForm = function() {	
+	    $http({
+	        method  : 'POST',
+	        url     : urlpath+"regionalManagement/add.do",
+	        data    : $.param($scope.formData),  // pass in data as strings
+	        headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
+	    })
+        .success(function(data) {
+            if (data.result=="success") {
+            	alert("保存成功！")
+            	location.href="regionalManagement.html";
+            } else{
+            	alert("保存失败！")
+            }
+        });
+	};
+});
+</script>
+	</body>
+</html>
+

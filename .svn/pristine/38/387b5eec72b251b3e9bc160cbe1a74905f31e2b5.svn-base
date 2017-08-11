@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>通过子元素获取父元素</title>
+</head>
+<body>
+<div class="box">
+
+
+</div>
+<div class="box">
+    <p>今天天气不好</p>
+    <p>明天天气不好</p>
+    <p class="node">后天天气不好</p>
+    <p >大后天气不好</p>
+    <p>今天天气很好</p>
+</div>
+<button>添加元素</button>
+<button>复制元素</button>
+<script type="text/javascript">
+    var box=document.getElementsByClassName("box")[0];
+    var node=document.getElementsByClassName("node")[0];
+    var btn=document.getElementsByTagName("button");
+    console.log(node.parentNode);//通过子元素获取父元素
+    console.log(node.parentNode.getAttribute("class"));//通过子元素获取父元素的类名
+    console.log(node.parentNode.firstElementChild.innerHTML);//通过父元素获取第一个子元素
+    console.log(node.parentNode.lastElementChild.innerHTML);//通过父元素获取最后一个子元素
+    btn[0].onclick=function () {
+        var newtag=document.createElement("p");//创建新的元素
+        newtag.innerHTML="新的标签";
+        //在创建元素 都是通过父元素操作 添加到响应的位置
+        //node.parentNode.appendChild(newtag);//向父元素末尾添加新的元素
+        node.parentNode.insertBefore(newtag,node);//向某个元素之前添加子元素  新的元素在前  老的元素在后
+    }
+    var box1=document.getElementsByClassName("box")[1];
+   btn[1].onclick=function () {
+       var newclone=node.cloneNode(true);//复制标签 括号内部值true/false代表深复制或者淺复制 深复制代表标签以及内容全部复制 淺复制代表只复制标签
+       box1.appendChild(newclone);//添加p
+       var newdiv=box1.cloneNode(true);
+       box.appendChild(newdiv);//添加div
+   }
+</script>
+</body>
+</html>

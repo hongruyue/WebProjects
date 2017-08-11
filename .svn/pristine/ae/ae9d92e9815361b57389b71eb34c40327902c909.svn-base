@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title></title>
+    <script src="06bootstrap/bootstrap.min.js"></script>
+    <script src="06bootstrap/jquery-1.10.2.min.js"></script>
+    <link rel="stylesheet" href="06bootstrap/bootstrap.min.css"/>
+    <style>
+        div{
+            outline: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3 col-md-6 col-sm-8 col-xs-12">4份</div>
+        <div class="col-lg-3 col-md-6 col-sm-8 col-xs-12">4份</div>
+        <div class="col-lg-3 col-md-6 col-sm-8 col-xs-12">4份</div>
+        <div class="col-lg-3 col-md-6 col-sm-8 col-xs-12">4份</div>
+    </div>
+
+</div>
+</body>
+</html>

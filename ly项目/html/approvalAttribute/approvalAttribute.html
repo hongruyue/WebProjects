@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html  ng-app="appAttr" ng-controller="appAttrCtrl">
+	<head>
+		<meta charset="UTF-8">
+		<title>审批属性</title>
+		<link rel="stylesheet" href="../../bs/css/bootstrap.min.css">  
+		<link rel="stylesheet" href="../../css/main.css" />
+		<link rel="stylesheet" href="../../css/style.css" />
+		<link rel="stylesheet" href="../../css/collaboration.css" />
+		<script type="text/javascript" src="../../bs/js/jquery-1.11.3.min.js" ></script>
+		<script type="text/javascript" src="../../bs/js/angular.min.js" ></script>
+		<script type="text/javascript" src="../../bs/js/bootstrap.min.js" ></script>
+		<script type="text/javascript" src="../../js/url.js" ></script>
+		<script type="text/javascript" src="js/appAttr.js"></script>
+		<script type="text/javascript" src="../../bs/js/angular-popups.js" ></script>
+		<script type="text/javascript" src="../../bs/js/jquery.form.js" ></script>
+		<style>
+			p{font-size: 12px;margin: 5px 0px;}
+			.table{margin-bottom: 0;font-size: 12px;}
+			.form-group {
+			    margin-bottom: 5px;
+			}
+			.btm{
+				display: none;
+				color: #fff;
+				background-color: #00BCF2;
+				border-radius: 5px;
+				font-weight: 400;
+				border:1px solid #ddd;
+				padding: 1px 10px;
+			}
+			.left{border: 1px solid #ddd;
+				height: 380px;
+				overflow-y: auto;
+			}
+			.nav-tabs > li{
+				height: 30px;
+			}
+			.nav-tabs > li.active > a,.nav-tabs > li > a:hover,.nav > li > a{
+				height: 31px;
+				line-height: 12px;
+			}
+			.btm:hover{color: #157fb3;background-color: #fff;border-color: #adadad;}
+			#Update,#deleteApproval{display: none;}
+			#box{ margin:0px auto; width:540px; min-height:200px; background:#FF9}
+		</style>
+	</head>
+	<body  >
+		<div id="man_zone" class="mianbody" >
+			<div class="softtm"></div>
+			<div class="row show-grid" style="padding: 1% 1% 0% 1%;">
+				<div class="col-md-2 col-xs-3 col-sm-3">
+					<button type="button" class="btn btndel-handle" ng-click="preAdd()">添加</button>
+					<div id="operation" style="display:inline-block;">
+						<button type="button" class="btn btndel-handle" id="Update" ng-click="preUpdate()">修改</button>
+						<button type="button" class="btn btndel-handle" id="deleteApproval" ng-click="deleteApprovalNode()">删除</button>
+					</div>
+					
+					<div class="col-md-12 col-xs-12 col-sm-12 View"><span>机构部门审批名称列表</span></div>
+					<div class="col-md-12 col-xs-12 col-sm-12 left">											
+							<p ng-repeat="x in json">								
+									<span ng-if="nodeId==x.nodeId">								
+										<input value="{{x.nodeId}}" ng-checked="true" ng-click="changeApp(x.nodeId)" type="radio" name="approval" >{{x.orgNameAndApprovalNodeName}}
+									</span>
+									<span ng-if="nodeId!=x.nodeId">										
+										<input value="{{x.nodeId}}" ng-click="changeApp(x.nodeId)" type="radio" name="approval" >{{x.orgNameAndApprovalNodeName}}
+									</span>																 						
+							</p>
+						
+					</div>
+				</div>
+								
+				<div class="col-md-10 col-xs-9 col-sm-9" id="myTab" style="display:inline-block;">
+					<div class="col-md-12 col-xs-12 col-sm-12" style="padding-left: 0;">
+						<ul class="nav nav-tabs">
+							<li class="active" id="Organi">
+								<a href="#Organization" data-toggle="tab">环节操作</a>
+							</li>
+							<li id="handlMatters">
+								<a href="#matters" data-toggle="tab">印章操作</a>
+							</li>
+						</ul>
+					</div>
+					<div id="myTabContent" class="tab-content" style="display:block;">
+						<!-- 初始环节列表 -->
+						<div class="tab-pane fade in active" id="Organization">
+						<div class="col-md-12 col-xs-12 col-sm-12 View" style="margin-top: 7px;">
+							<span style="display: inline-block;height: 26px;line-height: 25px;">环节详细信息</span>
+							<button class="btm" type="button" ng-click="addclear()">增加</button>
+						</div>
+						
+							<div class="col-md-12 col-xs-12 col-sm-12">
+								<div class="table_style">
+									<table class="table top table-condensed" id="iniTable">
+										<tr>
+											<th width="4%">序号</th>
+											<th width="6%">环节</th>
+											<th width="15%">服务办理依据</th>
+											<th width="15%">时间细则管理</th>
+											<th width="10%">转下一环节发件时间</th>
+											<th width="10%">本办理环节额定用时</th>
+											<th width="10%">本办理环节实际用时</th>
+											<th width="15%">本环节经办人是否签名</th>
+											<th width="15%">操作</th>
+										</tr>
+									</table>
+									<table class="table hover table-hover table-condensed" ng-repeat="t in trans">
+										<tr>
+											<td width="4%">{{$index+1}}</td>
+											<td width="6%" ng-if="t.initialLink == 0">初始</td>
+											<td width="6%" ng-if="t.initialLink == 1">普通</td>
+											<td width="15%">{{t.gist}}</td>
+											<td width="15%" ng-if="t.initialLink == 0">
+												 <button id="btn{{$index}}" class="btn btn-sm btn-default"  ng-click="bubble.open = true">
+												 	时间细则
+												 </button>
+												<bubble ng-if="bubble.open" for="btn{{$index}}" align="right" style="text-align: left;"  close="bubble.open=false">
+													<b>空白凭证申领时间:</b>{{t.applyTime}} <br>
+													<b>受理结果转入本凭证时间:</b>{{t.rollinTime}} <br>
+													<b>业务协同函请编制时间:</b>{{t.makeTime}} <br>
+													<b>文件装袋完成时间:</b>{{t.finishTime}} <br>
+													<b>业务协同函请发出时间:</b>{{t.sendoutTime}} <br>
+												</bubble>
+											</td>
+											<td width="15%" ng-if="t.initialLink == 1">
+												 <button id="btn{{$index}}" class="btn btn-sm btn-default"  ng-click="bubble.open = true">
+												 	时间细则
+												 </button>
+												<bubble ng-if="bubble.open" for="btn{{$index}}"  align="right" style="text-align: left;" close="bubble.open=false">
+													<b>到件时间:</b>{{t.arrivalTime}} <br>
+													<b>签收时间:</b>{{t.receiveTime}} <br>
+													<b>转业务系统办理时间:</b>{{t.transactTime}} <br>
+													<b>办理结果转入本凭证时间:</b>{{t.rollinTime}} <br>
+												</bubble>
+											</td>
+											<td width="10%">{{t.nextSendoutTime}}</td>
+											<td width="10%">{{t.ratedTime}}</td>
+											<td width="10%">{{t.actualTime}}</td>
+											<td width="15%" ng-if="t.issignature == 0">否</td>
+											<td width="15%" ng-if="t.issignature == 1">是
+												 <button id="qm{{$index}}" class="btn btn-sm btn-default"  ng-click="bubble1.open = true">
+												 	签名样例
+												 </button>
+												<bubble ng-if="bubble1.open" for="qm{{$index}}" align="right" style="text-align: left;" close="bubble1.open=false">
+													{{t.signatureName}}<br>
+												</bubble>
+											</td>
+											<td width="15%">
+												<a ng-click="UpdateInitialLink(t)">修改</a>&nbsp;&nbsp;
+												<a ng-click="deleteInitialLink(t.linkId)"> 删除</a>&nbsp;&nbsp;
+												<a ng-click="goOtherPage2(t.linkId)"> 管理</a>
+											</td>
+										</tr>
+									</table>
+									
+								</div>
+							</div>
+						</div>
+		
+						<!--普通环节列表 -->
+						<div class="tab-pane fade" id="matters">							
+							<div class="col-md-12 col-xs-12 col-sm-12 View" style="margin-top: 7px;">
+								<span style="display: inline-block;height: 26px;line-height: 25px;">印章列表信息</span>
+								<button class="btm" type="button" ng-click="addseal()">增加</button>
+							</div>
+							<div class="col-md-12 col-xs-12 col-sm-12">
+							<!--	<div class="table_style">
+									<table class="table top table-condensed">
+										<thead>
+											<tr>
+												<th width="12%">服务办理依据</th>
+												<th width="15%">到件时间</th>
+												<th width="15%">签收时间</th>
+												<th width="15%">转业务系统办理时间</th>
+												<th width="15%">办理结果转入本凭证时间</th>
+												<th width="10%">操作</th>
+											</tr>
+										</thead>
+										<tbody id="gentable"></tbody>
+									</table>
+		
+								</div>-->
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+				
+				
+<!-- 添加模态框（Modal） -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					&times;
+				</button>
+				<h4 class="modal-title" id="myModalLabel">
+					添加
+				</h4>
+			</div>
+			<form id="addApprovalNodeForm"  ng-submit="submitForm()" class="form-horizontal" novalidate><!--action="<%=basePath%>approvalAttributy/addApprovalNode.do"-->
+				<div class="modal-body">
+					<div class="form-group">
+						<label class="control-label col-sm-2 ">组织机构 </label>
+						<div class="col-sm-6">							
+						<select class="form-control" ng-options="o.id as o.organizationName for o in approval" name="organizationId" ng-change="depart()" ng-model="formData.organizationId" data-validation-engine="validate[required]" >														
+						</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-sm-2 ">部门名称 </label>
+						<div class="col-sm-6">							
+						<select class="form-control" ng-options="o.departId as o.departName for o in departs" name="departId" ng-model="formData.departId" data-validation-engine="validate[required]" >														
+						</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-sm-2 ">审批名称</label>
+						<div class="col-sm-6">
+							<input class="form-control" name="approvalnodeName" ng-model="formData.approvalnodeName" placeholder="审批名称" data-validation-engine="validate[required]">
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<span id="addErrorMsg"></span>
+					<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+					</button>
+					<button type="submit" class="btn btn-primary">
+						提交
+					</button>
+				</div>
+			</form>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal -->
+</div> 				
+<!-- 修改模态框（Modal） -->
+<div class="modal fade" id="upModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					&times;
+				</button>
+				<h4 class="modal-title" id="myModalLabel">
+					修改
+				</h4>
+			</div>
+			<form  ng-submit="updateForm()" class="form-horizontal" novalidate><!--action="<%=basePath%>approvalAttributy/addApprovalNode.do"-->
+				<div class="modal-body">
+					<div class="form-group">
+						<label class="control-label col-sm-2 ">组织机构 </label>
+						<div class="col-sm-6">							
+						<select class="form-control" ng-options="o.id as o.organizationName for o in approval" name="organizationId" ng-model="updateData.organizationId" ng-change="depart()" data-validation-engine="validate[required]" >														
+						</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-sm-2 ">部门名称 </label>
+						<div class="col-sm-6">							
+						<select class="form-control" ng-options="o.departId as o.departName for o in departs" name="departId" ng-model="updateData.departId" data-validation-engine="validate[required]" >														
+						</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-sm-2 ">审批名称</label>
+						<div class="col-sm-6">
+							<input class="form-control" name="approvalnodeName" ng-model="updateData.approvalnodeName" placeholder="审批名称" data-validation-engine="validate[required]">
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+					</button>
+					<button type="submit" class="btn btn-primary">
+						提交
+					</button>
+				</div>
+			</form>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal -->
+</div> 
+
+<!-- 添加环节 -->
+<div class="modal fade" id="addInitialLink" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					&times;
+				</button>
+				<h4 class="modal-title" id="myModalLabel">
+					添加环节
+				</h4>
+			</div>
+			<form class="form-horizontal" id="myForm" novalidate>
+				 <input type="hidden" id="nodeId" name="nodeId"  >
+			<div class="modal-body">	
+				<div class="form-group">
+					    <label for="initialLink" class="col-sm-4 control-label">选择办理环节</label>
+					    <div class="col-sm-7">
+					    	<select  class="form-control" id="initialLink" onchange="linkChange(this)" name="initialLink" >
+									<option selected="selected" value="0">初始环节</option>
+									<option value="1">普通环节</option>									
+							</select>
+					    </div>
+				</div>
+				<div class="form-group">
+					 <label for="gist" class="col-sm-4 control-label">服务办理依据</label>
+					 <div class="col-sm-7">
+					     <input type="text" id="gist" name="gist" class="input form-control" placeholder="请输入服务办理依据" >
+					 </div>
+				</div>
+				<div id="inits">
+					 <div class="form-group">
+						    <label for="applyTime" class="col-sm-4 control-label">空白凭证申领时间</label>
+						    <div class="col-sm-7">
+						    	<select  class="form-control" name="applyTime" id="applyTime" >
+									<option selected="selected" value="年/月/日">年/月/日</option>
+									<option  value="年/月/日/时/分/秒">年/月/日/时/分/秒</option>
+								</select>
+						    </div>
+					</div>
+					<div class="form-group">
+						    <label for="rollinTime1" class="col-sm-4 control-label">受理结果转入本凭证时间</label>
+						    <div class="col-sm-7">
+						    	<select  class="form-control" name="rollinTime1" id="rollinTime1">
+									<option selected="selected" value="年/月/日">年/月/日</option>
+									<option  value="年/月/日/时/分/秒">年/月/日/时/分/秒</option>
+								</select>
+						    </div>
+					</div>
+					<div class="form-group">
+						    <label for="makeTime" class="col-sm-4 control-label">业务协同函请编制时间</label>
+						    <div class="col-sm-7">
+						    	<select  class="form-control" id="makeTime" name="makeTime" >
+									<option selected="selected" value="年/月/日">年/月/日</option>
+									<option  value="年/月/日/时/分/秒">年/月/日/时/分/秒</option>
+								</select>
+						    </div>
+					</div>
+					<div class="form-group">
+						    <label for="finishTime" class="col-sm-4 control-label">文件袋装完成时间</label>
+						    <div class="col-sm-7">
+						    	<select  class="form-control" id="finishTime" name="finishTime" >
+									<option selected="selected" value="年/月/日">年/月/日</option>
+									<option  value="年/月/日/时/分/秒">年/月/日/时/分/秒</option>
+								</select>
+						    </div>
+					</div>
+					<div class="form-group">
+						    <label for="sendoutTime" class="col-sm-4 control-label">业务协同函请发出时间</label>
+						    <div class="col-sm-7">
+						    	<select  class="form-control" id="sendoutTime" name="sendoutTime" >
+									<option selected="selected" value="年/月/日">年/月/日</option>
+									<option  value="年/月/日/时/分/秒">年/月/日/时/分/秒</option>
+								</select>
+						    </div>
+					</div>
+				</div>
+				
+				<div id="ordinary">
+					<div class="form-group">
+					    <label for="arrivalTime" class="col-sm-4 control-label">到件时间</label>
+					    <div class="col-sm-7">
+					    	<select  class="form-control" id="arrivalTime" name="arrivalTime">
+									<option selected="selected"  value="年/月/日">年/月/日</option>
+									<option  value="年/月/日/时/分/秒">年/月/日/时/分/秒</option>
+							</select>
+					    </div>
+					</div>
+					<div class="form-group">
+						    <label for="receiveTime" class="col-sm-4 control-label">签收时间</label>
+						    <div class="col-sm-7">
+						    	<select  class="form-control" id="receiveTime" name="receiveTime" >
+									<option selected="selected"  value="年/月/日">年/月/日</option>
+									<option  value="年/月/日/时/分/秒">年/月/日/时/分/秒</option>
+								</select>
+						    </div>
+					</div>
+					<div class="form-group">
+						    <label for="transactTime" class="col-sm-4 control-label">转业务系统办理时间</label>
+						    <div class="col-sm-7">
+						    	<select  class="form-control" id="transactTime" name="transactTime" >
+									<option selected="selected"  value="年/月/日">年/月/日</option>
+									<option  value="年/月/日/时/分/秒">年/月/日/时/分/秒</option>
+								</select>
+						    </div>
+					</div>
+					<div class="form-group">
+						    <label for="rollinTime" class="col-sm-4 control-label">办理结果转入本凭证时间</label>
+						    <div class="col-sm-7">
+						    	<select  class="form-control" id="rollinTime" name="rollinTime2" >										
+									<option selected="selected"  value="年/月/日">年/月/日</option>
+									<option  value="年/月/日/时/分/秒">年/月/日/时/分/秒</option>
+								</select>
+						    </div>
+					</div>					
+				</div>
+				
+				<div class="form-group">
+					    <label class="col-sm-4 control-label">转下一环节发件时间</label>
+					    <div class="col-sm-7">
+					    	<select  class="form-control" name="nextSendoutTime" id="nextSendoutTime">
+								<option selected="selected" value="年/月/日">年/月/日</option>
+								<option  value="年/月/日/时/分/秒">年/月/日/时/分/秒</option>
+							</select>
+					    </div>
+				</div>
+				<div class="form-group">
+					    <label  class="col-sm-4 control-label">本办理环节额定用时</label>
+					    <div class="col-sm-7">
+					    	<select  class="form-control"  name="ratedTime" id="ratedTime" >
+								<option selected="selected" value="年/月/日">年/月/日</option>
+								<option  value="年/月/日/时/分/秒">年/月/日/时/分/秒</option>
+							</select>
+					    </div>
+				</div>
+				<div class="form-group">
+					    <label class="col-sm-4 control-label">本办理环节实际用时</label>
+					    <div class="col-sm-7">
+					    	<select  class="form-control"  name="actualTime" id="actualTime">
+								<option selected="selected" value="年/月/日">年/月/日</option>
+								<option  value="年/月/日/时/分/秒">年/月/日/时/分/秒</option>
+							</select>
+					    </div>
+				</div>
+				
+				<div class="form-group">
+				    <label for="name" class="col-sm-4 control-label">本环节经办人是否签名</label>
+				    <div class="col-sm-7">
+					    <select  class="form-control" id="issignature" name="issignature" onchange="sendout(this)" >
+							<option selected="selected" value="1">是</option>
+							<option  value="0">否</option>
+						</select>
+						<div id="showFlie">						
+						    <a href="javascript:;" class="file">
+						        <input type="file" name="signature" title="选择文件">选择文件
+						    </a>
+						     <span id="showFileName" class="showflie" style="margin: 1px"></span>					 					    
+						</div>
+				    </div>
+				</div>
+				
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+				</button>
+				<button type="button" class="btn btn-primary" ng-click="addLinkForm()" >提交</button>
+			</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<!-- 修改环节 -->
+<div class="modal fade" id="updInitialLink" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					&times;
+				</button>
+				<h4 class="modal-title" id="myModalLabel">
+					修改环节
+				</h4>
+			</div>
+			<form class="form-horizontal" id="updlink"  novalidate >
+				 <input type="hidden" id="nodeId1" name="nodeId"  >
+				 <input type="hidden" id="linkId" name="linkId"  >
+			<div class="modal-body">	
+				<div class="form-group">
+					    <label for="organTime" class="col-sm-4 control-label">选择办理环节</label>
+					    <div class="col-sm-7">
+					    	<select  class="form-control" id="initialLink" onchange="linkChange(this)" name="initialLink" ng-model="initialLinka">
+									<option value="0">初始环节</option>
+									<option value="1">普通环节</option>									
+							</select>
+					    </div>
+				</div>
+				<div class="form-group">
+					 <label for="managementBasis" class="col-sm-4 control-label">服务办理依据</label>
+					 <div class="col-sm-7">
+					     <input type="text" name="gist" class="input form-control" ng-model="gista" placeholder="请输入服务办理依据" >
+					 </div>
+				</div>
+				<div id="inits1">
+					 <div class="form-group">
+						    <label for="blankTime" class="col-sm-4 control-label">空白凭证申领时间</label>
+						    <div class="col-sm-7">
+						    	<select  class="form-control" name="applyTime" ng-model="applyTimea">
+									<option selected="selected" value="年/月/日">年/月/日</option>
+									<option  value="年/月/日/时/分/秒">年/月/日/时/分/秒</option>
+								</select>
+						    </div>
+					</div>
+					<div class="form-group">
+						    <label for="toTime" class="col-sm-4 control-label">受理结果转入本凭证时间</label>
+						    <div class="col-sm-7">
+						    	<select  class="form-control" name="rollinTime1" ng-model="rollinTimea">
+									<option selected="selected" value="年/月/日">年/月/日</option>
+									<option  value="年/月/日/时/分/秒">年/月/日/时/分/秒</option>
+								</select>
+						    </div>
+					</div>
+					<div class="form-group">
+						    <label for="organTime" class="col-sm-4 control-label">业务协同函请编制时间</label>
+						    <div class="col-sm-7">
+						    	<select  class="form-control" id="makeTime" name="makeTime" ng-model="makeTimea">
+									<option selected="selected" value="年/月/日">年/月/日</option>
+									<option  value="年/月/日/时/分/秒">年/月/日/时/分/秒</option>
+								</select>
+						    </div>
+					</div>
+					<div class="form-group">
+						    <label for="completeTime" class="col-sm-4 control-label">文件袋装完成时间</label>
+						    <div class="col-sm-7">
+						    	<select  class="form-control" id="finishTime" name="finishTime" ng-model="finishTimea">
+									<option selected="selected" value="年/月/日">年/月/日</option>
+									<option  value="年/月/日/时/分/秒">年/月/日/时/分/秒</option>
+								</select>
+						    </div>
+					</div>
+					<div class="form-group">
+						    <label for="lssueTime" class="col-sm-4 control-label">业务协同函请发出时间</label>
+						    <div class="col-sm-7">
+						    	<select  class="form-control" id="sendoutTime" name="sendoutTime" ng-model="sendoutTimea">
+									<option selected="selected" value="年/月/日">年/月/日</option>
+									<option  value="年/月/日/时/分/秒">年/月/日/时/分/秒</option>
+								</select>
+						    </div>
+					</div>
+				</div>
+				
+				<div id="ordinary1">
+					<div class="form-group">
+					    <label for="arrivalTime" class="col-sm-4 control-label">到件时间</label>
+					    <div class="col-sm-7">
+					    	<select  class="form-control" id="arrivalTime" name="arrivalTime" ng-model="arrivalTimea">
+									<option selected="selected"  value="年/月/日">年/月/日</option>
+									<option  value="年/月/日/时/分/秒">年/月/日/时/分/秒</option>
+							</select>
+					    </div>
+					</div>
+					<div class="form-group">
+						    <label for="signTime" class="col-sm-4 control-label">签收时间</label>
+						    <div class="col-sm-7">
+						    	<select  class="form-control" id="receiveTime" name="receiveTime" ng-model="receiveTimea">
+									<option selected="selected"  value="年/月/日">年/月/日</option>
+									<option  value="年/月/日/时/分/秒">年/月/日/时/分/秒</option>
+								</select>
+						    </div>
+					</div>
+					<div class="form-group">
+						    <label for="applyTime" class="col-sm-4 control-label">转业务系统办理时间</label>
+						    <div class="col-sm-7">
+						    	<select  class="form-control" id="transactTime" name="transactTime" ng-model="transactTimea">
+									<option selected="selected"  value="年/月/日">年/月/日</option>
+									<option  value="年/月/日/时/分/秒">年/月/日/时/分/秒</option>
+								</select>
+						    </div>
+					</div>
+					<div class="form-group">
+						    <label for="rollinTime" class="col-sm-4 control-label">办理结果转入本凭证时间</label>
+						    <div class="col-sm-7">
+						    	<select  class="form-control" id="rollinTime" name="rollinTime2" ng-model="rollinTimea">										
+									<option selected="selected"  value="年/月/日">年/月/日</option>
+									<option  value="年/月/日/时/分/秒">年/月/日/时/分/秒</option>
+								</select>
+						    </div>
+					</div>					
+				</div>
+				
+				
+				<div class="form-group">
+						    <label class="col-sm-4 control-label">转下一环节发件时间</label>
+						    <div class="col-sm-7">
+						    	<select  class="form-control" name="nextSendoutTime" ng-model="nextSendoutTimea">
+									<option selected="selected" value="年/月/日">年/月/日</option>
+									<option  value="年/月/日/时/分/秒">年/月/日/时/分/秒</option>
+								</select>
+						    </div>
+					</div>
+					<div class="form-group">
+						    <label  class="col-sm-4 control-label">本办理环节额定用时</label>
+						    <div class="col-sm-7">
+						    	<select  class="form-control"  name="ratedTime" ng-model="ratedTimea">
+									<option selected="selected" value="年/月/日">年/月/日</option>
+									<option  value="年/月/日/时/分/秒">年/月/日/时/分/秒</option>
+								</select>
+						    </div>
+					</div>
+					<div class="form-group">
+						    <label class="col-sm-4 control-label">本办理环节实际用时</label>
+						    <div class="col-sm-7">
+						    	<select  class="form-control"  name="actualTime" ng-model="actualTimea" >
+									<option selected="selected" value="年/月/日">年/月/日</option>
+									<option  value="年/月/日/时/分/秒">年/月/日/时/分/秒</option>
+								</select>
+						    </div>
+					</div>
+				<div class="form-group">
+				    <label for="name" class="col-sm-4 control-label">本环节经办人是否签名</label>
+				    <div class="col-sm-7">
+					    <select  class="form-control" id="issignature" name="issignature" onchange="sendout(this)" ng-model="issignaturea">
+							<option selected="selected" value="1">是</option>
+							<option  value="0">否</option>
+						</select>
+						<div id="showFlie1">						
+						    <a href="javascript:;" class="file">
+						        <input type="file" class="" name="signature" title="选择文件" id="">选择文件
+						    </a>
+						     <span id="showFileName" class="showflie" style="margin: 1px"></span>					 					    
+						</div>
+				    </div>
+				</div>
+				
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+				</button>
+				<button type="button" class="btn btn-primary" ng-click="updLinkForm()">提交</button>
+			</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<!-- 上传图片模态框（Modal） -->
+<div class="modal fade" id="uploadImg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					&times;
+				</button>
+				<h4 class="modal-title" id="myModalLabel">
+					添加
+				</h4>
+			</div>
+			<form id="addimg"  ng-submit="submitImg()" class="form-horizontal" novalidate>	
+				<div class="modal-body">
+					<input name="nodeId" id="nodeIdimg" type="hidden" />
+					<div class="form-group">
+						<label class="control-label col-sm-2 ">印章名称 </label>
+						<div class="col-sm-6">
+							<input class="form-control" name="signetName" placeholder="印章名称" data-validation-engine="validate[required]">
+						</div>
+					</div>
+					 <a href="javascript:;" class="file">
+				        <input type="file" name="signet" title="选择图片" id="img" style="width:150px;" onchange="setImagePreview();" accept="image/*">选择图片
+				    </a>
+				     <span id="showImgName" style="margin: 1px"></span>	
+				  <div id="localImag" style="display: none;"><img id="preview"  width="280" height="180" style="display: block; width: 150px; height: 180px;margin: 3px;border: 2px solid #1679da;border-radius: 10px;"></div>
+				</div>
+				<div class="modal-footer">
+					<span id="addErrorMsg"></span>
+					<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+					</button>
+					<button type="submit" class="btn btn-primary">
+						上传图片
+					</button>
+				</div>
+			</form>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal -->
+</div> 		
+<script>
+	$(function() {			
+			$(".file").on("change","input[type='file']",function(){
+		        var filePath = $(this).val().split('\\');
+		        var fileName = filePath[filePath.length-1];
+		        $(this).parent().next().html(fileName);
+		        $(this).parent().next().attr("title",fileName);
+		   })
+		})
+	//下面用于图片上传预览功能
+function setImagePreview(avalue) {	
+	document.getElementById("localImag").style.display = 'block';
+	var docObj = document.getElementById("img");
+	var imgObjPreview = document.getElementById("preview");
+	if(docObj.files && docObj.files[0]) {
+		//火狐下，直接设img属性
+		imgObjPreview.style.display = 'block';
+		imgObjPreview.style.width = '280px';
+		imgObjPreview.style.height = '180px';
+		//imgObjPreview.src = docObj.files[0].getAsDataURL(); 
+		//火狐7以上版本不能用上面的getAsDataURL()方式获取，需要一下方式
+		imgObjPreview.src = window.URL.createObjectURL(docObj.files[0]);
+	} else { //IE下，使用滤镜docObj.select();
+		var imgSrc = document.selection.createRange().text;
+		var localImagId = document.getElementById("localImag");
+		//必须设置初始大小
+		localImagId.style.width = "280px";localImagId.style.height ="180px";
+	}
+}
+	function linkChange(va){
+		var va=$(va).val();		
+		if(va=="0"){
+				$("#inits").css("display","block");
+				$("#ordinary").css("display","none");
+				$("#inits1").css("display","block");
+				$("#ordinary1").css("display","none");	
+				return
+		}
+		if(va=="1"){
+				$("#inits").css("display","none");
+				$("#ordinary").css("display","block");
+				$("#inits1").css("display","none");
+				$("#ordinary1").css("display","block");
+				return
+		}		
+	}
+	function sendout(va){
+		var va=$(va).val();	
+		if(va=="0"){
+				$("#showFlie").css("display","none");
+				$("#showFlie1").css("display","none");
+				return
+		}	
+		if(va=="1"){
+				$("#showFlie").css("display","block");
+				$("#showFlie1").css("display","block");
+				return
+		}
+		
+	}
+</script>
+</body>
+</html>

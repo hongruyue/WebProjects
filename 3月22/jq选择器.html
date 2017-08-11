@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            //基本选择器
+          // $("div").css("color","red");//标签选择器
+            $("p").css("fontSize","30px");
+            $(".div1").css("background","green");//类选择器
+            $("#p1,#p2").css("color","yellow");//id选择器与并集选择器
+            $(".outer>li").css("color","purple");//子元素选择器只能选择第一级子元素
+            $(".outer li").css("color","blue");//后代选择器会把父级内部所有的子元素全部选中
+           //属性选择器
+            $(".outer>li[class]").css("fontSize","30px");//选择带有class属性的元素
+            $(".outer>li[class='li1']").css("fontSize","20px");//选中class名为li1的元素 精确到值
+        })
+    </script>
+</head>
+<body>
+<div>div元素</div>
+<div class="div1" id="p2">div元素</div>
+<p>p元素</p>
+<p id="p1">p元素</p>
+<ul class="outer">
+    <li>子元素1</li>
+    <li class="li1">子元素2</li>
+    <li class="li2">子元素3</li>
+    <li>子元素4</li>
+    <div>
+        <ul>
+            <li>孙子元素1</li>
+            <li>孙子元素2</li>
+            <li>孙子元素3</li>
+        </ul>
+    </div>
+</ul>
+</body>
+</html>

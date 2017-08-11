@@ -1,0 +1,250 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>轮播图</title>
+	<link rel="stylesheet" href="reset.css">
+	<style>
+		#box{
+			width: 820px;
+			height: 461px;
+			overflow: hidden;
+			border: 1px solid #f00;
+			margin: 50px auto;
+			position: relative;
+		}
+		#inn{
+			width: 820px;
+			height: 461px;
+			overflow: hidden;
+		}
+		#con{
+			width: 8200px;
+			height: 461px;
+			overflow: hidden;
+
+		}
+		#con img{
+			width: 820px;
+			height: 461px;
+			float: left;
+		}
+		#left,#right{
+			position: absolute;
+			top: 50%;
+			width: 50px;
+			height: 50px;
+			line-height: 50px;
+			text-align: center;
+			background: #ccc;
+			color: #f00;
+			margin-top: -25px;
+			font-size: 25px;
+			font-weight: bold;
+			cursor:pointer;
+		}
+		#right{
+			right: 0;
+		}
+		#list{
+			position: absolute;
+			bottom: 30px;
+			width: 350px;
+			height: 30px;
+			overflow: hidden;
+			left: 50%;
+			margin-left: -175px;
+		}
+		#list li{
+			width: 30px;
+			height: 30px;
+			float: left;
+			margin-right: 20px;
+			background: #ccc;
+			color: #f00;
+			line-height: 30px;
+			text-align: center;
+			font-size: 20px;
+			font-weight: bold;
+			cursor:pointer;
+		}
+
+		/*默认选中*/
+		#list li.select{
+			background: #f00;
+			color: #fff;
+		}
+	</style>
+</head>
+<body>
+<div id="box">
+	<div id="inn">
+		<div id="con">
+		 	<!--<img src="img/7.jpg" alt="">-->
+		 	<img src="images/01.jpg" alt="">
+		 	<img src="images/02.jpg" alt="">
+		 	<img src="images/03.jpg" alt="">
+		 	<img src="images/04.jpg" alt="">
+		 	<img src="images/05.jpg" alt="">
+		 	<img src="images/06.jpg" alt="">
+		 	<img src="images/07.jpg" alt="">
+		 	<!--<img src="img/1.jpg" alt="">-->
+		 </div>
+	</div>
+	 <p id="left"><</p>
+	 <p id="right">></p>
+	 <ul id="list">
+	 	<li class="select">1</li>
+	 	<li>2</li>
+	 	<li>3</li>
+	 	<li>4</li>
+	 	<li>5</li>
+	 	<li>6</li>
+	 	<li>7</li>
+	 </ul>
+</div>	
+</body>
+<script>
+	var inn=document.getElementById('inn');
+	var con=document.getElementById('con');
+	var left=document.getElementById('left');
+	var right=document.getElementById('right');
+	var list=document.getElementById('list');
+	//var imgs=con.getElementsByTagName('img');
+	//var lis=list.getElementsByTagName('li');
+	var imgs=con.children;//获取img标签
+	var lis=list.children;//获取li标签
+	var img_l=imgs[imgs.length-1];//文本节点//
+	var img_f=imgs[0];
+	
+	var f_img_l=img_l.cloneNode(true);//复制节点
+	var l_img_f=img_f.cloneNode(true);
+	
+	con.insertBefore(f_img_l,imgs[0]);
+	con.appendChild(l_img_f);//插入节点
+
+	inn.scrollLeft=imgs[0].width;//默认图片
+	var x=0;//控制li的下标
+	var n=1;//控制图片显示哪一个
+	var time1=null,time2=null;
+	var tt=true;
+
+	function move(){//公用部分
+		// 图片滚动部分
+		var start=inn.scrollLeft;//起始位置
+		var end=imgs[0].width*n;//结束位置
+		var step=0;//起始步数
+		var stepmax=20;//最大步数//
+		var everystep=(end-start)/(stepmax-step);//每一步所走的距离
+
+		clearInterval(time2);//清除计时器
+		time2=setInterval(function (){
+			step++;//步数增加
+			if (step>=stepmax) {
+				step=0;
+				clearInterval(time2);//废掉time2
+				tt=true;
+			};
+			start+=everystep;//增加start的值
+			inn.scrollLeft=start;//把start的值
+		},40)
+
+
+		// li对应下标
+		for (var i = 0; i < lis.length; i++) {//清除掉所有的类名//
+			lis[i].className="";
+		};
+		lis[x].className="select";
+	}
+
+
+
+	// 第一步：自动走
+	function auto(){
+		clearInterval(time1);
+		time1=setInterval(function (){
+			x++;//增加x的值
+			if(x>=lis.length){//判断条件的值
+				x=0;
+			}
+			n++;
+			if (n>=imgs.length) {
+				n=2;
+				inn.scrollLeft=imgs[0].width;//返回默认状态
+			};
+			// alert(x) //0 1 2 3 4 5 6 0 1 
+			// alert(n)	//1 2 3 4 5 6 7 8 2
+			move();
+		},2000)
+	}
+	auto();//自动走
+
+	// 第二步：左点击
+	left.onclick=function (){
+		if (tt) {
+			tt=false;
+			clearInterval(time1);//清除time1
+			x--;
+			if (x<0) {
+				x=lis.length-1;
+			};
+			n--;
+			if (n<0) {
+				n=imgs.length-3;
+				inn.scrollLeft=imgs[0].width*(n+1);//返回默认状态
+			};
+			// alert(x)  //6 5 4 3 2 1 0 6 5
+			// alert(n)  //7 6 5 4 3 2 1 0 6
+
+			move();
+			auto();//执行完之后自动走
+		};
+		
+
+	}
+
+	// 第三步：向右走
+	right.onclick=function (){
+		if (tt) {
+			tt=false;
+			clearInterval(time1);//清除time1
+			x++;//增加x的值
+			if(x>=lis.length){//判断条件的值
+				x=0;
+			}
+			n++;
+			if (n>=imgs.length) {
+				n=2;
+				inn.scrollLeft=imgs[0].width;
+			};
+			// alert(x) //0 1 2 3 4 5 6 0 1 
+			// alert(n)	//1 2 3 4 5 6 7 8 2
+
+			move();
+
+			auto();//执行完自动走
+		};
+		
+	}
+
+
+	// 第四步：li的点击事件
+	for (var i = 0; i < lis.length; i++) {//让li每一个都有点击事件 找大奥当前的按钮
+		lis[i].onclick=function (){
+			for (var i = 0; i < lis.length; i++) {//找到左右的li，让它再次循环滚动
+				if (lis[i]==this) {
+					if (tt) {
+						tt=false;
+						clearInterval(time1);//清除计时器
+						x=i;//吧当前点击的li的下标赋值给x
+						n=x+1;//
+						move();
+						auto();//执行完自动走
+					};
+					
+				};
+			};
+		}
+	};
+</script>
+</html>

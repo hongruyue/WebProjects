@@ -1,0 +1,4 @@
+.icon-dottedline{background-image:url(../imgs/dottedline.png);background-position:center;margin:1px -1px;width:16px;height:16px}
+.icon-vertical{background-image:url(../imgs/line.png);background-position:center;margin:1px -1px;width:16px;height:16px}
+.icon-level{background-image:url(../imgs/level.png);background-position:center;margin:1px -1px;width:16px;height:16px}
+.icon-vertical1{background-image:url(../imgs/vertical1.png);background-position:center;margin:1px -1px;width:16px;height:16px}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+       audio{
+           width: 200px;
+           height: 200px;
+           background: red;
+       }
+    </style>
+</head>
+
+<audio src="vedio/song.mp3" controls autoplay loop>
+    <!--当浏览器不兼容的时候 提示信息-->
+<!--source当浏览器不支持文件格式 寻找下一个来播放-->
+    <source src="vedio/song.mp3">
+    <source src="vedio/song.ogg">
+    <source src="vedio/song.wav">
+    您的浏览器版本太低
+</audio>
+</body>
+</html>

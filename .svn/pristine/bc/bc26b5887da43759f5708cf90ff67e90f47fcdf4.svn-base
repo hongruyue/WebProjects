@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="政府,采购,政府采购, IT, 办公设备,财政部 "/> 
+<meta name="description" content="政府采购信息网IT栏目为供应商和采购中心提供专业、准确、快捷的采购、政府、政府采购、IT、办公设备、财政部等信息 "/>
+<title>IT频道-政府采购信息网</title>
+<link href="css.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+
+
+   	<div class="header"> 
+   	       <ul>
+             <li>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.caigou2003.com/index.html" title="首页" target="_blank">首&nbsp;&nbsp;页</a>&nbsp;<span style="color:#000">┊</span>&nbsp;</li>
+             <li><a href="http://www.caigou2003.com/news/" title="政采资讯" target="_blank">政采资讯</a>&nbsp;<span style="color:#000">┊</span>&nbsp;</li>
+             <li><a href="http://www.caigou2003.com/tender/" title="标讯标书" target="_blank">标讯标书</a>&nbsp;<span style="color:#000">┊</span>&nbsp;</li>
+             <li><a href="http://www.caigou2003.com/theory/" title="理论实务" target="_blank">理论实务</a>&nbsp;<span style="color:#000">┊</span>&nbsp;</li>
+             <li><a href="http://www.caigou2003.com/law/" title="法律法规" target="_blank">法律法规</a>&nbsp;<span style="color:#000">┊</span>&nbsp;</li>
+             <li><a href="http://www.caigou2003.com/perspective/" title="国际视野" target="_blank">国际视野</a>&nbsp;<span style="color:#000">┊</span>&nbsp;</li>
+             <li><a href="http://www.caigou2003.com/suppliers/" title="供应商专区" target="_blank">供应商专区</a>&nbsp;<span style="color:#000">┊</span>&nbsp;</li>
+             <li><a href="http://member.caigou2003.com/" title="政采博客" target="_blank">政采博客</a>&nbsp;<span style="color:#000">┊</span>&nbsp;</li>
+             <li><a href="http://bbs.caigou2003.com/" title="政采论坛" target="_blank">政采论坛</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+             <li class="bog"><a href="#" title="登录">登录</a>&nbsp;<span style="color:#000">┊</span>&nbsp;</li>
+             <li><a href="#" title="注册">注册</a></li>
+      </ul>
+   	</div>
+    <div class="log"></div>
+    <div class="zixun">
+    	<!--<h1>新闻资讯</h1>-->
+    	<div class="nav">
+        	<ul>
+                <li><a href="http://www.caigou2003.com/yyj123/itnew/hangyeindex.html" title="新闻资讯" target="_blank">新闻资讯</a></li>
+                <li><a href="#" title="业界热点">业界热点</a></li>
+            	<li><a href="#" title="专家访谈">专家访谈</a></li>
+                <li><a href="#" title="采购指南">采购指南</a></li>
+                 <li><a href="http://www.caigou2003.com/tender/notice/" title="招标公告" target="_blank">招标公告</a></li>
+                <li><a href="#" title="产品库">产品库</a></li>
+                <li><a href="#" title="专题策划">专题策划</a></li>
+                <li><a href="http://bbs.caigou2003.com/" title="IT论坛" target="_blank">IT论坛</a></li>
+                <li style="width:120px; margin-left:10px;"><a href="http://www.caigou2003.com/yyj123/itnew/renzhengindex.html" title="政府采购IT实验室" target="_blank">政府采购IT实验室</a></li>
+            </ul>
+       </div>
+  </div>
+ 
+</body>
+
+</html>

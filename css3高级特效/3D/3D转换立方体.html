@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{margin: 0px;
+        padding: 0px;
+        list-style: none;}
+        div{
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+            margin-top: 60px;
+            margin-bottom: 100px;
+        }
+        ul{
+            perspective: 10000px;/*视距*/
+            perspective-origin:center center ;/*视点 看到元素的那个点*/
+            transform-style: preserve-3d;/*定义元素的3D属性*/
+            position: relative;
+            transform: rotateX(-10deg) rotateY(-20deg);
+        }
+        ul li:nth-child(1){
+            width: 300px;
+            height: 300px;
+            background: green;
+            position: absolute;
+            top:0px;
+            left:0px;
+            opacity: 0.3;
+            transform: translateZ(150px);
+        }
+        ul li:nth-child(2){
+            width: 300px;
+            height: 300px;
+            background:red;
+            position: absolute;
+            top:0px;
+            left:0px;
+            opacity: 0.3;
+            transform: translateZ(-150px);
+        }
+        ul li:nth-child(3){
+            width: 300px;
+            height: 300px;
+            background: yellow;
+            position: absolute;
+            top:0px;
+            left:0px;
+            opacity: 0.3;
+            transform: rotateY(90deg) translateZ(-150px);
+
+        }
+        ul li:nth-child(4){
+            width: 300px;
+            height: 300px;
+            background:purple;
+            position: absolute;
+            top:0px;
+            left:0px;
+            opacity: 0.3;
+            transform: rotateY(90deg) translateZ(150px);
+
+        }
+        ul li:nth-child(5){
+            width: 300px;
+            height: 300px;
+            background:orange;
+            position: absolute;
+            top:0px;
+            left:0px;
+            opacity: 0.3;
+            transform: rotateX(90deg) translateZ(150px);
+
+        }
+        ul li:nth-child(6){
+            width: 300px;
+            height: 300px;
+            background: pink;
+            position: absolute;
+            top:0px;
+            left:0px;
+            opacity: 0.3;
+            transform: rotateX(90deg) translateZ(-150px);
+
+        }
+        input{
+            width: 1000px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+<input type="range" max="360" min="-360" step="1" value="0"/>
+<input type="range" max="360" min="-360" step="1" value="0"/>
+<input type="range" max="360" min="-360" step="1" value="0"/>
+</body>
+<script>
+    var inp=document.getElementsByTagName("input");
+    var uls=document.getElementsByTagName("ul")[0];
+    var inp=document.getElementsByTagName("input");
+    inp[0].oninput=function(){
+        uls.style.transform="rotateX("+inp[0].value+"deg) rotateY("+inp[1].value+"deg) rotateZ("+inp[2].value+"deg)";
+    }
+    inp[1].oninput=function(){
+        uls.style.transform="rotateX("+inp[0].value+"deg) rotateY("+inp[1].value+"deg) rotateZ("+inp[2].value+"deg)";
+    }
+    inp[2].oninput=function(){
+        uls.style.transform="rotateX("+inp[0].value+"deg) rotateY("+inp[1].value+"deg) rotateZ("+inp[2].value+"deg)";
+    }
+
+</script>
+</html>

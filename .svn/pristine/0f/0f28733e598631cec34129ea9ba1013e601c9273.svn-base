@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="angular-1.5.8/angular.js"></script>
+</head>
+<body ng-app="myApp">
+<div ng-controller="con1">
+    <p>{{str1}}</p>
+    <div ng-controller="con2">
+        <input type="text" ng-model="str"/>
+        <button ng-click="fun()">按钮</button>
+    </div>
+    <div ng-controller="con3">
+
+    </div>
+
+</div>
+</body>
+<script>
+    var app=angular.module("myApp",[]);
+    app.controller("con1",function($scope){
+       $scope.str1="";
+        $scope.$on("fu",function(d,data){
+            console.log(d);
+            console.log(data);
+            $scope.str1=data.con;
+            $scope.$broadcast("fu1",data.con)
+        })
+    });
+    app.controller("con2",function($scope){
+          $scope.str="new";
+        $scope.fun=function(){
+            $scope.$emit("fu",{type:"click",con:$scope.str});
+        }
+    });
+    app.controller("con3",function($scope){
+         $scope.$on("fu1",function(d,str2){
+
+         })
+    })
+</script>
+</html>

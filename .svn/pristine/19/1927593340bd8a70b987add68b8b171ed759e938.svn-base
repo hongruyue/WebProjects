@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>微博</title>
+    <script src="js/vue.js"></script>
+    <script src="js/vue-resource.js"></script>
+    <style>
+        .takeComment{
+            width: 800px;
+            height: 200px;
+            margin:0 auto;
+            border: 1px solid #cccccc;
+        }
+        .takeTextField{
+            width: 760px;
+            height: 100px;
+            margin: 20px;
+        }
+        .takeSbmcomment{
+            width: 200px;
+            height: 40px;
+            float: right;
+        }
+        .takeSbmcomment span{
+            color: #cccccc;
+        }
+        .takeSbmcomment input{
+            cursor: pointer;
+        }
+        .commentOn{
+            width: 800px;
+            height: 200px;
+            margin: 40px auto;
+            border: 1px solid #cccccc;
+            text-align:center;
+        }
+        .noContent{
+            width: 800px;
+            height: 40px;
+            line-height: 40px;
+            border-bottom: 1px solid #cccccc;
+        }
+        .replayContent{
+            text-align: left;
+            padding-left: 20px;
+        }
+        .operation{
+            text-align: right;
+            padding-right: 40px;
+        }
+        .page a{
+            text-decoration: none;
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            border: 1px solid #cccccc;
+            margin-right: 6px;
+            color: #000000;
+        }
+        .active{
+            background: #cccccc;
+        }
+        [v-cloak]{/*防止闪烁 用在比较大的块*/
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+<div class="znsArea">
+    <!-- 留言-->
+    <div class="takeComment">
+        <textarea name="textarea" class="takeTextField" id="tijiaoText" v-model="t1"
+                ></textarea>
+        <div class="takeSbmcomment">
+            <san>(可按Enter回复)</san>
+            <input type="button" class="inputs" value="提交评论" @click="add">
+
+        </div>
+    </div>
+  <!-- 留言-->
+    <div class="commentOn">
+        <div class="noContent" v-show="msgData.length==0">暂无留言</div>
+        <div class="messList">
+            <div class="replay" v-for="item in msgData" v-cloak>
+                <p class="replayContent">{{item.content}}</p>
+                <p class="operation">
+                    <span class="replayTime">{{item.time | date}}</span>
+                    <span class="handle">
+                        <a href="javascript:" class="top">{{item.acc}}</a>
+                        <a href="javascript:" class="down_icon">{{item.ref}}</a>
+                        <a href="javascript:" class="cut">删除</a>
+                    </span>
+                </p>
+            </div>
+        </div>
+        <div class="page">
+            <a href="javascript:" class="active">1</a>
+            <a href="javascript:">2</a>
+            <a href="javascript:">3</a>
+        </div>
+
+    </div>
+</div>
+</body>
+<script>
+    Vue.filter('date',function(input){
+        var oDate=new Date(input*1000);
+        return oDate.getFullYear()+'-'+(oDate.getMonth()+1)+'-'+oDate.getDate()+'  '+oDate.getHours()+':'+oDate.getMinutes()+':'+oDate.getSeconds();
+    });
+    var url='weibo.php';
+   new Vue({
+       el:".znsArea",
+       data:{//vue的属性 数据
+           t1:"",
+           msgData:[{
+               content:"aaaa",
+               time:"xxx",
+               acc:0,
+               ref:4,
+               id:12
+           }]
+       },
+       methods:{
+          add:function(){
+              //发送请求
+              this.$http({//默认get请求
+                  url:url,
+                  data:{//后台发送的数据
+                      act:'add',
+                      content:this.t1
+                  }
+              }).then(function(res){
+                  var json=res.data;
+                  //msgData添加数据
+                  this.msgData.unshift({
+                      content:this.t1,
+                      time:json.time,
+                      acc:0,
+                      ref:0,
+                      id:json.id
+                  });
+                  this.t1="";
+              })
+
+          },
+           getPageData:function(n){//获取页的数据
+               this.$http({
+                   url:url,
+                   data:{
+                       act:'get',
+                       page:n
+                   }
+               }).then(function(){
+//                   console.log(res.data);
+                   var arr=res.data;
+                   for(var i=0;i<arr.length;i++){
+                       this.msData.push({
+                           content:arr[i].content,
+                           time:arr[i].time,
+                           acc:arr[i].acc,
+                           ref:arr[i].ref,
+                           id:arr[i].id
+                       })
+
+                   }
+
+               });
+           },
+           ready:function(){
+               this.getPageData(1);
+           }
+       }
+   })
+</script>
+</html>

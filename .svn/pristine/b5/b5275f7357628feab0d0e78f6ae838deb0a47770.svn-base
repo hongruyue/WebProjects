@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .outer{
+            width: 600px;
+            height: 600px;
+            background: red;
+        }
+        .inner{
+            width: 500px;
+            height: 500px;
+            background: green;
+        }
+        .box{
+            width: 300px;
+            height:300px;
+            background:yellow;
+        }
+    </style>
+</head>
+<body>
+<div class="outer">
+    <div class="inner">
+        <div class="box">
+
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    var bodys=document.getElementsByTagName("body")[0];
+    var outer=document.getElementsByClassName("outer")[0];
+    var inner=document.getElementsByClassName("inner")[0];
+    var box=document.getElementsByClassName("box")[0];
+   /* bodys.onclick=function(){
+        alert("点击body")
+    }
+    outer.onclick=function(ev){//阻止事件传播的兼容写法  阻止的是从这个函数之后的时间 阻止事件捕获和冒泡是一样的
+        alert("点击outer")
+        var event=ev||window.event;
+        if(Event.stopPropagation){
+            Event.stopPropagation();}//非ie游览器
+        else{
+            event.cancelBubble=true;//ie浏览器
+    };
+    inner.onclick=function(){
+
+        alert("点击inner")
+    }
+    box.onclick=function(){//自己触发点击事件，父级会触发相同的事件并且定义了相同的事件  事件冒泡
+        alert("点击box")
+    };*/
+    box.onclick= function () {//js中给元素定义多个点击事件的时候，只会执行一次，并且是最后一次
+        var num=0;
+        box.addEventListener("click",function(){//事件监听 可以让监听的事件全部触发 事件监听第三个参数，true是捕获 默认冒泡，fasle也是冒泡
+            num++;
+            alert(num);//弹出1
+        });
+        box.addEventListener("click",function(){
+            num++;
+            alert(num);//弹出2
+        },true)
+
+    }
+</script>
+</html>

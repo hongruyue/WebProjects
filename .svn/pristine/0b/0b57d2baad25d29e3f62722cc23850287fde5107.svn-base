@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #canvas{
+            border: #cccccc;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvas"width="800px"height="800px"></canvas>
+</body>
+<script>
+    var canvas=document.getElementById("canvas");
+    var cvs=canvas.getContext("2d");
+
+    cvs.globalCompositeOperation="destination-atop";
+
+    cvs.beginPath();
+    cvs.arc(300,300,200,0,Math.PI*2,true);
+    cvs.fillStyle="green";
+    cvs.fill();
+    cvs.closePath();
+
+    cvs.beginPath();
+    cvs.rect(350,350,200,200);
+    cvs.fillStyle="blue";
+    cvs.fill();
+    cvs.closePath();
+
+
+</script>
+</html>

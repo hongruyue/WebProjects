@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<form>
+    <input onclick="selectAll()" type="checkbox"   name="controlAll"  id="controlAll"/>全选<br>
+    1:<input type="checkbox" name="selected" value="1"/><br>
+    2:<input type="checkbox" name="selected" value="2"/><br>
+    3:<input type="checkbox" name="selected" value="3"/><br>
+    4:<input type="checkbox" name="selected" value="4"/><br>
+    5:<input type="checkbox" name="selected" value="5"/><br>
+    6:<input type="checkbox" name="selected" value="6"/><br>
+</form>
+<button>删除</button>
+</body>
+<script>
+    function selectAll(){
+        var checklist = document.getElementsByName ("selected");
+        if(document.getElementById("controlAll").checked)
+        {
+            for(var i=0;i<checklist.length;i++)
+            {
+                checklist[i].checked = 1;
+
+            }
+        }else{
+            for(var j=0;j<checklist.length;j++)
+            {
+                checklist[j].checked = 0;
+            }
+        }
+    }
+    var btn=document.getElementsByTagName("button")[0];
+    var checklist = document.getElementsByName ("selected");
+    btn.onclick=function(){
+        for(i=0;i<checklist.length;i++){
+             if(checklist.checked){
+                 checklist[i].remove();
+             }
+
+        }
+
+
+    }
+</script>
+</html>

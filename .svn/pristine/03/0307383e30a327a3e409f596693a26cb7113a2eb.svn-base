@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{padding: 0;margin: 0;}
+        .box{width: 1000px;height:103px;margin: 0 auto;border: 1px solid #ccc;position: relative;margin-top: 40px;overflow: hidden;}
+        .top{width: 1000px;height:103px;position: absolute;z-index:3;}
+        .top p{width:249px;height: 103px;float: left;cursor: pointer;position: relative; }
+        .bottom{width: 755px;height:103px;position: absolute;}
+        .bottom p{width: 755px;height: 103px;position: absolute;top:0px;left:240px;display: none;}
+        .bottom1{z-index:1;display: block;}
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="top">
+        <p><img src="img/01.png" width="249px"></p>
+        <p><img src="img/02.png" width="249px"></p>
+        <p><img src="img/03.png" width="249px"></p>
+        <p><img src="img/04.png" width="249px"></p>
+    </div>
+    <div class="bottom">
+        <p class="bottom1"><img src="img/11.png"></p>
+        <p><img src="img/12.png"></p>
+        <p><img src="img/13.png"></p>
+        <p><img src="img/14.png"></p>
+    </div>
+</div>
+</body>
+<script src="js/jquery-1.8.3.min.js"></script>
+<script>
+    $(function(){
+       $(".top p").eq(0).hover(function(){
+          // alert("1234")
+           $(".top p").eq(1).stop().animate({left:'770px'},1000);
+           $(".top p").eq(2).stop().animate({left:'770px'},1000);
+           $(".top p").eq(3).stop().animate({left:'770px'},1000);
+           $(".bottom p").eq(0).css("display","block").siblings().css("display","none");
+       },function(){
+           $(".top p").eq(1).stop().animate({left:'0px'},1000);
+           $(".top p").eq(2).stop().animate({left:'0px'},1000);
+           $(".top p").eq(3).stop().animate({left:'0px'},1000);
+       });
+        $(".top p").eq(1).hover(function(){
+            $(".top p").eq(0).stop().animate({left:'-249px'},1000);
+            $(".top p").eq(1).stop().animate({left:'-249px'},1000);
+            $(".top p").eq(2).stop().animate({left:'520px'},1000);
+            $(".top p").eq(3).stop().animate({left:'520px'},1000);
+            $(".bottom p").eq(1).css("display","block").siblings().css("display","none");
+        },function(){
+            $(".top p").eq(0).stop().animate({left:'0px'},1000);
+            $(".top p").eq(1).stop().animate({left:'0px'},1000);
+            $(".top p").eq(2).stop().animate({left:'0px'},1000);
+            $(".top p").eq(3).stop().animate({left:'0px'},1000);
+        });
+        $(".top p").eq(2).hover(function(){
+            $(".top p").eq(0).stop().animate({left:'-500px'},1000);
+            $(".top p").eq(1).stop().animate({left:'-500px'},1000);
+            $(".top p").eq(2).stop().animate({left:'-500px'},1000);
+            $(".top p").eq(3).stop().animate({left:'256px'},1000);
+            $(".bottom p").eq(2).css("display","block").siblings().css("display","none");
+        },function(){
+            $(".top p").eq(0).animate({left:'0px'},1000);
+            $(".top p").eq(1).animate({left:'0px'},1000);
+            $(".top p").eq(2).animate({left:'0px'},1000);
+            $(".top p").eq(3).animate({left:'0px'},1000);
+        });
+        $(".top p").eq(3).hover(function(){
+            $(".top p").eq(0).stop().animate({left:'-750px'},1000);
+            $(".top p").eq(1).stop().animate({left:'-750px'},1000);
+            $(".top p").eq(2).stop().animate({left:'-750px'},1000);
+            $(".top p").eq(3).stop().animate({left:'-750px'},1000);
+            $(".bottom p").eq(3).css("display","block").siblings().css("display","none");
+        },function(){
+            $(".top p").eq(0).stop().animate({left:'0px'},1000);
+            $(".top p").eq(1).stop().animate({left:'0px'},1000);
+            $(".top p").eq(2).stop().animate({left:'0px'},1000);
+            $(".top p").eq(3).stop().animate({left:'0px'},1000);
+        })
+    })
+
+</script>
+</html>

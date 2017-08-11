@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #canvas{
+            border: #cccccc;
+        }
+        div{
+            width: 800px;
+            height: 600px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <canvas id="canvas" width="800px" height="600px"></canvas>
+
+</div>
+
+</body>
+<script>
+    var canvas=document.getElementById("canvas");//获取画布
+    var cvs=canvas.getContext("2d");//定义画布
+    cvs.beginPath();
+    /*角度π π=180°*/
+    cvs.arc(200,200,150,0,Math.PI*2,true)//起始位置200,200，半径150，起始角度0度 结束角度45度 true逆时针 false代表顺时针
+
+    cvs.strokeStyle="red";
+    cvs.fillStyle="blue";
+    cvs.lineWidth=3;
+    cvs.fill();
+    cvs.stroke();
+    cvs.closePath();
+
+    cvs.beginPath();
+    cvs.arc(300,300,50,0,Math.PI/180*90,true);
+    cvs.strokeStyle="red";
+    cvs.fillStyle="yellow";
+    cvs.lineWidth=3;
+    cvs.fill();
+    cvs.stroke();
+    cvs.closePath();
+
+    cvs.beginPath();
+    cvs.arc(300,300,50,0,Math.PI/180*90,false);
+    cvs.strokeStyle="orange";
+    cvs.fillStyle="red";
+    cvs.lineWidth=3;
+    cvs.fill();
+    cvs.stroke();
+    cvs.closePath();
+
+    cvs.beginPath();
+    cvs.arc(400,400,60,0,Math.PI/180*100,true);
+    cvs.strokeStyle="red";
+    cvs.fillStyle="yellow";
+    cvs.lineWidth=3;
+    cvs.fill();
+    cvs.stroke();
+    cvs.closePath();
+
+    cvs.beginPath();
+    cvs.arc(400,400,60,0,Math.PI/180*100,false);
+    cvs.strokeStyle="orange";
+    cvs.fillStyle="red";
+    cvs.lineWidth=3;
+    cvs.fill();
+    cvs.stroke();
+    cvs.closePath();
+</script>
+</html>

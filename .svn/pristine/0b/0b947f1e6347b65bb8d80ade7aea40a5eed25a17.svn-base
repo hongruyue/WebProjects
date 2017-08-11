@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script type="text/javascript">
+    //window对象的一个属性
+    //var index=0;
+    //闭包   定义在函数中的函数
+    function move(){
+        var s = 2;
+        return s;
+    }
+    alert(move());
+    function f(){
+        var a=0;
+        function f1(){
+            var b=2;
+            alert(b);
+        }
+        return f1;
+    }
+    //alert(a);
+    var fv=f();
+    fv();
+//    .onvlick
+//alter(fv);
+    var s = function (){
+        var j =2;
+        return j;
+    }
+    s();
+</script>
+</body>
+</html>

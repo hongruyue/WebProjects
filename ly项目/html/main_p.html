@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+	<head>
+
+		<title>业务协同平台</title>
+		<meta  charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" Chrome=1/>
+		<link rel="stylesheet" href="../css/style.css" />
+<style>
+#cover{
+	display:none;
+	position:fixed;
+	z-index:1;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background:rgba(0, 0, 0, 0.44);
+}
+#coverShow{
+	display:none;
+	position:fixed;
+	z-index:2;
+	top:50%;
+	left:50%;
+	border:1px solid #127386;
+	width:300px;
+	height:150px;
+	margin-left:-150px;
+	margin-top:-150px;
+	background:#E0E0E0;
+}
+</style>
+	</head>
+	<frameset rows="45,*">
+		<frame frameborder="1" bordercolor="#95BAE9" name="head" id="head" src="include/top.html" noresize="noresize" scrolling="no" />
+		<frameset cols="15%,*">
+			<frame bordercolor="#95BAE9" src="include/left.html" name="left" id="left" />
+			<frame  bordercolor="#95BAE9" src="include/content.html" frameborder="1" name="middle" id='middle' />			
+		</frameset>
+	</frameset>
+   	<script type="text/javascript" src="../bs/js/jquery-1.11.0.min.js" ></script>
+	<script type="text/javascript" src="../js/url.js" ></script>
+   	<script type="text/javascript">
+	 // 遮幕罩
+   	function coverit(){
+   		var cover = document.getElementById("cover");
+   		var covershow = document.getElementById("coverShow");
+   		cover.style.display = 'block';
+   		covershow.style.display = 'block';
+   	}
+   	function showTime(){
+   		var cover = document.getElementById("cover");
+   		var covershow = document.getElementById("coverShow");
+   		cover.style.display = '';
+   		covershow.style.display = '';
+   		window.location.reload();
+   	}
+   	</script>
+<div id="cover"></div>
+<div id="coverShow">
+</div>
+</html>

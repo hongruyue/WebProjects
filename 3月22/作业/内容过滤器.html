@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+ 内容过滤器
+$('div:contains("测试")')选取包含文本“测试”的<div></div>元素---集合元素
+$("div:empty")选取不包含子元素和文本的<div></div>空元素---集合元素
+$("div:has(p)")选取含有<p></p>元素的<div></div>元素---集合元素
+$("div:parent")选取拥有子元素或文本元素的<div></div>元素---集合元素
+ 属性过滤选择器：
+$("div[id]")选取拥有属性id的<div></div>元素---集合元素
+$("div[title=test]")选取属性title为test的<div></div>元素---集合元素
+$("div[title!=test]")选取属性title不为test的<div></div>元素---集合元素
+$("div[title^=test]")选取属性title以test开始的<div></div>元素---集合元素
+$("div[title$=test]")选取属性title以test结束的<div></div>元素---集合元素
+$("div[title*=test]")选取属性title含有test的<div></div>元素---集合元素
+$("div[id][title$='test']")选取拥有属性id，并且属性title以test结束的<div></div>元素---集合元素
+子元素过滤选择器：
+$("div:nth-child(1)")选取所有div中，是其父标签的第一个子标签的div元素---集合元素
+【比较$（“div:eq(0)"）选取第一个div元素】
+$（“ul li:first-child”）选取每个ul中第一个li元素---集合元素
+$（“ul li:last-child”）选取每个ul中最后一个li元素---集合元素
+【比较$("div:first")选择所有div标签中的第一个元素】
+【比较$("div:last")选择所有div标签中的最后一个元素】
+$("ul li:only-child")在ul中选取是唯一子元素的li元素---集合元素

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box{
+            height: 500px;
+            width: 500px;
+            border: 1px solid red;
+            background: #CCCCCC;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+<div class="box"></div>
+<p draggable="true">这是一个拖放文字</p>
+</body>
+<script>
+    var box=document.getElementsByClassName("box")[0];
+    var ps=document.getElementsByTagName("p")[0];
+    var imgs=document.createElement("img");
+    imgs.src="icon.png";
+    ps.ondragstart=function(ev){
+        var word=this.innerHTML;
+        ev.dataTransfer.setDragImage(imgs,0,0);//定义鼠标形状 （图片节点，x坐标，y坐标）正方向上和左
+        ev.dataTransfer.setData("Text",word);
+    };
+    box.ondragover=function(ev){//必须存在  用来阻止默认事件
+        var ev=ev||window.event;
+        ev.preventDefault();
+    };
+    box.ondrop=function(ev){//投放  获取数据
+        var txt=ev.dataTransfer.getData("Text");
+        this.innerHTML=txt;
+        ps.remove();
+    }
+</script>
+</html>

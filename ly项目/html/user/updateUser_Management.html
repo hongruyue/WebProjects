@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html ng-app="updateapp">
+	<head>
+		<meta charset="UTF-8">
+		<title>元数据列表</title>
+		<link rel="stylesheet" href="../../bs/css/bootstrap.min.css">  
+		<link rel="stylesheet" href="../../css/main.css" />
+		<link rel="stylesheet" href="../../css/style.css" />
+		<script type="text/javascript" src="../../bs/js/jquery-1.11.3.min.js" ></script>
+		<script type="text/javascript" src="../../bs/js/angular.min.js" ></script>
+		<script type="text/javascript" src="../../bs/js/bootstrap.min.js" ></script>
+		<script type="text/javascript" src="../../js/url.js" ></script>
+		<script type="text/javascript" src="js/User_Management.js" ></script>
+	</head>
+	<body  ng-controller="updateUserCtrl">
+		<div id="man_zone" class="mianbody">
+			<div class="softtm"></div>			
+			<div class="row show-grid" style="padding: 1% 1% 0% 1%;">
+				<div class="col-md-12 col-xs-12 col-sm-12">	
+					<form id="testForm" ng-submit="submitForm()" class="form-horizontal" name="addForm">
+						<input type="hidden" name="userId" value="${User.userId}" >
+					  	<input type="hidden" id="projId" name="projId" value="${projId}">
+					  <div class="form-group">
+					    <label for="userName" class="col-sm-1 control-label">姓名</label>
+					    <div class="col-sm-5">
+					      <input type="text" data-validation-engine="validate[required,custom[chineseName]]" class="input form-control" id="userName" placeholder="请输入2-20位以内中文" ng-model="formData.alias" name="alias" >
+					    </div>
+					  </div>
+					  <div class="form-group">
+					    <label for="loginName" class="col-sm-1 control-label">登录名</label>
+					    <div class="col-sm-5">
+					      <input type="text"   class="input form-control text-input" id="loginName" readonly ng-model="formData.username" name="username" >
+					    </div>
+					  </div>
+					  
+					  <div class="form-group">
+					    <label for="userMail" class="col-sm-1 control-label">邮箱</label>
+					    <div class="col-sm-5">
+					      <input type="text"   data-validation-engine="validate[required,custom[email]]" class="input form-control" id="userMail" ng-model="formData.email" name="email" placeholder="请输入标准邮箱格式" >
+					    </div>
+					  </div>
+					  <div class="form-group">
+					    <label for="userPhone" class="col-sm-1 control-label">手机</label>
+					    <div class="col-sm-5">
+					      <input type="text" data-validation-engine="validate[required,custom[userPhone]]" class="input form-control" id="userPhone" ng-model="formData.phone" name="phone" placeholder="请输入11位以内中国大陆手机号" >
+					    </div>
+					  </div>
+					  <div class="col-md-12 col-xs-12 col-sm-12">
+					  	<div class="col-md-1 col-xs-1 col-sm-1"></div>
+					  	<div class="col-md-3 col-xs-3 col-sm-3">
+					  		<button class="btn btndel-handle1" type="button" ng-click="rt()">返回</button>
+					  	</div>
+					  	 <div class="col-md-5 col-xs-5 col-sm-5">
+					  		<button class="btn btndel-handle1" type="submit" >保存</button>					  		
+					  	</div>
+					  </div>		  		          		
+	          		</form>
+				</div>
+			</div>
+			
+		</div>
+	</body>
+</html>

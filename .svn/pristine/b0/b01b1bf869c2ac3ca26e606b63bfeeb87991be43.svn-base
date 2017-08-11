@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+</body>
+<script>
+    /*.......闭包......*/
+    function fun(){//局部变量只能执行一次
+        var v=0;
+         function fun2(){
+            v++;
+            console.log(v);
+        }
+        fun2();
+        fun2();
+        fun2();
+        fun2();
+    }
+
+    fun();
+
+
+   /* function fun3(){//局部变量只能执行一次
+        var v=0;
+            v++;
+            console.log(v);
+
+    }
+    fun3();
+    fun3();
+    fun3();
+    fun3();
+*/
+
+</script>
+</html>

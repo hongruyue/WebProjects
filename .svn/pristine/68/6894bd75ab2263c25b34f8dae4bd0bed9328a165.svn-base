@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="angular-1.5.8/angular.js"></script>
+</head>
+<body ng-app="app1">
+<div ng-controller="con1">
+    <input type="text" ng-model="a"/>
+    <p>{{a}}</p>
+    <input type="text" ng-model="b"/>
+    <p>{{b}}</p>
+    <div ng-controller="con2">
+        <input type="text" ng-model="a"/>
+        <p>{{a}}</p>
+    </div>
+</div>
+
+</body>
+<script>
+    var app=angular.module("app1",[]);
+    app.controller("con1",function($scope){
+          $scope.a="a"
+    });
+    //嵌套关系的控制器  子级可以获取父级的数据 但只是复制  不会对父级数据有影响 父元素不能获取子元素
+    app.controller("con2",function($scope){
+        $scope.b="b"
+    })
+
+</script>
+</html>

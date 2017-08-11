@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>复制增加图</title>
+</head>
+<body>
+<div class="box">
+    <img src="img/11.png" width="300px" height="100px;">
+</div>
+<button>复制原图</button>
+<button>增加图片</button>
+</body>
+<script type="text/javascript">
+    var box=document.getElementsByClassName("box")[0];
+    var pic=document.getElementsByTagName("img")[0];
+    var btn=document.getElementsByTagName("button");
+    var type=true;
+    var time=true;
+    btn[0].onclick=function () {
+        if(type){
+            var newimgs=pic.cloneNode(true);
+            box.appendChild(newimgs);
+            type=false;
+
+        }
+    };
+    btn[1].onclick=function () {
+        if(time){
+            var newimgs1=document.createElement("img");
+            //newimgs1.innerHTML=newimgs1;
+            newimgs1.setAttribute("src","img/xi.png");
+            // newimgs1.src="img/xi.png";
+            newimgs1.width="300";
+            newimgs1.height="100";
+            pic.parentNode.insertBefore(newimgs1,pic);
+            time=false;
+        }
+    }
+
+
+
+
+</script>
+</html>

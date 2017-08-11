@@ -1,0 +1,1015 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>北京金桥建业网</title>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script src="js/a.js" type="text/javascript"></script>
+<script src="js/ScrollPic.js" type="text/javascript"></script>
+<script src="Scripts/swfobject_modified.js" type="text/javascript"></script>
+</head>
+
+<body>
+  <div class="box">
+  
+     <div class="top">
+     	<div class="top_con">
+        <p class="top_w"><a href="#" title="登录" target="_blank">登录</a> | <a href="#" title="注册" target="_blank">注册</a> |<a href="#" title="忘记密码" target="_blank">   忘记密码</a>   |<a href="#" title="收藏本站" target="_blank">   收藏本站</a>   </p>
+        <p id="buy"><a href="#" title="购物车" target="_blank">购物车</a></p>
+   	   </div>
+     </div>
+      
+    <div class="top1">
+     	<div class="logo">
+     		<p><img src="images/logo.png" width="270" height="78" /></p>
+        </div>
+        <div class="link">
+     		<p class="tel"><span style="font-size:18px; color:#9b0b0d; margin-left:40px;">400-6007-600</span><br /><span style="color:#333333; font-size:10px; margin-left:40px;">全国免费咨询电话</span></p>
+      </div>
+            <div class="form">
+        	<form action="" method="get">
+              <input name="请输入搜索的课程" type="text" value="请输入搜索的课程" onfocus="if(this.value=='请输入搜索的课程'){this.value='';this.style.color='#888888'}" onblur="if(this.value==''){this.value='请输入搜索的课程';this.style.color='#000'}" class="input" /><input name="搜索" type="button" value=""  class="button" onclick="display_alert()" style="cursor:pointer"/>
+            
+            </form>
+        </div>
+</div>
+        
+      <div class="nav">
+    	<div class="nav_w">
+    		<ul>
+             <li><a href="#" title="首页" target="_blank">首&nbsp;&nbsp;页</a>&nbsp;┊&nbsp;<a href="#" title="新闻资讯" target="_blank">新闻资讯</a>&nbsp;┊&nbsp;<a href="#" title="课程中心" target="_blank">课程中心</a>&nbsp;┊&nbsp;<a href="#" title="赴企内训" target="_blank">赴企内训</a>&nbsp;┊&nbsp;<a href="#" title="网络课程" target="_blank">网络课程 </a>&nbsp;┊&nbsp;<a href="#" title="资料下载" target="_blank">资料下载</a>&nbsp;┊&nbsp;<a href="#" title="资质升级" target="_blank">资质升级</a>&nbsp;┊&nbsp;<a href="#" title="关于我们" target="_blank">关于我们</a></li>
+          	</ul>
+            <form action="" method="get" class="select">
+            <select name="选择分校"  class="select1">
+              <option>选择分校</option>
+              <option>建工一键</option>
+              </select>
+          </form>
+      </div>
+    </div>
+    
+   	<div class="banner">
+			<div id="wrap"> 
+                <div id="slider" > 
+               <p><img src="images/banner.png" width="100%" height="340" /></p> 
+               <p><img src="images/banner2.png" width="100%" height="340" /></p> 
+              </div> 
+              <ul> 
+               <li>1</li> 
+               <li>2</li> 
+              </ul> 
+			</div> 
+
+
+    </div>
+    
+    <div class="gonggao">
+    	<div class="gonggao_w" id="div1">
+        	<p><a href="#" target="_blank">一次过一建选金桥建业，他们这么说,一次过一建选金桥建业，他们这么说</a><span>2016-11-20</span></p>
+            <p><a href="#" target="_blank">一次过一建选金桥建业，他们这么说,一次过一建选金桥建业，他们这么说</a><span>2016-11-20</span></p>
+            <p><a href="#" target="_blank">一次过一建选金桥建业，他们这么说,一次过一建选金桥建业，他们这么说</a><span>2016-11-20</span></p>
+        </div>
+        <script language="javascript">
+var box=document.getElementById("div1"),can=true;
+box.innerHTML+=box.innerHTML;
+box.onmouseover=function(){can=false};
+box.onmouseout=function(){can=true};
+new function (){
+	var stop=box.scrollTop%40==0&&!can;
+	if(!stop)box.scrollTop==parseInt(box.scrollHeight/2)?box.scrollTop=0:box.scrollTop++;
+	setTimeout(arguments.callee,box.scrollTop%40?10:1500);
+};
+</script>
+        
+    </div>
+     
+     <div class="tonglan">
+    	<div class="tonglan_w">
+        	<p>
+        	  <object id="FlashID" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="1100" height="115">
+        	    <param name="movie" value="images/tonglan.swf" />
+        	    <param name="quality" value="high" />
+        	    <param name="wmode" value="opaque" />
+        	    <param name="swfversion" value="6.0.65.0" />
+        	    <!-- 此 param 标签提示使用 Flash Player 6.0 r65 和更高版本的用户下载最新版本的 Flash Player。如果您不想让用户看到该提示，请将其删除。 -->
+        	    <param name="expressinstall" value="Scripts/expressInstall.swf" />
+        	    <!-- 下一个对象标签用于非 IE 浏览器。所以使用 IECC 将其从 IE 隐藏。 -->
+        	    <!--[if !IE]>-->
+        	    <object type="application/x-shockwave-flash" data="images/tonglan.swf" width="1100" height="115">
+        	      <!--<![endif]-->
+        	      <param name="quality" value="high" />
+        	      <param name="wmode" value="opaque" />
+        	      <param name="swfversion" value="6.0.65.0" />
+        	      <param name="expressinstall" value="Scripts/expressInstall.swf" />
+        	      <!-- 浏览器将以下替代内容显示给使用 Flash Player 6.0 和更低版本的用户。 -->
+        	      <div>
+        	        <h4>此页面上的内容需要较新版本的 Adobe Flash Player。</h4>
+        	        <p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="获取 Adobe Flash Player" width="112" height="33" /></a></p>
+      	        </div>
+        	      <!--[if !IE]>-->
+      	      </object>
+        	    <!--<![endif]-->
+      	    </object>
+        	</p>	
+        </div>   	
+    </div>
+<!--内容-->
+	<div class="content">
+    	<div class="content1">
+       	  <div class="xinwen">
+            	<div class="xinwen_header">
+                <h2 class="xinwen_h2">新闻资讯</h2>
+            </div>
+            <div class="xinwen_con">
+                	<div class="xinwen_pic">
+                    <div id="wrap1"> 
+                <div id="slider1" > 
+               <P><img src="images/pic1_01.png" width="275" height="243" /></P> 
+               <p><img src="images/pic1_02.png" width="275" height="243" /></p>
+               <p><img src="images/pic1_03.png" width="275" height="243" /></p>
+              </div> 
+              <ul> 
+               <li>1</li> 
+               <li>2</li> 
+               <li>3</li> 
+              </ul> 
+               </div> 
+              </div>
+               <div class="xinwen_w">
+               <ul>
+               		<li><a href="#" target="_blank">一次过一建选金桥建业，他们这么说,一次过一建<span>2016-11-20</span></a></li>
+                    <li><a href="#" target="_blank">一次过一建选金桥建业，他们这么说,一次过一建<span>2016-11-20</span></a></li>
+                    <li><a href="#" target="_blank">一次过一建选金桥建业，他们这么说,一次过一建<span>2016-11-20</span></a></li>
+                    <li><a href="#" target="_blank">一次过一建选金桥建业，他们这么说,一次过一建<span>2016-11-20</span></a></li>
+                    <li><a href="#" target="_blank">一次过一建选金桥建业，他们这么说,一次过一建<span>2016-11-20</span></a></li>
+                    <li><a href="#" target="_blank">一次过一建选金桥建业，他们这么说,一次过一建<span>2016-11-20</span></a></li>
+                    <li><a href="#" target="_blank">一次过一建选金桥建业，他们这么说,一次过一建<span>2016-11-20</span></a></li>
+                    <li><a href="#" target="_blank">一次过一建选金桥建业，他们这么说,一次过一建<span>2016-11-20</span></a></li>
+                    </ul>
+               </div> 
+              </div>
+            </div>
+                	  <div class="tixing">
+            	<div class="tixing_header">
+                <h2 class="tixing_h2">考试提醒</h2>
+            </div>
+             <div class="daojishi">
+             	<p>距2016年一建考试还有<span>&nbsp;&nbsp;&nbsp;120</span>&nbsp;&nbsp;天</p>
+             
+             </div>
+                	
+                    
+               <div class="tixing_w">
+             <p>考试项目<span>&nbsp;&nbsp;&nbsp;考试时间</span></p>
+               <ul>
+               		<li><a href="#" target="_blank">一次过一建<span>2016-11-20</span></a></li>
+                    <li><a href="#" target="_blank">一次过一建<span>2016-11-20</span></a></li>
+                    <li><a href="#" target="_blank">一次过一建<span>2016-11-20</span></a></li>
+                    <li><a href="#" target="_blank">一次过一建<span>2016-11-20</span></a></li>
+                    <li><a href="#" target="_blank">一次过一建<span>2016-11-20</span></a></li>
+                    <li><a href="#" target="_blank">一次过一建<span>2016-11-20</span></a></li>
+                    <li><a href="#" target="_blank">一次过一建<span>2016-11-20</span></a></li>
+                    <li><a href="#" target="_blank">一次过一建<span>2016-11-20</span></a></li>
+                    
+                    </ul>
+             
+             
+            </div>
+            </div>
+    	</div>
+<!--热门网课-->    
+    		<div class="hot">
+                 <h2>热门网课</h2>
+            
+<!--  js转换块      start   -->  
+            
+
+<div style="width:1100px;" border="0" cellspacing="0" cellpadding="0" class="iborder"> 
+  <div> 
+    <div> 
+<div id="clipNum" width="100%" border="0" cellspacing="0" cellpadding="0" > 
+  <div style=" margin-left:496px;"> 
+    <div class="topnavon" id="clipNum1" onMouseOver="clip_Switch(1,5,'newsbox','clipNum')"; return false;>一级建造师</div> 
+    <div class="topnavoff" id="clipNum2" onMouseOver="clip_Switch(2,5,'newsbox','clipNum')"; return false;>二级建造师</div> 
+    <div class="topnavoff" id="clipNum3" onMouseOver="clip_Switch(3,5,'newsbox','clipNum')"; return false;>安全工程师</div> 
+    <div class="topnavoff" id="clipNum4" onMouseOver="clip_Switch(4,5,'newsbox','clipNum')"; return false;>造价工程师</div> 
+    <div class="topnavoff" id="clipNum5" onMouseOver="clip_Switch(5,5,'newsbox','clipNum')"; return false;>一级消防工程师</div> 
+  </tr> 
+</div> 
+
+
+<div style="clear:both;"></div>
+<div width="100%" border="0" cellspacing="0" cellpadding="0"> 
+  <div> 
+    <div id="newsbox1" style="display:block; margin-top:20px; margin-left:10px;">
+    	<div class="goumai">
+    	<p><img src="images/kecheng_01.png" width="230" height="128" /></p>
+        <p class="biaoti"><a href="#" target="_blank" title="一级建造师-精讲班-建筑工程全科">一级建造师-精讲班-建筑工程全科</a></p>
+        <p class="keshi">课时：140<span>价格</span></p>
+        <p class="dianji">点击量：1230<span>4880.00￥</span></p>
+        <form action="" method="get">
+             <input name="" type="button" value=""  class="button2" onclick="display_alert()" style="cursor:pointer"/>
+            </form>
+            </div>
+            <div class="goumai">
+    	<p><img src="images/kecheng_02.png" width="230" height="128" /></p>
+        <p class="biaoti"><a href="#" target="_blank" title="一级建造师-保障班-建筑工程全科">一级建造师-保障班-建筑工程全科</a></p>
+        <p class="keshi">课时：140<span>价格</span></p>
+        <p class="dianji">点击量：1230<span>4880.00￥</span></p>
+        <form action="" method="get">
+             <input name="" type="button" value=""  class="button2" onclick="display_alert()" style="cursor:pointer"/>
+            </form>
+            </div>
+            <div class="goumai">
+    	<p><img src="images/kecheng_03.png" width="230" height="128" /></p>
+        <p class="biaoti"><a href="#" target="_blank" title="一级建造师-保障班-机电工程全科">一级建造师-保障班-机电工程全科</a></p>
+        <p class="keshi">课时：140<span>价格</span></p>
+        <p class="dianji">点击量：1230<span>4880.00￥</span></p>
+        <form action="" method="get">
+             <input name="" type="button" value=""  class="button2" onclick="display_alert()" style="cursor:pointer"/>
+            </form>
+            </div>
+            <div class="goumai">
+    	<p><img src="images/kecheng_04.png" width="230" height="128" /></p>
+        <p class="biaoti"><a href="#" target="_blank" title="一级建造师-保障班-市政工程全科">一级建造师-保障班-市政公用工程全科</a></p>
+        <p class="keshi">课时：140<span>价格</span></p>
+        <p class="dianji">点击量：1230<span>4880.00￥</span></p>
+        <form action="" method="get">
+             <input name="" type="button" value=""  class="button2" onclick="display_alert()" style="cursor:pointer"/>
+            </form>
+            </div>
+            <div class="goumai">
+    	<p><img src="images/kecheng_05.png" width="230" height="128" /></p>
+        <p class="biaoti"><a href="#" target="_blank" title="一级建造师-保障班-公路工程全科">一级建造师-保障班-公路工程全科</a></p>
+        <p class="keshi">课时：140<span>价格</span></p>
+        <p class="dianji">点击量：1230<span>4880.00￥</span></p>
+        <form action="" method="get">
+             <input name="" type="button" value=""  class="button2" onclick="display_alert()" style="cursor:pointer"/>
+            </form>
+            </div>
+            <div class="goumai">
+    	<p><img src="images/kecheng_06.png" width="230" height="128" /></p>
+        <p class="biaoti"><a href="#" target="_blank" title="一级建造师-保障班-水利水电全科">一级建造师-保障班-水利水电全科</a></p>
+        <p class="keshi">课时：140<span>价格</span></p>
+        <p class="dianji">点击量：1230<span>4880.00￥</span></p>
+        <form action="" method="get">
+             <input name="" type="button" value=""  class="button2" onclick="display_alert()" style="cursor:pointer"/>
+            </form>
+            </div>
+            <div class="goumai">
+    	<p><img src="images/kecheng_07.png" width="230" height="128" /></p>
+        <p class="biaoti"><a href="#" target="_blank" title="一级建造师-保过班-建筑工程全科">一级建造师-保过班-建筑工程全科</a></p>
+        <p class="keshi">课时：140<span>价格</span></p>
+        <p class="dianji">点击量：1230<span>4880.00￥</span></p>
+        <form action="" method="get">
+             <input name="" type="button" value=""  class="button2" onclick="display_alert()" style="cursor:pointer"/>
+            </form>
+            </div>
+            <div class="goumai">
+    	<p><img src="images/kecheng_08.png" width="230" height="128" /></p>
+        <p class="biaoti"><a href="#" target="_blank" title="一级建造师-保过班-市政工程全科">一级建造师-保过班-市政工程全科</a></p>
+        <p class="keshi">课时：140<span>价格</span></p>
+        <p class="dianji">点击量：1230<span>4880.00￥</span></p>
+        <form action="" method="get">
+             <input name="" type="button" value=""  class="button2" onclick="display_alert()" style="cursor:pointer"/>
+            </form>
+            </div>
+            
+           
+      
+    </div> 
+  </div> 
+  <div> 
+    <div id="newsbox2" style="display:none; margin-top:20px; margin-left:10px;">    	
+    <div class="goumai">
+    	<p><img src="images/kecheng_09.png" width="230" height="128" /></p>
+        <p class="biaoti"><a href="#" target="_blank" title="二级建造师-精讲班-建设工程法规及相关知识">二级建造师-精讲班-建设工程法规及相关知识</a></p>
+        <p class="keshi">课时：140<span>价格</span></p>
+        <p class="dianji">点击量：1230<span>4880.00￥</span></p>
+        <form action="" method="get">
+             <input name="" type="button" value=""  class="button2" onclick="display_alert()" style="cursor:pointer"/>
+            </form>
+            </div>
+            <div class="goumai">
+    	<p><img src="images/kecheng_10.png" width="230" height="128" /></p>
+        <p class="biaoti"><a href="#" target="_blank" title="二级建造师-保障班-建筑工程全科">二级建造师-保障班-建筑工程全科</a></p>
+        <p class="keshi">课时：140<span>价格</span></p>
+        <p class="dianji">点击量：1230<span>4880.00￥</span></p>
+        <form action="" method="get">
+             <input name="" type="button" value=""  class="button2" onclick="display_alert()" style="cursor:pointer"/>
+            </form>
+            </div>
+            <div class="goumai">
+    	<p><img src="images/kecheng_11.png" width="230" height="128" /></p>
+        <p class="biaoti"><a href="#" target="_blank" title="二级建造师-保障班-机电工程全科">二级建造师-保障班-机电工程全科</a></p>
+        <p class="keshi">课时：140<span>价格</span></p>
+        <p class="dianji">点击量：1230<span>4880.00￥</span></p>
+        <form action="" method="get">
+             <input name="" type="button" value=""  class="button2" onclick="display_alert()" style="cursor:pointer"/>
+            </form>
+            </div>
+            <div class="goumai">
+    	<p><img src="images/kecheng_12.png" width="230" height="128" /></p>
+        <p class="biaoti"><a href="#" target="_blank" title="二级建造师-保障班-市政公用工程全科">二级建造师-保障班-市政公用工程全科</a></p>
+        <p class="keshi">课时：140<span>价格</span></p>
+        <p class="dianji">点击量：1230<span>4880.00￥</span></p>
+        <form action="" method="get">
+             <input name="" type="button" value=""  class="button2" onclick="display_alert()" style="cursor:pointer"/>
+            </form>
+            </div>
+            <div class="goumai">
+    	<p><img src="images/kecheng_13.png" width="230" height="128" /></p>
+        <p class="biaoti"><a href="#" target="_blank" title="二级建造师-保障班-公路工程全科">二级建造师-保障班-公路工程全科</a></p>
+        <p class="keshi">课时：140<span>价格</span></p>
+        <p class="dianji">点击量：1230<span>4880.00￥</span></p>
+        <form action="" method="get">
+             <input name="" type="button" value=""  class="button2" onclick="display_alert()" style="cursor:pointer"/>
+            </form>
+            </div>
+            <div class="goumai">
+    	<p><img src="images/kecheng_14.png" width="230" height="128" /></p>
+        <p class="biaoti"><a href="#" target="_blank" title="二级建造师-保过班-建筑工程全科">二级建造师-保过班-建筑工程全科</a></p>
+        <p class="keshi">课时：140<span>价格</span></p>
+        <p class="dianji">点击量：1230<span>4880.00￥</span></p>
+        <form action="" method="get">
+             <input name="" type="button" value=""  class="button2" onclick="display_alert()" style="cursor:pointer"/>
+            </form>
+            </div>
+            <div class="goumai">
+    	<p><img src="images/kecheng_15.png" width="230" height="128" /></p>
+        <p class="biaoti"><a href="#" target="_blank" title="二级建造师-保过班-市政公用工程全科">二级建造师-保过班-市政公用工程全科</a></p>
+        <p class="keshi">课时：140<span>价格</span></p>
+        <p class="dianji">点击量：1230<span>4880.00￥</span></p>
+        <form action="" method="get">
+             <input name="" type="button" value=""  class="button2" onclick="display_alert()" style="cursor:pointer"/>
+            </form>
+            </div>
+            <div class="goumai">
+    	<p><img src="images/kecheng_16.png" width="230" height="128" />
+</p>
+        <p class="biaoti"><a href="#" target="_blank" title="二级建造师-保过班-机电工程全科">二级建造师-保过班-机电工程全科</a></p>
+        <p class="keshi">课时：140<span>价格</span></p>
+        <p class="dianji">点击量：1230<span>4880.00￥</span></p>
+        <form action="" method="get">
+             <input name="" type="button" value=""  class="button2" onclick="display_alert()" style="cursor:pointer"/>
+            </form>
+            </div>
+</div> 
+  </div> 
+  <div> 
+    <div id="newsbox3" style="display:none;margin-top:20px; margin-left:10px;">    	
+    <div class="goumai">
+    	<p><img src="images/kecheng_17.png" width="230" height="128" /></p>
+        <p class="biaoti"><a href="#" target="_blank" title="安全工程师-精讲班-安全生产法及相关法律知识">安全工程师-精讲班-安全生产法及相关法律知识</a></p>
+        <p class="keshi">课时：140<span>价格</span></p>
+        <p class="dianji">点击量：1230<span>4880.00￥</span></p>
+        <form action="" method="get">
+             <input name="" type="button" value=""  class="button2" onclick="display_alert()" style="cursor:pointer"/>
+            </form>
+            </div>
+            <div class="goumai">
+    	<p><img src="images/kecheng_18.png" width="230" height="128" /></p>
+        <p class="biaoti"><a href="#" target="_blank" title="安全工程师-精讲班-安全生产管理知识">安全工程师-精讲班-安全生产管理知识</a></p>
+        <p class="keshi">课时：140<span>价格</span></p>
+        <p class="dianji">点击量：1230<span>4880.00￥</span></p>
+        <form action="" method="get">
+             <input name="" type="button" value=""  class="button2" onclick="display_alert()" style="cursor:pointer"/>
+            </form>
+            </div>
+            <div class="goumai">
+    	<p><img src="images/kecheng_19.png" width="230" height="128" /></p>
+        <p class="biaoti"><a href="#" target="_blank" title="安全工程师-精讲班-安全生产技术">安全工程师-精讲班-安全生产技术</a></p>
+        <p class="keshi">课时：140<span>价格</span></p>
+        <p class="dianji">点击量：1230<span>4880.00￥</span></p>
+        <form action="" method="get">
+             <input name="" type="button" value=""  class="button2" onclick="display_alert()" style="cursor:pointer"/>
+            </form>
+            </div>
+            <div class="goumai">
+    	<p><img src="images/kecheng_20.png" width="230" height="128" /></p>
+        <p class="biaoti"><a href="#" target="_blank" title="安全工程师-精讲班-安全生产事故案例分析">安全工程师-精讲班-安全生产事故案例分析</a></p>
+        <p class="keshi">课时：140<span>价格</span></p>
+        <p class="dianji">点击量：1230<span>4880.00￥</span></p>
+        <form action="" method="get">
+             <input name="" type="button" value=""  class="button2" onclick="display_alert()" style="cursor:pointer"/>
+            </form>
+            </div>
+            <div class="goumai">
+    	<p><img src="images/kecheng_21.png" width="230" height="128" /></p>
+        <p class="biaoti"><a href="#" target="_blank" title="安全工程师-保证班-安全生产法及相关法律知识">安全工程师-保障班-安全生产法及相关法律知识</a></p>
+        <p class="keshi">课时：140<span>价格</span></p>
+        <p class="dianji">点击量：1230<span>4880.00￥</span></p>
+        <form action="" method="get">
+             <input name="" type="button" value=""  class="button2" onclick="display_alert()" style="cursor:pointer"/>
+            </form>
+            </div>
+            <div class="goumai">
+    	<p><img src="images/kecheng_22.png" width="230" height="128" /></p>
+        <p class="biaoti"><a href="#" target="_blank" title="安全工程师-保障班-安全生产管理知识">安全工程师-保障班-安全生产管理知识</a></p>
+        <p class="keshi">课时：140<span>价格</span></p>
+        <p class="dianji">点击量：1230<span>4880.00￥</span></p>
+        <form action="" method="get">
+             <input name="" type="button" value=""  class="button2" onclick="display_alert()" style="cursor:pointer"/>
+            </form>
+            </div>
+            <div class="goumai">
+    	<p><img src="images/kecheng_23.png" width="230" height="128" /></p>
+        <p class="biaoti"><a href="#" target="_blank" title="安全工程师-保障班-安全生产技术">安全工程师-保障班-安全生产技术</a></p>
+        <p class="keshi">课时：140<span>价格</span></p>
+        <p class="dianji">点击量：1230<span>4880.00￥</span></p>
+        <form action="" method="get">
+             <input name="" type="button" value=""  class="button2" onclick="display_alert()" style="cursor:pointer"/>
+            </form>
+            </div>
+            <div class="goumai">
+    	<p><img src="images/kecheng_24.png" width="230" height="128" />
+</p>
+        <p class="biaoti"><a href="#" target="_blank" title="安全工程师-保障班-安全生产事故案例分析">安全工程师-保障班-安全生产事故案例分析</a></p>
+        <p class="keshi">课时：140<span>价格</span></p>
+        <p class="dianji">点击量：1230<span>4880.00￥</span></p>
+        <form action="" method="get">
+             <input name="" type="button" value=""  class="button2" onclick="display_alert()" style="cursor:pointer"/>
+            </form>
+            </div>
+</div> 
+  </div> 
+  <div> 
+    <div id="newsbox4" style="display:none;margin-top:20px; margin-left:10px;">    	
+    <div class="goumai">
+    	<p><img src="images/kecheng_25.png" width="230" height="128" /></p>
+        <p class="biaoti"><a href="#" target="_blank" title="造价工程师-保过班-建设工程技术土建全科">造价工程师-保过班-建设工程技术土建全科</a></p>
+        <p class="keshi">课时：140<span>价格</span></p>
+        <p class="dianji">点击量：1230<span>4880.00￥</span></p>
+        <form action="" method="get">
+             <input name="" type="button" value=""  class="button2" onclick="display_alert()" style="cursor:pointer"/>
+            </form>
+            </div>
+            <div class="goumai">
+    	<p><img src="images/kecheng_26.png" width="230" height="128" /></p>
+        <p class="biaoti"><a href="#" target="_blank" title="造价工程师-保障班-建设工程技术土建全科">造价工程师-保障班-建设工程技术土建全科</a></p>
+        <p class="keshi">课时：140<span>价格</span></p>
+        <p class="dianji">点击量：1230<span>4880.00￥</span></p>
+        <form action="" method="get">
+             <input name="" type="button" value=""  class="button2" onclick="display_alert()" style="cursor:pointer"/>
+            </form>
+            </div>
+            <div class="goumai">
+    	<p><img src="images/kecheng_27.png" width="230" height="128" /></p>
+        <p class="biaoti"><a href="#" target="_blank" title="造价工程师-保过班-建设工程技术安装全科">造价工程师-保过班-建设工程技术安装全科</a></p>
+        <p class="keshi">课时：140<span>价格</span></p>
+        <p class="dianji">点击量：1230<span>4880.00￥</span></p>
+        <form action="" method="get">
+             <input name="" type="button" value=""  class="button2" onclick="display_alert()" style="cursor:pointer"/>
+            </form>
+            </div>
+            <div class="goumai">
+    	<p><img src="images/kecheng_28.png" width="230" height="128" /></p>
+        <p class="biaoti"><a href="#" target="_blank" title="造价工程师-保障班-建设工程技术安装全科">造价工程师-保障班-建设工程技术安装全科</a></p>
+        <p class="keshi">课时：140<span>价格</span></p>
+        <p class="dianji">点击量：1230<span>4880.00￥</span></p>
+        <form action="" method="get">
+             <input name="" type="button" value=""  class="button2" onclick="display_alert()" style="cursor:pointer"/>
+            </form>
+            </div>
+            <div class="goumai">
+    	<p><img src="images/kecheng_29.png" width="230" height="128" /></p>
+        <p class="biaoti"><a href="#" target="_blank" title="造价工程师-精讲班-建设工程技术与计量（安装）">造价工程师-精讲班-建设工程技术与计量（安装）</a></p>
+        <p class="keshi">课时：140<span>价格</span></p>
+        <p class="dianji">点击量：1230<span>4880.00￥</span></p>
+        <form action="" method="get">
+             <input name="" type="button" value=""  class="button2" onclick="display_alert()" style="cursor:pointer"/>
+            </form>
+            </div>
+            <div class="goumai">
+    	<p><img src="images/kecheng_30.png" width="230" height="128" /></p>
+        <p class="biaoti"><a href="#" target="_blank" title="造价工程师-精讲班-建设工程技术与计量（土建）">造价工程师-精讲班-建设工程技术与计量（土建）</a></p>
+        <p class="keshi">课时：140<span>价格</span></p>
+        <p class="dianji">点击量：1230<span>4880.00￥</span></p>
+        <form action="" method="get">
+             <input name="" type="button" value=""  class="button2" onclick="display_alert()" style="cursor:pointer"/>
+            </form>
+            </div>
+            <div class="goumai">
+    	<p><img src="images/kecheng_31.png" width="230" height="128" /></p>
+        <p class="biaoti"><a href="#" target="_blank" title="造价工程师-精讲班-建设工程造价管理">造价工程师-精讲班-建设工程造价管理</a></p>
+        <p class="keshi">课时：140<span>价格</span></p>
+        <p class="dianji">点击量：1230<span>4880.00￥</span></p>
+        <form action="" method="get">
+             <input name="" type="button" value=""  class="button2" onclick="display_alert()" style="cursor:pointer"/>
+            </form>
+            </div>
+            <div class="goumai">
+    	<p><img src="images/kecheng_32.png" width="230" height="128" />
+</p>
+        <p class="biaoti"><a href="#" target="_blank" title="造价工程师-精讲班-建设工程造价案例分析">造价工程师-精讲班-建设工程造价案例分析</a></p>
+        <p class="keshi">课时：140<span>价格</span></p>
+        <p class="dianji">点击量：1230<span>4880.00￥</span></p>
+        <form action="" method="get">
+             <input name="" type="button" value=""  class="button2" onclick="display_alert()" style="cursor:pointer"/>
+            </form>
+            </div>
+</div> 
+  </div> 
+  <div> 
+    <div id="newsbox5" style="display:none;margin-top:20px; margin-left:10px;">    
+    	<div class="goumai">
+    	<p><img src="images/kecheng_33.png" width="230" height="128" /></p>
+        <p class="biaoti"><a href="#" target="_blank" title="一级消防工程师-保过班-一消全科">一级消防工程师-保过班-一消全科</a></p>
+        <p class="keshi">课时：140<span>价格</span></p>
+        <p class="dianji">点击量：1230<span>4880.00￥</span></p>
+        <form action="" method="get">
+             <input name="" type="button" value=""  class="button2" onclick="display_alert()" style="cursor:pointer"/>
+            </form>
+            </div>
+            <div class="goumai">
+    	<p><img src="images/kecheng_34.png" width="230" height="128" /></p>
+        <p class="biaoti"><a href="#" target="_blank" title="一级消防工程师-保障班-一消全科">一级消防工程师-保障班-一消全科</a></p>
+        <p class="keshi">课时：140<span>价格</span></p>
+        <p class="dianji">点击量：1230<span>4880.00￥</span></p>
+        <form action="" method="get">
+             <input name="" type="button" value=""  class="button2" onclick="display_alert()" style="cursor:pointer"/>
+            </form>
+            </div>
+            <div class="goumai">
+    	<p><img src="images/kecheng_35.png" width="230" height="128" /></p>
+        <p class="biaoti"><a href="#" target="_blank" title="一级消防工程师-精讲班-一消全科">一级消防工程师-精讲班-一消全科</a></p>
+        <p class="keshi">课时：140<span>价格</span></p>
+        <p class="dianji">点击量：1230<span>4880.00￥</span></p>
+        <form action="" method="get">
+             <input name="" type="button" value=""  class="button2" onclick="display_alert()" style="cursor:pointer"/>
+            </form>
+            </div>
+            <div class="goumai">
+    	<p><img src="images/kecheng_36.png" width="230" height="128" /></p>
+        <p class="biaoti"><a href="#" target="_blank" title="一级消防工程师-精讲班-消防安全技术综合能力">一级消防工程师-精讲班-消防安全技术综合能力</a></p>
+        <p class="keshi">课时：140<span>价格</span></p>
+        <p class="dianji">点击量：1230<span>4880.00￥</span></p>
+        <form action="" method="get">
+             <input name="" type="button" value=""  class="button2" onclick="display_alert()" style="cursor:pointer"/>
+            </form>
+            </div>
+            <div class="goumai">
+    	<p><img src="images/kecheng_37.png" width="230" height="128" /></p>
+        <p class="biaoti"><a href="#" target="_blank" title="一级消防工程师-精讲班-消防安全技术实务">一级消防工程师-精讲班-消防安全技术实务</a></p>
+        <p class="keshi">课时：140<span>价格</span></p>
+        <p class="dianji">点击量：1230<span>4880.00￥</span></p>
+        <form action="" method="get">
+             <input name="" type="button" value=""  class="button2" onclick="display_alert()" style="cursor:pointer"/>
+            </form>
+            </div>
+            <div class="goumai">
+    	<p><img src="images/kecheng_38.png" width="230" height="128" /></p>
+        <p class="biaoti"><a href="#" target="_blank" title="一级消防工程师-精讲班-消防安全案例分析">一级消防工程师-精讲班-消防安全案例分析</a></p>
+        <p class="keshi">课时：140<span>价格</span></p>
+        <p class="dianji">点击量：1230<span>4880.00￥</span></p>
+        <form action="" method="get">
+             <input name="" type="button" value=""  class="button2" onclick="display_alert()" style="cursor:pointer"/>
+            </form>
+            </div>
+            <div class="goumai">
+    	<p><img src="images/kecheng_39.png" width="230" height="128" /></p>
+        <p class="biaoti"><a href="#" target="_blank" title="一级消防工程师-冲刺班-一消全科">一级消防工程师-冲刺班-一消全科</a></p>
+        <p class="keshi">课时：140<span>价格</span></p>
+        <p class="dianji">点击量：1230<span>4880.00￥</span></p>
+        <form action="" method="get">
+             <input name="" type="button" value=""  class="button2" onclick="display_alert()" style="cursor:pointer"/>
+            </form>
+            </div>
+            <div class="goumai">
+    	<p><img src="images/kecheng_40.png" width="230" height="128" />
+</p>
+        <p class="biaoti"><a href="#" target="_blank" title="一级消防工程师"></a></p>
+        <p class="keshi">课时：140<span>价格</span></p>
+        <p class="dianji">点击量：1230<span>4880.00￥</span></p>
+        <form action="" method="get">
+             <input name="" type="button" value=""  class="button2" onclick="display_alert()" style="cursor:pointer"/>
+            </form>
+            </div>
+</div> 
+  </div> 
+</div> 
+    </div> 
+  </div> 
+</div> 
+ <!--  js转换块    end    -->            
+           </div>
+ <!--  课程中心块    end    --> 
+ 			<div class="kczx">
+            	<h2>课程中心</h2>
+                 <div class="kczx_n">
+                	<div class="kczx_w">
+                	<div class="jzgc">
+                    	<h3>建筑工程类</h3>
+                        <p class="jzgc_p1"><a href="#" title="赴企内训" target="_blank">赴企内训</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" title="一级建造师" target="_blank">一级建造师</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" title="安全工程师" target="_blank">安全工程师</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" title="造价工程师" target="_blank">造价工程师</a></p>
+                        <p><a href="#" title="一级建筑师" target="_blank">一级建筑师</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" title="监理工程师" target="_blank">监理工程师</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" title="二级建造师" target="_blank">二级建造师</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" title="建筑八大员" target="_blank">建筑八大员</a></p>
+                    </div>
+                    <div class="jzgc">
+                    	<h3>职业资格类</h3>
+                        <p class="jzgc_p1"><a href="#" title="一级建筑师" target="_blank">一级建筑师</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" title="监理工程师" target="_blank">监理工程师</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" title="二级建造师" target="_blank">二级建造师</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" title="建筑八大员" target="_blank">建筑八大员</a></p>
+                    </div>
+                	<div class="jzgc">
+                    	<h3>学历教育类</h3>
+                        <p class="jzgc_p1"><a href="#" title="一级建筑师" target="_blank">一级建筑师</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" title="监理工程师" target="_blank">监理工程师</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" title="二级建造师" target="_blank">二级建造师</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" title="建筑八大员" target="_blank">建筑八大员</a></p>
+                    </div>
+                </div>
+            	<div class="kczx_sp">
+                	<div class="sp_header">
+                    <h3>在线试听</h3>
+                    <div class="sp">
+                    	<p><img src="images/shiping.png" width="360" height="250" /></p>
+                        <p class="wlkc"><a href="#" target="_blank">网络课程</a></p>
+                        <p class="zcdl"><a href="#" target="_blank">注册用户登录</a></p>
+                        </div>
+
+                </div>
+                </div>
+             	</div>   
+             </div>   
+<!-- 2屏通栏-->    
+    		<div class="tonglan2">
+    	<div class="tonglan2_w">
+        	<p><a href="" target="_blank"><img src="images/tonglan1.png" width="1100" height="115" /></a></p>	
+        </div>   	
+    </div> 
+<!-- 考试咨询-->    
+    	    		<div class="kszx">
+                 <h2>考试咨询</h2>
+            
+<!--  js转换块      start   -->  
+              
+
+
+<div style="width:1100px;" border="0" cellspacing="0" cellpadding="0" class="iborder"> 
+  <div> 
+    <div> 
+<div id="other" width="100%" border="0" cellspacing="0" cellpadding="0" > 
+  <div style=" margin-left:596px;"> 
+    <div class="topnavon" id="other1" onMouseOver="clip_Switch(1,4,'haokan','other')"; return false;>一级建造师</div> 
+    <div class="topnavoff" id="other2" onMouseOver="clip_Switch(2,4,'haokan','other')"; return false;>二级建造师</div> 
+    <div class="topnavoff" id="other3" onMouseOver="clip_Switch(3,4,'haokan','other')"; return false;>造价工程师</div> 
+    <div class="topnavoff" id="other4" onMouseOver="clip_Switch(4,4,'haokan','other')"; return false;>一级消防工程师</div> 
+  </tr> 
+</div> 
+</div>
+
+<div style="clear:both;"></div>
+<div width="100%" border="0" cellspacing="0" cellpadding="0"> 
+  <div> 
+    <div id="haokan1" style="display:block; margin-top:20px; margin-left:10px;">
+     
+    		<ul>
+            	<li><a href="#" target="_blank">2016一级查询相关事项为了依法推进行政审批制度改革制度</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项为了依法推进行政审批制度改革制度</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项为了依法推进行政审批制度改革制度</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项为了依法推进行政审批制度改革制度</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项为了依法推进行政审批制度改革制度</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项为了依法推进行政审批制度改革制度</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项为了依法推进行政审批制度改革制度</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项为了依法推进行政审批制度改革制度</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项为了依法推进行政审批制度改革制度</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项为了依法推进行政审批制度改革制度</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项为了依法推进行政审批制度改革制度</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项为了依法推进行政审批制度改革制度</a></li>
+               
+                
+            </ul>
+    </div> 
+  </div> 
+  <div> 
+    <div id="haokan2" style="display:none; margin-top:20px; margin-left:10px;">    	
+    <ul>
+            	<li><a href="#" target="_blank">2016一级查询相关事项为了依法推进行政审批制度改革制度</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项为了依法推进行政审批制度改革制度</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项为了依法推进行政审批制度改革制度</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项为了依法推进行政审批制度改革制度</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项为了依法推进行政审批制度改革制度</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项为了依法推进行政审批制度改革制度</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项为了依法推进行政审批制度改革制度</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项为了依法推进行政审批制度改革制度</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项为了依法推进行政审批制度改革制度</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项为了依法推进行政审批制度改革制度</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项为了依法推进行政审批制度改革制度</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项为了依法推进行政审批制度改革制度</a></li>
+               
+                
+                
+            </ul>
+            
+</div> 
+  </div> 
+  <div> 
+    <div id="haokan3" style="display:none;margin-top:20px; margin-left:10px;"> 
+       	
+           <ul>
+            	<li><a href="#" target="_blank">2016一级查询相关事项为了依法推进行政审批制度改革制度</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项为了依法推进行政审批制度改革制度</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项为了依法推进行政审批制度改革制度</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项为了依法推进行政审批制度改革制度</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项为了依法推进行政审批制度改革制度</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项为了依法推进行政审批制度改革制度</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项为了依法推进行政审批制度改革制度</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项为了依法推进行政审批制度改革制度</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项为了依法推进行政审批制度改革制度</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项为了依法推进行政审批制度改革制度</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项为了依法推进行政审批制度改革制度</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项为了依法推进行政审批制度改革制度</a></li>
+               
+                
+            </ul> 
+            
+            
+</div> 
+  </div> 
+  <div> 
+    <div id="haokan4" style="display:none;margin-top:20px; margin-left:10px;">   
+     	
+            
+           <ul>
+            	<li><a href="#" target="_blank">2016一级查询相关事项为了依法推进行政审批制度改革制度</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项为了依法推进行政审批制度改革制度</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项为了依法推进行政审批制度改革制度</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项为了依法推进行政审批制度改革制度</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项为了依法推进行政审批制度改革制度</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项为了依法推进行政审批制度改革制度</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项为了依法推进行政审批制度改革制度</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项为了依法推进行政审批制度改革制度</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项为了依法推进行政审批制度改革制度</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项为了依法推进行政审批制度改革制度</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项为了依法推进行政审批制度改革制度</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项为了依法推进行政审批制度改革制度</a></li>
+                
+                
+                
+            </ul> 
+            
+</div> 
+  </div> 
+  <div> 
+
+  </div> 
+</div> 
+    </div> 
+  </div> 
+</div> 
+ <!--  js转换块    end    -->            
+           </div>
+ <!--考试咨询 end--> 
+  <!--资料下载 开始-->
+  		    <div class="zlxz">
+            	<div class="zlxz_left">
+                	<h2>资料下载</h2>
+                    <!--  js转换块      start   -->  
+             
+
+<div style="width:720px;" border="0" cellspacing="0" cellpadding="0" class="iborder"> 
+  <div> 
+    <div> 
+<div id="then" width="100%" border="0" cellspacing="0" cellpadding="0" > 
+  <div style=" margin-left:296px;"> 
+    <div class="topnavon" id="then1" onMouseOver="clip_Switch(1,4,'pic','then')"; return false;>一级建造师</div> 
+    <div class="topnavoff" id="then2" onMouseOver="clip_Switch(2,4,'pic','then')"; return false;>二级建造师</div> 
+    <div class="topnavoff" id="then3" onMouseOver="clip_Switch(3,4,'pic','then')"; return false;>造价工程师</div> 
+    <div class="topnavoff" id="then4" onMouseOver="clip_Switch(4,4,'pic','then')"; return false;>一级消防工程师</div> 
+  </tr> 
+</div> 
+
+<div style="clear:both;"></div>
+<div width="100%" border="0" cellspacing="0" cellpadding="0"> 
+  <div> 
+    <div id="pic1" style="display:block; margin-top:20px; margin-left:10px;">
+    		<ul>
+            	<li><a href="#" target="_blank">2016一级查询相关事项</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项</a></li>
+               
+                
+            </ul>
+    </div> 
+  </div> 
+  <div> 
+    <div id="pic2" style="display:none; margin-top:20px; margin-left:10px;">    	
+    <ul>
+            	<li><a href="#" target="_blank">2016一级查询相关事项</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项</a></li>
+               
+                
+                
+            </ul>
+            
+</div> 
+  </div> 
+  <div> 
+    <div id="pic3" style="display:none;margin-top:20px; margin-left:10px;"> 
+       	
+           <ul>
+            	<li><a href="#" target="_blank">2016一级查询相关事项</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项</a></li>
+               
+                
+            </ul> 
+            
+            
+</div> 
+  </div> 
+  <div> 
+    <div id="pic4" style="display:none;margin-top:20px; margin-left:10px;">   
+     	
+            
+           <ul>
+            	<li><a href="#" target="_blank">2016一级查询相关事项</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项</a></li>
+                
+                
+                
+            </ul> 
+            
+</div> 
+  </div> 
+  <div> 
+
+  </div> 
+</div> 
+    </div> 
+  </div> 
+</div> 
+ <!--  js转换块    end    -->  
+                </div>
+                
+   		</div>
+        <div class="kszn">
+                
+                	<div class="kszn_header">
+                    <h3>考试指南</h3>
+                    <ul>
+            	<li><a href="#" target="_blank">2016一级查询相关事项为了加强本专业学习</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项为了加强本专业学习</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项为了加强本专业学习</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项为了加强本专业学习</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项为了加强本专业学习</a></li>
+                <li><a href="#" target="_blank">2016一级查询相关事项为了加强本专业学习</a></li>
+            </ul> 
+
+                </div>
+            
+            </div>
+   
+       </div>
+<!--资料下载 end-->   
+<!--案例影像开始--> 
+		<div class="alyx">
+            	<h2>案例影像<span>全国建筑工程培训知名品牌，历年通过率行业领先！</span></h2>
+                         <!--视频开始-->
+         <div id=demo style="overflow:hidden;width:1100;" align=center>
+	<table border=0 align=center cellpadding=1 cellspacing=1 cellspace=0 >
+		<tr><td valign=top  id=marquePic1>
+	<table width='100' border='0' cellspacing='0'><tr>
+    <td align=center><a href='#'><img src="images/yj_01.png" width="250" height="150"/style="margin:5px;"><br>一建考前培训</a></td>
+    <td align=center><a href='#'><img src="images/yj_02.png" width="250" height="150"/style="margin:5px;"><br>热烈欢迎</a></td>
+    <td align=center><a href='#'><img src="images/yj_03.png" width="250" height="150"/style="margin:5px;"><br>全神贯注听讲</a></td>
+    <td align=center><a href='#'><img src="images/yj_04.png" width="250" height="150"/style="margin:5px;"><br>企业领导开班动员</a></td>
+    <td align=center><a href='#'><img src="images/yj_05.png" width="250" height="150"/style="margin:5px;"><br>某企业考前培训</a></td>
+    <td align=center><a href='#'><img src="images/yj_06.png" width="250" height="150"/style="margin:5px;"><br>老师学员课间交流</a></td>
+    <td align=center><a href='#'><img src="images/yj_07.png" width="250" height="150"/style="margin:5px;"><br>建筑实务精讲培训</a></td>
+    <td align=center><a href='#'><img src="images/yj_08.png" width="250" height="150"/style="margin:5px;"><br>16年一建考前集中培训</a></td>
+    <td align=center><a href='#'><img src="images/yj_09.png" width="250" height="150"/style="margin:5px;"><br>16年一级建造师企业内训</a></td>
+    <td align=center><a href='#'><img src="images/yj_10.png" width="250" height="150"/style="margin:5px;"><br>16年培训现场学员认真记录</a></td>
+    <td align=center><a href='#'><img src="images/yj_11.png" width="250" height="150"/style="margin:5px;"><br>16年某大型企业一建培训</a></td>
+    <td align=center><a href='#'><img src="images/yj_12.png" width="250" height="150"/style="margin:5px;"><br>15年某企业一建培训</a></td>
+    <td align=center><a href='#'><img src="images/yj_13.png" width="250" height="150"/style="margin:5px;"><br>15年某大型企业一建培训</a></td>
+    <td align=center><a href='#'><img src="images/yj_14.png" width="250" height="150"/style="margin:5px;"><br>14年某大型企业考前培训</a></td>
+    <td align=center><a href='#'><img src="images/yj_15.png" width="250" height="150"/style="margin:5px;"><br>13年市政专业企业培训</a></td>
+    <td align=center><a href='#'><img src="images/yj_16.png" width="250" height="150"/style="margin:5px;"><br>12年一级建造师企业内训</a></td>
+    <td align=center><a href='#'><img src="images/yj_17.png" width="250" height="150"/style="margin:5px;"><br>11年一建企业内训现场</a></td>
+    </tr>
+    </table>
+		</td><td id=marquePic2 valign=top></td></tr>
+	</table></div>
+<script type="text/javascript">
+var speed=50 
+marquePic2.innerHTML=marquePic1.innerHTML 
+function Marquee(){ 
+if(demo.scrollLeft>=marquePic1.scrollWidth){ 
+demo.scrollLeft=0 
+}else{ 
+demo.scrollLeft++ 
+} 
+} 
+var MyMar=setInterval(Marquee,speed) 
+demo.onmouseover=function() {clearInterval(MyMar)} 
+demo.onmouseout=function() {MyMar=setInterval(Marquee,speed)} 
+</script>
+        
+        <!--视频结束-->
+             </div>
+         <!--友情链接-->
+     <div class="link2"> 
+      <UL>
+        <LI><a href="http://www.mohrss.gov.cn/" target="_blank"><img src="images/link_01.png" width="134" height="61" /></a></LI>
+        <LI><a href="http://search.cpta.com.cn/cpta/index.html" target="_blank"><img src="images/link_02.png" width="134" height="61" /></a></LI>
+        <LI><a href="http://www.pqrc.org.cn/" target="_blank"><img src="images/link_03.png" width="134" height="61" /></a></LI>
+        <LI><a href="http://www.tsinghua.edu.cn/publish/newthu/index.html" target="_blank"><img src="images/link_04.png" width="134" height="61" /></a></LI>
+        <LI><a href="http://www.sdu.edu.cn/" target="_blank"><img src="images/link_05.png" width="134" height="61" /></a></LI>
+        <LI><a href="http://www.csust.edu.cn/pub/cslgdx/index.htm" target="_blank"><img src="images/link_06.png" width="134" height="61" /></a></LI>
+        <LI><a href="http://www.zju.edu.cn/" target="_blank"><img src="images/link_07.png" width="134" height="61" /></a></LI>
+       </UL>
+
+                    </div>
+                   
+<!--关于我们-->
+					<div class="bottom">
+                    	<div class="gywm">
+                    	   <h5>关于我们</h5>
+                        	<p><a href="" target="_blank">企业简介</a></p>
+                            <p><a href="" target="_blank">人才招聘</a></p>
+                            <p><a href="" target="_blank">联系我们</a></p>
+                        </div>
+                        <div class="gkzn2">
+                    	   <h5>购课指南</h5>
+                        	<p><a href="" target="_blank">如何注册</a></p>
+                            <p><a href="" target="_blank">支付方式</a></p>
+                            <p><a href="" target="_blank">开通课程</a></p>
+                        </div>
+                        <div class="hzjm">
+                    	   <h5>合作加盟</h5>
+                        	<p><a href="" target="_blank">教师加盟</a></p>
+                            <p><a href="" target="_blank">机构加盟</a></p>
+                            <p><a href="" target="_blank">渠道合作</a></p>
+                        </div>
+                        <div class="wztk">
+                    	   <h5>网站条款</h5>
+                        	<p><a href="" target="_blank">版权声明</a></p>
+                            <p><a href="" target="_blank">隐私条款</a></p>
+                            <p><a href="" target="_blank">网站律师</a></p>
+                        </div>
+                    </div>
+
+
+    </div>
+	<div class="bottom2">
+    
+    	<p><a href="" target="_blank">金桥简介</a>|<a href="" target="_blank">资质升级</a>|<a href="" target="_blank">合作加盟</a>|<a href="" target="_blank">诚聘英才</a>|<a href="" target="_blank">联系我们</a></p>
+        <p>北京金桥建业教育咨询有限公司 版权所有............</p> 
+    
+    </div>
+
+
+
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </div>
+<script type="text/javascript">
+swfobject.registerObject("FlashID");
+  </script>
+</body>
+</html>

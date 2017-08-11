@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="angular-1.5.8/angular.js"></script>
+</head>
+<body ng-app="myApp">
+   <div ng-controller="con1"></div>
+   <div ng-controller="con2"></div>
+
+</body>
+<script>
+    var app=angular.module("myApp",[]);
+    //共享数据和函数
+    app.factory("test",function(){//可以用依赖注入 外部调用
+        return {
+           a:"zcer",
+            b:function(){
+                console.log(123);
+            }
+        };
+    });
+    app.controller("con1",function($scope,test){
+        test.b();
+        test.b=function(){
+            alert(5678);
+        }
+    });
+    app.controller("con2",function($scope,test){
+        test.b()
+    })
+
+
+
+</script>
+</html>

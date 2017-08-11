@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title></title>
+    <script src="06bootstrap/bootstrap.min.js"></script>
+    <script src="06bootstrap/jquery-1.10.2.min.js"></script>
+    <link rel="stylesheet" href="06bootstrap/bootstrap.min.css"/>
+    <style>
+        .row div{
+            outline: 1px solid red;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+         <!--列嵌套行 会从新分配12栅格-->
+            <div class="row">
+                <div class="col-lg-9">9份</div>
+                <div class="col-lg-3">3份</div>
+                <div class="col-lg-3">3份</div>
+                <div class="col-lg-3">3份</div>
+                <div class="col-lg-3">3份</div>
+            </div>
+        </div>
+        <div class="col-lg-6">没嵌套</div>
+
+
+    </div>
+
+</div>
+</body>
+</html>

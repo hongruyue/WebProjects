@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div></div>
+<button>按钮</button>
+</body>
+<script src="js/jquery-2.1.0.min.js"></script>
+<script>
+    $(function(){
+        $("button").click(function(){
+//            $.ajax({//ajax方法
+//                url:"text",//链接    就是接口
+//                type:"get",//post、post   区别
+//                data:"",
+//                dataType:"text",//json xml html text
+//                success:function(data){//成功获取数据的回调函数   参数是获取到的数据
+////                alert(123);
+//                    $("div").html(data);
+//                },
+//                error:function(){//获取数据失败的回调函数
+//                    alert("失败");
+//                },
+//                async:true//定义同步还是异步加载    true代表异步   false代表同步
+//            })
+            $.get("text",function(data){
+                alert(data);
+            },"text");
+        })
+
+    })
+</script>
+</html>

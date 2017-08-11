@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+</body>
+<script>
+   // var str="aaaabbbbbbbbbbbbcccdddddddd",obj=[];
+     /*for(var i=0;i<str.length;i++){
+        var key = str[i];
+         if(!obj[key]){
+            obj[key]=1;
+         }else{
+             obj[key]++;
+         }
+         }
+    var max=0;
+    var max_key = "";
+    for(key in obj){
+        if(max<obj[key]){
+            max=obj[key];
+            max_key=key;
+        }
+    }
+    document.write(max_key+"为最多出现字符，出现的次数为"+max);*/
+    var str="cdffvvfmmidaasgfsfrfAadgr ",obj=[];
+    var arr=str.split("");
+    var objarr=[];
+    for(var i= 0,j;j=arr[i];i++){
+        if(!obj[j]) {
+            obj[j] = 0;
+        }
+        objarr[++obj[j]] = j;
+    }
+    document.write(objarr[objarr.length-1]+"=="+(objarr.length-1));
+
+
+</script>
+</html>

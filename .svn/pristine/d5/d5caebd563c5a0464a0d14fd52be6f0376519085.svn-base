@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title></title>
+    <link rel="stylesheet" href="Demo/css/bootstrap.min.css"/>
+    <script src="Demo/js/jquery-1.10.2.min.js"></script>
+    <script src="Demo/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="btn-group">
+                    <button class="btn btn-success" >下拉菜单
+                    </button>
+                    <button class="btn btn-danger" data-toggle="dropdown">
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">下拉列表1</a> </li>
+                        <li><a href="#">下拉列表2</a> </li>
+                        <li><a href="#">下拉列表3</a> </li>
+                        <li class="divider"></li><!--分割线-->
+                        <li><a href="#">下拉列表4</a> </li>
+
+                    </ul>
+            </div>
+        </div>
+
+
+        
+
+
+    </div>
+</div>
+</body>
+</html>

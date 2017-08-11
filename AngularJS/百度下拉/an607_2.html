@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>http服务百度搜索导航</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/angular.min.js"></script>
+    <style>
+        .inp{
+            width:400px;
+            margin:0 auto;
+           margin-top:180px;
+        }
+        li{
+            text-indent:1em;
+        }
+        .uls{
+            width:319px;
+            border:1px solid #999;
+            border-top:none;
+        }
+        .col{
+            background:pink;
+        }
+    </style>
+</head>
+<body  ng-app="myApp" ng-controller="cont">
+<div class="inp">
+    <div class="input-group">
+        <input type="text" ng-model="str" class="form-control" ng-keydown="shijian($event)">
+        <span class="input-group-btn">
+            <button class="btn btn-primary">百度一下</button>
+        </span>
+    </div>
+    <ul class="list-unstyled {{str!=''?'uls':null}}">
+        <li ng-repeat="x in arr" class="{{num==$index?'col':null}}">{{x}}</li>
+    </ul>
+</div>
+
+<script>
+    angular.module("myApp",[])
+        .controller('cont',function($scope,$http) {
+            $scope.str = "";
+            $scope.arr = [];
+            $scope.num = -1;
+            var change = 1;
+            $scope.shijian = function (ev) {
+
+                if($scope!=""){
+                    console.log(ev.keyCode);
+                    if(ev.keyCode==40){
+                        change = 0;
+                        $scope.num =$scope.num>($scope.arr.length-2)?0:$scope.num+1;
+                        $scope.str=$scope.arr[x];
+                    }
+                    else if(ev.keyCode==38){
+                        change = 0;
+                        $scope.num =$scope.num<1?($scope.arr.length-1):$scope.num-1;
+                        $scope.str=$scope.arr[x];
+                        console.log($scope.num);
+                    }
+                    else {
+                        change = 1;
+                        $scope.str = $scope.arr[x];
+                    }
+                }
+            };
+            $scope.$watch("str",function () {
+                if (change == 1) {
+                    $http.jsonp("https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?",{params:{
+                    wd:$scope.str,
+                    cb:"JSON_CALLBACK"
+                    }}).then(function (pos) {
+                        console.log(pos.data.s);
+                        $scope.arr=pos.data.s;
+                    });
+                }
+            })
+        })
+</script>
+</body>
+</html>

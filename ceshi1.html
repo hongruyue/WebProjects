@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        p{
+            border: 1px solid red;
+        }
+        p:nth-child(1){
+            line-height:2;
+        }
+        p:nth-child(2){
+            line-height:32px;
+        }
+    </style>
+</head>
+<body>
+<p>我们都是好朋友</p>
+<p>我们都是很好朋友</p>
+</body>
+<script>
+//    var a=[10];
+//    var b=a;
+//    b[0]=5;
+//    alert(a);
+
+/*    var m=12;
+     var n=5;
+     var c;
+     function modulo(){
+         c=12%5;
+         return c;
+     }
+    modulo();
+    alert(c)*/
+  /*  var c;
+    function modulo(m,n){
+        c=m%n;
+    }
+    modulo(12,5);
+    alert(c);*/
+
+//function modulo(m,n){
+//    var c;
+//    function aa(){
+//        c=m%n;
+//        alert(c);
+//    }
+//    return aa;
+//
+//}
+//var d=modulo(12,5);
+//d();
+//    alert(d);
+
+
+function a(){
+    var i=0;
+
+    function b(){
+        console.log(++i);
+    }
+    return b;
+}
+var c=a();
+c();
+    console.log(c)
+</script>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .tab{
+            border-collapse: collapse;/*合并边框*/
+            width:350px;
+        }
+    </style>
+</head>
+<body>
+<table class="tab" border="1" cellpadding="10" cellspacing="0">
+    <tbody>
+        <tr>
+            <th>姓名</th>
+            <th>班级</th>
+            <th>分数</th>
+        </tr>
+        <tr>
+            <td>张三</td>
+            <td>三班</td>
+            <td>80</td>
+        </tr>
+        <tr>
+            <td>李四</td>
+            <td>四班</td>
+            <td>90</td>
+        </tr>
+        <tr><td>赵五</td>
+            <td>五班</td>
+            <td>93</td>
+        </tr>
+
+    </tbody>
+</table>
+<button>增加一行</button>
+<button>复制最后一行</button>
+<button>删除第二行</button>
+<button>修改标题样式</button>
+
+</body>
+<script type="text/javascript">
+    var tab=document.getElementsByClassName("tab")[0];
+    var trs=document.getElementsByTagName("tr");
+    var btn=document.getElementsByTagName("button");
+    var tbodys=document.getElementsByTagName("tbody")[0];
+    var num=6;
+    btn[0].onclick=function(){
+        var add=document.createElement("tr");
+        //innerHTML可以设置标签
+        //innerText只可以设置文本内容
+        add.innerHTML="<td>王"+num+"</td><td>"+num+"班</td><td>7"+num+"分</td>";
+        tbodys.appendChild(add);
+        num++;
+
+    }
+    btn[1].onclick=function(){
+        var last=tbodys.lastElementChild.cloneNode(true);
+        tbodys.appendChild(last);
+    }
+    btn[2].onclick=function(){
+        tbodys.removeChild(trs[1]);
+    }
+    btn[3].onclick=function(){
+      trs[0].style.color="red";
+    }
+</script>
+</html>

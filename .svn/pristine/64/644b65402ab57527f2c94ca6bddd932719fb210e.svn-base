@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box1{
+            width: 500px;
+            height: 300px;
+            border: 1px solid red;
+            background: #CCCCCC;
+            float: left;
+            margin: 20px;
+        }
+        .box2{
+            width: 500px;
+            height: 300px;
+            border: 1px solid red;
+            float: left;
+            margin: 20px;
+        }
+        img{
+            border: 1px solid #000000;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+<h1>图片拖放</h1>
+<p>拖动的是：</p>
+<div class="box1"></div>
+<div class="box2">
+<img src="1.jpg" alt="第一张" width="80" height="120"/>
+<img src="2.jpg" alt="第二张" width="80" height="120"/>
+<img src="3.jpg" alt="第三张" width="80" height="120"/>
+
+</div>
+</body>
+<script>
+ var imgs=document.getElementsByTagName("img");
+ var ps=document.getElementsByTagName("p")[0];
+ var box1=document.getElementsByClassName("box1")[0];
+ var box2=document.getElementsByClassName("box2")[0];
+ var imgs1=document.createElement("img");
+ imgs1.src="icon.png";
+ var news=null;
+    box2.ondragstart=function(ev){
+         news=ev.target;//获取事件的目标节点
+        //return news;
+        ev.dataTransfer.setDragImage(imgs1,30,30);//拖动时鼠标图片
+        ev.dataTransfer.setData("Text",news.alt);
+    }
+    box1.ondragover=function(ev){
+        ev.preventDefault();
+    };
+    box1.ondrop=function(ev){
+     this.appendChild(news);
+     var txt=ev.dataTransfer.getData("Text");
+     ps.innerHTML="拖动的是："+txt;
+     this.style.background="#fff";
+    }
+</script>
+</html>

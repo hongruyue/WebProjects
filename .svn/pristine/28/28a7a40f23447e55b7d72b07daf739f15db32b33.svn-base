@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title></title>
+    <link rel="stylesheet" href="06bootstrap/bootstrap.min.css"/>
+    <style>
+        .row div{
+            outline: 1px solid red;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-1">logo</div>
+        <div class="col-lg-1">位置</div>
+        <div class="col-lg-1 col-lg-offset-7">首页</div>
+        <div class="col-lg-1">菜单</div>
+        <div class="col-lg-1">登录</div>
+    </div>
+
+</div>
+</body>
+</html>

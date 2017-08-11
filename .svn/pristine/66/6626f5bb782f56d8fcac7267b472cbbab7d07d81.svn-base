@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <ul class="nav nav-tabs">
+            <li class=""><a href="#a"  data-toggle="tab">新闻一</a></li>
+            <li class=""><a href="#b"  data-toggle="tab">新闻2</a></li>
+            <li class=""><a href="#c"  data-toggle="tab">新闻3</a></li>
+            <li class=""><a href="#d"  data-toggle="tab">新闻4</a></li>
+        </ul>
+            <ul class="tab-content">
+                <li class="tab-pane fade in active" id="a">内容1</li>
+                <li class="tab-pane fade" id="b">内容2</li>
+                <li class="tab-pane fade" id="c">内容3</li>
+                <li class="tab-pane fade" id="d">内容4</li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>

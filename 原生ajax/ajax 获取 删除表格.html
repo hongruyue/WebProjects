@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box{
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+<table border="1" style="border-collapse: collapse;" cellpadding=20>
+    <tbody>
+      <tr>
+          <th>姓名</th>
+          <th>年龄</th>
+          <th>分数</th>
+          <th><button>删除全部</button></th>
+      </tr>
+    </tbody>
+</table>
+</body>
+<script>
+    var tbodys=document.getElementsByTagName("tbody")[0];
+    var btn=document.getElementsByTagName("button");
+    if(window.XMLHttpRequest){
+       var xhr=new XMLHttpRequest();
+    }else{
+        var xhr=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xhr.open("get","json?"+new Date().getTime(),true);//"json?"+new Date().getTime()服务器显示时间
+    xhr.send();
+    xhr.onreadystatechange=function(){
+        if(xhr.readyState==4&&xhr.status==200){
+                var str=xhr.responseText;
+                var str1=JSON.parse(str);
+               for(var i=0;i<str1.length;i++){
+                   var news=document.createElement("tr");
+                   news.innerHTML="<td>"+str1[i].name+"</td><td>"+str1[i].age+"</td><td>"+str1[i].scole+"</td><td><button>删除</button></td>";
+                   tbodys.appendChild(news);
+                   btn[i+1].onclick=function(){
+                       this.parentNode.parentNode.remove()
+                   }
+               }
+
+            }
+    };
+    btn[0].onclick=function(){
+        tbodys.innerHTML="<tr>\
+                <th>姓名</th>\
+                <th>年龄</th>\
+                <th>分数</th>\
+                <th><button>删除全部</button></th>\
+        </tr>"
+    }
+</script>
+</html>

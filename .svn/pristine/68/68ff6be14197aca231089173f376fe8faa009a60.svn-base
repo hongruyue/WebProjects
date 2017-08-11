@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	.outer{
+		width: 800px;
+		height: 600px;
+		background: green;
+	}
+	.inner{
+		background: red;
+		width: 500px;
+		height: 500px;
+	}
+	.box{background: yellow;
+		width: 200px;
+		height: 200px;
+
+	}
+	</style>
+</head>
+<body>
+	<div class="outer">
+		<div class="inner">
+			<div class="box"></div>
+		</div>
+	</div>
+</body>
+<script>
+	var bodys=document.getElementsByTagName('body')[0];
+	var outer=document.getElementsByClassName('outer')[0];
+	var inner=document.getElementsByClassName('inner')[0];
+	var box=document.getElementsByClassName('box')[0];
+
+	// bodys.onclick=function(){
+	// 	alert("点击body");
+	// }
+	// outer.onclick=function(){
+	// 	alert("点击outer");
+	// }
+	// inner.onclick=function(ev){//阻止事件传播
+	// 	var event=ev||window.event;
+	// 	if(event.stopPropagation){
+	// 		event.stopPropagation();//非ie
+	// 	}else{
+	// 		event.cancelBubble=true;//ie浏览器
+	// 	}
+	// 	alert("点击inner");
+	// }
+	// box.onclick=function(){//自己触发点击事件   父级也会触发相同的事件  （定义了相同的事件）  事件冒泡	    浏览器默认事件冒泡	
+	// 	alert("点击box");
+	// }
+
+	// box.onclick=function(){
+	// 	alert(456);
+	// }
+	// box.onclick=function(){//在js中给元素定义多个相同的事件    只可以执行最后一个
+	// 	alert(123);
+	// }
+
+
+
+	// var num=0;
+	// box.addEventListener("click",function(){//事件监听    可以让元素定义的事件全部触发
+	// 	num++;
+	// 	alert(num);
+	// })
+	// box.addEventListener("click",function(){
+	// 	num++;
+	// 	alert(num);
+	// })
+
+
+	bodys.addEventListener("click",function(){//在事件监听中   将第三个参数写成true    事件传播过程变成捕获
+		alert("点击的是body");
+	},true)
+	outer.addEventListener("click",function(){
+		alert("点击的是22222");
+	},true)
+	inner.addEventListener("click",function(ev){
+		var event=ev||window.event;
+		if(event.stopPropagation){
+			event.stopPropagation();//非ie
+		}else{
+			event.cancelBubble=true;//ie浏览器
+		}
+		alert("点击的是33333");
+	},true)
+	box.addEventListener("click",function(){
+		alert("点击的是4444");
+	},true)
+</script>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .outer{
+            width: 500px;
+            height: 500px;
+            border: 1px solid  black ;
+            margin: 0 auto;
+            /*嵌套*/
+            display: flex;
+            /*flex-shrink: 2;*/
+            /*row横向   row-reverse横向反向*/
+            /*flex-direction: row-reverse;*/
+            /*column竖向 column-reverse竖向反向*/
+            /*flex-direction:column-reverse;*/
+            /*换行  反向排列*/
+            /*flex-wrap: wrap-reverse;*/
+            /*flex-flow: column-reverse wrap-reverse;*/
+
+        }
+        .red{
+            background: red;
+            /*定义元素所占宽度/高度   百分数或者***px   百分数指占父级的比例   如果没有占满会空白*/
+            flex-basis: 10%;
+        }
+        .orange{
+            background: orange;
+            flex-basis: 20%;
+            /*flex-grow: 2;*/
+            /*flex-shrink: 2;*/
+        }
+        .yellow{
+            background: yellow;
+            flex-basis: 30%;
+            display: flex;
+            /*width: 20px;*/
+        }
+        .green{
+            background: green;
+            flex-basis: 20%;
+            /*本身盒子扩展剩余空白处的比例*/
+            /*flex-grow: 1;*/
+        }
+        .ye_in1{
+            flex-basis: 50%;
+            background: purple;
+        }
+        .ye_in2{
+            flex-basis: 40%;
+            background: pink;
+        }
+        /*.blue{*/
+            /*flex-basis: 30%;*/
+            /*background: blue;*/
+        /*}*/
+        /*.cyan{*/
+            /*flex-basis: 20% ;*/
+            /*background: cyan;*/
+        /*}*/
+        /*.gray{*/
+            /*background: gray;*/
+            /*flex-basis: 10%;*/
+        /*}*/
+    </style>
+</head>
+<body>
+<div class="outer">
+    <div class="red">1</div>
+    <div class="orange">2</div>
+    <div class="yellow">3
+        <!--<div class="ye_in1"></div>-->
+        <!--<div class="ye_in2"></div>-->
+    </div>
+    <div class="green">4</div>
+    <!--<div class="blue">5</div>-->
+    <!--<div class="cyan">6</div>-->
+    <!--<div class="gray">7</div>-->
+</div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+</body>
+<script src="js/jquery-1.8.3.min.js"></script>
+<script>
+    var divs=document.getElementsByTagName("div")[0];
+    /*(function(){//匿名函数 调用方法 添加小括号
+        alert(253)
+    })();*/
+    /*var num=0;
+    function fun2(){
+        num++;
+        divs.innerHTML=num;
+        setTimeout(fun2,1000);
+    }
+    fun2();*/
+    $("div").animate({//回调函数
+        width:"400px",
+        height:"400px"
+    },1000,function(){
+        alert("执行完毕")
+    })
+
+
+</script>
+</html>

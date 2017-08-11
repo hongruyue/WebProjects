@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<ul class="outer">
+    <li>大家哈哈啊</li>
+    <li class="li1">大家哈哈啊</li>
+    <li>大家哈哈啊</li>
+    <div>
+    <ul>
+        <li>dajh da f</li>
+        <li>dajh da f</li>
+        <li class="li2">dajh da f</li>
+        <li>dajh da f</li>
+
+    </ul>
+    </div>
+</ul>
+<script src="js/jquery-1.8.3.min.js"></script>
+<script>
+    $(function(){
+
+
+      // $(".outer").children().css("color","red");//children内部不写特定子元素，指全部子元素
+       // $(".outer").children("li").css("color","red"); // children内部写特定子元素，指特定的子元素 而不是后代
+        //$(".outer").find("li").css("color","red")//find指的是子子孙孙
+
+
+        //遍历同辈元素
+//        $(".li1").siblings().css("background","red")//除了本身，改变所有的兄弟元素
+//        $(".li1").next().css("background","red")//除了本身元素，下一个同辈元素
+//        $(".li1").nextAll().css("background","red")//除了本身元素后面的所有同辈元素
+//        $(".li1").prev().css("background","red")//本身元素上面的同辈元素
+//        $(".li1").prevAll().css("background","red")//本身元素上面的所有同辈元素
+
+        //遍历父辈元素
+//        $(".li2").parent().css("border","solid","1px");//parent()找的是直接父元素
+       // $(".li2").parents("ul").css("border","solid","1px");//parent()找的是所有的父元素 parents()括号内可以添加元素 找到所有的父级元素的添加元素内容
+        $("ul li").first().css("color","blue");
+        $("ul li").last().css("color","blue");
+        $("ul li").eq(3).css("color","yellow")
+    })
+</script>
+</body>
+
+</html>

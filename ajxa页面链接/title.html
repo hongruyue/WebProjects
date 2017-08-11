@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="js/jquery-1.8.3.min.js"></script>
+</head>
+<body>
+<ul>
+
+</ul>
+</body>
+<script>
+    $(function(){
+        $.ajax({
+            url:"news",
+            type:"get",
+            dataType:"json",
+            success:function(data){
+                for(var i=0;i<data.length;i++){
+                    var lis="<li><a href='content.html#code="+data[i].code+"'>"+data[i].title+"</a></li>"
+                    $("ul").append(lis);
+                }
+            },
+            error:function(){
+
+            },
+            async:true
+        })
+
+       /* $.get("news",function(data){
+            for(var i=0;i<data.length;i++){
+                var lis="<li><a href='content.html#code="+data[i].code+"'>"+data[i].title+"</a></li>"
+                $("ul").append(lis);
+            }
+        },"json")*/
+
+
+    })
+
+
+</script>
+</html>

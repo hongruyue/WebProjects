@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #canvas{
+            background: #cccccc;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvas" width="800px" height="800px"></canvas>
+</body>
+<script>
+    var canvas=document.getElementById("canvas");
+    var cvs=canvas.getContext("2d");
+  //阴影是一个图形 可以用图形组合
+    cvs.globalCompositeOperation="xor";
+    cvs.beginPath();
+    cvs.rect(200,200,200,200);
+    cvs.fillStyle="red";
+    cvs.shadowOffsetX=30;//x偏移
+    cvs.shadowOffsetY=30;//y偏移
+    //cvs.shadowColor="rgba(0,0,0,0.5)";//渐变颜色
+    cvs.shadowColor="#999";//渐变颜色
+    cvs.shadowBlur=5;//模糊值
+    cvs.fill();
+    cvs.closePath();
+
+
+</script>
+
+</html>

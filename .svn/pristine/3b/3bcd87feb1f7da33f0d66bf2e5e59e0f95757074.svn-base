@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title></title>
+    <link rel="stylesheet" href="../06bootstrap/bootstrap.min.css"/>
+
+    <style>
+        .row div{
+            outline: 1px solid red;
+            text-align: center;
+        }
+        .red{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<!--bootstrap标题定义的每个浏览器都一样-->
+<h1 class="text-left">标题一</h1>
+<h2 class="text-center">标题二</h2>
+<h3 class="text-right">标题三</h3>
+<h4>标题四</h4>
+<h5>标题五</h5>
+<h6>标题六</h6>
+<div class="h1">标题一</div>
+<div class="h2">标题二</div>
+<div class="h3">标题三</div>
+<div class="h4">标题四</div>
+<div class="h5">标题五</div>
+<div class="h6">标题六</div>
+<a href="#" role="button">按钮</a>
+<p>大家好，天气也很好啊</p>
+<p class="lead red">大家好，天气也很好啊</p>
+<p>大家好，天气也很好啊</p>
+<p>大家好，天气也很好啊</p>
+</body>
+</html>

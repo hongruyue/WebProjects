@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="js.js"></script>
+    <style>
+        *{
+            padding: 0px; margin: 0px;
+        }
+        .box{
+            width: 300px;
+            height: 300px;
+            overflow: hidden;
+            position: relative;
+            margin: 0 auto;
+        }
+        img{
+            width: 300px;
+            height: 300px;
+
+
+        }
+        ul{
+            position: absolute;
+            top:260px;
+            left:60px;
+            text-align: center;
+        }
+        li{
+            float: left;
+            border-radius: 50%;
+            list-style: none;
+            width: 20px;
+            height: 20px;
+            background: #999;
+            color:#ffffff;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+        .red{
+            background: red;
+        }
+
+    </style>
+</head>
+<body>
+<div class="box">
+    <img src="img/1.jpg" alt=""/>
+    <ul>
+        <li class="red">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+</div>
+<!--<script>
+    var imgs=document.getElementsByTagName("img")[0];
+    var lis=document.getElementsByTagName("li");
+    var num=0
+    var time=null;
+    time=setInterval(function(){
+        num++
+        if(num>=imgs.length){
+            num=0;
+        }
+        for(var i=0;i<=lis.length;i++){
+            if(i==num){
+                imgs[num].style.display="block";
+                lis[num].style.background="red";
+            }else{
+                imgs[i].style.display="none";
+                lis[i].style.background="#999";
+            }
+        }
+    },1000)
+</script>-->
+<!--改变图片链接-->
+<!--<script>
+    var imgs=document.getElementsByTagName("img")[0];
+    var lis=document.getElementsByTagName("li");
+    var num=1;
+    var time=null;
+    time=setInterval(function(){
+        num++;
+        if(num>=lis.length+1){
+            num=1;
+        }
+        imgs.src="img/"+num+".jpg";
+        for(var i=0;i<lis.length;i++) {
+            if (i == num) {
+                lis[i-1].style.background = "red";
+            } else {
+                lis[i].style.background = "#999";
+        }
+        }
+    },2000);
+
+</script>-->
+<!--改变图片下标-->
+</body>
+
+</html>

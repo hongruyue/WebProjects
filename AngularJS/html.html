@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp"><!--ng-app="myApp"定义页面应用的范围 所有者-->
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="angular-1.5.8/angular.js"></script>
+</head>
+<body ng-app="myApp"  ng-init="aname='a变量初始化';bname='b变量初始化'"><!--ng-init初始化变量-->
+<input type="text" ng-model="aname">
+<!--ng-model可以绑定多个输入框-->
+<!--<p ng-bind="aname"></p>-->
+<p>{{aname}}</p>
+<input type="text" ng-model="bname">
+<!--<span ng-bind="bname"></span>-->
+<p>{{bname}}</p>
+</body>
+
+<script>
+    //定义一个模块
+    var app=angular.module("myApp",[]);
+</script>
+</html>

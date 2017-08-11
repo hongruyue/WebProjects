@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../angular-1.5.8/angular.min.js"></script>
+</head>
+<body ng-app="app1">
+<div ng-controller="con1"></div>
+<div ng-controller="con2"></div>
+</body>
+<script>
+    var app=angular.module("app1",[]);
+    app.factory("test",function(){
+        return {
+            a:'factory',
+            b:function(){
+                alert("first");
+            }
+        }
+    });
+    app.provider("test1",function(){
+        this.$get=function(){
+            return {
+                c:"provider",
+                d:function(){
+                    alert("second");
+                }
+            }
+        }
+    });
+    app.service("test2",function(){
+        this.e="service";
+        this.f=function(){
+            alert("third");
+        }
+    });
+    app.constant("test3",{
+        g:"constant",
+        h:function(){
+            alert("fourth");
+        }
+    });
+    app.value("test4",{
+        i:"value",
+        j:function(){
+            alert("forth");
+        }
+    });
+//
+    app.decorator("test",function($delegate){
+//        进口　　进去里边装饰　　　$delegate指代当前依赖项
+        $delegate.a="a";
+        return $delegate;
+    });
+    app.decorator("test1",function($delegate){
+        $delegate.d="sasa";
+        $delegate.abc="ashgfs";
+        return $delegate;
+    });
+//    test3常量    不可以改变的
+//    app.decorator("test3",function($delegate){
+//        $delegate.g=123;
+//        return $delegate;
+//    })
+    app.controller("con1",function($scope,test,test1,test2,test3,test4){
+//        test.b();
+        alert(test.a);
+//        test1.d();
+//        alert(test1.d);
+        alert(test1.d);
+//        test2.f();
+        alert(test3.g)
+//        test3.h();
+//        test4.j();
+    })
+    app.controller("con2",function($scope){
+
+    })
+</script>
+</html>

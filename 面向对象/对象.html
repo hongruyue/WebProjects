@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+</body>
+<script>
+    //方法1：直接扩充属性和方法（最简单）
+    /*var car={
+        name:"BMW",
+        color:"red",
+        speed:"100",
+        run:function(){
+        alert("时速"+this.speed+"km/h");
+        }
+    }
+    alert(car.color);
+    car.run();*/
+   /* var car=new Object();
+    car.name="audi";
+    car.color="黑色";
+    car.speed="300";
+    car.run=function(){
+        alert("时速"+this.speed+"km/h");
+    };
+    alert(car.name);
+    car.run();*/
+//2,工厂模式
+   /* function car(name,color,speed){
+        var obj=new Object();
+        obj.name=name;
+        obj.color=color;
+        obj.speed=speed;
+        obj.run=function(){
+            alert("时速"+this.speed+"km/h");
+        };
+        return obj;
+    }
+    var car1=new car("大众","green",300);
+    var car2=new car("奥迪","red",400);
+    var car3=new car("奔驰","block",500);
+    alert(car1.name);
+    alert(car2.color);
+    car3.run();*/
+    //3,构造函数  不需要还回值
+    /*function car(name,color,speed){
+        this.name=name;
+        this.color=color;
+        this.speed=speed;
+        this.run=function(){
+            alert("时速"+this.speed+"km/h");
+        };
+    }
+    var car1=new car("大众","green",300);
+    var car2=new car("奥迪","red",400);
+    var car3=new car("奔驰","block",500);
+    alert(car1.name);
+    alert(car2.color);
+    car3.run();
+    alert(car1.run==car2.run)//false 属性跟方法不一样*/
+    //4,原型方式（prototype）
+    function car(){}
+    car.prototype.name="name";
+    car.prototype.color="color";
+    car.prototype.speed="speed";
+    car.prototype.run=function() {
+            alert("时速" + this.speed + "km/h");
+        };
+    var car1=new car();
+    var car2=new car();
+    alert(car1.name);
+    alert(car2.name);
+    car1.run(5);
+    car1.run(6);
+    alert(car1.run==car2.run);//true
+</script>
+</html>

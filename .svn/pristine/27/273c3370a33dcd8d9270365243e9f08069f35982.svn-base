@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="angular-1.5.8/angular.js"></script>
+</head>
+<body ng-app="myApp">
+    <div ng-controller="con">
+      <my-directive></my-directive><br />
+        <div my-directive></div><br />
+        <div class="my-directive"></div><br />
+        <!--directive:my-directive --><!--两侧必须要有空格 后面空格必须有，前面空格可以没有-->
+    </div>
+
+</body>
+<script>
+    var app=angular.module("myApp",[]);
+    app.controller("con",function($scope){
+       $scope.json=[
+           {name:"abcv",age:18,sex:"男"},
+           {name:"abcv1",age:13,sex:"男"},
+           {name:"abcv2",age:16,sex:"男"}
+       ]
+    });
+    app.directive("myDirective",function(){
+       return{
+           restrict:"ECMA",
+           template:"<table border='1' style='border-collapse: collapse'>\
+          <tr ng-repeat='x in json'>\
+            <td>{{x.name}}</td>\
+            <td>{{x.age}}</td>\
+            <td>{{x.sex}}</td>\
+        </tr>\
+        </table>",
+           replace:true
+       }
+    })
+</script>
+</html>

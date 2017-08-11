@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0px;padding: 0px;
+        }
+        .box{
+            width: 289px;
+            height: 594px;
+            margin: 0 auto;
+            background: url("img1/phone.png") no-repeat;
+            padding-top: 90px;
+            padding-left: 26px;
+
+        }
+        .bottom{
+            width: 236px;
+            height: 46px;
+            border: 1px solid #a8d2e7;
+        }
+        .bottom span{
+            width: 24px;
+            height:24px;
+            border-radius: 20%;
+            border: 1px solid #999999;
+            display: inline-block;
+            padding: 4px;
+            margin: 7px;
+            float: left;
+
+        }
+        input{
+            width: 140px;
+            height: 29px;
+            float: left;
+            margin-top: 7px;
+        }
+        button{
+            width: 40px;
+            height: 29px;
+            margin-top: 7px;
+            margin-left: 4px;
+        }
+       /* .bottom  .tu2{
+            display:none ;
+        }*/
+       .content{
+           width: 236px;
+           height: 364px;
+           overflow: scroll;
+       }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="top">
+        <div class="content"></div>
+    </div>
+     <div class="bottom">
+         <span><img src="img1/ku2.png"></span>
+      <!--   <span><img src="img1/ku.png"></span>-->
+         <input type="text"/>
+         <button>发送</button>
+     </div>
+</div>
+</body>
+<script>
+    var show=true;
+    var spans=document.getElementsByTagName("span")[0];
+    var iptText=document.getElementsByTagName("input")[0];
+    var btnSend=document.getElementsByTagName("button")[0];
+    var content=document.getElementsByClassName("content")[0];
+    var imgs=document.getElementsByTagName("img")[0];
+    spans.onclick=function click(){
+        if (show) {
+            imgs.setAttribute("src","img1/ku.png");
+            show=false;
+        } else {
+            imgs.setAttribute("src","img1/ku2.png");//设置属性元素
+            show=true;
+        }
+    }
+
+    btnSend.onclick=function(){
+       //iptnew= "说:"+iptText.value;
+     if(show){
+         if(iptText.value!="") {
+             var divnew = document.createElement("div");
+             var imgnew=document.createElement("div");
+             divnew.innerHTML = "说:"+"iptText.value";
+             imgnew.innerHTML='<img src="img1/ku2.png"/>';
+             imgnew.style.float="right";
+             divnew.style.float="right";
+             divnew.style.background = "green";
+             content.appendChild(divnew);
+             content.appendChild(imgnew);
+            // show=false;
+
+         }
+     }else{
+         if(iptText.value!="") {
+             var divnew = document.createElement("div");
+             var imgnew=document.createElement("div");
+             //alert("leng:"+iptText.value.length);
+             //divnew.setAttribute("src","img1/ku2.png");
+             //divnew.style.width = "100px";
+             divnew.innerHTML = "说:"+"iptText.value";
+             imgnew.innerHTML='<img src="img1/ku.png"/>';
+             imgnew.style.float="left";
+             divnew.style.float="left";
+             divnew.style.background = "#ccc";
+             content.appendChild(divnew);
+             content.appendChild(imgnew);
+             //show=true;
+
+         }
+     }
+
+        iptText.value="";
+    }
+
+</script>
+</html>

@@ -1,0 +1,167 @@
+header{
+    width: 100%;
+    height: 50px;
+    background:#757575;
+}
+.logo img{
+    width:140px;
+    height: 40px;
+    margin-top: 5px;
+    margin-left: 30px;
+}
+.logo{
+    float: left;
+}
+.header_con{
+    position: relative;
+}
+.header_con ul{
+    width: 1000px;
+    font-size: 15px;
+    margin:0 auto;
+    text-align: center;
+}
+.header_con li{
+    width: 110px;
+    height: 50px;
+    line-height: 50px;
+    float: left;
+}
+header  a{
+    color: #FFFFFF;
+}
+header a:hover{
+    color:#C2AC94;
+}
+.header_cen{
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    background-color:#BEA38D;
+    position: absolute;
+    left:0px;
+    top:50px;
+    text-align: center;
+}
+.header_cen{
+    display:none;
+}
+.header_con li:nth-child(2):hover .header_cen{
+    display: block;
+}
+.header_con li:nth-child(3):hover .header_cen{
+    display: block;
+}
+.nav1{
+    padding-left: 100px;
+}
+.nav2{
+    padding-left:200px;
+}
+.header_cen li{
+    width: 110px;
+    height: 50px;
+}
+.header_cen img{
+    float: right;
+    margin-top: 10px;
+}
+.jiantou{
+    width:34px;
+    height:14px;
+    background: url("../img/arrow1.png") no-repeat;
+    position: absolute;
+    left: 420px;
+    top:-13px;
+}
+.jiantou1{
+    left:530px
+}
+
+.header_right{
+    float: right;
+}
+.header_right ul{
+    width: 300px;
+    height:35px
+}
+.header_right li{
+    width: 60px;
+    height:17px;
+    cursor: pointer;
+    float: left;
+}
+.header_right ul li:nth-child(1){
+    background: url("../img/ico_tools_search2.png")  no-repeat;
+    background-position: left 0px;
+    margin-top:16px;
+}
+.header_right ul li img{
+    margin-left: 16px;
+}
+.header_right ul li:nth-child(1):hover{
+    background-position: left -18px;
+}
+.header_right ul li:nth-child(2){
+    background: url("../img/zhong.png")  no-repeat;
+    background-position: left 0px;
+    margin-top:16px;
+}
+.header_right ul li:nth-child(2):hover{
+    background-position: left -19px;
+}
+.header_right ul li:nth-child(3){
+    background: url("../img/ico_tools_user2.png")  no-repeat;
+    background-position: left 0px;
+    margin-top:16px;
+}
+.header_right ul li:nth-child(3):hover{
+    background-position: left -19px;
+}
+.header_right ul li:nth-child(4){
+    height: 34px;
+    background: url("../img/menu2.png")  no-repeat;
+    background-position: left 0px;
+    margin-top: 8px;
+}
+.header_right ul li:nth-child(4):hover{
+    background-position: left -34px;
+}
+.header_right p{
+    width: 50px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border: 1px solid #FFFFFF;
+}
+.load{
+    display: none;
+}
+.kw{
+    background:url("../img/ss1.png") right 0 no-repeat;
+    width: 260px;
+    height:30px;
+}
+.header_right form{
+    width: 200px;
+    height: 30px;
+    margin-left: -150px;
+    margin-top: 30px;
+}
+.header_right form input{
+    outline:0px;
+    border: 1px solid #FFFFFF;
+
+}
+.header_right ul li:nth-child(1):hover .load1{
+    display: block;
+}
+.header_right ul li:nth-child(2):hover .load2{
+    display: block;
+}
+.search{
+    display: none;
+}
+.header_right ul li:nth-child(3):hover .search{
+    display: block;
+}

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box{
+            width: 600px;
+            height:600px;
+            margin: 0 auto;
+            background: #FFFFFF;
+        }
+        button{
+            background: red;
+            color:#FFFFFF;
+            height: 30px;
+            line-height: 30px;
+            cursor: pointer;
+        }
+        .color{
+            width:50px;
+            height:50px;
+            border: 3px solid #000000;
+            float: left;
+        }
+        .con{
+            width: 260px;
+            height:200px;
+            float: right;
+            border:10px solid #666666;
+            display: none;
+            margin-top: 150px;
+        }
+
+      span{
+            width: 30px;
+            height: 30px;
+            background:#a8d2e7;
+            border: 1px solid #000000;
+            margin-left: 10px;
+           display: inline-block;
+           line-height: 30px;
+          text-align: center;
+          cursor: pointer;
+
+        }
+        .red{
+            background: orange;
+
+        }
+        .yellow{
+              background: green;
+
+          }
+        .blue{
+            background: pink;
+
+        }
+       .huifu,.queding{
+           width: 50px;
+           background: #050052;
+           color:#FFFFFF;
+           cursor: pointer;
+       }
+        .bord{border: 1px solid #000000;}
+    </style>
+</head>
+<body>
+<div class="box">
+<h2>请为下面的div设置样式：<button>点击设置</button></h2>
+ <div class="color"></div>
+    <div class="con">
+         <p>设置背景颜色：<span class="red">红</span><span class="yellow">黄</span><span class="blue">蓝</span></p>
+         <p class="wh">请选择宽度：<span>100</span><span>200</span><span>300</span></p>
+         <p class="hh">请选择高度：<span>100</span><span>200</span><span>300</span></p>
+        <p><span class="huifu">恢复</span><span class="queding">确定</span></p>
+    </div>
+
+</div>
+</body>
+<script src="js/jquery-1.8.3.min.js"></script>
+<script>
+    $(function(){
+        $("button").click(function(){
+            $(".con").css("display","block");
+        })
+        $(".red").on({
+            mouseover:function(){
+                $(this).css({"background": "red"});
+            },
+            click:function(){
+                $(".color").css("background","red");
+            },
+            mouseout:function(){
+                $(this).css({"background": "orange"});
+            },
+        })
+        $(".yellow").on({
+            mouseover:function(){
+                $(this).css({"background": "yellow"});
+            },
+            click:function(){
+                $(".color").css("background","yellow");
+            },
+            mouseout:function(){
+                $(this).css({"background": "green"});
+            },
+        })
+        $(".blue").on({
+            mouseover:function(){
+                $(this).css({"background": "blue"});
+            },
+            click:function(){
+                $(".color").css("background","blue");
+            },
+            mouseout:function(){
+                $(this).css({"background": "pink"});
+            },
+        })
+        $(".blue").on({
+            mouseover:function(){
+                $(this).css({"background": "blue"});
+            },
+            click:function(){
+                $(".color").css("background","blue");
+            },
+            mouseout:function(){
+                $(this).css({"background": "pink"});
+            },
+        })
+        $(".wh span").on({
+            mouseover:function(){
+                $(this).css({"background": "darkgoldenrod"});
+            },
+          /* click:function(){
+            $(".color").css("width","200");
+            },*/
+            mouseout:function(){
+                $(this).css({"background": "#ccc"});
+            },
+        })
+        $(".wh span").eq(0).click(function(){
+                $(".color").css("width","100");
+                })
+        $(".wh span").eq(1).click(function(){
+            $(".color").css("width","200");
+        })
+        $(".wh span").eq(2).click(function(){
+            $(".color").css("width","300");
+        })
+
+
+        $(".hh span").on({
+            mouseover:function(){
+                $(this).css({"background": "darkgoldenrod"});
+            },
+            /* click:function(){
+             $(".color").css("width","200");
+             },*/
+            mouseout:function(){
+                $(this).css({"background": "#ccc"});
+            },
+        })
+        $(".hh span").eq(0).click(function(){
+            $(".color").css("height","100");
+        })
+        $(".hh span").eq(1).click(function(){
+            $(".color").css("height","200");
+        })
+        $(".hh span").eq(2).click(function(){
+            $(".color").css("height","300");
+        })
+
+      $(".huifu").click(function(){
+          $(".color").css({"width":"100","height":"100","background":"#fff"});
+      })
+        $(".queding").click(function(){
+            $(".con").css("display","none");
+        })
+
+
+
+
+    })
+
+</script>
+</html>

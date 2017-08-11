@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        @media all and (min-width: 1200px) not (min-width: 1300px){
+            div{
+                background: green;
+                width: 600px;
+                height: 600px;
+            }
+        }
+        /*max-width在1200px范围之内*/
+        @media all and (max-width: 1200px) and (min-width: 900px){
+            div{
+                background: red;
+                width: 500px;
+                height: 500px;
+            }
+        }
+        @media all and (max-width: 900px) and (min-width: 500px){
+            div{
+                background: gray;
+                width: 200px;
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+
+</div>
+</body>
+</html>

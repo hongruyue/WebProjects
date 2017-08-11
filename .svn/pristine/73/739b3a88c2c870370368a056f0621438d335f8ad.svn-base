@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{ color: red; font-size: 30px;}
+        #blue{ color:blue;}
+    </style>
+</head>
+<body>
+<div class="box">
+    <img  src="img/11.png" width="300px;" height="100">
+</div>
+<button >改变图片</button>
+
+<script>
+    var box=document.getElementsByClassName("box")[0];
+    var btn=document.getElementsByTagName("button");
+    var imgs=document.getElementsByTagName("img")[0];
+    //console.log(box.getAttribute("style"))//获取元素属性值 只能获取到标签内部书写的属性
+    spans.onclick=function(){
+         imgs.getAttribute("src");
+         imgs.setAttribute("src","img1/tu2.png");//设置属性元素
+
+     }
+
+
+
+
+
+</script>
+</body>
+</html>

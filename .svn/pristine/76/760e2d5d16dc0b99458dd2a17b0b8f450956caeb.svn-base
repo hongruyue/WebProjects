@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>测试</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<style>
+*{margin:0; padding:0;}
+figure img{width: 100%; display: block;}
+</style>
+<!-- <script type="text/javascript" src="js/common.js"></script> -->
+</head>
+<body>
+<div id="tu1">
+	<figure><img src="images/bg1.jpg" alt=""></figure>
+</div>
+<div id="tu2">
+	<figure><img src="images/bg2.jpg" alt=""></figure>
+</div>
+<div id="tu3">
+	<figure><img src="images/bg3.jpg" alt=""></figure>
+</div>
+<div id="tu4">
+	<figure><img src="images/bg4.jpg" alt=""></figure>
+</div>
+<div id="tu5">
+	<figure><img src="images/bg5.jpg" alt=""></figure>
+</div>
+<script>
+	var startY=0,startX=0,endY=0,endX=0;
+	document.addEventListener('touchstart',function (ev){
+		// console.log(ev);
+		// console.log(ev.touches);
+		// console.log(ev.touches[0].clientY);
+		// console.log(ev.touches[0].pageY);
+		// startY=ev.touches[0].pageY;
+		// startX=ev.touches[0].pageX;
+	},false);
+	// document.addEventListener('touchmove',function (ev){
+	// 	endY=ev.touches[0].pageY;
+	// 	endX=ev.touches[0].pageX;
+	// },false);
+	document.addEventListener('touchend',function (){
+		// if (startY-endY>0) {
+		// 	alert('向上滑动');
+		// }else if(startY-endY<0){
+		// 	alert('向下滑动');
+		// }
+	},false);
+</script>
+</body>
+</html>

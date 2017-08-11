@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+</body>
+<script>
+    //var arr=["2","8","9","6","4","3","5"];
+	var arr=[2,8,9,6,3,4,5];
+    /*var arr1=[];
+	var tmp;
+    function sort(){
+        for(var i=0;i<arr.length-1;i++){
+          for(var j=1;j<arr.length;j++){
+              if(arr[i]<arr[j]){
+                  arr1[i]=arr[i];
+              }else{
+                  arr1[i]=arr[j];
+              }
+          }
+        }
+        document.write(arr1)
+    }
+    sort();*/
+  
+	function bubbleSort(arr){
+		var i,j,temp;
+		for(i=arr.length;i>0;i--){
+			for(j=0;j<i-1;j++){
+				if(arr[j]>arr[j+1]){
+					temp=arr[j];
+					arr[j]=arr[j+1];
+					arr[j+1]=temp;
+				}
+			}
+			
+		}
+		document.write(arr);
+	}
+	
+	bubbleSort(arr);
+	
+</script>
+</html>

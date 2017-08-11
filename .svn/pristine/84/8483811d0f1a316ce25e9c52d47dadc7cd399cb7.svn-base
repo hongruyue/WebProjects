@@ -1,0 +1,82 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Title</title>
+    <style>
+        .outer{
+            width: 1000px;
+            height:105px;
+            margin:0 auto;
+            overflow: hidden;
+        }
+        .inner{
+            width: 1744px;
+        }
+        img{
+            float: left;
+        }
+    </style>
+</head>
+<body>
+<div class="outer">
+    <div class="inner">
+        <img src="img/1.jpg" alt="">
+        <img src="img/6.jpg" alt="" width="0" height="95" style="margin-top:10px;">
+    <!--
+        <img src="img/6.jpg" alt="" width="0">
+    -->
+        <img src="img/2.jpg" alt="">
+        <img src="img/7.jpg" alt="" width="0" height="95" style="margin-top:10px;">
+        <img src="img/3.jpg" alt="">
+        <img src="img/8.jpg" alt="" width="0" height="95" style="margin-top:10px;">
+        <img src="img/4.jpg" alt="">
+        <img src="img/9.jpg" alt="" width="0" height="95" style="margin-top:10px;">
+    </div>
+</div>
+</body>
+<script src="js/jquery-1.11.0.min.js"></script>
+<script>
+    $(function () {
+        //第一张
+        $("img").eq(0).hover(function () {
+            $("img").eq(1).stop().animate({"width":"744px"},500);
+        },function () {
+            $("img").eq(1).stop().animate({"width":"0"},500);
+        })
+
+        //第二张
+        $("img:eq(2)").hover(function () {
+            $("img").eq(0).stop().animate({"width":"0","height":"105"},500);
+            $("img").eq(3).stop().animate({"width":"744px"},500);
+        },function () {
+            $("img").eq(0).stop().animate({"width":"250px","height":"105"},500);
+            $("img").eq(3).stop().animate({"width":"0"},500);
+        })
+
+        //第三张
+        $("img:eq(4),img:eq(5)").hover(function () {
+            $("img").eq(0).stop().animate({"width":"0","height":"105"},500);
+            $("img").eq(2).stop().animate({"width":"0","height":"105"},500);
+            $("img").eq(5).stop().animate({"width":"744px"},500);
+        },function () {
+            $("img").eq(0).stop().animate({"width":"250px","height":"105"},500);
+            $("img").eq(2).stop().animate({"width":"250px","height":"105"},500);
+            $("img").eq(5).stop().animate({"width":"0"},500);
+        })
+
+        //第四张
+        $("img:eq(6),img:eq(7)").hover(function () {
+            $("img").eq(0).stop().animate({"width":"0","height":"105"},500);
+            $("img").eq(2).stop().animate({"width":"0","height":"105"},500);
+            $("img").eq(4).stop().animate({"width":"0","height":"105"},500);
+            $("img").eq(7).stop().animate({"width":"744px"},500);
+        },function () {
+            $("img").eq(0).stop().animate({"width":"250px","height":"105"},500);
+            $("img").eq(2).stop().animate({"width":"250px","height":"105"},500);
+            $("img").eq(4).stop().animate({"width":"250px","height":"105"},500);
+            $("img").eq(7).stop().animate({"width":"0"},500);
+        })
+    })
+</script>
+</html>

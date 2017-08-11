@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #demo{
+            width: 400px;
+            height: 40px;
+            overflow:hidden;
+
+        }
+        p{
+            width: 400px;
+            height: 30px;
+            line-height: 30px;
+        }
+
+    </style>
+    <script type="text/javascript">
+        /* $(function(){
+         setInterval(function(){
+         var scrollbars=$("p");
+         var num=0;
+         var scrollTop=function() {
+         //$("p").eq(num).css("display","block").siblings().css("display", "none");
+
+         //num++;
+         // if (num >= $("p").length) {
+         // num = 0;
+         }
+         // }
+         },100)
+
+         })*/
+        window.onload=function(){
+        var speed=40;
+        var demo=document.getElementById("demo");
+        var demo2=document.getElementById("demo2");
+        var demo1=document.getElementById("demo1");
+        demo2.innerHTML=demo1.innerHTML;
+        function Marquee(){
+            if(demo2.offsetTop-demo.scrollTop<=0)
+                demo.scrollTop-=demo1.offsetHeight;
+            else{
+                demo.scrollTop++
+            }
+        }
+        var MyMar=setInterval(Marquee,speed);
+        demo.onmouseover=function() {clearInterval(MyMar)};
+        demo.onmouseout=function() {MyMar=setInterval(Marquee,speed)}
+
+        };
+    </script>
+
+</head>
+<body>
+<div id="demo">
+    <div id="demo1">
+<p>春天的天气非常的好，让人感觉很舒服1</p>
+<p>春天的天气非常的好，让人感觉很舒服2</p>
+<p>春天的天气非常的好，让人感觉很舒服3</p>
+<p>春天的天气非常的好，让人感觉很舒服4</p>
+<p>春天的天气非常的好，让人感觉很舒服5</p>
+<p>春天的天气非常的好，让人感觉很舒服6</p>
+<p>春天的天气非常的好，让人感觉很舒服7</p>
+    </div>
+    <div id="demo2"></div>
+</div>
+</body>
+
+</html>

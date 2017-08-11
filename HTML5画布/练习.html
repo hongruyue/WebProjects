@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body{
+            background: #000000;
+        }
+        #canvas{
+            border: #cccccc;
+        }
+        div{
+            width: 800px;
+            height: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <canvas id="canvas" width="800px" height="800px"></canvas>
+</div>
+</body>
+<script>
+    var canvas=document.getElementById("canvas");
+    var cvs=canvas.getContext("2d");
+    cvs.beginPath();
+    cvs.moveTo(400,100);
+    cvs.lineTo(450,100);
+    cvs.lineTo(450,130);
+    cvs.lineTo(410,130);
+    cvs.lineTo(410,450);
+    cvs.lineTo(460,450);
+    cvs.lineTo(460,480);
+    cvs.lineTo(490,480);
+    cvs.lineTo(490,510);
+    cvs.lineTo(580,510);
+    cvs.lineTo(490,580);
+    cvs.lineTo(200,580);
+    cvs.lineTo(100,510);
+    cvs.lineTo(200,510);
+    cvs.lineWidth=3;
+    cvs.fillStyle="red";
+    cvs.strokeStyle="green";
+    cvs.stroke();
+    cvs.fill();
+    cvs.closePath();
+</script>
+</html>

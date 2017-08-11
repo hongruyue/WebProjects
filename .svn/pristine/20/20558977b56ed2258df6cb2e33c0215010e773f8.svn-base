@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div{float: left;}
+        .linear{
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(to right,red 0%,green 25%,orange 50%,yellow 75%,blue 100%);/*百分数代表的是位置 0开始*/
+        }
+        .linear1{
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(to bottom,red 0%,green 25%,orange 50%,yellow 75%,blue 100%);
+        }
+        .linear2{
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(to right top,red 0%,green 25%,orange 50%,yellow 75%,blue 100%);
+        }
+        .rid{
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background:radial-gradient(red 0%,green 25%,orange 50%,yellow 75%,blue 100%) ;
+        }
+    </style>
+</head>
+<body>
+<div class="linear"></div>
+<div class="linear1"></div>
+<div class="linear2"></div>
+<div class="rid"></div>
+</body>
+</html>

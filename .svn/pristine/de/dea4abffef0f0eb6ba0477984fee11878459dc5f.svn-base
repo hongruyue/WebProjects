@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<head>
+    <style>
+        body{background: #000}
+        .shadow{
+            font-size: 50px;
+            color: #ccc;
+            text-shadow: 4px 3px 3px red,5px 6px 6px green;/*水平  垂直  模糊距离  颜色*/
+            text-align: center;
+        }
+        .div{
+            font-size: 50px;
+            font-weight: bold;
+            text-shadow: -5px 0px #999;
+            color: #FFFFFF;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="div">大家好啊</div>
+<p class="shadow">今天天气好</p>
+</body>
+</html>

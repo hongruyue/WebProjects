@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .box{
+            width: 300px;
+            height: 600px;
+            margin: 0 auto;
+            position: relative;
+            margin-top:10px;
+        }
+        .pic{
+            width:300px;
+            height:400px;
+            position: absolute;
+        }
+        .pic img{
+            width: 300px;
+            height: 400px;
+            position: absolute;
+            margin-top:10px;
+        }
+        .bt{
+            position: absolute;
+            left:300px;
+            z-index: 2;
+        }
+        ul{
+            width: 300px;
+            height: 20px;
+            list-style: none;
+            position: absolute;
+            opacity:0.7;
+            top:380px;
+            left:-210px;
+            z-index: 2;
+        }
+        li{
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            line-height: 30px;
+            background:red;
+            color: #FFFFFF;
+            float: left;
+            border-radius: 50%;
+            margin-right: 8px;
+            cursor: pointer;
+
+        }
+        .point{
+            position: absolute;
+            top:200px;
+            left:0px;
+            z-index:3;
+        }
+        .leftp{
+            float: left;
+            margin-left: 10px;
+
+        }
+        .rightp{
+            float: right;
+            margin-left: 220px;
+        }
+
+        .img1{
+            /*z-index: 2;*/
+        }
+      .li1{
+          z-index: 3;
+          background: yellow;
+      }
+        .pic2{
+            width: 60px;
+            height:60px;
+            position: absolute;
+            border: 5px solid white;
+            top:310px;
+            right:164px;
+            display: none;
+
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="pic">
+         <img src="img1/1.jpg" class="img1">
+         <!--<img src="img1/2.jpg">-->
+         <!--<img src="img1/3.jpg">-->
+         <!--<img src="img1/4.jpg">-->
+         <!--<img src="img1/5.jpg">-->
+    </div>
+    <div class="bt">
+        <ul>
+            <li class="li1"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <div class="pic2"><img src="img1/1.jpg" width="60px" height="60px"></div>
+    </div>
+
+    <div class="point">
+        <p class="leftp"><img src="img1/left.png"></p>
+        <p class="rightp"><img src="img1/right.png"></p>
+    </div>
+</div>
+</body>
+<!--<script src="js/jquery-1.8.3.min.js"></script>-->
+<script>
+    "use strict";
+    var leftp=document.getElementsByClassName("leftp")[0];
+    var rightp=document.getElementsByClassName("rightp")[0];
+    var pics=document.getElementsByClassName("pic")[0];
+    var imgs=pics.getElementsByTagName("img")[0];
+    var lis=document.getElementsByTagName("li");
+    var pic2=document.getElementsByClassName("pic2")[0];
+    var type=true;
+    var num=1;
+    leftp.onclick=function(){
+        leftp.style.opacity="0.5";
+        num--;
+        if(num<=0){
+            num=5;
+        }
+        imgs.src="img1/"+num+".jpg";
+        lis[num-1].style.background="yellow";
+        if (num == 5) {
+            lis[0].style.background="red";
+        } else {
+            lis[num].style.background="red";
+        }
+    }
+    rightp.onclick=function(){
+        //alert("a="+num);
+        rightp.style.opacity="0.5";
+        lis[num-1].style.background="red";
+        num++;
+        if(num>5){
+            num=1;
+        }
+        imgs.src="img1/"+num+".jpg";
+        lis[num-1].style.background="yellow";
+    };
+
+    for (var i=0; i < lis.length; i++) {//让li每一个都有点击事件
+        lis[i].onclick = function () {
+           for (var i =0; i < lis.length; i++) {//找到左右的li，让它再次循环滚动
+                if (lis[i] == this) {
+                       lis[i].style.background="yellow";
+                       var k=i+1;
+                        num = k;
+                        imgs.src="img1/"+k+".jpg";
+                }else{
+                    lis[i].style.background="red"
+                }
+
+            }
+        }
+    }
+    lis[num-1].onmouseover=function(){
+        pic2.style.display="block";
+       pic2.src="img1/"+num+".jpg";
+    }
+
+
+</script>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0px;padding: 0px;
+        }
+       .outer{
+           width: 480px;
+           height: 500px;
+           margin: 0 auto;
+           border: 1px solid #950406;
+       }
+        .box{
+            width: 480px;
+            height: 50px;
+            overflow: hidden;
+        }
+        p{
+            width: 480px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            background: #ccc;
+            cursor: pointer;
+            border-bottom:1px solid #950406;
+        }
+        .box1{
+            width: 480px;
+            height: 350px;
+        }
+    </style>
+</head>
+<body>
+<div class="outer">
+    <div class="box box1">
+        <p>标题一</p>
+        <img src="img/1.jpg"/>
+    </div>
+    <div class="box">
+        <p>标题一</p>
+        <img src="img/2.jpg"/>
+    </div>
+    <div class="box">
+        <p>标题一</p>
+        <img src="img/3.jpg"/>
+    </div>
+    <div class="box">
+        <p>标题一</p>
+        <img src="img/4.jpg"/>
+    </div>
+</div>
+</body>
+<script src="js/jquery-1.8.3.min.js"></script>
+<script>
+    $(function(){
+        $("p").click(function(){
+            $(this).parent().animate({
+                height:"350px"
+            },300).siblings().animate({
+                height:"50px"
+            },300)
+        })
+    })
+</script>
+</html>

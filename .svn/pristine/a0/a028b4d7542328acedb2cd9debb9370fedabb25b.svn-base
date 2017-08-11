@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div{
+            width: 45px;
+            height: 45px;
+            font-size: 15px;
+            line-height: 45px;
+            text-align: center;
+            border-radius: 50%;
+            float: left;
+            margin-left: 20px;
+            background: yellow;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<video controls poster="01.jpg" width="600px" height="400px">
+    <source src="vedio/video.webm"/>
+</video>
+<p>
+    <span></span>
+    <span>/</span>
+    <span></span>
+</p>
+<input type="range" max="1" min="0" step="0.01"/>
+<div>播放</div>
+<div>暂停</div>
+<div>播放</div>
+<div>快进</div>
+<div>播放到60s</div>
+<div>快退</div>
+<div>静音</div>
+<div>全屏</div>
+</body>
+<script>
+    var btn=document.getElementsByTagName("div");
+    var spans=document.getElementsByTagName("span");
+    var vid=document.getElementsByTagName("video")[0];
+    var inp=document.getElementsByTagName("input")[0];
+    btn[0].onclick=function(){
+        vid.play();//播放
+    }
+    btn[1].onclick=function(){
+        vid.pause();
+    }
+//    paused判断是否暂停   暂停返回true   播放false
+    btn[2].onclick=function(){
+        if(vid.paused){
+            vid.play();
+            this.innerHTML="暂停";
+        }else{
+            vid.pause();
+            this.innerHTML="播放";
+        }
+    }
+    vid.onended=function(){
+        alert("完毕");
+    }
+//    vid.addEventListener("ended",function(){
+//        alert("123");
+//    })
+    setInterval(function(){
+        spans[0].innerHTML=parseInt(vid.currentTime);//获取当前时间
+        spans[2].innerHTML=vid.duration;
+    },10)
+    btn[3].onclick=function(){
+        vid.currentTime+=2;
+    }
+    btn[4].onclick=function(){
+        vid.currentTime=60;//设置当前播放时间
+    }
+    btn[5].onclick=function(){
+        vid.currentTime-=2;
+    }
+    btn[6].onclick=function(){
+//        muted可以设置静音还可以获取状态
+        if(vid.muted){
+            vid.muted=false;
+        }else{
+            vid.muted=true;
+        }
+    }
+    inp.oninput=function(){
+        vid.volume=inp.value;
+//        console.log(inp.value)
+    }
+    vid.ontimeupdate=function(){//只要播放时间在变化   就会触发   时间变化
+        console.log(vid.currentTime);
+    }
+    vid.oncanplay=function(){//当前状态   可以播放
+//        alert("success");
+    }
+    btn[7].onclick=function(){
+        vid.webkitRequestFullscreen();
+//            if(video.requestFullscreen) {
+//                video.requestFullscreen();
+//            } else if(video.mozRequestFullScreen) {
+//                video.mozRequestFullScreen();
+//            } else if(video.webkitRequestFullscreen) {
+//                video.webkitRequestFullscreen();
+//            } else if(video.msRequestFullscreen) {
+//                video.msRequestFullscreen();
+//        };
+    }
+</script>
+</html>

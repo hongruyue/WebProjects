@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>table操作</title>
+    <style>
+     th{
+         color: red;
+     }
+
+    </style>
+</head>
+<body class="box">
+<table width="360" border="1" class="tab">
+    <tr>
+        <th scope="col">书名</th>
+        <th scope="col">价格</th>
+    </tr>
+    <tr class="line">
+        <td>看的见风景的房价</td>
+        <td>￥30</td>
+    </tr>
+    <tr>
+        <td>生活如此好</td>
+        <td>￥62</td>
+    </tr>
+</table>
+<button>增加一行</button>
+<button>删除第二行</button>
+<button>修改标题样式</button>
+<button>复制最后一行</button>
+</body>
+<script type="text/javascript">
+    var table=document.getElementsByClassName("tab")[0];
+    var btn=document.getElementsByTagName("button");
+    btn[0].onclick=function () {
+        oneRow=table.insertRow();
+        cell1=oneRow.insertCell();
+        cell2=oneRow.insertCell();
+        cell1.innerHTML="js学习教程";
+        cell2.innerHTML="￥80";
+    };
+    btn[1].onclick=function () {
+        var rows = table.rows.length;
+        if (rows >= 2) {
+            //alert('行数'+rows);
+            twoRow=table.deleteRow(2);
+        }
+    };
+    btn[2].onclick=function () {
+        var th=document.getElementsByTagName("th");
+        th[0].style.color="blue";
+        th[1].style.color="blue";
+
+    };
+    btn[3].onclick=function () {
+        var rows=table.rows.length;	//获取表格总行数
+        //alert('行数'+rows);
+        var lastRow=table.getElementsByTagName("tr")[rows-1];	//获取最后一行
+        var copyRow=lastRow.cloneNode(true);	//复制最后一行
+        //alert(copyRow.innerHTML);
+        lastRow.parentNode.insertBefore(copyRow,lastRow);	//插入到最后一行之前
+    }
+
+</script>
+</html>

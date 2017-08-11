@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../css/style1.css"/>
+    <link rel="stylesheet" href="../css/动画.css"/>
+    <link rel="stylesheet" href="../css/reset.css"/>
+</head>
+<body>
+
+<!--导航条 s-->
+<div id="header">
+    <a class="logo" href="#"></a>
+    <ul class="page1_right">
+        <li>Android</li>
+        <li>iPhone</li>
+        <li>iPad</li>
+        <li>手机网页版</li>
+    </ul>
+</div>
+<!--导航条 e-->
+<!--右侧圆点 s-->
+<div class="ming">
+<ul id="yd">
+    <li class="active"></li>
+    <li></li>
+    <li></li>
+
+</ul>
+<!--右侧圆点 e-->
+<!--手机左侧1 s-->
+<div id="page1" class="page box0">
+    <div class="iphone"></div>
+    <div class="zx "></div>
+    <div class="yun"></div>
+</div>
+<!--手机左侧1 e-->
+<!--手机左侧2 s-->
+<div id="page2" class="page2 box0">
+    <div class="ml"></div>
+    <div class="zb zx"></div>
+    <div class="yc"></div>
+    <div class="rw"></div>
+</div>
+<!--手机左侧2 e-->
+
+<!--手机左侧3 s-->
+<div id="page3" class="page3 box0">
+    <div class="sj"></div>
+    <div class="yc3"></div>
+    <div class="colock-s zx">
+        <div class="colock-ss">
+            <p class="colock-p"></p>
+            <p class="colock-pp"></p>
+        </div>
+
+    </div>
+    <canvas id="colock" class="colock-in" width="211px" height="221px"></canvas>
+</div>
+<!--手机左侧3 e-->
+
+<!--手机右侧 s-->
+<div class="page1_top">
+    <div class="page1_text">
+        <p class="p1">手机折800</p>
+
+        <p class="p2">随时随地买，手机专享是你不变的特权</p>
+    </div>
+    <div class="page1_bottom">
+        <p>请扫二维码下载</p>
+
+        <div class="page1_rem"></div>
+        <a href="http://wwww.baidu.com" class="pages"></a>
+    </div>
+</div>
+<!--手机右侧 e-->
+<!--下方箭头 s-->
+<div class="next_page" style="display: block"></div>
+<!--下方箭头 e-->
+</div>
+
+</body>
+<script src="../js/jquery-1.10.2.min.js"></script>
+<script>
+
+    $(function(){
+        var num= 0,time;
+//        time=setInterval(function(){
+//            $(".box0").eq(num).slideDown(200).siblings.slideDown;
+//        })
+
+        $("#yd li").click(function(){
+            $(this).css({"transform":" scale(1.8)","background":"white","border-radius":"50%","opacity":"1"})
+                    .siblings().css({"transform":" scale(1)","background":"white","border-radius":"50%","opacity":"0.4"})
+            var pag=$(this).index();
+            $(".box0").eq(pag).slideDown().siblings(".box0").slideUp();
+        })
+
+
+        var num1=0;
+        var box0=document.getElementsByClassName("box0");
+        function as(){
+            $(".box0").eq(num1).find(".zx").addClass(".ri").siblings().removeClass("");
+//            $(".box0").eq(num1).css({"transform":" scale(1.8)","background":"white","border-radius":"50%","opacity":"1"})
+//                    .siblings().css({"transform":" scale(1)","background":"white","border-radius":"50%","opacity":"0.4"})
+
+            $(".box0").eq(num1).slideDown(1000).siblings(".box0").slideUp(1000);
+        }
+
+
+
+
+        $(document.body)[0].onmousewheel=function(ev){
+            var event=ev||window.event;
+            if(event.preventDefault){
+                event.preventDefault();
+            }else{
+                event.returnValue=false;
+            }
+            var  down = ev.wheelDelta?ev.wheelDelta<0:ev.detail>0;
+            console.log(down);a
+            //alert(down+"");
+            if(down){
+                if (num1 == 2) {
+                    return;
+                }
+                $(".box0").eq(num1).slideUp(2000);
+                num1++;
+                $(".box0").eq(num1).slideDown(2000);
+            }
+            else
+            {
+                if (num1 == 0) {
+                    return;
+                }
+                $(".box0").eq(num1).slideUp(2000);
+                num1--;
+                $(".box0").eq(num1).slideDown(2000)
+            }
+        }
+
+    });
+
+//            $(".box0").eq(box1).find(".zx").addClass("ri").siblings().removeClass("");
+//            setTimeout(function(){
+//                $(this).css({"transform":" scale(1.8)","background":"white","border-radius":"50%","opacity":"1"})
+//                        .siblings().css({"transform":" scale(1)","background":"white","border-radius":"50%","opacity":"0.4"})
+//                var pag=$(this).index();
+//                $(".box0").eq(pag).slideDown().siblings(".box0").slideUp();
+//            },1000)
+////
+
+
+
+
+
+</script>
+</html>

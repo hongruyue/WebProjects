@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box {
+            width: 300px;
+            border: 1px solid red;
+         /*   word-wrap: break-word;/!*换行*!/
+            /!*添加省略号*!/
+            text-overflow: ellipsis;
+            /!*强制不换行*!/
+            white-space: nowrap;
+            /!*超出隐藏*!/
+            overflow: hidden;*/
+        }
+        .p{
+            width: 300px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+       . p1{
+           width: 300px;
+           word-wrap: break-word;
+        }
+
+    </style>
+</head>
+<body>
+<div class="box">
+    <p class="p">正则表达式(Regular Expression)是一种匹配模式，描述的是一串文本的特征。
+        正如自然语言中“高大”、“坚固”等词语抽象出来描述事物特征一样，正则表达式就是字符的高度抽象，用来描述字符串的特征。
+        正则表达式（以下简称正则，Regex）通常不独立存在，各种编程语言和工具作为宿主语言提供对正则的支持，并根据自身语言的特点，进行一定的剪裁或扩展。
+        正则入门很容易，有限的语法规则很容易掌握，但是目前正则的普及率并不高，主要是因为正则的流派众多，各种宿主语言提供的文档都过多的关注于自身的一些细节，而这些细节通常是初学者并不需要关注的。
+        当然，如果想要深入的了解正则表达式，这些细节又是必须被关注的，这是后话，让我们先从正则的基础开始，进入正则表达式的世界。</p>
+</div>
+<button>展开</button>
+</body>
+<script src="js/jquery-1.8.3.min.js"></script>
+<script>
+    var box=document.getElementsByClassName("box")[0];
+    var pt=box.getElementsByTagName("p")[0];
+    var btn=document.getElementsByTagName("button")[0];
+    var type=1;
+    btn.onclick=function(){
+        if(type){
+            pt.setAttribute('class','p1');
+            btn.innerHTML="收缩";
+            type=0;
+        }else{
+            pt.setAttribute('class','p');
+            btn.innerHTML="展开";
+            type=1;
+        }
+    }
+
+</script>
+</html>

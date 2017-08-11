@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<form action="http:\\www.baidu.com">
+    <!--required非空验证-->
+邮箱：<input type="email" required/>请输入邮箱<br><!--邮箱验证-->
+链接地址：<input type="url" required/>请输入连接地址<br>
+   <!-- number增加或减少的时候 会就近寻找有效值（min+/—n*step）找的有效值是step的倍数-->
+数字：<input type="number" required value="50" max="100" min="0" step="12"/>请输入数字<br>
+    <progress></progress><br>
+    <div style="width: 20px;height: 20px;background: red"></div>
+    <input type="range" max="1000" min="10" value="20" step="0.5" style="width:1000px"/><br>
+    <input type="search"/><br><!--写内容 后面会有删除键-->
+    <input type="date" /><br><!--日期，不用value值-->
+    <input type="month" /><br>
+    <input type="week" /><br>
+    <input type="time" /><br>
+    <!--不兼容-->
+    <input type="datetime" /><br>
+    <input type="datetime-local" /><br>
+    <input type="submit">
+</form>
+</body>
+<script>
+    var inp=document.getElementsByTagName("input");
+    var div=document.getElementsByTagName("div")[0];
+    console.log(inp[2].value);
+    inp[2].addEventListener("input",function(){
+
+    },false);
+    //change,input都是value改变之后触发  区别change是改变之后失去焦点才触发 input随时改变随时触发
+   /* inp[3].onchange=function(){
+        console.log(inp[3].value);
+    }*/
+    inp[3].oninput=function(){
+        console.log(inp[3].value);
+        div.style.width=inp[3].value+"px";
+    }
+</script>
+</html>

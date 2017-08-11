@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<body>
+<input type="text" value="">
+<input type="text" value=""  >
+<button>弹出</button>
+</body>
+<script>
+    var btn=document.getElementsByTagName("button")[0];
+    var ipt=document.getElementsByTagName("input");
+    btn.onclick=function() {
+        //ipt[1].value=ipt[0].value+"是闰年"
+        var year = ipt[0].value;
+        if (year == "") {
+            alert("请输入年份")
+        } else {
+            if (isNaN(year)) {
+                alert("年份只能是数字");
+            } else {
+                if ((year % 4 == 0 && (year % 100) != 0) || year % 400 == 0) {
+                    ipt[1].value = year + "年是润年";
+                } else {
+                    ipt[1].value = year + "年是平年";
+                }
+
+            }
+        }
+    }
+</script>
+</html>

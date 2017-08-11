@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="box"></div>
+</body>
+<script>
+    setInterval(function (){
+        var box=document.getElementsByClassName("box")[0];
+        var start=new Date();
+        var end=new Date("2017/05/01 00:00:00");
+        var starttime=start.getTime();
+        var endtime=end.getTime();
+        var fulltime=endtime-starttime;
+        box.innerHTML=fulltime;
+        var day=parseInt(fulltime/(24*60*60*1000));
+        var _day=fulltime%(24*60*60*1000);//获取剩余毫秒 取余
+        var hours=parseInt(_day/(60*60*1000));
+        var _hours=_day%(60*60*1000);
+        var minutes=parseInt(_hours/(60*1000));
+        var _minutes=_hours%(60*1000);
+        var seconds=parseInt(_minutes/1000);
+        var hao=_minutes%1000;
+        box.innerHTML="距离五一还有："+day+"天"+hours+"小时"+minutes+"分钟"+seconds+"秒"+minutes+"毫秒";//设置div中的内容显示倒计时
+    },1)
+
+</script>
+</html>

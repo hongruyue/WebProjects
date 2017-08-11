@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+        }
+        ul li{
+            display: none ;
+            margin-left: 40px;
+            width: 210px;
+            height: 30px;
+            background-color: #a8d2e7;
+            border-radius: 8px ;
+            line-height: 30px ;
+            margin-top: 3px;
+          text-indent: 1em;
+            cursor: pointer;
+            opacity: 0.5;
+            color: #031b0d;
+            font-weight:300;
+            font-size:20px ;
+            font-family: 微软雅黑;
+        }
+        .zong{
+            width: 280px;
+           margin-left: 30px;
+            border: 1px solid #0e128b;
+            background-color:#39818e;
+            margin-top: 30px;
+            border-radius: 8px ;
+        }
+        .dianji{
+            width: 280px;
+            height: 40px;
+            line-height: 40px;
+            background-color: #39818e;
+            border-radius: 8px ;
+            font-size:25px ;
+            font-family: 宋体;
+            font-weight: 600;
+            cursor: pointer;
+            opacity: 1;
+        }
+        img{
+            margin-left: 10px ;
+            margin-right: 10px ;
+        }
+       .dianji:hover {
+           opacity: 0.5;
+        }
+        li:hover{
+            opacity: 1;
+        }
+        span{
+            font-size: 15px;
+            color: #FEA000;
+            margin-left: 15px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+<div class="zong">
+<table>
+    <tbody>
+    <div class="dianji"><img src="1.png" width="10px" height="10px" alt=""/>我的同学</div>
+    <ul>
+        <li>王振华 <span>啦 啦 啦</span> </li>
+        <li>李宣达 <span>啦 啦 啦</span> </li>
+        <li>刘霞  <span>我是卖报的小行家</span></li>
+        <li>王青 <span>不等天明去等派报</span></li>
+        <li>郭秀芬 <span>一面走 一面叫</span></li>
+        <li>刘莹 <span>今天的新闻真正好</span></li>
+    </ul>
+    <div class="dianji"><img src="1.png" width="10px" height="10px" alt=""/>好丽友 好朋友</div>
+    <ul>
+        <li>王振华 <span>啦 啦 啦</span> </li>
+        <li>李宣达 <span>啦 啦 啦</span> </li>
+        <li>刘霞  <span>我是卖报的小行家</span></li>
+        <li>王青 <span>不等天明去等派报</span></li>
+        <li>郭秀芬 <span>一面走 一面叫</span></li>
+        <li>刘莹 <span>今天的新闻真正好</span></li>
+    </ul>
+    <div class="dianji"><img src="1.png" width="10px" height="10px" alt=""/>怎样非这样</div>
+    <ul>
+        <li>王振华 <span>啦 啦 啦</span> </li>
+        <li>李宣达 <span>啦 啦 啦</span> </li>
+        <li>刘霞  <span>我是卖报的小行家</span></li>
+        <li>王青 <span>不等天明去等派报</span></li>
+        <li>郭秀芬 <span>一面走 一面叫</span></li>
+        <li>刘莹 <span>今天的新闻真正好</span></li>
+    </ul>
+    <div class="dianji"><img src="1.png" width="10px" height="10px" alt=""/>小小小同志</div>
+    <ul>
+        <li>王振华 <span>啦 啦 啦</span> </li>
+        <li>李宣达 <span>啦 啦 啦</span> </li>
+        <li>刘霞  <span>我是卖报的小行家</span></li>
+        <li>王青 <span>不等天明去等派报</span></li>
+        <li>郭秀芬 <span>一面走 一面叫</span></li>
+        <li>刘莹 <span>今天的新闻真正好</span></li>
+    </ul>
+    </tbody>
+</table>
+</div>
+</body>
+<script src="js/jquery-1.8.3.min.js"></script>
+<script>
+    $(function(){
+        $('.dianji').click(function(){
+            var ta=$('.dianji').index(this);
+            if($('img').eq(ta).attr('src')=='1.png'){
+                $('ul').eq(ta).children().slideDown(300,function(){
+                    $('.dianji').eq(ta).css('background','#2A278E');
+                    $('img').eq(ta).attr('src','2.png');
+                    $('li').click(function(){
+                        var ste=$('li').index(this);
+                                 $('li').css('background','#a8d2e7');
+                                 $('li').eq(ste).css('background','#4E8E73')
+                    })
+                })
+        }else{
+            $('ul').eq(ta).children().slideUp(300,function(){
+            $('.dianji').eq(ta).css('background','#39818e')
+            $('img').eq(ta).attr('src','1.png')
+                $('li').css('background','#a8d2e7')
+        })
+    }
+        })
+    })
+
+</script>
+</html>

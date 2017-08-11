@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../angular-1.5.8/angular.min.js"></script>
+    <script src="../angular-1.5.8/angular-route.js"></script>
+    <style>
+        .red{
+            color:red;
+        }
+    </style>
+</head>
+<body ng-app="app1">
+    <div ng-controller="con1">
+        <a ng-href="{{x.url}}" ng-repeat="x in arr">{{x.con}}    </a><br>
+        <ng-view></ng-view>
+    </div>
+</body>
+<script>
+    var app=angular.module("app1",["ngRoute"]);
+    app.controller("con1",function($scope){
+        $scope.arr=[
+            {url:"#/news",con:"新闻"},
+            {url:"#/video",con:"视频"},
+            {url:"#/music",con:"音乐"},
+            {url:"#/other",con:"其他"}
+                ]
+    });
+    app.config(function($routeProvider){
+        $routeProvider
+                .when("/news",{
+                    templateUrl:"view/first.html",
+                    controller:function($scope){
+                        $scope.arr=[11111,222222,333333]
+                    }
+                })
+                .when("/video",{
+//                    将html视图分离
+                    templateUrl:"view/second.html",
+                    controller:function($scope){
+                        $scope.arr=[111345311,2221122222,333378978997833];
+                    }
+                })
+    })
+
+</script>
+</html>

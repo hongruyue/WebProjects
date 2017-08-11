@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box{
+            width: 600px;
+            height:300px;
+            margin: 0 auto;
+            border: 20px solid #a8d2e7;
+        }
+        .left{
+            width: 220px;
+            height: 300px;
+            float: left;
+            border: 1px groove #000000;
+        }
+        .right{
+            width: 220px;
+            height: 300px;
+            float: right;
+            border: 1px groove #000000;
+            background: #a8d2e7;
+        }
+        #text{
+            width: 220px;
+            height: 300px;
+        }
+        #text1{
+            width: 220px;
+            height: 300px;
+        }
+        .cen{
+            width:140px;
+            height: 300px;
+            float: left;
+            text-align: center;
+        }
+        .cen .p1{
+            width: 100px;
+            height: 30px;
+            line-height: 30px;
+            background: #FF0000;
+            color:#FFFFFF;
+            margin-left: 30px;
+            cursor: pointer;
+        }
+        .cen .p2{
+            width: 120px;
+            height: 30px;
+            margin-left:20px;
+
+        }
+        .light{
+            margin-left:10px;
+            display: none;
+        }
+        .light span{
+            width: 10px;
+            height: 10px;
+            background: yellow;
+            display: inline-block;
+            margin-left: 4px;
+
+        }
+
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="left"><textarea type="text" value="" id="text" cols="" rows=""></textarea></div>
+<div class="cen">
+    <p class="p1">把文字右移</p>
+    <p class="p2"><span>0</span>/<span>0</span></p>
+    <p class="light"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></p>
+</div>
+<div class="right"><textarea type="text" value="" id="text1"></textarea></div>
+</div>
+</body>
+<script src="js/jquery-1.8.3.min.js"></script>
+<script>
+  /*  $(function(){
+        $(".light").css("display","none");
+        $(".p1").click(function(){
+            $(".light").css("display","block");
+            $(this).css("opacity","0.5");
+            var num=0;
+            var time
+            var light
+            light=function() {
+                $(".light span").eq(num).css("background", "red").siblings().css("background", "yellow");
+                num++;
+                if (num >= $(".light span").length) {
+                    num = 0;
+                }
+            }
+            time= setInterval(light ,200);
+        })
+           clearInterval(time)
+    })*/
+    var txt=document.getElementsByTagName("textarea");
+    var p1=document.getElementsByClassName("p1")[0];
+    var p2=document.getElementsByClassName("p2")[0];
+    var light=document.getElementsByClassName("light")[0];
+    var span1=light.getElementsByTagName("span")
+    var span2=p2.getElementsByTagName("span");
+    var time,time1,time2;
+    var num1=0;
+    p1.onclick=function() {
+        txt[1].value = "";
+        clearInterval(time);
+        clearInterval(time1);
+        clearInterval(time2);
+        light.style.display = "block";
+        var text = txt[0].value;
+        span2[1].innerHTML = text.length;
+        p1.style.background = "red";
+        time = setInterval(fun, 100);
+        time1=setInterval(function(){
+            for(var i=0;i<=span1.length;i++){
+                if(span1[i]==span1[num1]){
+                    span1[i].style.background="red"
+                }else{
+                    span1[i].style.background="orange"
+                }
+            }
+            num1++;
+            if(num1>span1.length){
+                num1=0;
+            }
+        },50);
+
+    }
+
+        fun=function(){
+            var str=txt[0].value;
+            if(str.length==0){
+                p1.style.background="orange";
+                clearInterval(time);
+                var opa=1;
+                time2=setInterval(function(){
+                    light.style.opacity=opa;
+                    opa-=0.1;
+                    if(opa==0){
+                        light.style.display="none";
+                        light.style.opacity=1;
+                    }
+                },100);
+            }
+            var num=txt[1].value.length;
+            var str1=str.substring(0,1);
+            var str2=str.substring(1);
+            txt[0].value=str2;
+            txt[1].value+=str1;
+            span2[0].innerHTML=num;
+
+             /*if(txt[0].value = ""){
+             light.style.display = "none";
+             }*/
+
+
+    }
+
+</script>
+</html>

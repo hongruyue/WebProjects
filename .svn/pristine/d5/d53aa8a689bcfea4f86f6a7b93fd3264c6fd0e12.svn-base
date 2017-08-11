@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<button>按钮</button>
+</body>
+<script>
+    var btn=document.getElementsByTagName("button")[0];
+    btn.onclick=function(){
+        window.localStorage.setItem("user1","皮皮虾1");
+    };
+    window.localStorage.getItem("user1");
+    window.onstorage=function(event){//事件   当存储的值发生变化   会触发
+        var ev=event||window.event;
+        alert(ev.key+":"+ev.oldValue+"改变为"+ev.newValue);
+    }
+</script>
+</html>

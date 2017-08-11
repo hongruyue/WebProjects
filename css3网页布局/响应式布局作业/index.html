@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" media="all and (min-width:1100px)" href="css/style1.css"/>
+    <link rel="stylesheet" media="all and (max-width:1100px) and (min-width:900px)" href="css/style2.css"/>
+    <link rel="stylesheet" media="all and (max-width:900px) and (min-width:700px)" href="css/style3.css"/>
+    <link rel="stylesheet" media="all and (max-width:700px) and (min-width:500px)" href="css/style4.css"/>
+    <link rel="stylesheet" media="all and (max-width:500px) and (min-width:300px)" href="css/style5.css"/>
+</head>
+<body>
+<div class="conter">
+    <div class="bg3">
+        <img src="img/bg03.png"/>
+    </div>
+    <div class="bg7">
+    <p>THE<br>DESIGN<br>FRONTIER</p>
+    </div>
+<div class="bg1">
+    <a href="#">
+        <img src="img/bg01.png" alt=""/>
+    </a>
+</div>
+<ul class="box">
+    <li class="li1">
+        <p>大西瓜</p>
+        <p>11111</p>
+    </li>
+    <li class="li1">
+        <p>大西瓜</p>
+        <p>11111</p>
+    </li>
+    <li class="bg2">
+        <a href="#">
+            <img src="img/bg01.png" alt=""/>
+        </a>
+    </li>
+    <li class="li1">
+        <p>大西瓜</p>
+        <p>11111</p>
+    </li>
+    <li class="li1">
+        <p>大西瓜</p>
+        <p>11111</p>
+    </li>
+</ul>
+    <div class="bg4">
+        <img src="img/bg04.png"/>
+    </div>
+    <div class="bottom">
+        <div class="bg6">
+            <img src="img/bg06.png"/>
+        </div>
+        <div class="bg5">
+            <img src="img/bg05.png"/>
+            <p>May you have enough happiness to make you sweet,enough trials to make you strong,enough sorrow to keep you human,enough hope to make you happy? Always put yourself in others’shoes.If you feel that it hurts you,it probably hurts the other person, too.</p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+<script src="js/jquery-1.8.3.min.js"></script>
+<script>
+    $(function(){
+        $(".bg3").click(function(){
+            $(".bg7").slideToggle();
+        })
+    })
+
+</script>
+</html>

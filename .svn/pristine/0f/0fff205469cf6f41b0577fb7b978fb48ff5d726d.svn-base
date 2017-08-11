@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #canvas{
+            background: #ccc;
+        }
+        div{
+            width: 600px;
+            height: 500px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <canvas id="canvas" width="600px" height="500px">
+
+    </canvas>
+</div>
+</body>
+<script>
+    var canvas=document.getElementById("canvas");
+    var cvs=canvas.getContext("2d");
+    cvs.beginPath();//开始绘制图形 当大括号 每次绘制都写一次
+    cvs.moveTo(300,300);
+    cvs.lineTo(400,400);
+    cvs.lineTo(300,400);
+    cvs.lineTo(300,300);
+    cvs.strokeStyle="blue";
+    cvs.lineWidth=3;
+    cvs.fillStyle="red";
+    cvs.fill()//填充颜色
+    cvs.stroke();
+    cvs.closePath()//结束绘制
+
+    cvs.beginPath();//开始绘制图形 当大括号 每次绘制都写一次
+    cvs.moveTo(100,100);
+    cvs.lineTo(250,200);
+    cvs.lineTo(250,50);
+
+    cvs.strokeStyle="yellow";
+    cvs.lineWidth=3;
+    cvs.fillStyle="green";
+    cvs.fill();//填充颜色
+    cvs.closePath();//结束绘制
+    cvs.stroke();//放在外面，自动闭合
+
+   /* cvs.beginPath();
+    cvs.moveTo(100,100);//（Y X）
+    cvs.lineTo(100,300);
+    cvs.lineTo(500,300);
+    cvs.lineTo(500,100);
+    cvs.strokeStyle="yellow";
+    cvs.fillStyle="#950406";
+    cvs.closePath();
+    cvs.fill();
+    cvs.stroke();*/
+    //矩形
+    cvs.beginPath();
+     cvs.rect(200,200,300,200);//起点 宽 高
+     cvs.strokeStyle="yellow";
+     cvs.fillStyle="purple";
+     cvs.stroke();
+     cvs.fill();
+     cvs.closePath();
+    cvs.clearRect(0,0,400,600);//清除画布 清除一个矩形区域
+    //填充矩形 不可以连线
+    cvs.beginPath();
+    cvs.fillStyle="blue";//先填充样式 再填充
+    cvs.fillRect(400,400,300,300);
+    cvs.stroke();//属性没用
+    cvs.closePath();
+    //连线矩形  不能填充颜色
+    cvs.beginPath();
+    cvs.fillStyle="blue";
+    cvs.strokeRect(100,100,100,100);
+    cvs.fill();//属性没用
+    cvs.stroke();
+    cvs.closePath();
+
+</script>
+</html>

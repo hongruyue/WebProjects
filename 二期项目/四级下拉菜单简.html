@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+            /* navigation style */
+        #nav{
+            height: 39px;
+            font: 12px Geneva, Arial, Helvetica, sans-serif;
+            background: #2D2D2D;
+            border: 1px solid #323232;
+            border-radius: 3px;
+            margin-left: 0px;
+            padding-left: 0px;
+        }
+
+        #nav li{
+            list-style: none;
+            display: block;
+            float: left;
+            height: 40px;
+            position: relative;
+            border-right: 1px solid #323232;
+        }
+
+        #nav li a{
+            padding: 0px 10px 0px 30px;
+            line-height: 40px;
+            height: 40px;
+            text-decoration: none;
+            border-right: 1px solid #636161;
+            color: #FFF;
+            text-shadow: 1px 1px 1px #66696B;
+            display: block;
+        }
+
+        #nav ul{
+            background: #f2f5f6;
+            padding: 0px;
+            border-bottom: 1px solid #DDDDDD;
+            border-right: 1px solid #DDDDDD;
+            border-left:1px solid #DDDDDD;
+            border-radius: 0px 0px 3px 3px;
+            box-shadow: 2px 2px 3px #ECECEC;
+            -webkit-box-shadow: 2px 2px 3px #ECECEC;
+            -moz-box-shadow:2px 2px 3px #ECECEC;
+            width:170px;
+        }
+        #nav li:hover{
+            background: #010101;
+        }
+        #nav ul li {
+            border-right:none;
+            border-bottom:1px solid #DDDDDD;
+            width:170px;
+            height:39px;
+        }
+        #nav ul li a {
+            border-right: none;
+            color:#6791AD;
+            text-shadow: 1px 1px 1px #FFF;
+            border-bottom:1px solid #FFFFFF;
+        }
+        #nav ul li:hover{background:#DFEEF0;}
+        #nav ul li:last-child { border-bottom: none;}
+        #nav ul li:last-child a{ border-bottom: none;}
+        /* Sub menus */
+        #nav ul{
+            display: none;
+         /* visibility:hidden;*/
+            position: absolute;
+            /*top: 40px;*/
+        }
+
+        /* Third-level menus */
+        #nav ul ul{
+            top: 0px;
+            left:170px;
+            /*display: none;
+            visibility:hidden;*/
+            border: 1px solid #DDDDDD;
+        }
+        /* Fourth-level menus */
+        #nav ul ul ul{
+            top: 0px;
+            left:170px;
+           /* display: none;
+            visibility:hidden;*/
+            border: 1px solid #DDDDDD;
+        }
+      /*  #nav ul li{
+            display: block;
+            visibility:visible;
+        }
+        #nav li:hover > ul{
+            display: block;
+            visibility:visible;
+        }*/
+    </style>
+
+</head>
+<body>
+
+        <ul id="nav">
+            <li><a href="#" title="首页" target="_blank">首页</a> </li>
+            <li><a href="#" title="全部商品" target="_blank">全部商品<span class="lbjt"><img src="img/jiantou.png"></span></a>
+                <ul>
+                    <li><a href=""><img src="img/jiantou4.png">&nbsp新品</a> </li>
+                    <li><a href=""><img src="img/jiantou4.png">&nbsp买手自留</a></li>
+                    <li><a href=""><img src="img/jiantou4.png">&nbsp上衣</a>
+                        <ul>
+                            <li><a href=""><img src="img/jiantou4.png">&nbsp卫衣</a>
+                                <ul>
+                                    <li><a href=""><img src="img/jiantou4.png">&nbsp童装1</a> </li>
+                                    <li><a href=""><img src="img/jiantou4.png">&nbsp运动装2</a></li>
+                                    <li><a href=""><img src="img/jiantou4.png">&nbsp女装3</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href=""><img src="img/jiantou4.png">&nbspT恤</a>
+                                <ul>
+                                    <li><a href=""><img src="img/jiantou4.png">&nbsp童装1</a> </li>
+                                    <li><a href=""><img src="img/jiantou4.png">&nbsp运动装2</a></li>
+                                    <li><a href=""><img src="img/jiantou4.png">&nbsp女装3</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href=""><img src="img/jiantou4.png">&nbsp衬衣</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li><a href=""><img src="img/jiantou4.png">&nbsp套装</a>
+                        <ul>
+                            <li><a href=""><img src="img/jiantou4.png">&nbsp童装</a> </li>
+                            <li><a href=""><img src="img/jiantou4.png">&nbsp运动装</a></li>
+                            <li><a href=""><img src="img/jiantou4.png">&nbsp女装</a>
+                            </li>
+                        </ul>
+
+                    </li>
+                    <li><a href=""><img src="img/jiantou4.png">&nbsp裙子</a> </li>
+                    <li><a href=""><img src="img/jiantou4.png">&nbsp外套</a> </li>
+                </ul>
+            </li>
+            <li><a href="#" title="夏季商品" target="_blank">夏季商品</a></li>
+        </ul>
+
+
+</body>
+<script src="js/jquery-1.8.3.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $("#nav li").hover(
+                function(){
+                    //(this).children('ul').hide();
+                    $(this).children('ul').slideDown('fast');
+                },
+                function (){
+                    //$('ul', this).slideUp('fast');
+                    $(this).children('ul').slideUp('fast')
+                });
+    });
+</script>
+</html>

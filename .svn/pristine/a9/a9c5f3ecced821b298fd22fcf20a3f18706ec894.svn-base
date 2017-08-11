@@ -1,0 +1,21 @@
+#addData{
+    margin-top:20px;
+}
+#resetData{
+    margin-top:20px;
+}
+.table{
+    margin-top: 40px;
+}
+.table th{
+    color: #32728F;
+    font-size: 30px;
+}
+.table td{
+    color:#D9534F;
+    font-size: 20px;
+}
+.zwsj{
+    color:#C1D2D6;
+}
+
